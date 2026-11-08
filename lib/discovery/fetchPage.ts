@@ -1,6 +1,6 @@
 import * as cheerio from "cheerio";
 import { fetchWithTimeout } from "@/lib/llm/provider";
-import { domainKey, sameSite } from "./canonical";
+import { domainKey, isAggregator, sameSite } from "./canonical";
 
 const UA = "Mozilla/5.0 (compatible; AIToolMatchmakerBot/0.1; small-business research)";
 const TIMEOUT_MS = 10_000;
@@ -133,15 +133,23 @@ const KIND_PATTERNS: Record<PageKind, RegExp> = {
   contact: /contact|about/i,
 };
 
-/** Same-site links that look like pricing/integrations/privacy/terms/security/contact pages. */
+/** Policies are often hosted by a parent company (Mailchimp → intuit.com), so these may be off-site. */
+const OFFSITE_OK: PageKind[] = ["privacy", "terms"];
+
+/** Links on the official site that look like pricing/integrations/privacy/terms/security/contact pages. */
 export function findKeyLinks(page: FetchedPage): Partial<Record<PageKind, string>> {
   const out: Partial<Record<PageKind, string>> = {};
   for (const kind of Object.keys(KIND_PATTERNS) as PageKind[]) {
-    const hit = page.links.find((l) => {
-      if (!/^https?:/.test(l.href) || !sameSite(l.href, page.finalUrl)) return false;
+    const matches = page.links.filter((l) => {
+      if (!/^https?:/.test(l.href)) return false;
       const path = new URL(l.href).pathname;
       return KIND_PATTERNS[kind].test(path) || KIND_PATTERNS[kind].test(l.text);
     });
+    const hit =
+      matches.find((l) => sameSite(l.href, page.finalUrl)) ??
+      (OFFSITE_OK.includes(kind)
+        ? matches.find((l) => l.href.startsWith("https://") && !isAggregator(l.href) && KIND_PATTERNS[kind].test(l.text))
+        : undefined);
     if (hit) out[kind] = hit.href.split("#")[0];
   }
   return out;

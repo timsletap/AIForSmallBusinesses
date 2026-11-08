@@ -1,5 +1,39 @@
 [
   {
+    "id": "80935d4c-b1ea-4d80-b9b5-90b5a997875c",
+    "query": {
+      "query": "AI online booking software for small coffee shop or bakery businesses pricing",
+      "use_case": "booking_waitlist",
+      "industry": "coffee_bakery"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI online booking software for small coffee shop or bakery businesses pricing\"",
+      "found 3 candidate(s): Lokuli, Aedan Rose, Wemu",
+      "→ Lokuli (https://lokuli.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Lokuli: published, trust checks_passed (6/6 checks), price 15",
+      "→ Aedan Rose (https://aedanrose.ai) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ Aedan Rose: published, trust checks_passed (6/6 checks), price 79",
+      "→ Wemu (https://wemu.io) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Wemu: published, trust checks_passed (6/6 checks), price 29"
+    ],
+    "started_at": "2026-11-08T23:00:26.643Z",
+    "finished_at": "2026-11-08T23:01:41.480Z"
+  },
+  {
     "id": "323fc904-1ae1-4de3-bd24-3b8d4548b48e",
     "query": {
       "query": "AI field service scheduling software for small landscaping or lawn care businesses pricing",

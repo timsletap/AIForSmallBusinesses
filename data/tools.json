@@ -1,5 +1,138 @@
 [
   {
+    "id": "d70ba302-dc34-4d72-9980-a6827838b633",
+    "slug": "aedan-rose",
+    "name": "Aedan Rose",
+    "vendor": "Aedan Rose",
+    "canonical_url": "https://aedanrose.ai",
+    "description": "Restaurant software that uses AI to answer guests, take orders and reservations, and manage staff.",
+    "status": "published",
+    "use_cases": [
+      "booking_waitlist",
+      "missed_calls",
+      "auto_replies",
+      "customer_list",
+      "win_back"
+    ],
+    "industries": [
+      "restaurant"
+    ],
+    "pricing": {
+      "free_plan": true,
+      "free_trial_days": 30,
+      "est_monthly_usd_min": 79,
+      "est_monthly_usd_max": 299,
+      "plan_name": "Online Ordering",
+      "pricing_url": "https://aedanrose.ai/pricing"
+    },
+    "integrations": [
+      "excel_sheets"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "Your menu, opening hours and restaurant settings entered in the dashboard",
+      "A Stripe account to receive online order and deposit payouts"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Run the free restaurant audit to see what guests can find online",
+      "Create an account and start the 30-day free trial",
+      "Add your menu, opening hours and team members",
+      "Turn on online ordering and table reservations"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/",
+        "note": null
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/security",
+        "note": "Aedan Rose · help@aedanrose.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/privacy-policy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/terms-of-service",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/security",
+        "note": "Security page; no SOC 2 or ISO 27001 yet; card payments handled by Stripe (PCI-DSS Level 1)"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://aedanrose.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://aedanrose.ai/security",
+        "quote": "2026 Aedan Rose. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "stay on the free order-only plan",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "30 days Free trial — no card",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "$79 Lowest paid plan, per month",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "Full House $299/month",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "Online Ordering $79/month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "acts in Slack, Google Sheets, Microsoft Excel, Wix, Squarespace & GitHub",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://aedanrose.ai/",
+        "quote": "Aedan Rose finds the leaks in how your restaurant runs, then gives you one place to fix them",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://aedanrose.ai/security",
+        "quote": "Security & privacy contact: help@aedanrose.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://aedanrose.ai/security",
+        "quote": "We do not currently hold SOC 2, ISO 27001, or our own PCI DSS certification",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-08T23:01:23.939Z",
+    "admin_reviewed": false
+  },
+  {
     "id": "b2c01ade-5b8c-418b-9415-20d8ad3c05ea",
     "slug": "auxflo",
     "name": "Auxflo",
@@ -130,10 +263,11 @@
     "name": "Bakeable",
     "vendor": "Bakeable",
     "canonical_url": "https://getbakeable.com",
-    "description": "Bakeable is a platform for micro-bakers to run websites, pre-orders, pickup days, payments and subscriptions.",
+    "description": "Gives cottage and micro bakers a branded website, pre-orders, pickup days, and payments in one place.",
     "status": "published",
     "use_cases": [
       "booking_waitlist",
+      "customer_list",
       "win_back"
     ],
     "industries": [
@@ -142,22 +276,23 @@
     "pricing": {
       "free_plan": true,
       "free_trial_days": 14,
-      "est_monthly_usd_min": 29,
-      "est_monthly_usd_max": 29,
+      "est_monthly_usd_min": 39,
+      "est_monthly_usd_max": null,
       "plan_name": "Micro",
       "pricing_url": "https://getbakeable.com/pricing"
     },
     "integrations": [],
-    "works_standalone": true,
+    "works_standalone": null,
     "integration_requirements": [
-      "Payments run through Stripe, with Stripe fees on each sale"
+      "A credit card to start the Micro free trial (Nano needs no card)"
     ],
     "setup_complexity": "low",
     "setup_steps": [
       "Sign up free on the Nano plan",
-      "Tell Bakeable your name, location and what you bake to set up your storefront",
-      "Create your pickup schedule for the day and time window customers collect",
-      "Share your storefront link so customers can place pre-orders"
+      "Tell Bakeable your name, location, and what you bake",
+      "Set up your branded storefront, which goes live the same day",
+      "Create your first pickup day and set your order window",
+      "Share your storefront link with customers and take orders"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -216,32 +351,22 @@
       },
       "price_monthly_min": {
         "source_url": "https://getbakeable.com/pricing",
-        "quote": "$29/mobilled $348/yr",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://getbakeable.com/pricing",
-        "quote": "$29/mobilled $348/yr",
+        "quote": "Monthly priceFree$39$99",
         "claim_type": "fact"
       },
       "plan_name": {
-        "source_url": "https://getbakeable.com",
+        "source_url": "https://getbakeable.com/pricing",
         "quote": "For bakers ready to grow their local presence.",
         "claim_type": "fact"
       },
       "integrations": {
         "source_url": "https://getbakeable.com/pricing",
-        "quote": "Stripe processing fees (2.9% + $0.30 per transaction) apply on all plans",
+        "quote": "Stripe processing fees (2.9% + $0.30 per transaction) apply on all plans, separate from platform fees.",
         "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://getbakeable.com",
-        "quote": "The all-in-one platform for micro-bakers",
-        "claim_type": "vendor_claim"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:51:48.702Z",
+    "last_checked_at": "2026-11-08T23:02:33.572Z",
     "admin_reviewed": false
   },
   {
@@ -929,13 +1054,13 @@
     "name": "Canopy",
     "vendor": null,
     "canonical_url": "https://startcanopy.com",
-    "description": "An AI office manager for landscapers that answers calls, prices jobs, and keeps schedules and crew updates organized.",
+    "description": "Canopy is an AI office manager for landscapers that answers calls, prices jobs, and keeps schedules full.",
     "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
-      "scheduling_dispatch",
-      "customer_list"
+      "customer_list",
+      "scheduling_dispatch"
     ],
     "industries": [
       "landscaping"
@@ -945,7 +1070,7 @@
       "free_trial_days": 30,
       "est_monthly_usd_min": 0,
       "est_monthly_usd_max": null,
-      "plan_name": "Tiered by customer count",
+      "plan_name": null,
       "pricing_url": "https://www.startcanopy.com/"
     },
     "integrations": [
@@ -953,15 +1078,15 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A business phone number that customers can call",
-      "Crew members with any phone to text job updates"
+      "A business phone number that can forward calls to Canopy",
+      "Existing customer data in spreadsheets or another tool, if you want a free import"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start a free 30-day trial with no credit card",
-      "Import existing customer data from spreadsheets or other tools",
-      "Set up the phone answering and quoting features",
-      "Give crew members the dedicated number to text job updates"
+      "Start your free 30-day trial with no credit card",
+      "Send your existing customer data for a free import, if you have it",
+      "Forward your business phone line so Canopy answers calls",
+      "Give crew members the dedicated number to text for job updates"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -1007,7 +1132,7 @@
     "evidence": {
       "free_plan": {
         "source_url": "https://startcanopy.com",
-        "quote": "Free to start",
+        "quote": "Free forever11-25$19.99/mo",
         "claim_type": "fact"
       },
       "free_trial_days": {
@@ -1015,21 +1140,16 @@
         "quote": "Get full access for 30 days. No credit card required.",
         "claim_type": "fact"
       },
-      "plan_name": {
-        "source_url": "https://startcanopy.com",
-        "quote": "You only pay based on how many customers you have.",
-        "claim_type": "fact"
-      },
       "works_standalone": {
         "source_url": "https://startcanopy.com",
         "quote": "Works without apps",
-        "claim_type": "fact"
+        "claim_type": "vendor_claim"
       }
     },
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:54:56.287Z",
+    "last_checked_at": "2026-11-08T23:02:49.266Z",
     "admin_reviewed": false
   },
   {
@@ -1422,13 +1542,12 @@
     "name": "CrewRunner",
     "vendor": "Block Nexus Labs",
     "canonical_url": "https://crewrunner.app",
-    "description": "An AI assistant that answers calls, schedules jobs, and sends invoices for trade and field service businesses.",
+    "description": "AI back office for trades contractors that answers calls, schedules jobs, and sends invoices.",
     "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
-      "scheduling_dispatch",
-      "win_back"
+      "scheduling_dispatch"
     ],
     "industries": [
       "hvac_plumbing",
@@ -1448,16 +1567,16 @@
       "gmail_outlook",
       "phone_line"
     ],
-    "works_standalone": true,
+    "works_standalone": null,
     "integration_requirements": [
-      "Business name, services, and hours to set up the AI assistant",
-      "An existing business phone line to forward (or use the new number CrewRunner provides)"
+      "A business phone line to forward, or use the new number CrewRunner provides",
+      "Your business name, services, and hours to set up the AI assistant"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Join the waitlist for launch",
-      "Tell CrewRunner your business name, services, and hours",
-      "Forward your existing phone line or use the new number directly"
+      "Join the waitlist for launch access",
+      "Tell us your business name, services, and hours",
+      "Forward your existing business line or use the new number directly"
     ],
     "engagement": null,
     "reviews": null,
@@ -1485,7 +1604,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://crewrunner.app",
-        "note": "Hosted on Vercel and Supabase, both SOC 2 Type II certified"
+        "note": "Data hosted on Vercel and Supabase, both SOC 2 Type II certified"
       },
       "public_pricing": {
         "pass": true,
@@ -1517,17 +1636,12 @@
       },
       "plan_name": {
         "source_url": "https://crewrunner.app",
-        "quote": "StarterFor solo operators and 1–2 person crews$99/mo",
+        "quote": "StarterFor solo operators and 1–2 person crews",
         "claim_type": "fact"
       },
       "integrations": {
         "source_url": "https://crewrunner.app",
         "quote": "CrewRunner integrates with QuickBooks, Google Calendar, and popular field service tools.",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://crewrunner.app",
-        "quote": "We provision a dedicated AI phone number and assistant.",
         "claim_type": "fact"
       },
       "security": {
@@ -1537,7 +1651,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:52:58.058Z",
+    "last_checked_at": "2026-11-08T23:03:03.560Z",
     "admin_reviewed": false
   },
   {
@@ -3750,48 +3864,171 @@
     "admin_reviewed": false
   },
   {
+    "id": "44ae51fc-b282-4f06-86cb-e26fc31745fa",
+    "slug": "lokuli",
+    "name": "Lokuli",
+    "vendor": "Now Tech LLC",
+    "canonical_url": "https://lokuli.com",
+    "description": "Lets customers find and book local service appointments, and lets small businesses take bookings and get paid online.",
+    "status": "published",
+    "use_cases": [
+      "booking_waitlist",
+      "missed_calls"
+    ],
+    "industries": [
+      "salon_barber"
+    ],
+    "pricing": {
+      "free_plan": false,
+      "free_trial_days": null,
+      "est_monthly_usd_min": 15,
+      "est_monthly_usd_max": 29,
+      "plan_name": "Starter",
+      "pricing_url": "https://lokuli.com/pricing"
+    },
+    "integrations": [
+      "google_business_profile"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A bank account to receive payouts if you want to get paid online (one-time ID check required)"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create a free Lokuli account with no card needed",
+      "Add your services, prices and business hours",
+      "Upgrade to Starter ($15/mo) and connect payments if you want to get paid online",
+      "Turn on AI phone answering if you want it to book calls (Starter includes 30 minutes a month)"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://lokuli.com/",
+        "note": null
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://lokuli.com/pricing",
+        "note": "Now Tech LLC · [email protected], 1-844-4LOKULI, Los Angeles, CA"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://lokuli.com/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://lokuli.com/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://lokuli.com/privacy",
+        "note": "SOC 2 Type II certification via Google Cloud"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://lokuli.com/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "© 2026 Now Tech LLC · Lokuli · Terms · Privacy · Support",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "Your first 10 bookings are free. After that, $5 a month keeps your page taking bookings.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "Get paid online $15/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "2–10 staff $29/mo",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "StarterGet paid online $15/mo",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://lokuli.com/privacy",
+        "quote": "Stripe processes all payments.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "Live today. No card needed.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://lokuli.com",
+        "quote": "Contact [email protected] 1-844-4LOKULI Los Angeles, CA",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://lokuli.com/privacy",
+        "quote": "Google Cloud with SOC 2 Type II certification",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-08T23:00:50.285Z",
+    "admin_reviewed": false
+  },
+  {
     "id": "31c58249-b95f-4812-923b-990eb47f8892",
     "slug": "mailchimp",
     "name": "Mailchimp",
     "vendor": "The Rocket Science Group",
     "canonical_url": "https://mailchimp.com",
-    "description": "Email and SMS marketing tool for sending campaigns and automated messages to your customers.",
+    "description": "Email and text marketing tool that sends campaigns and automations to your customers.",
     "status": "published",
     "use_cases": [
-      "win_back",
-      "customer_list"
+      "win_back"
     ],
     "industries": [
-      "restaurant",
       "retail",
-      "other"
+      "restaurant"
     ],
     "pricing": {
       "free_plan": true,
       "free_trial_days": 14,
       "est_monthly_usd_min": 13,
       "est_monthly_usd_max": 350,
-      "plan_name": "Essentials",
+      "plan_name": "Free, Essentials, Standard, Premium",
       "pricing_url": "https://mailchimp.com/pricing/marketing/"
     },
     "integrations": [
-      "shopify",
       "square",
-      "quickbooks"
+      "shopify",
+      "quickbooks",
+      "instagram_facebook"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "An email list or customer contacts to import",
-      "Optional: an online store or app to connect, such as Shopify or Square"
+      "An account with any app you want to connect, such as Square or Shopify"
     ],
     "setup_complexity": "low",
     "setup_steps": [
       "Start the free trial or sign up for the free plan",
-      "Import or add your customer contacts",
-      "Connect your store or other apps (optional)",
-      "Build your first email or automation"
+      "Add or import your customer contacts",
+      "Connect Square, Shopify, or other apps you use",
+      "Build an email or text campaign or automation",
+      "Send to your audience and review results"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -3805,8 +4042,8 @@
         "note": "The Rocket Science Group · +1 (800) 330-4838"
       },
       "privacy_policy": {
-        "pass": false,
-        "source_url": null,
+        "pass": true,
+        "source_url": "https://www.intuit.com/privacy/statement",
         "note": null
       },
       "terms": {
@@ -3817,7 +4054,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://mailchimp.com/gdpr/",
-        "note": "Certified under the EU-U.S. Data Privacy Framework, the UK Extension, and the Swiss-U.S. Data Privacy Framework"
+        "note": "GDPR compliance page; certified under the EU-US Data Privacy Framework"
       },
       "public_pricing": {
         "pass": true,
@@ -3826,9 +4063,7 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [
-      "We couldn't find a privacy policy."
-    ],
+    "warnings": [],
     "evidence": {
       "vendor": {
         "source_url": "https://mailchimp.com/integrations/",
@@ -3841,7 +4076,7 @@
         "claim_type": "fact"
       },
       "free_trial_days": {
-        "source_url": "https://mailchimp.com",
+        "source_url": "https://mailchimp.com/pricing/marketing/",
         "quote": "Try free for 14 days",
         "claim_type": "fact"
       },
@@ -3857,7 +4092,7 @@
       },
       "plan_name": {
         "source_url": "https://mailchimp.com/pricing/marketing/",
-        "quote": "Mailchimp Recommends Essentials",
+        "quote": "Premium Our most advanced tools, unlimited contacts, and priority support; built for teams.",
         "claim_type": "fact"
       },
       "integrations": {
@@ -3867,7 +4102,7 @@
       },
       "contact": {
         "source_url": "https://mailchimp.com",
-        "quote": "Larger contact list? Call +1 (800) 330-4838 for custom pricing, annual plans, demos, and more.",
+        "quote": "Call +1 (800) 330-4838 for custom pricing, annual plans, demos, and more.",
         "claim_type": "fact"
       },
       "security": {
@@ -3877,7 +4112,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:40:50.244Z",
+    "last_checked_at": "2026-11-08T23:03:22.093Z",
     "admin_reviewed": false
   },
   {
@@ -5669,10 +5904,11 @@
     "name": "SimpleTexting",
     "vendor": "SimpleTexting, LLC",
     "canonical_url": "https://simpletexting.com",
-    "description": "Sends text messages to customers for marketing, two-way replies, and automated texts.",
+    "description": "Lets businesses send mass texts and two-way text conversations with their customers from a business number.",
     "status": "published",
     "use_cases": [
       "win_back",
+      "auto_replies",
       "customer_list"
     ],
     "industries": [
@@ -5680,7 +5916,7 @@
       "retail"
     ],
     "pricing": {
-      "free_plan": null,
+      "free_plan": false,
       "free_trial_days": null,
       "est_monthly_usd_min": 39,
       "est_monthly_usd_max": null,
@@ -5692,22 +5928,23 @@
       "excel_sheets",
       "quickbooks",
       "shopify",
-      "instagram_facebook"
+      "instagram_facebook",
+      "phone_line"
     ],
-    "works_standalone": true,
+    "works_standalone": null,
     "integration_requirements": [
-      "A new texting number or an existing business landline to text-enable",
-      "Carrier registration of your business texting number, which SimpleTexting guides you through"
+      "A business phone number to text-enable, or a new local or toll-free number",
+      "Business details for carrier registration of your texting number"
     ],
-    "setup_complexity": "low",
+    "setup_complexity": "medium",
     "setup_steps": [
-      "Start a free trial or create an account",
-      "Choose a local, toll-free, or landline number",
-      "Register your business texting number with carriers",
-      "Import contacts or collect opt-in sign-ups",
-      "Send a text blast or set up autoresponders"
+      "Start the free trial and create an account",
+      "Choose a local, toll-free, or landline number to text from",
+      "Complete the number registration form so carriers approve your number",
+      "Collect opt-in consent from contacts before texting them",
+      "Set up auto-replies and send your first text campaign"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -5718,7 +5955,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://simpletexting.com",
-        "note": "SimpleTexting, LLC · One North Wacker, Suite 2500, Chicago, IL 60606; (866) 259-1887"
+        "note": "SimpleTexting, LLC · (866) 259-1887; One North Wacker, Suite 2500, Chicago, IL 60606"
       },
       "privacy_policy": {
         "pass": false,
@@ -5751,19 +5988,19 @@
         "quote": "© Copyright 2026 SimpleTexting, LLC",
         "claim_type": "fact"
       },
+      "free_plan": {
+        "source_url": "https://simpletexting.com",
+        "quote": "Our free trial lets you text your own number so you can see exactly how it works before you text your customers.",
+        "claim_type": "fact"
+      },
       "price_monthly_min": {
         "source_url": "https://simpletexting.com/pricing/",
-        "quote": "Estimated monthly cost $39.00 (billed yearly at $398.40)",
+        "quote": "$39.00 (billed yearly at $398.40)",
         "claim_type": "fact"
       },
       "integrations": {
         "source_url": "https://simpletexting.com/integrations/",
-        "quote": "Connect SimpleTexting to the web apps you already use.",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://simpletexting.com",
-        "quote": "Start with a new number or text-enable your landline",
+        "quote": "QuickBooks Salesforce Shopify SimpleTix Slack Squarespace",
         "claim_type": "fact"
       },
       "contact": {
@@ -5773,7 +6010,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:41:10.040Z",
+    "last_checked_at": "2026-11-08T23:03:43.367Z",
     "admin_reviewed": false
   },
   {
@@ -6616,6 +6853,135 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:38:55.469Z",
+    "admin_reviewed": false
+  },
+  {
+    "id": "1d1cbb09-a439-4210-b535-b06bfb6605b9",
+    "slug": "wemu",
+    "name": "Wemu",
+    "vendor": "Wemu Inc.",
+    "canonical_url": "https://wemu.io",
+    "description": "Wemu runs bookings, point of sale, staff schedules, stock and customer messages for small businesses in one app.",
+    "status": "published",
+    "use_cases": [
+      "booking_waitlist",
+      "customer_list",
+      "win_back"
+    ],
+    "industries": [
+      "salon_barber",
+      "coffee_bakery",
+      "restaurant",
+      "retail",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": false,
+      "free_trial_days": 7,
+      "est_monthly_usd_min": 29,
+      "est_monthly_usd_max": 49,
+      "plan_name": "Wemu Core",
+      "pricing_url": "https://wemu.io/pricing"
+    },
+    "integrations": [],
+    "works_standalone": null,
+    "integration_requirements": [
+      "A Stripe account for card payments",
+      "A tablet or phone to run the Wemu POS app"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Sign up for the 7-day free trial with your email",
+      "Add your services, staff and opening hours",
+      "Connect Stripe to take card payments",
+      "Share your wemu.io booking page link",
+      "Turn on reminders and customer campaigns"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://wemu.io/",
+        "note": null
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://wemu.io",
+        "note": "Wemu Inc. · [email protected]"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://wemu.io/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://wemu.io/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://wemu.io/privacy",
+        "note": "Privacy Policy describes industry-standard security measures and encryption"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://wemu.io/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://wemu.io",
+        "quote": "© 2026 Wemu Inc. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "7-day free trial on all paid plans.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "you get 7 days free with every feature, no credit card required.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "Wemu Core is $29/month for one location",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "Wemu Growth is $49/month per location.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "Wemu Core is $29/month for one location",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://wemu.io",
+        "quote": "Card payments need Stripe connected.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://wemu.io/privacy",
+        "quote": "Email: [email protected]",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://wemu.io/privacy",
+        "quote": "We implement industry-standard security measures to protect your data",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-08T23:01:41.463Z",
     "admin_reviewed": false
   },
   {
