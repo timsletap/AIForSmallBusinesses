@@ -1,0 +1,29 @@
+import { NextResponse } from "next/server";
+import { z } from "zod";
+import { getStore } from "@/lib/storage/db";
+import { checkWarnings, trustLevel } from "@/lib/verification/vendorChecks";
+import { apiError, badInput, isAdmin } from "@/lib/http/errors";
+
+const Body = z.object({ action: z.enum(["verify", "reject"]) });
+
+export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
+  if (!isAdmin(req)) return apiError(401, "unauthorized", "Wrong admin password.");
+  const parsed = Body.safeParse(await req.json().catch(() => null));
+  if (!parsed.success) return badInput(parsed.error);
+  const { id } = await ctx.params;
+  const store = getStore();
+  const tool = await store.getTool(id);
+  if (!tool) return apiError(404, "not_found", "No tool with that id.");
+
+  if (parsed.data.action === "reject") {
+    tool.status = "rejected";
+  } else {
+    tool.admin_reviewed = true;
+    tool.trust_level = trustLevel(tool.vendor_checks, true);
+    // An admin can publish a draft, but never an unverified vendor.
+    tool.status = tool.trust_level === "unverified" ? "draft" : "published";
+    tool.warnings = [...new Set([...checkWarnings(tool.vendor_checks), ...tool.warnings])];
+  }
+  await store.saveTool(tool);
+  return NextResponse.json({ tool });
+}

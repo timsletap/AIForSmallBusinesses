@@ -1,0 +1,533 @@
+[
+  {
+    "id": "323fc904-1ae1-4de3-bd24-3b8d4548b48e",
+    "query": {
+      "query": "AI field service scheduling software for small landscaping or lawn care businesses pricing",
+      "use_case": "scheduling_dispatch",
+      "industry": "landscaping"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI field service scheduling software for small landscaping or lawn care businesses pricing\"",
+      "found 3 candidate(s): Lawnager, Terrascape, Canopy",
+      "→ Lawnager (https://lawnager.com) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ Lawnager: published, trust checks_passed (6/6 checks), price 41",
+      "→ Terrascape (https://terrascape.io) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "  dropped unverified fields: price_monthly_max",
+      "✓ Terrascape: published, trust checks_passed (6/6 checks), price 33",
+      "→ Canopy (https://startcanopy.com) new candidate",
+      "  found pages: pricing, terms",
+      "  fetched 2 page(s)",
+      "  dropped unverified fields: price_monthly_min, price_monthly_max",
+      "✓ Canopy: published, trust partial (3/6 checks), price 0"
+    ],
+    "started_at": "2026-11-08T22:53:47.657Z",
+    "finished_at": "2026-11-08T22:54:56.290Z"
+  },
+  {
+    "id": "6fbb75dd-c913-4bce-a199-5b6fe74b8194",
+    "query": {
+      "query": "AI field service scheduling software for small hvac, plumbing or electrical businesses pricing",
+      "use_case": "scheduling_dispatch",
+      "industry": "hvac_plumbing"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI field service scheduling software for small hvac, plumbing or electrical businesses pricing\"",
+      "found 3 candidate(s): CrewRunner, Servorio, WowServe",
+      "→ CrewRunner (https://crewrunner.app) new candidate",
+      "  found pages: pricing, contact",
+      "  fetched 2 page(s)",
+      "✓ CrewRunner: published, trust partial (3/6 checks), price 99",
+      "→ Servorio (https://servorio.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Servorio: published, trust checks_passed (6/6 checks), price 59",
+      "→ WowServe (https://wowserve.com) new candidate",
+      "  found pages: pricing, privacy, terms",
+      "  fetched 3 page(s)",
+      "✓ WowServe: published, trust checks_passed (6/6 checks), price 229"
+    ],
+    "started_at": "2026-11-08T22:52:38.404Z",
+    "finished_at": "2026-11-08T22:53:47.655Z"
+  },
+  {
+    "id": "a94212b1-fd1c-494f-9f92-69e77229a806",
+    "query": {
+      "query": "AI automated email or text marketing software for small hvac, plumbing or electrical businesses pricing",
+      "use_case": "win_back",
+      "industry": "hvac_plumbing"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 2,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 1
+    },
+    "log": [
+      "search: \"AI automated email or text marketing software for small hvac, plumbing or electrical businesses pricing\"",
+      "found 3 candidate(s): Craftify AI, AutoCampaign.ai, Revynue",
+      "→ Craftify AI (https://craftify.ai) new candidate",
+      "  found pages: pricing, integrations, privacy, terms",
+      "  fetched 4 page(s)",
+      "  dropped unverified fields: price_monthly_max",
+      "✓ Craftify AI: published, trust checks_passed (5/6 checks), price 32",
+      "→ AutoCampaign.ai (https://autocampaign.ai) new candidate",
+      "✗ AutoCampaign.ai: homepage did not load or is blocked by robots.txt",
+      "→ Revynue (https://revynue.ai) new candidate",
+      "  found pages: none",
+      "  fetched 1 page(s)",
+      "✓ Revynue: draft, trust unverified (1/6 checks), price unknown"
+    ],
+    "started_at": "2026-11-08T22:52:05.512Z",
+    "finished_at": "2026-11-08T22:52:38.400Z"
+  },
+  {
+    "id": "90577dbe-c4ce-47a4-84a8-daed3a72a71b",
+    "query": {
+      "query": "AI automated email or text marketing software for small coffee shop or bakery businesses pricing",
+      "use_case": "win_back",
+      "industry": "coffee_bakery"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI automated email or text marketing software for small coffee shop or bakery businesses pricing\"",
+      "found 3 candidate(s): Bakery Buddy, Bakeable, Jayu",
+      "→ Bakery Buddy (https://bakerybuddy.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Bakery Buddy: published, trust checks_passed (5/6 checks), price 29",
+      "→ Bakeable (https://getbakeable.com) new candidate",
+      "  found pages: pricing, terms",
+      "  fetched 2 page(s)",
+      "✓ Bakeable: published, trust partial (4/6 checks), price 29",
+      "→ Jayu (https://jayu.us) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Jayu: published, trust checks_passed (6/6 checks), price 29"
+    ],
+    "started_at": "2026-11-08T22:51:10.346Z",
+    "finished_at": "2026-11-08T22:52:05.508Z"
+  },
+  {
+    "id": "91b1ea0d-dd08-4396-b361-f19d3ed43f66",
+    "query": {
+      "query": "AI automated email or text marketing software for small salon or barber businesses pricing",
+      "use_case": "win_back",
+      "industry": "salon_barber"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 2,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 1
+    },
+    "log": [
+      "search: \"AI automated email or text marketing software for small salon or barber businesses pricing\"",
+      "found 3 candidate(s): Lobotix, Squire, Lilo",
+      "→ Lobotix (https://lobotix.com) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security",
+      "  fetched 4 page(s)",
+      "✓ Lobotix: published, trust checks_passed (6/6 checks), price 29",
+      "→ Squire (https://getsquire.com) new candidate",
+      "✗ Squire: homepage did not load or is blocked by robots.txt",
+      "→ Lilo (https://heylilo.co) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ Lilo: published, trust checks_passed (5/6 checks), price 20"
+    ],
+    "started_at": "2026-11-08T22:50:31.257Z",
+    "finished_at": "2026-11-08T22:51:10.343Z"
+  },
+  {
+    "id": "31427c3b-24ed-4c0b-b89f-10a167645c84",
+    "query": {
+      "query": "AI simple crm software for small hvac, plumbing or electrical businesses pricing",
+      "use_case": "customer_list",
+      "industry": "hvac_plumbing"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI simple crm software for small hvac, plumbing or electrical businesses pricing\"",
+      "found 3 candidate(s): Catch CRM, Hero365, Plyrium",
+      "→ Catch CRM (https://catchcrm.ai) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ Catch CRM: published, trust checks_passed (6/6 checks), price 30",
+      "→ Hero365 (https://hero365.ai) new candidate",
+      "  found pages: pricing, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ Hero365: published, trust checks_passed (6/6 checks), price 149",
+      "→ Plyrium (https://plyrium.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 2 page(s)",
+      "✓ Plyrium: published, trust checks_passed (5/6 checks), price 49"
+    ],
+    "started_at": "2026-11-08T22:48:57.145Z",
+    "finished_at": "2026-11-08T22:50:31.254Z"
+  },
+  {
+    "id": "5c1de033-13fb-4456-a26d-2cf5ec7bded3",
+    "query": {
+      "query": "AI simple crm software for small retail store businesses pricing",
+      "use_case": "customer_list",
+      "industry": "retail"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI simple crm software for small retail store businesses pricing\"",
+      "found 3 candidate(s): Plyto, SimpleCRM AI, Ringvance",
+      "→ Plyto (https://plyto.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Plyto: published, trust checks_passed (6/6 checks), price 19",
+      "→ SimpleCRM AI (https://simplecrmai.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Simple CRM AI: published, trust checks_passed (6/6 checks), price 10",
+      "→ Ringvance (https://ringvance.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Ringvance: published, trust checks_passed (5/6 checks), price 9"
+    ],
+    "started_at": "2026-11-08T22:47:58.602Z",
+    "finished_at": "2026-11-08T22:48:57.143Z"
+  },
+  {
+    "id": "b66c3bfd-c158-497b-b9f6-0485a8889856",
+    "query": {
+      "query": "AI replying to reviews software for small retail store businesses pricing",
+      "use_case": "auto_replies",
+      "industry": "retail"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 2,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 1
+    },
+    "log": [
+      "search: \"AI replying to reviews software for small retail store businesses pricing\"",
+      "found 3 candidate(s): Pulvo, Typani, Responsly",
+      "→ Pulvo (https://pulvo.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Pulvo: published, trust checks_passed (6/6 checks), price 23",
+      "→ Typani (https://typani.com) new candidate",
+      "✗ Typani: homepage did not load or is blocked by robots.txt",
+      "→ Responsly (https://responsly.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Responsly: published, trust checks_passed (5/6 checks), price 10"
+    ],
+    "started_at": "2026-11-08T22:47:25.410Z",
+    "finished_at": "2026-11-08T22:47:58.598Z"
+  },
+  {
+    "id": "91a0e165-1cfb-4d0b-9857-504bc00b8d06",
+    "query": {
+      "query": "AI replying to reviews software for small restaurant or diner businesses pricing",
+      "use_case": "auto_replies",
+      "industry": "restaurant"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI replying to reviews software for small restaurant or diner businesses pricing\"",
+      "found 3 candidate(s): Dine Replies, Platero AI, Echoly",
+      "→ Dine Replies (https://dinereplies.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Dine Replies: published, trust checks_passed (6/6 checks), price 10",
+      "→ Platero AI (https://platero.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Platero AI: published, trust checks_passed (6/6 checks), price 5",
+      "→ Echoly (https://tryecholy.com) new candidate",
+      "  found pages: pricing, privacy, terms",
+      "  fetched 3 page(s)",
+      "✓ Echoly: published, trust checks_passed (6/6 checks), price 49"
+    ],
+    "started_at": "2026-11-08T22:46:34.704Z",
+    "finished_at": "2026-11-08T22:47:25.407Z"
+  },
+  {
+    "id": "1883f751-0f07-4961-ad0c-5e561bad5f3c",
+    "query": {
+      "query": "AI online booking software for small restaurant or diner businesses pricing",
+      "use_case": "booking_waitlist",
+      "industry": "restaurant"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI online booking software for small restaurant or diner businesses pricing\"",
+      "found 3 candidate(s): Reservaii, Fork Time, BookBite AI",
+      "→ Reservaii (https://reservaii.com) new candidate",
+      "  found pages: pricing, privacy, terms",
+      "  fetched 3 page(s)",
+      "✓ Reservaii: published, trust checks_passed (5/6 checks), price 39",
+      "→ Fork Time (https://forktime.ai) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, contact",
+      "  fetched 4 page(s)",
+      "✓ Fork Time: published, trust checks_passed (5/6 checks), price 99",
+      "→ BookBite AI (https://bookbiteai.com) new candidate",
+      "  found pages: pricing, privacy, terms",
+      "  fetched 3 page(s)",
+      "✓ BookBite AI: published, trust checks_passed (6/6 checks), price 149"
+    ],
+    "started_at": "2026-11-08T22:45:38.356Z",
+    "finished_at": "2026-11-08T22:46:34.702Z"
+  },
+  {
+    "id": "5f4be914-6814-44a2-ba73-ab789d96d1a5",
+    "query": {
+      "query": "AI online booking software for small salon or barber businesses pricing",
+      "use_case": "booking_waitlist",
+      "industry": "salon_barber"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 1,
+      "updated": 2,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI online booking software for small salon or barber businesses pricing\"",
+      "found 3 candidate(s): Stacked, Slott, Jvora",
+      "→ Stacked (https://stackedbooking.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Stacked: published, trust checks_passed (6/6 checks), price 29",
+      "→ Slott (https://slott.ai) already in database, updating",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Slott: published, trust checks_passed (6/6 checks), price 19",
+      "→ Jvora (https://jvora.com) already in database, updating",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Jvora: published, trust checks_passed (6/6 checks), price 39"
+    ],
+    "started_at": "2026-11-08T22:44:32.572Z",
+    "finished_at": "2026-11-08T22:45:38.354Z"
+  },
+  {
+    "id": "3bcfc5c1-2ca5-47b0-af88-5a6ed4122444",
+    "query": {
+      "query": "AI ai receptionist software for small hvac, plumbing or electrical businesses pricing",
+      "use_case": "missed_calls",
+      "industry": "hvac_plumbing"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI ai receptionist software for small hvac, plumbing or electrical businesses pricing\"",
+      "found 3 candidate(s): Auxflo, OnCrew, DispatchLine",
+      "→ Auxflo (https://auxflo.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Auxflo: published, trust checks_passed (6/6 checks), price 149",
+      "→ OnCrew (https://oncrew.ai) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ OnCrew: published, trust checks_passed (6/6 checks), price 49",
+      "→ DispatchLine (https://getdispatchline.com) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ DispatchLine: published, trust checks_passed (6/6 checks), price 149"
+    ],
+    "started_at": "2026-11-08T22:43:40.023Z",
+    "finished_at": "2026-11-08T22:44:32.568Z"
+  },
+  {
+    "id": "772063da-d319-4d94-a64d-a8300b5bd4d5",
+    "query": {
+      "query": "AI ai receptionist software for small salon or barber businesses pricing",
+      "use_case": "missed_calls",
+      "industry": "salon_barber"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 3,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI ai receptionist software for small salon or barber businesses pricing\"",
+      "found 3 candidate(s): BarberReceptionist, PorchBell, Jvora",
+      "→ BarberReceptionist (https://barberreceptionist.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ BarberReceptionist: published, trust partial (4/6 checks), price 39",
+      "→ PorchBell (https://porchbell.com) new candidate",
+      "  found pages: pricing, integrations, privacy, terms, security, contact",
+      "  fetched 4 page(s)",
+      "✓ PorchBell: published, trust checks_passed (6/6 checks), price 49",
+      "→ Jvora (https://jvora.com) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Jvora: published, trust checks_passed (5/6 checks), price 39"
+    ],
+    "started_at": "2026-11-08T22:42:51.259Z",
+    "finished_at": "2026-11-08T22:43:40.020Z"
+  },
+  {
+    "id": "04b15a19-c944-430a-9236-6ce6a9092689",
+    "query": {
+      "query": "AI ai receptionist software for small restaurant or diner businesses pricing",
+      "use_case": "missed_calls",
+      "industry": "restaurant"
+    },
+    "status": "done",
+    "counts": {
+      "found": 3,
+      "new": 2,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 1
+    },
+    "log": [
+      "search: \"AI ai receptionist software for small restaurant or diner businesses pricing\"",
+      "found 3 candidate(s): Tovu AI, Fonitix, Maple",
+      "→ Tovu AI (https://tovu.ai) new candidate",
+      "✗ Tovu AI: homepage did not load or is blocked by robots.txt",
+      "→ Fonitix (https://fonitix.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Fonitix: published, trust checks_passed (6/6 checks), price 99",
+      "→ Maple (https://callmaple.ai) new candidate",
+      "  found pages: pricing, contact",
+      "  fetched 2 page(s)",
+      "✓ Maple: draft, trust unverified (2/6 checks), price unknown"
+    ],
+    "started_at": "2026-11-08T22:42:11.349Z",
+    "finished_at": "2026-11-08T22:42:51.255Z"
+  },
+  {
+    "id": "35bdb600-148c-492e-9399-1f557334f7eb",
+    "query": {
+      "query": "AI ai receptionist software for small salon or barber businesses pricing",
+      "use_case": "missed_calls",
+      "industry": "salon_barber"
+    },
+    "status": "done",
+    "counts": {
+      "found": 2,
+      "new": 2,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 0
+    },
+    "log": [
+      "search: \"AI ai receptionist software for small salon or barber businesses pricing\"",
+      "found 2 candidate(s): Slott, Bimbly Receptionist",
+      "→ Slott (https://slott.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✓ Slott: published, trust checks_passed (6/6 checks), price 19",
+      "→ Bimbly Receptionist (https://bimblyai.com) new candidate",
+      "  found pages: privacy, terms, contact",
+      "  fetched 2 page(s)",
+      "✓ Bimbly Receptionist: published, trust checks_passed (6/6 checks), price 39"
+    ],
+    "started_at": "2026-11-08T22:36:27.880Z",
+    "finished_at": "2026-11-08T22:37:05.289Z"
+  },
+  {
+    "id": "dcd7ff45-573c-404f-bd11-88a3f4d728a9",
+    "query": {
+      "query": "AI ai receptionist software for small salon or barber businesses pricing",
+      "use_case": "missed_calls",
+      "industry": "salon_barber"
+    },
+    "status": "done",
+    "counts": {
+      "found": 2,
+      "new": 0,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 2
+    },
+    "log": [
+      "search: \"AI ai receptionist software for small salon or barber businesses pricing\"",
+      "found 2 candidate(s): Slott, Bimbly Receptionist",
+      "→ Slott (https://slott.ai) new candidate",
+      "  found pages: pricing, privacy, terms, contact",
+      "  fetched 3 page(s)",
+      "✗ Slott: extraction failed (No JSON in model reply)",
+      "→ Bimbly Receptionist (https://bimblyai.com) new candidate",
+      "  found pages: privacy, terms, contact",
+      "  fetched 2 page(s)",
+      "✗ Bimbly Receptionist: extraction failed (Expected ',' or '}' after property value in JSON at position 928 (line 12 column 169))"
+    ],
+    "started_at": "2026-11-08T22:34:45.512Z",
+    "finished_at": "2026-11-08T22:35:22.672Z"
+  }
+]
