@@ -64,3 +64,20 @@ describe("robots.txt", () => {
     expect(robotsAllows(parseRobots("User-agent: *\nDisallow: /"), "/")).toBe(false);
   });
 });
+
+it("prefers the Contact page over an earlier About link", async () => {
+  const { findKeyLinks } = await import("@/lib/discovery/fetchPage");
+  const links = findKeyLinks({
+    url: "https://vendor.com",
+    finalUrl: "https://vendor.com/",
+    status: 200,
+    https: true,
+    title: "Vendor",
+    text: "",
+    links: [
+      { href: "https://vendor.com/about", text: "About us" },
+      { href: "https://vendor.com/contact", text: "Contact us" },
+    ],
+  });
+  expect(links.contact).toBe("https://vendor.com/contact");
+});

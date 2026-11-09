@@ -33,7 +33,7 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
   if (tools.length < 2) {
     return (
       <EmptyState title="Pick 2 or 3 tools to compare.">
-        <p className="mb-4">Tick “Pick for compare or plan” on two or three tools, then press Compare.</p>
+        <p className="mb-4">Select tools from your matches, then choose Compare.</p>
         <Button href={back}>Go back</Button>
       </EmptyState>
     );
@@ -123,7 +123,7 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
           </>
         }
       >
-        {profile && <Button href={`/plan?${query}&ids=${tools.map((t) => t.slug).join(",")}`}>Build my plan with these</Button>}
+        {profile && <Button href={`/plan?${query}&ids=${tools.map((t) => t.slug).join(",")}`}>Build my plan</Button>}
       </PageHeader>
 
       {/* Contenders */}

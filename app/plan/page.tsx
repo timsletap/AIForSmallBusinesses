@@ -65,7 +65,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
     <div className="mx-auto max-w-3xl space-y-6">
       <PageHeader
         eyebrow="Your plan"
-        title="Your plan to get started"
+        title="Your getting-started plan"
         sub={
           <>
             {chosen.length === 1 ? "1 tool" : `${chosen.length} tools`} · made {new Date().toLocaleDateString("en-US", { dateStyle: "long" })}
@@ -78,7 +78,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
       <AlreadyInYourTools matches={already} />
 
       <Card className="space-y-2">
-        <h2 className="text-xl font-bold">What it costs each month</h2>
+        <h2 className="text-xl font-bold">Monthly cost</h2>
         <ul className="space-y-1">
           {chosen.map((s) => (
             <li key={s.tool.id} className="flex justify-between gap-3">
@@ -167,13 +167,12 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
       <Card className="space-y-2 border-2 border-brand bg-brand-soft">
         <h2 className="text-xl font-bold text-brand-strong">Free help near you</h2>
         <p>
-          You don&apos;t have to do this alone. These programs are free, funded by the U.S. Small Business Administration, and
-          can help you set up new tools, plan the cost, and train your staff.
+          Get free advice on setup, costs, and staff training.
         </p>
         <ul className="space-y-2">
           <li>
             <a className="underline font-bold" href="https://www.sba.gov/local-assistance/find" target="_blank" rel="noreferrer">
-              Find your local SBA office or Small Business Development Center (SBDC)
+              Find local SBA assistance
             </a>
           </li>
           <li>
@@ -183,7 +182,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
           </li>
           <li>
             <a className="underline font-bold" href="https://americassbdc.org/find-your-sbdc/" target="_blank" rel="noreferrer">
-              Find your nearest SBDC (America&apos;s SBDC)
+              Find an SBDC advisor
             </a>
           </li>
         </ul>

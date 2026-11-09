@@ -42,14 +42,14 @@ export function ProblemBox() {
   return (
     <form onSubmit={submit} className="space-y-3">
       <label htmlFor="problem" className="block text-xl font-bold">
-        What&apos;s slowing your business down?
+        Describe the problem
       </label>
       <textarea
         id="problem"
         rows={3}
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="For example: We miss calls during the lunch rush and lose takeout orders."
+        placeholder="We miss calls during the lunch rush."
         className="w-full rounded-xl border-2 border-line bg-surface-2 p-3 text-lg focus:border-brand"
         maxLength={2000}
       />
@@ -58,7 +58,7 @@ export function ProblemBox() {
         disabled={busy}
         className="w-full sm:w-auto min-h-12 px-6 rounded-xl bg-brand text-on-brand text-lg font-bold hover:bg-brand-hover disabled:opacity-70"
       >
-        {busy ? "Reading your problem…" : "Find AI for my business"}
+        {busy ? "Finding your matches…" : "Find my matches"}
       </button>
       <p role="status" aria-live="polite" className="text-warn">
         {msg}

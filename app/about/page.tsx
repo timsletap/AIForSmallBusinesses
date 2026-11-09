@@ -14,17 +14,17 @@ export const metadata = {
 };
 
 const DISCOVERY_STEPS = [
-  ["Search", "A live web search looks for AI products. Directory and review sites are thrown out."],
-  ["Trace", "Each product is traced to the company's own official website. Vendors can't pay to be listed."],
-  ["Read", "We read the homepage plus pricing, integrations, security and privacy pages, respecting robots.txt."],
-  ["Refresh", "Daily: the oldest listings are re-checked against live sites, and a new area is searched for new tools."],
+  ["Search", "Find products on the web."],
+  ["Trace", "Find each vendor's official website."],
+  ["Read", "Read product details and policies, respecting robots.txt."],
+  ["Refresh", "Recheck older listings and search for new tools daily."],
 ];
 
 const PROOF_RULES = [
-  "Every fact must come with the page it came from and an exact quote. No quote, no fact.",
-  "Code, not AI, confirms each quote appears word-for-word on the vendor's page.",
-  "The quote must back up the value: the price is in it, the plan name matches, a free trial is never called a free plan.",
-  "Anything that can't be proven is removed and shown to owners as a plain-English warning.",
+  "Key details include a source page and supporting quote.",
+  "We check that cited quotes appear in the fetched text.",
+  "Prices and plan names must match their quotes. Trials don’t count as free plans.",
+  "Unsupported cited details are removed; missing information is flagged.",
 ];
 
 const CHECK_HOW: Record<string, string> = {
@@ -64,7 +64,7 @@ export default async function AboutPage() {
   const pct = (n: number) => Math.round((n / Math.max(all.length, 1)) * 100);
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       <header className="mx-auto space-y-5 max-w-3xl text-center pt-4 sm:pt-8">
         <p className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 pl-1.5 pr-3 py-1 text-sm font-bold text-gold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -72,11 +72,10 @@ export default async function AboutPage() {
           About TerpTool · A University of Maryland project
         </p>
         <h1 className="font-display text-4xl sm:text-6xl font-semibold leading-[1.02]">
-          Every fact has a receipt. <span className="text-gradient">Every vendor is checked.</span>
+          Useful tools. <span className="text-gradient">Clear checks.</span>
         </h1>
         <p className="text-lg text-muted">
-          An &ldquo;Angie&apos;s List&rdquo; for AI tools, except we find the tools ourselves, prove what they claim,
-          and rate them on how well they fit <em>your</em> business, not just on reviews.
+          We research vendor sites and score tools for your needs, budget, and workflow.
         </p>
       </header>
 
@@ -96,12 +95,12 @@ export default async function AboutPage() {
       <section aria-labelledby="how-h" className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-2">
           <h2 id="how-h" className="font-display text-2xl sm:text-3xl font-semibold">
-            How it works, in four parts
+            How it works
           </h2>
           <p className="text-sm text-muted">Tap ⊕ to see the details</p>
         </div>
         <div className="grid gap-3 lg:grid-cols-2 items-start">
-          <Expand icon={<Icon name="search" />} title="Discovered, not submitted" summary="We search the open web and trace every product to its official site." accent="#e21833">
+          <Expand icon={<Icon name="search" />} title="Find tools" summary="Search the web, then read the vendor’s site." accent="#e21833">
             <ol className="space-y-3">
               {DISCOVERY_STEPS.map(([h, p], i) => (
                 <li key={h} className="flex gap-3">
@@ -113,11 +112,11 @@ export default async function AboutPage() {
               ))}
             </ol>
             <Link href="/discover" className="mt-4 inline-flex min-h-11 items-center font-bold text-gold underline underline-offset-4">
-              Watch it run live →
+              Try Discover →
             </Link>
           </Expand>
 
-          <Expand icon={<Icon name="receipt" />} title="Proven word-for-word" summary="Every price and claim is tied to an exact quote on the vendor's own page." accent="#ffd200">
+          <Expand icon={<Icon name="receipt" />} title="Check sources" summary="See the vendor quotes behind pricing and key details." accent="#ffd200">
             <ul className="space-y-2">
               {PROOF_RULES.map((r) => (
                 <li key={r} className="flex gap-2">
@@ -128,7 +127,7 @@ export default async function AboutPage() {
             </ul>
           </Expand>
 
-          <Expand icon={<Icon name="shield" />} title="Six vendor checks + track record" summary="We check the company, not just the product, and hold back brand-new websites." accent="#ffffff">
+          <Expand icon={<Icon name="shield" />} title="Check vendors" summary="Look for contact details, policies, security, and website history." accent="#ffffff">
             <ul className="grid gap-2 sm:grid-cols-2">
               {CHECK_IDS.map((id, i) => (
                 <li key={id} className="flex gap-3 rounded-xl bg-surface-2 p-3">
@@ -160,7 +159,7 @@ export default async function AboutPage() {
             </div>
           </Expand>
 
-          <Expand icon={<Icon name="gauge" />} title="Rated beyond reviews: the Fit Score" summary="0–100 for your business, from six weighted factors. Fixed rules, no paid ranking." accent="#ff7a8a">
+          <Expand icon={<Icon name="gauge" />} title="Score the fit" summary="Six factors, one score out of 100. No paid ranking." accent="#ff7a8a">
             <div className="flex h-4 w-full overflow-hidden rounded-full" role="img" aria-label="Fit Score weights">
               {(Object.keys(WEIGHTS) as FactorId[]).map((f) => (
                 <div key={f} style={{ width: `${WEIGHTS[f]}%`, background: FACTOR_COLORS[f] }} />
@@ -193,8 +192,7 @@ export default async function AboutPage() {
               A real receipt
             </h2>
             <p className="text-muted">
-              From {example.name}&apos;s live listing: each fact is tied to the vendor&apos;s exact words, with a link so you
-              can check it yourself.
+              Quotes from {example.name}&apos;s site, linked for you to check.
             </p>
             <Link href={`/tools/${example.slug}`} className="inline-flex min-h-11 items-center font-bold text-gold underline underline-offset-4">
               Open the listing →

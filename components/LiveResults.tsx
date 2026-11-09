@@ -38,7 +38,7 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <PageHeader
-        eyebrow="Your matches"
+        eyebrow="Recommendations"
         title="Your best matches"
         sub={
           <p aria-live="polite">
@@ -51,7 +51,7 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
       <details className="no-print rounded-2xl border-2 border-line bg-surface group" open={false}>
         <summary className="min-h-12 px-4 flex items-center justify-between gap-3 font-bold text-lg">
           <span>
-            <Icon name="edit" size={18} className="inline -mt-0.5 mr-2 text-gold" />Adjust your answers <span className="font-normal text-base text-muted">(scores update as you go)</span>
+            <Icon name="edit" size={18} className="inline -mt-0.5 mr-2 text-gold" />Adjust your answers
           </span>
           <span aria-hidden className="transition-transform group-open:rotate-180">
             ▾
@@ -101,7 +101,7 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
           <details className="rounded-2xl border border-line bg-surface-2">
             <summary className="min-h-12 px-4 flex items-center font-bold text-lg">Might work, check first ({r.check_first.length})</summary>
             <div className="p-3 space-y-3">
-              <p className="text-muted px-1">These could fit, but something needs checking before you sign up.</p>
+              <p className="text-muted px-1">Confirm these details before signing up.</p>
               {r.check_first.map((s) => (
                 <ResultCard key={s.tool.id} s={s} query={query} industry={profile.industry} />
               ))}
@@ -111,7 +111,7 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
 
         {r.ranked.length > 0 && (
           <>
-            <p className="text-muted">Tick 2 or 3 tools to compare them side by side. No picks? Your plan uses your top match.</p>
+            <p className="text-sm text-muted">Select 2–3 tools to compare, or build a plan from your best matches.</p>
             <div className="no-print sticky bottom-[5.5rem] z-20 grid grid-cols-2 gap-2 rounded-2xl border border-white/15 bg-surface p-2 shadow-xl sm:flex sm:justify-center">
               <button type="submit" className="min-h-11 px-4 rounded-xl border-2 border-brand bg-surface-2 text-brand-strong font-bold">
                 Compare picks

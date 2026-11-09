@@ -161,7 +161,7 @@ export function Advisor() {
       {step === 1 && (
         <fieldset className="space-y-3">
           <legend className="text-xl font-bold mb-2">How much could you spend each month?</legend>
-          <p className="text-muted">Most small businesses start between $25 and $100 a month. We&apos;ll still show tools that cost a bit more, and tell you by how much.</p>
+          <p className="text-muted">Choose a budget. Any higher prices will be marked.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {BUDGETS.map((b) => (
               <label key={b} className={option(budget === b && !customBudget)}>
@@ -197,7 +197,7 @@ export function Advisor() {
         <>
           <fieldset className="space-y-3">
             <legend className="text-xl font-bold mb-2">What do you already use?</legend>
-            <p className="text-muted">Pick everything that applies. Paper and a phone count too.</p>
+            <p className="text-muted">Pick all that apply, including paper or a phone.</p>
             <div className="flex flex-wrap gap-2">
               {CURRENT_TOOLS.map((t) => (
                 <label key={t.id} className={chip(tools.includes(t.id))}>
@@ -219,7 +219,7 @@ export function Advisor() {
 
           {tools.filter((t) => !["none", "paper"].includes(t)).length > 0 && (
             <fieldset className="space-y-2">
-              <legend className="font-bold mb-1">Does the new tool have to work with any of these? (optional)</legend>
+              <legend className="font-bold mb-1">Must it connect to any of these? (optional)</legend>
               <div className="flex flex-wrap gap-2">
                 {tools
                   .filter((t) => !["none", "paper"].includes(t))

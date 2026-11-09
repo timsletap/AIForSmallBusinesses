@@ -35,8 +35,8 @@ export function ToolFitChecker({ tool, initial }: { tool: Tool; initial: Profile
           <h2 className="text-xl font-bold">How well does {tool.name} fit your business?</h2>
           <p className="text-muted">
             {started
-              ? "Change any answer and the score updates right away."
-              : "Answer a few quick questions and we'll score it for your business: your problem, budget, the tools you use, and how easy it is to set up."}
+              ? "Adjust your answers to update the score."
+              : "Check the fit for your needs, budget, and current tools."}
           </p>
         </div>
         {started && (

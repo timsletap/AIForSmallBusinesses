@@ -169,7 +169,7 @@ export function PaybackChart({ tools, typicalSale, saleWord }: { tools: ChartToo
   return (
     <Panel
       title="Estimated payback"
-      sub="Your estimate, from your own numbers: value of time saved and extra customers, minus each tool's starting price."
+      sub="Estimated value of saved time and extra customers, minus the starting price."
     >
       <div className="grid gap-3 sm:grid-cols-3 text-sm">
         {[

@@ -156,6 +156,7 @@ export function findKeyLinks(page: FetchedPage): Partial<Record<PageKind, string
       return KIND_PATTERNS[kind].test(path) || KIND_PATTERNS[kind].test(l.text);
     });
     const hit =
+      (kind === "contact" ? matches.find((l) => sameSite(l.href, page.finalUrl) && /contact/i.test(new URL(l.href).pathname + " " + l.text)) : undefined) ??
       matches.find((l) => sameSite(l.href, page.finalUrl)) ??
       (OFFSITE_OK.includes(kind)
         ? matches.find((l) => l.href.startsWith("https://") && !isAggregator(l.href) && KIND_PATTERNS[kind].test(l.text))

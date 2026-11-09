@@ -34,10 +34,10 @@ export function priceText(t: Pick<Tool, "pricing">): string {
 }
 
 export const ENGAGEMENT: Record<NonNullable<Tool["engagement"]>, string> = {
-  self_serve: "Sign up on their website",
-  free_trial: "Start a free trial",
-  book_demo: "Book a call with their team",
-  needs_setup_help: "Ask them for setup help",
+  self_serve: "Sign up",
+  free_trial: "Start free trial",
+  book_demo: "Book a demo",
+  needs_setup_help: "Ask for setup help",
 };
 
 export const SETUP_LABEL: Record<NonNullable<Tool["setup_complexity"]>, string> = {

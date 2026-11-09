@@ -8,14 +8,14 @@ import { ToolLogo } from "@/components/ToolLogo";
 
 const STAGES: { id: Stage; label: string }[] = [
   { id: "search", label: "Search" },
-  { id: "site", label: "Official site" },
-  { id: "extract", label: "Extract facts" },
-  { id: "verify", label: "Verify vendor" },
-  { id: "save", label: "Decide" },
+  { id: "site", label: "Read site" },
+  { id: "extract", label: "Read details" },
+  { id: "verify", label: "Check" },
+  { id: "save", label: "Results" },
 ];
 const ORDER = STAGES.map((s) => s.id);
 
-const SUGGESTIONS = ["Email marketing for a bakery", "Online booking for a barbershop", "AI phone answering for a plumber", "Review replies for a restaurant"];
+const SUGGESTIONS = ["Email marketing for a bakery", "Booking for a barbershop", "Phone answering for a plumber"];
 
 type Result = Extract<DiscoverEvent, { type: "result" }>;
 type Cand = { name: string; url?: string; stage: Stage; message: string; result?: Result };
@@ -92,7 +92,7 @@ export function DiscoverLive() {
   }
 
   async function run(q: string) {
-    if (q.trim().length < 3) return setError("Tell us what you need AI for.");
+    if (q.trim().length < 3) return setError("Tell us what you need help with.");
     setQuery(q);
     setRunning(true);
     setError(null);
@@ -170,7 +170,7 @@ export function DiscoverLive() {
   const started = running || !!done || cands.length > 0;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6">
       {/* Search */}
       <form
         onSubmit={(e) => {
@@ -180,23 +180,23 @@ export function DiscoverLive() {
         className="mx-auto max-w-3xl space-y-4"
       >
         <label htmlFor="need" className="sr-only">
-          What do you need AI for?
+          What do you need help with?
         </label>
         <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-2 sm:flex-row focus-within:border-gold/60 transition">
           <input
             id="need"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="What do you need AI for? e.g. phone orders for a pizza shop"
+            placeholder="e.g. phone orders for a pizza shop"
             maxLength={160}
-            className="min-h-12 flex-1 bg-transparent px-3 text-lg outline-none placeholder:text-muted"
+            className="min-h-12 min-w-0 flex-1 bg-transparent px-3 text-lg outline-none placeholder:text-muted"
           />
           <button
             disabled={running}
             className="min-h-12 rounded-xl bg-white px-6 font-bold text-black transition hover:bg-gold disabled:opacity-60 inline-flex items-center justify-center gap-2"
           >
             {running && <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-black/30 border-t-black" />}
-            {running ? "Searching" : "Discover tools"}
+            {running ? "Searching…" : "Search"}
           </button>
         </div>
         <div className="flex flex-wrap justify-center gap-2 text-sm">
@@ -245,7 +245,7 @@ export function DiscoverLive() {
                   >
                     {state === "done" ? "✓" : i + 1}
                   </span>
-                  <span className={`font-mono text-[0.7rem] uppercase tracking-[0.14em] ${state === "todo" ? "text-muted" : "text-white"}`}>{s.label}</span>
+                  <span className={`text-xs text-center ${state === "todo" ? "text-muted" : "text-white"}`}>{s.label}</span>
                 </li>
               );
             })}
@@ -267,7 +267,7 @@ export function DiscoverLive() {
             return (
               <article
                 key={c.name}
-                className={`rounded-2xl border bg-surface p-5 animate-[fadeUp_.35s_ease-out_both] ${ok ? "border-gold/60 shadow-[0_0_40px_-18px_rgba(255,210,0,.6)]" : "border-line"}`}
+                className={`rounded-2xl border bg-surface p-4 animate-[fadeUp_.35s_ease-out_both] ${ok ? "border-gold/60" : "border-line"}`}
               >
                 <div className="flex flex-wrap items-center gap-4">
                   {c.url ? <ToolLogo name={c.name} url={c.url} size={44} /> : <span className="h-11 w-11 rounded-xl bg-surface-2" />}
@@ -289,14 +289,19 @@ export function DiscoverLive() {
                 </div>
                 {r?.description && <p className="mt-3 text-sm text-muted">{r.description}</p>}
                 {!r && <p className="mt-3 text-sm text-muted">{c.message}</p>}
-                {r?.status === "failed" && <p className="mt-3 text-sm text-muted">We couldn&apos;t load their website, so nothing was added.</p>}
-                {r?.rules && <RuleList rules={r.rules} />}
+                {r && !ok && <p className="mt-3 text-sm text-muted">{r.detail}</p>}
+                {r?.rules && (
+                  <details className="mt-3">
+                    <summary className="min-h-9 cursor-pointer text-sm text-muted">View checks</summary>
+                    <RuleList rules={r.rules} />
+                  </details>
+                )}
                 {(r?.price || (ok && r?.slug)) && (
                   <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-sm">
                     <span className="text-muted">{r?.price}</span>
                     {ok && r?.slug && (
                       <Link href={`/tools/${r.slug}`} className="font-bold text-gold hover:underline">
-                        Open its listing →
+                        View tool →
                       </Link>
                     )}
                   </div>
@@ -308,26 +313,23 @@ export function DiscoverLive() {
             <p className="text-center text-sm text-muted">
               {done.approved > 0
                 ? `${done.approved} added to the directory.`
-                : "Nothing new was added this time. Tools that miss a rule wait for a person to review them."}
+                : "Nothing added. Tools with missing checks need a review."}
             </p>
           )}
         </section>
       ) : (
         !running && (
-          <section aria-labelledby="rules-h" className="mx-auto max-w-4xl">
-            <h2 id="rules-h" className="mb-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-muted">
-              A tool is added only if it passes all four
-            </h2>
-            <ol className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-              {APPROVAL_RULES.map((r, i) => (
-                <li key={r.id} className="bg-surface p-5">
-                  <p className="font-mono text-xs text-gold">0{i + 1}</p>
-                  <p className="mt-2 font-bold">{r.label}</p>
-                  <p className="mt-1 text-sm text-muted">{r.detail}</p>
+          <details className="mx-auto max-w-3xl rounded-xl border border-line px-4">
+            <summary className="min-h-11 cursor-pointer py-3 text-sm text-muted">How tools get added</summary>
+            <ol className="grid gap-3 pb-4 sm:grid-cols-2">
+              {APPROVAL_RULES.map((r) => (
+                <li key={r.id}>
+                  <p className="text-sm font-bold">{r.label}</p>
+                  <p className="text-sm text-muted">{r.detail}</p>
                 </li>
               ))}
             </ol>
-          </section>
+          </details>
         )
       )}
     </div>

@@ -132,7 +132,7 @@
     "vendor": "Aedan Rose",
     "canonical_url": "https://aedanrose.ai",
     "description": "Restaurant software that uses AI to answer guests, take orders and reservations, and manage staff.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "booking_waitlist",
       "missed_calls",
@@ -172,7 +172,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://aedanrose.ai/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -265,7 +265,7 @@
     "vendor": "Auxflo, Inc.",
     "canonical_url": "https://auxflo.com",
     "description": "AI receptionist that answers calls, qualifies leads, books appointments, and texts missed callers for trades businesses.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -302,7 +302,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://auxflo.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -426,7 +426,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://getbakeable.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -502,7 +502,7 @@
     "vendor": "Bakery Buddy.ai",
     "canonical_url": "https://bakerybuddy.ai",
     "description": "Bakery Buddy is an AI assistant that turns customer texts into orders and helps with payments, follow-ups, and marketing.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "customer_list",
       "win_back"
@@ -534,7 +534,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://bakerybuddy.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -656,12 +656,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://barberreceptionist.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": false,
         "source_url": "https://barberreceptionist.com",
-        "note": "BarberAI"
+        "note": "BarberAI · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -686,7 +686,7 @@
     },
     "trust_level": "partial",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them.",
+      "We couldn't find a phone number, email or address for this company on their site.",
       "We couldn't find information about how they keep your data safe."
     ],
     "evidence": {
@@ -849,7 +849,7 @@
     "vendor": "Bimbly Inc.",
     "canonical_url": "https://bimblyai.com",
     "description": "Bimbly is an AI receptionist that answers calls, takes bookings, and manages walk-in waitlists for barbershops and salons.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -888,7 +888,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://bimblyai.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -1082,7 +1082,7 @@
     "vendor": "BookBite AI",
     "canonical_url": "https://bookbiteai.com",
     "description": "An AI front desk that answers guest messages and phone calls and books restaurant tables.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -1124,7 +1124,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.bookbiteai.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -1198,6 +1198,128 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:46:34.7+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "ca6e1230-ab54-4679-a29f-768746ad3672",
+    "slug": "bookdesk",
+    "name": "BookDesk",
+    "vendor": "BookDesk",
+    "canonical_url": "https://bookdesk.ai",
+    "description": "An AI receptionist that answers website chat and Messenger, books appointments, and collects deposits for service businesses.",
+    "status": "published",
+    "use_cases": [
+      "booking_waitlist",
+      "auto_replies"
+    ],
+    "industries": [
+      "salon_barber",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": false,
+      "free_trial_days": null,
+      "est_monthly_usd_min": 29,
+      "est_monthly_usd_max": 49,
+      "plan_name": "Standard",
+      "pricing_url": "https://bookdesk.ai"
+    },
+    "integrations": [
+      "gmail_outlook",
+      "instagram_facebook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A Facebook Page to connect Messenger",
+      "A Stripe account to take deposits",
+      "A Google Calendar account for two-way sync",
+      "A carrier-registered business texting number if you add the Textline add-on"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create your site free and pick an industry template",
+      "Add your services and business hours",
+      "Add your team members",
+      "Connect Stripe to take deposits",
+      "Connect Google Calendar and your Facebook Page when ready"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://bookdesk.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": false,
+        "source_url": "https://bookdesk.ai/",
+        "note": "BookDesk · no contact details found"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://bookdesk.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://bookdesk.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://bookdesk.ai/privacy",
+        "note": "Industry-standard encryption, Argon2 password hashing, and HTTPS/TLS data transmission"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://bookdesk.ai",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "We couldn't find a phone number, email or address for this company on their site."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://bookdesk.ai",
+        "quote": "© 2026 BookDesk",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://bookdesk.ai",
+        "quote": "$29 / month",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://bookdesk.ai",
+        "quote": "$49 / month",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://bookdesk.ai",
+        "quote": "Standard Up to 3 staff, 1 location $29 / month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://bookdesk.ai",
+        "quote": "Google Calendar two-way sync",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://bookdesk.ai/",
+        "quote": "Every plan includes a site designed for your industry, in your brand",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://bookdesk.ai/privacy",
+        "quote": "We use industry-standard encryption and security measures to protect your data",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T04:44:01.988Z",
     "admin_reviewed": false
   },
   {
@@ -1339,13 +1461,14 @@
     "name": "Booksy",
     "vendor": "Booksy Inc.",
     "canonical_url": "https://booksy.com",
-    "description": "Booksy is a calendar and booking tool for beauty and wellness businesses that sends appointment reminders.",
+    "description": "Booksy is an app where clients book beauty and wellness appointments, and businesses manage their calendar and bookings.",
     "status": "published",
     "use_cases": [
       "booking_waitlist"
     ],
     "industries": [
-      "salon_barber"
+      "salon_barber",
+      "other"
     ],
     "pricing": {
       "free_plan": null,
@@ -1360,10 +1483,10 @@
     "integration_requirements": [],
     "setup_complexity": "low",
     "setup_steps": [
-      "Download the BooksyBiz app from iOS or Android",
-      "Click Grow My Business to get started",
-      "Set up your calendar, booking, and payments",
-      "Share your booking link with clients"
+      "Download the BooksyBiz app",
+      "Create your business profile",
+      "Set up your calendar and services",
+      "Turn on online booking and appointment reminders"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -1371,12 +1494,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://booksy.com/en-us/",
-        "note": null
+        "note": "Website registered in 2000"
       },
       "vendor_identity": {
-        "pass": false,
-        "source_url": "https://booksy.com",
-        "note": "Booksy Inc."
+        "pass": true,
+        "source_url": "https://booksy.com/en-us/p/contact",
+        "note": "Booksy Inc. · help.us@booksy.com"
       },
       "privacy_policy": {
         "pass": true,
@@ -1391,7 +1514,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://trust.booksy.com/",
-        "note": "Trust Center page linked in the site footer"
+        "note": "Trust Center page linked from the site"
       },
       "public_pricing": {
         "pass": false,
@@ -1399,9 +1522,8 @@
         "note": null
       }
     },
-    "trust_level": "partial",
+    "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them.",
       "Price isn't listed on the vendor's site. Ask before signing up.",
       "The vendor's site doesn't say which apps it works with. Ask before buying."
     ],
@@ -1409,6 +1531,11 @@
       "vendor": {
         "source_url": "https://booksy.com",
         "quote": "© 2026 Booksy Inc. All rights reserved",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://booksy.com/en-us/p/contact",
+        "quote": "Have a question or issue? Get in touch with our customer service team. Support help.us@booksy.com",
         "claim_type": "fact"
       },
       "security": {
@@ -1421,7 +1548,7 @@
       "price",
       "integrations"
     ],
-    "last_checked_at": "2026-11-09T02:37:08.746+00:00",
+    "last_checked_at": "2026-11-09T04:44:11.778Z",
     "admin_reviewed": false
   },
   {
@@ -1470,12 +1597,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.startcanopy.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": false,
         "source_url": "https://www.startcanopy.com/",
-        "note": null
+        "note": "Canopy · no contact details found"
       },
       "privacy_policy": {
         "pass": false,
@@ -1500,7 +1627,7 @@
     },
     "trust_level": "partial",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them.",
+      "We couldn't find a phone number, email or address for this company on their site.",
       "We couldn't find a privacy policy.",
       "We couldn't find information about how they keep your data safe.",
       "The vendor's site doesn't say which apps it works with. Ask before buying."
@@ -1660,7 +1787,7 @@
     "vendor": "Catch CRM",
     "canonical_url": "https://catchcrm.ai",
     "description": "A CRM for home-service businesses that auto-calls new leads and runs jobs, estimates, invoices, and reviews.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -1705,7 +1832,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://catchcrm.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -2071,12 +2198,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.crewrunner.app/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": false,
         "source_url": "https://crewrunner.app",
-        "note": "Block Nexus Labs"
+        "note": "Block Nexus Labs · no contact details found"
       },
       "privacy_policy": {
         "pass": false,
@@ -2101,7 +2228,7 @@
     },
     "trust_level": "partial",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them.",
+      "We couldn't find a phone number, email or address for this company on their site.",
       "We couldn't find a privacy policy.",
       "We couldn't find terms of service."
     ],
@@ -2148,7 +2275,7 @@
     "vendor": "Dine Replies",
     "canonical_url": "https://dinereplies.com",
     "description": "Uses AI to write and post replies to restaurant reviews on Google and other review sites.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "auto_replies"
     ],
@@ -2182,12 +2309,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://dinereplies.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
         "source_url": "https://dinereplies.com/pricing",
-        "note": "Dine Replies · [email protected] / 203-913-3060"
+        "note": "Dine Replies · 203-913-3060"
       },
       "privacy_policy": {
         "pass": true,
@@ -2310,7 +2437,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://getdispatchline.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -2339,7 +2466,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "This company's website is only about 2 months old, so there's little track record."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://getdispatchline.com/learn/topic/compliance/",
@@ -2429,12 +2558,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.tryecholy.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
         "source_url": "https://www.tryecholy.com/privacy",
-        "note": "KARAOGLAN LOGISTICS LLC · hello@tryecholy.com and (631) 316-8679"
+        "note": "KARAOGLAN LOGISTICS LLC · hello@tryecholy.com"
       },
       "privacy_policy": {
         "pass": true,
@@ -2458,7 +2587,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "This company's website is only about 1 month old, so there's little track record."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://www.tryecholy.com/privacy",
@@ -2737,7 +2868,7 @@
     "vendor": "Fonitix AI",
     "canonical_url": "https://fonitix.ai",
     "description": "Fonitix is an AI phone receptionist that answers calls, books appointments, and takes orders.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -2780,7 +2911,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://fonitix.ai/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -2863,7 +2994,7 @@
     "vendor": "Monster Hub Pty Ltd",
     "canonical_url": "https://forktime.ai",
     "description": "Answers restaurant reservation calls and books them into the booking system a restaurant already uses.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -2904,7 +3035,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://forktime.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -3118,8 +3249,7 @@
     ],
     "industries": [
       "hvac_plumbing",
-      "retail",
-      "other"
+      "retail"
     ],
     "pricing": {
       "free_plan": false,
@@ -3135,16 +3265,16 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A business phone number, either a new local number or your existing line set up to forward calls",
-      "A Google Calendar account if you want the agent to book appointments"
+      "Optional: your existing business phone line, if you want to forward calls",
+      "Calendar access, such as Google Calendar, to book appointments"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Create an account and describe your business, or hand Gabi your website",
-      "Test the agent with practice calls and approve it",
-      "Pick a local number or set up call forwarding from your existing line",
-      "Connect your calendar and CRM",
-      "Choose a plan once you connect a number"
+      "Start a free demo agent",
+      "Describe your business to Gabi in plain words",
+      "Test the agent with practice calls",
+      "Approve the agent and add a phone number",
+      "Forward your existing line or use a new local number"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -3156,8 +3286,8 @@
       },
       "vendor_identity": {
         "pass": false,
-        "source_url": "https://goodcall.com",
-        "note": "Goodcall"
+        "source_url": "https://www.goodcall.com/about",
+        "note": "Goodcall · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -3182,7 +3312,7 @@
     },
     "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them."
+      "We couldn't find a phone number, email or address for this company on their site."
     ],
     "evidence": {
       "vendor": {
@@ -3190,9 +3320,14 @@
         "quote": "© Goodcall 2026. All rights reserved.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://goodcall.com",
-        "quote": "SOC 2 compliant",
+      "price_monthly_min": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Starter $79 a month",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Growth Most popular $129 a month",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -3202,27 +3337,22 @@
       },
       "integrations": {
         "source_url": "https://goodcall.com",
-        "quote": "connect Goodcall to Zapier",
+        "quote": "Tool Google Calendar, connected",
         "claim_type": "fact"
       },
       "works_standalone": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Every plan includes a local number, and you can keep your existing one",
+        "claim_type": "fact"
+      },
+      "security": {
         "source_url": "https://goodcall.com",
-        "quote": "Rosie answers on a local number you pick",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Growth Most popular $129 a month",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Starter $79 a month",
+        "quote": "SOC 2 compliant HIPAA compliant",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T03:27:44.58+00:00",
+    "last_checked_at": "2026-11-09T04:44:31.259Z",
     "admin_reviewed": false
   },
   {
@@ -3232,7 +3362,7 @@
     "vendor": "Hunter Apps, Inc., a Uniq Ventures, SLU company",
     "canonical_url": "https://hero365.ai",
     "description": "Hero AI answers calls, books jobs, sends quotes and collects payments for trade businesses.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -3278,7 +3408,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://hero365.ai/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -3603,7 +3733,7 @@
     "vendor": "Jayu Services Inc",
     "canonical_url": "https://jayu.us",
     "description": "Jayu helps small businesses text, email, and reward customers so they come back.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "win_back",
       "customer_list"
@@ -3638,12 +3768,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://jayu.us/",
-        "note": null
+        "note": "Website registered in 2015"
       },
       "vendor_identity": {
         "pass": true,
         "source_url": "https://jayu.us",
-        "note": "Jayu Services Inc · info@jayu.us, San Diego, CA"
+        "note": "Jayu Services Inc · info@jayu.us"
       },
       "privacy_policy": {
         "pass": true,
@@ -3844,7 +3974,7 @@
     "vendor": "Jvora",
     "canonical_url": "https://jvora.com",
     "description": "Jvora is an AI receptionist and booking platform that answers calls, texts clients, and takes deposits for barbers and stylists.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -3885,7 +4015,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://jvora.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -4383,7 +4513,7 @@
       "vendor_identity": {
         "pass": false,
         "source_url": "https://heylilo.co",
-        "note": "Lilo AI, Inc."
+        "note": "Lilo AI, Inc. · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -4408,7 +4538,8 @@
     },
     "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them."
+      "We couldn't confirm how long this company's website has existed.",
+      "We couldn't find a phone number, email or address for this company on their site."
     ],
     "evidence": {
       "vendor": {
@@ -4463,7 +4594,7 @@
     "vendor": "Lobotix",
     "canonical_url": "https://lobotix.com",
     "description": "Sends personally written email and text campaigns to your customers at key moments, like birthdays and visits.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "win_back",
       "customer_list"
@@ -4504,7 +4635,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://lobotix.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -4587,7 +4718,7 @@
     "vendor": "Now Tech LLC",
     "canonical_url": "https://lokuli.com",
     "description": "Lets customers find and book local service appointments, and lets small businesses take bookings and get paid online.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "booking_waitlist",
       "missed_calls"
@@ -4623,12 +4754,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://lokuli.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
-        "pass": true,
+        "pass": false,
         "source_url": "https://lokuli.com/pricing",
-        "note": "Now Tech LLC · [email protected], 1-844-4LOKULI, Los Angeles, CA"
+        "note": "Now Tech LLC · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -4652,7 +4783,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "We couldn't find a phone number, email or address for this company on their site."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://lokuli.com/pricing",
@@ -4702,6 +4835,128 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T23:00:50.285+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "69e64142-9779-4485-b59c-b3a71e56f041",
+    "slug": "magicreply",
+    "name": "MagicReply",
+    "vendor": "MagicReply",
+    "canonical_url": "https://magicreply.ai",
+    "description": "MagicReply uses AI to draft and post replies to your Google reviews.",
+    "status": "published",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "industries": [
+      "restaurant",
+      "retail",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": true,
+      "free_trial_days": 7,
+      "est_monthly_usd_min": 19.99,
+      "est_monthly_usd_max": 49.99,
+      "plan_name": "Pro",
+      "pricing_url": "https://magicreply.ai/pricing"
+    },
+    "integrations": [
+      "google_business_profile"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [
+      "A Google Business Profile listing to connect"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create a MagicReply account or start the free plan",
+      "Connect your Google Business Profile in one click",
+      "Review the AI-drafted replies and edit if needed",
+      "Post replies, or turn on auto-reply rules on Pro or Business"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://magicreply.ai/",
+        "note": "Website registered in 2023"
+      },
+      "vendor_identity": {
+        "pass": false,
+        "source_url": "https://magicreply.ai/",
+        "note": "MagicReply · no contact details found"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://magicreply.ai/use-cases/healthcare",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://magicreply.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://magicreply.ai/security",
+        "note": "Encrypted at rest, TLS 1.2+ encryption, Google OAuth, hashed passwords"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://magicreply.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "We couldn't find a phone number, email or address for this company on their site."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://magicreply.ai/pricing",
+        "quote": "© 2026 MagicReply. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://magicreply.ai/",
+        "quote": "The Free plan stays free.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://magicreply.ai/",
+        "quote": "Pro and Business plans include a 7-day free trial.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://magicreply.ai/pricing",
+        "quote": "$19.99 /month",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://magicreply.ai/pricing",
+        "quote": "$49.99 /month",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://magicreply.ai/pricing",
+        "quote": "Pro For businesses serious about their online reputation.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://magicreply.ai/integrations",
+        "quote": "Google Business Profile is the review platform you can connect today.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://magicreply.ai/security",
+        "quote": "Google OAuth Encrypted at Rest TLS 1.2+ Everywhere Hashed Passwords",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T04:44:49.758Z",
     "admin_reviewed": false
   },
   {
@@ -5299,7 +5554,7 @@
     "vendor": "OnCrew",
     "canonical_url": "https://oncrew.ai",
     "description": "Answers business phone calls with an AI receptionist, captures job details, flags urgent calls, and books appointments.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -5340,7 +5595,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://oncrew.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -5793,7 +6048,7 @@
     "vendor": "Platero AI",
     "canonical_url": "https://platero.ai",
     "description": "Drafts replies to Google restaurant reviews for you to approve before they are published.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "auto_replies"
     ],
@@ -5828,7 +6083,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://platero.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -5911,7 +6166,7 @@
     "vendor": "Plyrium",
     "canonical_url": "https://plyrium.com",
     "description": "Plyrium helps trade shops answer calls with AI and manage quotes, invoices, scheduling and Google reviews.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -5953,7 +6208,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.plyrium.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6033,7 +6288,7 @@
     "vendor": "ClientFuse LLC",
     "canonical_url": "https://plyto.ai",
     "description": "Plyto is an AI marketing assistant that builds and runs ads, follows up on leads, and tracks which sales came back.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "customer_list",
       "win_back",
@@ -6073,7 +6328,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://plyto.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6260,7 +6515,7 @@
     "vendor": "Think & Do Hub, LLC",
     "canonical_url": "https://porchbell.com",
     "description": "A 24/7 voice receptionist that answers business calls, books appointments, and texts missed callers back.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -6301,7 +6556,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://porchbell.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6508,7 +6763,7 @@
     "vendor": "JIE & P LLC",
     "canonical_url": "https://pulvo.ai",
     "description": "Drafts AI replies to Google reviews and shows what customers praise or complain about.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "auto_replies"
     ],
@@ -6547,7 +6802,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://pulvo.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6635,7 +6890,7 @@
     "vendor": "Reservaii",
     "canonical_url": "https://reservaii.com",
     "description": "Booking system for independent restaurants that also answers phone calls with an AI receptionist.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -6668,7 +6923,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.reservaii.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6753,7 +7008,7 @@
     "vendor": "Responsly",
     "canonical_url": "https://responsly.ai",
     "description": "Replies to Google reviews with AI-written answers in your brand voice.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "auto_replies"
     ],
@@ -6787,7 +7042,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://responsly.ai/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -6998,7 +7253,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://ringvance.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -7028,6 +7283,7 @@
     },
     "trust_level": "checks_passed",
     "warnings": [
+      "This company's website is only about 1 month old, so there's little track record.",
       "We couldn't find information about how they keep your data safe."
     ],
     "evidence": {
@@ -7248,7 +7504,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://servorio.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -7278,6 +7534,7 @@
     },
     "trust_level": "checks_passed",
     "warnings": [
+      "This company's website is only about 2 months old, so there's little track record.",
       "The vendor's site doesn't say which apps it works with. Ask before buying."
     ],
     "evidence": {
@@ -7335,7 +7592,7 @@
     "vendor": "Simple CRM AI",
     "canonical_url": "https://simplecrmai.com",
     "description": "A CRM that gives each client an AI agent to follow up, take notes, and draft replies.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "customer_list",
       "auto_replies"
@@ -7373,7 +7630,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://simplecrmai.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -7569,7 +7826,7 @@
     "name": "Slang AI",
     "vendor": "Slang AI",
     "canonical_url": "https://slang.ai",
-    "description": "An AI phone agent that answers restaurant calls, takes reservations, and sends guests texts.",
+    "description": "Slang AI is a voice AI that answers restaurant phone calls and manages reservations for guests.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -7589,14 +7846,14 @@
     "integrations": [],
     "works_standalone": null,
     "integration_requirements": [
-      "An account on a supported reservation platform such as OpenTable, SevenRooms, Yelp, or Resy"
+      "A reservation platform account such as OpenTable, SevenRooms, Yelp, or Resy"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Request a quote or book a demo with Slang AI",
+      "Book a demo or request a quote from Slang AI",
       "Connect your reservation platform such as OpenTable or Resy",
-      "Add your restaurant's approved information for the AI to use",
-      "Go live, which the company says can happen the same day"
+      "Set up your restaurant's approved information for the AI to answer guest questions",
+      "Let Slang AI answer your restaurant's incoming calls"
     ],
     "engagement": "book_demo",
     "reviews": null,
@@ -7604,12 +7861,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.slang.ai/",
-        "note": null
+        "note": "Website registered in 2021"
       },
       "vendor_identity": {
         "pass": false,
-        "source_url": "https://www.slang.ai/",
-        "note": "Slang AI"
+        "source_url": "https://www.slang.ai/contact-us",
+        "note": "Slang AI · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -7634,17 +7891,22 @@
     },
     "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them."
+      "We couldn't find a phone number, email or address for this company on their site."
     ],
     "evidence": {
       "vendor": {
-        "source_url": "https://www.slang.ai/",
+        "source_url": "https://slang.ai",
         "quote": "Copyright © 2026 Slang AI",
         "claim_type": "fact"
       },
-      "security": {
+      "price_monthly_min": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "Enterprise-Grade Security and Compliance SOC II compliant",
+        "quote": "Starting at $399 *per location",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://www.slang.ai/pricing",
+        "quote": "Starting at $599 *per location",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -7654,22 +7916,17 @@
       },
       "integrations": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "Integrate with leading reservation platforms (including OpenTable, SevenRooms, Yelp, and Resy) to power end-to-end voice booking.",
+        "quote": "Integrate with leading reservation platforms (including OpenTable, SevenRooms, Yelp, and Resy)",
         "claim_type": "fact"
       },
-      "price_monthly_max": {
+      "security": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "Starting at $599 *per location",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.slang.ai/pricing",
-        "quote": "Starting at $399 *per location",
+        "quote": "Enterprise-Grade Security and Compliance SOC II compliant",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T02:38:42.089+00:00",
+    "last_checked_at": "2026-11-09T04:45:09.108Z",
     "admin_reviewed": false
   },
   {
@@ -7679,7 +7936,7 @@
     "vendor": "Slott",
     "canonical_url": "https://slott.ai",
     "description": "AI front desk that answers calls and texts, books clients into your schedule, and charges no booking fees.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -7719,7 +7976,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://slott.ai/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
         "pass": true,
@@ -7967,7 +8224,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://stackedbooking.com/",
-        "note": null
+        "note": "Website registered in 2026"
       },
       "vendor_identity": {
         "pass": true,
@@ -7996,7 +8253,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "This company's website is only about 1 month old, so there's little track record."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://stackedbooking.com",
@@ -8229,7 +8488,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "We couldn't confirm how long this company's website has existed."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://terrascape.io",
@@ -8573,9 +8834,9 @@
         "note": null
       },
       "vendor_identity": {
-        "pass": true,
+        "pass": false,
         "source_url": "https://wemu.io",
-        "note": "Wemu Inc. · [email protected]"
+        "note": "Wemu Inc. · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -8599,7 +8860,10 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "We couldn't confirm how long this company's website has existed.",
+      "We couldn't find a phone number, email or address for this company on their site."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://wemu.io",
@@ -8767,7 +9031,7 @@
     "vendor": "WowServe, Inc.",
     "canonical_url": "https://wowserve.com",
     "description": "AI phone receptionist and field service software that books jobs, dispatches techs, and sends invoices for HVAC, plumbing and electrical shops.",
-    "status": "rejected",
+    "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -8812,12 +9076,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://wowserve.com/",
-        "note": null
+        "note": "Website registered in 2025"
       },
       "vendor_identity": {
-        "pass": true,
+        "pass": false,
         "source_url": "https://wowserve.com/privacy",
-        "note": "WowServe, Inc. · (512) 555-0142"
+        "note": "WowServe, Inc. · no contact details found"
       },
       "privacy_policy": {
         "pass": true,
@@ -8841,7 +9105,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "We couldn't find a phone number, email or address for this company on their site."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://wowserve.com/privacy",

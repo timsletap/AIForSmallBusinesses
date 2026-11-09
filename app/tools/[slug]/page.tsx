@@ -67,7 +67,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
           </Button>
           {profile && (
             <Button href={`/plan?${query}&ids=${t.slug}`} variant="secondary">
-              Make a plan with this tool
+              Build my plan
             </Button>
           )}
         </div>
@@ -160,9 +160,9 @@ export default async function ToolPage({ params, searchParams }: Props) {
       </Card>
 
       <Card className="space-y-3">
-        <h2 className="text-xl font-bold">Can you trust this company?</h2>
+        <h2 className="text-xl font-bold">Vendor checks</h2>
         <p className="text-muted">
-          We checked the vendor&apos;s own website for these things.{" "}
+          Checked on the vendor&apos;s website.{" "}
           <Link href="/about" className="underline hover:text-gold">How we check →</Link>
         </p>
         <ul className="divide-y divide-line">

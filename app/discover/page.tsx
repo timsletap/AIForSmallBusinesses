@@ -14,15 +14,14 @@ export default async function DiscoverPage() {
   const newest = [...published].sort((a, b) => b.last_checked_at.localeCompare(a.last_checked_at)).slice(0, 6);
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       <PageHeader
         eyebrow="Discover"
-        title="Search the web for new AI tools"
-        sub="We find products on the open web, read each company's official site, check the vendor, and add only the ones that pass every rule."
+        title="Find new tools"
+        sub="Tell us what you need. We’ll search vendor sites and check what we find."
       >
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
-          <span className="text-white">{published.length}</span> approved · <span className="text-white">{all.length}</span> investigated ·{" "}
-          <span className="text-white">{all.length - published.length}</span> held back
+          <span className="text-white">{published.length}</span> in the directory · <span className="text-white">{all.length}</span> checked
         </p>
       </PageHeader>
 

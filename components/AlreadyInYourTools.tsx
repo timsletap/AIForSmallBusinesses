@@ -69,7 +69,7 @@ export function AlreadyInYourTools({ matches }: { matches: BuiltInMatch[] }) {
         <span className="flex-1 min-w-0">
           <span className="block font-bold">Check what you already have</span>
           <span className="block text-sm text-muted truncate">
-            {names.join(" and ")} {names.length > 1 ? "have" : "has"} {count} built-in feature{count === 1 ? "" : "s"} that could help, before you pay for anything new
+            {count} useful feature{count === 1 ? "" : "s"} in {names.join(" and ")}
           </span>
         </span>
         <span aria-hidden className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-sm transition-transform group-open:rotate-180">

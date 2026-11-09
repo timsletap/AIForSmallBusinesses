@@ -40,16 +40,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="sm:col-span-2 flex flex-wrap items-center gap-4 pb-6 border-b border-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/umd-wordmark-white.svg" alt="University of Maryland" width={220} height={44} className="h-9 w-auto" />
-              <span className="text-white/80"><strong className="text-white">TerpTool</strong>: the right AI tools for your small business, verified. Built at the University of Maryland.</span>
+              <span className="text-white/80"><strong className="text-white">TerpTool</strong> · Tools for small businesses. Built at the University of Maryland.</span>
               <span aria-hidden className="md-flag-stripe h-1.5 w-24 rounded-full ml-auto hidden sm:block" />
             </div>
             <p>
-              Every tool here was checked against the company&apos;s own website. Prices and features can change, so
-              confirm with the vendor before you pay. We don&apos;t take money from vendors and we don&apos;t store your
-              answers.
+              Details come from vendor websites. Confirm prices before buying. No paid placement.
             </p>
             <p className="sm:text-right">
-              <a className="underline hover:text-gold" href="/about">About &amp; how we verify tools</a>
+              <a className="underline hover:text-gold" href="/about">About &amp; vendor checks</a>
               <br />
               Free one-on-one help:{" "}
               <a className="underline hover:text-gold" href="https://www.sba.gov/local-assistance/find" target="_blank" rel="noreferrer">

@@ -7,6 +7,7 @@ import { carryForward, extract, validateExtraction, CITED_KEYS } from "@/lib/ext
 import type { Extraction } from "@/lib/extraction/schema";
 import { runVendorChecks, trustLevel, checkWarnings } from "@/lib/verification/vendorChecks";
 import { domainAgeDays, domainAgeWarning, domainRegisteredAt } from "@/lib/verification/domainAge";
+import { findRealContact } from "@/lib/verification/contact";
 import { getStore } from "@/lib/storage/db";
 import { INDUSTRY_IDS, type IndustryId } from "@/lib/taxonomy/industries";
 import { USE_CASE_IDS, type UseCaseId } from "@/lib/taxonomy/useCases";
@@ -50,7 +51,7 @@ export async function processCandidate(
   const links = findKeyLinks(homepage);
   log(`  found pages: ${Object.keys(links).join(", ") || "none"}`);
 
-  // Homepage + up to 3 linked pages, in priority order.
+  // Homepage + up to 3 key pages, then a separate Contact page when available.
   const pages: FetchedPage[] = [homepage];
   for (const kind of ["pricing", "integrations", "security"] as const) {
     if (pages.length >= 4) break;
@@ -62,6 +63,10 @@ export async function processCandidate(
   if (pages.length < 4 && links.privacy) {
     const p = await fetchPage(links.privacy);
     if (p) pages.push(p);
+  }
+  if (links.contact && !pages.some((p) => p.url === links.contact)) {
+    const p = await fetchPage(links.contact);
+    if (p && sameSite(p.finalUrl, home)) pages.push(p);
   }
   log(`  fetched ${pages.length} page(s)`);
 
@@ -78,6 +83,14 @@ export async function processCandidate(
   }
   const { ex: v, dropped } = validateExtraction(ex, pages.map((p) => ({ url: p.url, text: p.text })));
   if (dropped.length) log(`  dropped unverified fields: ${dropped.join(", ")}`);
+  if (!v.contact) {
+    for (const p of pages) {
+      const contact = findRealContact(p.text);
+      if (!contact) continue;
+      v.contact = { value: contact, source_url: p.url, quote: contact, claim_type: "fact" };
+      break;
+    }
+  }
 
   const use_cases = ex.use_cases.filter((u): u is UseCaseId => (USE_CASE_IDS as readonly string[]).includes(u));
   // The use case we searched for becomes primary when the vendor pages support it.

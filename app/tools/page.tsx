@@ -40,7 +40,7 @@ export default async function BrowsePage({ searchParams }: { searchParams: SP })
       <PageHeader
         eyebrow="The directory"
         title="Browse AI tools"
-        sub={<>{all.length} vetted tools. Every price and claim links back to the vendor&apos;s own website.</>}
+        sub={<>{all.length} checked tools, with details from vendor sites.</>}
       />
 
       <form method="get" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-end" role="search">

@@ -37,22 +37,22 @@ export default async function Home() {
   const byUseCase = (id: string) => live.filter((t) => t.use_cases.includes(id as Tool["use_cases"][number])).length;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16 sm:space-y-20">
       {/* Hero: centerpiece shell, giant headline across it, mono captions either side */}
-      <section className="relative -mt-4 flex min-h-[70vh] flex-col items-center justify-center overflow-hidden sm:min-h-[78vh]">
+      <section className="relative -mt-4 flex min-h-[62vh] flex-col items-center justify-center overflow-hidden sm:min-h-[70vh]">
         <ShellArt className="float-slow absolute left-1/2 top-1/2 w-[min(640px,92vw)] -translate-x-1/2 -translate-y-1/2" />
         <h1 className="relative z-10 text-center drop-shadow-[0_8px_30px_rgba(0,0,0,.55)]">
           <span className="block text-[clamp(3.6rem,13vw,11rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#f2f2f6]">
             TerpTool<span className="text-gold">.</span>
           </span>
           <span className="mx-auto mt-5 block max-w-[34rem] text-[clamp(1.15rem,2.4vw,1.75rem)] font-medium leading-snug tracking-[-0.02em] text-[#f2f2f6]/90">
-            The right AI tools for your small business, <span className="text-gold">verified.</span>
+            AI tools for your business, <span className="text-gold">checked.</span>
           </span>
         </h1>
         <div className="relative z-10 mt-10 grid w-full grid-cols-1 gap-4 font-mono text-[0.72rem] uppercase leading-relaxed tracking-[0.04em] text-muted sm:grid-cols-2">
-          <p className="max-w-[17rem] text-center sm:text-left">An AI directory for Main Street and rural small businesses</p>
+          <p className="max-w-[17rem] text-center sm:text-left">For Main Street and rural businesses</p>
           <p className="max-w-[19rem] text-center sm:ml-auto sm:text-right">
-            A University of Maryland project. {live.length} tools, each verified on the vendor&apos;s own site.
+            University of Maryland · {live.length} tools checked
           </p>
         </div>
       </section>
@@ -71,19 +71,17 @@ export default async function Home() {
       <section className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div className="space-y-6">
           <h2 className="text-4xl sm:text-5xl font-semibold leading-[1.02] tracking-[-0.045em]">
-            Tell us what&apos;s slowing you down.
+            What&apos;s slowing you down?
           </h2>
           <p className="text-lg text-muted max-w-xl">
-            We match you with vetted tools that fit your budget and the things you already use, each with its real price,
-            six vendor checks, and a Fit Score for <em className="text-white not-italic">your</em> business.
+            Find tools that fit your budget, your workflow, and how much setup you want.
           </p>
           <div className="rounded-2xl border border-line bg-surface p-4 sm:p-6">
             <ProblemBox />
           </div>
           <p className="text-sm text-muted">
-            Not sure where to start?{" "}
             <Link href="/tools" className="text-white underline underline-offset-4 hover:text-gold">
-              Browse the full directory
+              Or browse the directory →
             </Link>
           </p>
         </div>
@@ -154,17 +152,17 @@ export default async function Home() {
       <section aria-labelledby="why-h" className="grid gap-8 lg:grid-cols-[1fr_2fr]">
         <div className="space-y-3">
           <h2 id="why-h" className="font-display text-2xl sm:text-3xl font-semibold">
-            Built for trust, not clicks
+            Know before you choose
           </h2>
           <Link href="/about" className="inline-flex items-center gap-1.5 text-sm font-bold text-gold hover:underline">
-            How we verify every tool <Icon name="arrow" size={16} />
+            How we check tools <Icon name="arrow" size={16} />
           </Link>
         </div>
         <ul className="grid gap-6 sm:grid-cols-3">
           {[
-            ["receipt", "Prices with receipts", "Every price links to the exact words on the vendor's own site. If it isn't listed, we say so."],
-            ["shield", "Vendors checked", "Six safety checks plus a track-record check on every company before it's listed."],
-            ["gauge", "Scored for your business", "A Fit Score from your budget, your current tools and how much setup you want. No paid ranking."],
+            ["receipt", "Clear pricing", "Prices from vendor sites. Missing prices are marked."],
+            ["shield", "Vendor checks", "Checks for contact details, policies, security, and website history."],
+            ["gauge", "Your Fit Score", "Based on your needs, budget, tools, and setup preferences."],
           ].map(([icon, h, p]) => (
             <li key={h} className="space-y-2">
               <Icon name={icon} className="text-gold" />
