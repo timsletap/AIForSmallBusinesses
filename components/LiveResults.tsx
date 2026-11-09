@@ -16,6 +16,8 @@ import { ProfileEditor } from "@/components/ProfileEditor";
 import { ProfileHidden } from "@/components/ProfileHidden";
 import { ResultCard } from "@/components/ResultCard";
 import { EmptyState } from "@/components/ui";
+import { PageHeader } from "@/components/PageHeader";
+import { Icon } from "@/components/Icon";
 
 /**
  * Results that re-rank instantly as the owner adjusts their answers. Scoring is the same pure,
@@ -34,19 +36,22 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
   }, [query, router]);
 
   return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold text-brand-strong">Your best matches</h1>
-        <p className="text-muted" aria-live="polite">
-          For a {industryById(profile.industry)?.label.toLowerCase()} that wants help with{" "}
-          {profile.use_cases.map((u) => getUseCase(u)?.reason).join(" and ")}, about ${profile.budget_usd}/month.
-        </p>
-      </header>
+    <div className="mx-auto max-w-3xl space-y-6">
+      <PageHeader
+        eyebrow="Your matches"
+        title="Your best matches"
+        sub={
+          <p aria-live="polite">
+            For a {industryById(profile.industry)?.label.toLowerCase()} that wants help with{" "}
+            {profile.use_cases.map((u) => getUseCase(u)?.reason).join(" and ")}, about ${profile.budget_usd}/month.
+          </p>
+        }
+      />
 
       <details className="no-print rounded-2xl border-2 border-line bg-surface group" open={false}>
         <summary className="min-h-12 px-4 flex items-center justify-between gap-3 font-bold text-lg">
           <span>
-            ✏️ Adjust your answers <span className="font-normal text-base text-muted">(scores update as you go)</span>
+            <Icon name="edit" size={18} className="inline -mt-0.5 mr-2 text-gold" />Adjust your answers <span className="font-normal text-base text-muted">(scores update as you go)</span>
           </span>
           <span aria-hidden className="transition-transform group-open:rotate-180">
             ▾
@@ -107,7 +112,7 @@ export function LiveResults({ tools, builtins, initial }: { tools: Tool[]; built
         {r.ranked.length > 0 && (
           <>
             <p className="text-muted">Tick 2 or 3 tools to compare them side by side. No picks? Your plan uses your top match.</p>
-            <div className="no-print sticky bottom-0 -mx-4 px-4 py-2 bg-background/95 backdrop-blur border-t border-line grid grid-cols-2 gap-2 sm:flex z-20">
+            <div className="no-print sticky bottom-[5.5rem] z-20 grid grid-cols-2 gap-2 rounded-2xl border border-white/15 bg-surface p-2 shadow-xl sm:flex sm:justify-center">
               <button type="submit" className="min-h-11 px-4 rounded-xl border-2 border-brand bg-surface-2 text-brand-strong font-bold">
                 Compare picks
               </button>

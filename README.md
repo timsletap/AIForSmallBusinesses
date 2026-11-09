@@ -24,7 +24,6 @@ npm run dev                   # http://localhost:3000
 | --- | --- | --- |
 | `OPENROUTER_API_KEY` | yes (for discovery + classifier) | LLM extraction/classification and web search |
 | `LLM_MODEL` | no | Defaults to `anthropic/claude-haiku-5.5` |
-| `LLM_PROVIDER` | no | `openrouter` (default) or `openai` (+ `OPENAI_API_KEY`) |
 | `ADMIN_PASSWORD` | yes | Protects `/admin` and `/api/admin/*` |
 | `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | no | Use Supabase instead of the JSON store |
 | `CRON_SECRET` | no (P1) | Scheduled refresh |

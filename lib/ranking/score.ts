@@ -18,7 +18,7 @@ export const WEIGHTS: Record<FactorId, number> = {
 };
 
 export const FACTOR_LABELS: Record<FactorId, string> = {
-  use_case: "Fits your problem",
+  use_case: "Fits your problem & business",
   works_with: "Works with your tools",
   trust: "Vendor trust",
   affordability: "Fits your budget",
@@ -35,6 +35,7 @@ export type Scored = {
   matched_tools: ToolId[];
   relevant_tools: ToolId[];
   matched_use_case: UseCaseId;
+  industry_fit: IndustryFit["kind"];
   price: number | null;
   over_budget_by: number | null;
   reasons: string[];
@@ -57,6 +58,20 @@ export function scoreUseCase(t: Tool, useCases: UseCaseId[]): { f: number; match
     if (f > best.f) best = { f, matched: uc };
   }
   return best;
+}
+
+export type IndustryFit = { kind: "match" | "general" | "other_industries"; mult: number };
+
+/**
+ * Does the tool serve the owner's kind of business? Built for it: full credit. General-purpose
+ * (no industry listed, or "any business"): 0.9. Built only for other industries: 0.75.
+ * Owners who picked "something else" aren't penalized either way.
+ */
+export function industryFit(t: Tool, industry: Profile["industry"]): IndustryFit {
+  const specific = t.industries.filter((i) => i !== "other");
+  if (industry !== "other" && specific.includes(industry)) return { kind: "match", mult: 1 };
+  if (industry === "other" || specific.length === 0 || t.industries.includes("other")) return { kind: "general", mult: 0.9 };
+  return { kind: "other_industries", mult: 0.75 };
 }
 
 /** Current tools that can connect to software at all (paper and "none" can't). */
@@ -97,9 +112,10 @@ export function scoreTool(t: Tool, p: Profile): Scored | null {
   const uc = scoreUseCase(t, p.use_cases);
   if (!uc.matched) return null;
   const ww = worksWithFit(t, p);
+  const ind = industryFit(t, p.industry);
   const price = monthlyPrice(t);
   const fs: Record<FactorId, number> = {
-    use_case: uc.f,
+    use_case: uc.f * ind.mult,
     works_with: ww.f,
     trust: trustFit(t),
     affordability: affordabilityFit(price, p.budget_usd),
@@ -121,10 +137,15 @@ export function scoreTool(t: Tool, p: Profile): Scored | null {
     matched_tools: ww.matched,
     relevant_tools: ww.relevant,
     matched_use_case: uc.matched,
+    industry_fit: ind.kind,
     price,
     over_budget_by: price !== null && price > p.budget_usd ? Math.round(price - p.budget_usd) : null,
     reasons: [],
-    check_first: checkFirstReasons(t, p),
+    check_first: [
+      ...checkFirstReasons(t, p),
+      // Explicitly built for other industries: not a top pick for this owner.
+      ...(ind.kind === "other_industries" ? ["Built for other kinds of businesses, not specifically yours."] : []),
+    ],
   };
   scored.reasons = buildReasons(scored, p);
   return scored;
@@ -151,6 +172,8 @@ export type Recommendation = {
 export function recommend(tools: Tool[], p: Profile, limit = 5): Recommendation {
   const all = tools
     .filter(isRecommendable)
+    // "Free only" means free: paid and unpriced tools are left out entirely.
+    .filter((t) => p.budget_usd > 0 || monthlyPrice(t) === 0)
     .map((t) => scoreTool(t, p))
     .filter((s): s is Scored => s !== null)
     .sort(compareScored);

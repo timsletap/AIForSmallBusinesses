@@ -1,6 +1,7 @@
 /**
- * Small LLM provider interface. OpenRouter speaks the OpenAI chat-completions format,
- * so OpenAI (or Gemini via OpenRouter) can be swapped in by changing env vars.
+ * Small LLM provider interface over OpenRouter (OpenAI chat-completions format). Discovery depends on
+ * OpenRouter's web-search plugin, so OpenRouter is the only supported backend; any OpenRouter model
+ * can be selected with LLM_MODEL.
  */
 export type ChatMessage = { role: "system" | "user" | "assistant"; content: string };
 
@@ -115,16 +116,13 @@ export function parseJsonLoose(text: string): unknown {
 
 let cached: LlmProvider | null = null;
 
+/** The one tested configuration: OpenRouter, which also provides the web-search plugin discovery needs. */
+export const DEFAULT_MODEL = "anthropic/claude-haiku-5.5";
+
 export function getLlm(): LlmProvider {
   if (cached) return cached;
-  const provider = process.env.LLM_PROVIDER ?? "openrouter";
-  const model = process.env.LLM_MODEL || "anthropic/claude-haiku-5.5";
-  if (provider === "openai") {
-    if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY is not set");
-    cached = new OpenAiCompatibleProvider("https://api.openai.com/v1", process.env.OPENAI_API_KEY, model);
-  } else {
-    if (!process.env.OPENROUTER_API_KEY) throw new Error("OPENROUTER_API_KEY is not set");
-    cached = new OpenAiCompatibleProvider("https://openrouter.ai/api/v1", process.env.OPENROUTER_API_KEY, model);
-  }
+  const key = process.env.OPENROUTER_API_KEY;
+  if (!key) throw new Error("OPENROUTER_API_KEY is not set");
+  cached = new OpenAiCompatibleProvider("https://openrouter.ai/api/v1", key, process.env.LLM_MODEL || DEFAULT_MODEL);
   return cached;
 }

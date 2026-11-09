@@ -76,9 +76,18 @@ async function writeAtomic(file: string, body: string) {
   await fs.rename(tmp, file);
 }
 
+export class StorageNotConfiguredError extends Error {
+  constructor() {
+    super("Saving is turned off: this server has no database configured (set the Supabase environment variables).");
+  }
+}
+
 class JsonStore implements Store {
   private tools: Tool[] | null = null;
   private runs: DiscoveryRun[] | null = null;
+
+  /** readOnly: hosted servers without a database. Writes must fail loudly, never vanish into memory. */
+  constructor(private readOnly = false) {}
 
   private async load() {
     if (!this.tools) {
@@ -98,14 +107,12 @@ class JsonStore implements Store {
     return { tools: this.tools, runs: this.runs };
   }
   private async persist() {
-    try {
-      await fs.mkdir(DATA_DIR, { recursive: true });
-      const sorted = [...(this.tools ?? [])].sort((a, b) => a.slug.localeCompare(b.slug));
-      await writeAtomic(TOOLS_FILE, JSON.stringify(sorted, null, 2) + "\n");
-      await writeAtomic(RUNS_FILE, JSON.stringify((this.runs ?? []).slice(0, 50), null, 2) + "\n");
-    } catch {
-      // Read-only filesystem (e.g. Vercel): keep in memory.
-    }
+    if (this.readOnly) throw new StorageNotConfiguredError();
+    // Any write failure propagates: a save that didn't reach disk must not be reported as success.
+    await fs.mkdir(DATA_DIR, { recursive: true });
+    const sorted = [...(this.tools ?? [])].sort((a, b) => a.slug.localeCompare(b.slug));
+    await writeAtomic(TOOLS_FILE, JSON.stringify(sorted, null, 2) + "\n");
+    await writeAtomic(RUNS_FILE, JSON.stringify((this.runs ?? []).slice(0, 50), null, 2) + "\n");
   }
 
   async listTools(opts: { status?: Tool["status"] } = {}) {
@@ -122,6 +129,7 @@ class JsonStore implements Store {
     return tools.find((t) => domainKey(t.canonical_url) === d) ?? null;
   }
   async saveTool(tool: Tool) {
+    if (this.readOnly) throw new StorageNotConfiguredError();
     const { tools } = await this.load();
     const i = tools.findIndex((t) => t.id === tool.id);
     if (i >= 0) tools[i] = tool;
@@ -129,11 +137,13 @@ class JsonStore implements Store {
     await this.persist();
   }
   async createRun(run: DiscoveryRun) {
+    if (this.readOnly) throw new StorageNotConfiguredError();
     const { runs } = await this.load();
     runs.unshift(run);
     await this.persist();
   }
   async saveRun(run: DiscoveryRun) {
+    if (this.readOnly) throw new StorageNotConfiguredError();
     const { runs } = await this.load();
     const i = runs.findIndex((r) => r.id === run.id);
     if (i >= 0) runs[i] = run;
@@ -152,7 +162,8 @@ export function getStore(): Store {
   if (store) return store;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  store = url && key ? new SupabaseStore(createClient(url, key, { auth: { persistSession: false } })) : new JsonStore();
+  // On Vercel the filesystem is ephemeral, so without Supabase the JSON store is read-only and writes throw.
+  store = url && key ? new SupabaseStore(createClient(url, key, { auth: { persistSession: false } })) : new JsonStore(!!process.env.VERCEL);
   return store;
 }
 

@@ -8,6 +8,7 @@ import { getUseCase } from "@/lib/taxonomy/useCases";
 import { FitMeter } from "@/components/FitMeter";
 import { ProfileEditor } from "@/components/ProfileEditor";
 import { Card, Warnings } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 
 /**
  * "How well does this fit my business?" Owners enter (or tweak) their answers and the Fit Score
@@ -55,7 +56,7 @@ export function ToolFitChecker({ tool, initial }: { tool: Tool; initial: Profile
         <>
           {scored && scored.check_first.length > 0 && <Warnings items={scored.check_first} />}
           <details className="rounded-xl border border-line" open={!initial}>
-            <summary className="min-h-11 px-3 flex items-center font-bold">✏️ Your answers</summary>
+            <summary className="min-h-11 px-3 flex items-center font-bold"><Icon name="edit" size={18} className="mr-2 text-gold" />Your answers</summary>
             <div className="p-3 pt-0">
               <ProfileEditor value={profile} onChange={setProfile} />
             </div>

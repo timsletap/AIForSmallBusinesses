@@ -193,3 +193,77 @@ describe("more quote checks from the live data", () => {
     expect(quoteSupports(key, value, quote)).toBe(ok);
   });
 });
+
+describe("placeholder contacts (Goodcall's homepage demo showed a fake caller)", () => {
+  it("ignores fictional 555 numbers and placeholder emails", async () => {
+    const { findRealContact } = await import("@/lib/verification/contact");
+    expect(findRealContact("Incoming call from (555) 010-0199 about a leaky pipe")).toBeNull();
+    expect(findRealContact("Email jane@example.com to book")).toBeNull();
+    expect(findRealContact("Demo (555) 010-0199 · Sales 1-888-721-1115")).toBe("1-888-721-1115");
+    expect(findRealContact("Contact us at hello@waitwhile.com")).toBe("hello@waitwhile.com");
+    expect(findRealContact("1017 Olive St. #300 St. Louis")).toMatch(/1017 Olive St/);
+  });
+
+  it("vendor identity fails when the only phone on the page is a demo number", () => {
+    const c = runVendorChecks({
+      name: "Goodcall",
+      homepage: { finalUrl: "https://goodcall.com", https: true, text: "Goodcall answers calls. Caller: (555) 010-0199" },
+      links: {},
+      fetchedUrls: [],
+      vendor: { value: "Goodcall", source_url: "https://goodcall.com" },
+      contact: null,
+      security: null,
+      price: null,
+      freePlan: null,
+    });
+    expect(c.vendor_identity.pass).toBe(false);
+    expect(c.vendor_identity.note ?? "").not.toMatch(/555/);
+  });
+
+  it("a contact quote with only a fake number doesn't count", async () => {
+    const { quoteSupports } = await import("@/lib/extraction/extract");
+    expect(quoteSupports("contact", "x", "Call (555) 010-0199")).toBe(false);
+  });
+});
+
+describe("track record: website at least 3 months old", () => {
+  it("holds back only sites under 3 months (or unconfirmed)", async () => {
+    const { domainAgeWarning, MIN_DOMAIN_AGE_DAYS } = await import("@/lib/verification/domainAge");
+    expect(MIN_DOMAIN_AGE_DAYS).toBe(90);
+    expect(domainAgeWarning(60)).toMatch(/only about 2 months old/);
+    expect(domainAgeWarning(89)).not.toBeNull();
+    expect(domainAgeWarning(90)).toBeNull();
+    expect(domainAgeWarning(330)).toBeNull();
+    expect(domainAgeWarning(null)).toMatch(/couldn't confirm/);
+  });
+});
+
+describe("contact details check (the company name never fails it)", () => {
+  const base = {
+    name: "HubSpot",
+    homepage: { finalUrl: "https://hubspot.com", https: true, text: "HubSpot" },
+    links: {},
+    fetchedUrls: [],
+    security: null,
+    price: null,
+    freePlan: null,
+  };
+  it("passes with a real contact even when no legal company name is stated", () => {
+    const c = runVendorChecks({ ...base, vendor: null, contact: { value: "1 888 482 7768", source_url: "https://hubspot.com" } });
+    expect(c.vendor_identity.pass).toBe(true);
+    expect(c.vendor_identity.note).toBe("HubSpot · 1 888 482 7768");
+  });
+  it("fails only for missing contact details, with a precise warning", () => {
+    const c = runVendorChecks({ ...base, vendor: { value: "HubSpot, Inc.", source_url: "https://hubspot.com" }, contact: null });
+    expect(c.vendor_identity.pass).toBe(false);
+    expect(checkWarnings(c)).toContain("We couldn't find a phone number, email or address for this company on their site.");
+    expect(checkWarnings(c).join(" ")).not.toMatch(/company's name/);
+  });
+  it("backfill fixes stored tools that failed only for a missing legal name", async () => {
+    const { backfillTool } = await import("@/lib/pipeline/backfill");
+    const t = tool({ name: "Waitwhile", vendor: null, vendor_checks: { ...checks(6), vendor_identity: { pass: false, source_url: null, note: "hello@waitwhile.com" } }, warnings: ["We couldn't find the company's name and a way to contact them."] });
+    expect(backfillTool(t)).toBe(true);
+    expect(t.vendor_checks.vendor_identity.pass).toBe(true);
+    expect(t.warnings).toEqual([]);
+  });
+});

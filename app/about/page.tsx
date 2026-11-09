@@ -5,6 +5,7 @@ import { CHECK_LABELS } from "@/lib/verification/vendorChecks";
 import { CHECK_IDS } from "@/lib/schemas/tool";
 import { domainKey } from "@/lib/discovery/canonical";
 import { Expand } from "@/components/Expand";
+import { Icon } from "@/components/Icon";
 
 export const dynamic = "force-dynamic";
 export const metadata = {
@@ -28,7 +29,7 @@ const PROOF_RULES = [
 
 const CHECK_HOW: Record<string, string> = {
   official_site: "Secure HTTPS site whose domain matches the product",
-  vendor_identity: "Company name plus an email, phone or address",
+  vendor_identity: "A real phone number, email or street address published on their site",
   privacy_policy: "Privacy policy linked from their site",
   terms: "Terms of service linked from their site",
   security_docs: "Security page, trust center or certification",
@@ -45,7 +46,7 @@ const FACTOR_COLORS: Record<FactorId, string> = {
 };
 
 const FACTOR_HOW: Record<FactorId, string> = {
-  use_case: "Built for your exact problem, or just also helps?",
+  use_case: "Built for your problem and for businesses like yours?",
   works_with: "Connects to what you already use, even a phone line",
   trust: "Vendor checks passed, plus a bonus for a hand check",
   affordability: "Full marks within budget, zero at double it",
@@ -64,13 +65,13 @@ export default async function AboutPage() {
 
   return (
     <div className="space-y-16">
-      <header className="space-y-5 max-w-3xl">
+      <header className="mx-auto space-y-5 max-w-3xl text-center pt-4 sm:pt-8">
         <p className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 pl-1.5 pr-3 py-1 text-sm font-bold text-gold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/umd-terrapins-m.svg" alt="" width={18} height={20} className="h-5 w-auto" />
           About · A University of Maryland project
         </p>
-        <h1 className="font-display text-4xl sm:text-6xl font-extrabold leading-[1.02]">
+        <h1 className="font-display text-4xl sm:text-6xl font-semibold leading-[1.02]">
           Every fact has a receipt. <span className="text-gradient">Every vendor is checked.</span>
         </h1>
         <p className="text-lg text-muted">
@@ -86,7 +87,7 @@ export default async function AboutPage() {
           [String(live.length), "approved and live"],
         ].map(([n, l], i) => (
           <div key={l} className={`py-5 px-3 sm:px-5 ${i ? "border-l border-line" : ""}`}>
-            <p className="font-display text-3xl sm:text-5xl font-extrabold">{n}</p>
+            <p className="font-display text-3xl sm:text-5xl font-semibold">{n}</p>
             <p className="text-sm text-muted">{l}</p>
           </div>
         ))}
@@ -94,17 +95,17 @@ export default async function AboutPage() {
 
       <section aria-labelledby="how-h" className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-2">
-          <h2 id="how-h" className="font-display text-2xl sm:text-3xl font-extrabold">
+          <h2 id="how-h" className="font-display text-2xl sm:text-3xl font-semibold">
             How it works, in four parts
           </h2>
           <p className="text-sm text-muted">Tap ⊕ to see the details</p>
         </div>
         <div className="grid gap-3 lg:grid-cols-2 items-start">
-          <Expand icon="🔎" title="Discovered, not submitted" summary="We search the open web and trace every product to its official site." accent="#e21833">
+          <Expand icon={<Icon name="search" />} title="Discovered, not submitted" summary="We search the open web and trace every product to its official site." accent="#e21833">
             <ol className="space-y-3">
               {DISCOVERY_STEPS.map(([h, p], i) => (
                 <li key={h} className="flex gap-3">
-                  <span className="font-display font-extrabold text-gold w-6">0{i + 1}</span>
+                  <span className="font-display font-semibold text-gold w-6">0{i + 1}</span>
                   <span>
                     <span className="font-bold">{h}.</span> <span className="text-muted">{p}</span>
                   </span>
@@ -116,7 +117,7 @@ export default async function AboutPage() {
             </Link>
           </Expand>
 
-          <Expand icon="🧾" title="Proven word-for-word" summary="Every price and claim is tied to an exact quote on the vendor's own page." accent="#ffd200">
+          <Expand icon={<Icon name="receipt" />} title="Proven word-for-word" summary="Every price and claim is tied to an exact quote on the vendor's own page." accent="#ffd200">
             <ul className="space-y-2">
               {PROOF_RULES.map((r) => (
                 <li key={r} className="flex gap-2">
@@ -127,11 +128,11 @@ export default async function AboutPage() {
             </ul>
           </Expand>
 
-          <Expand icon="🛡️" title="Six vendor checks + track record" summary="We check the company, not just the product, and hold back brand-new websites." accent="#ffffff">
+          <Expand icon={<Icon name="shield" />} title="Six vendor checks + track record" summary="We check the company, not just the product, and hold back brand-new websites." accent="#ffffff">
             <ul className="grid gap-2 sm:grid-cols-2">
               {CHECK_IDS.map((id, i) => (
                 <li key={id} className="flex gap-3 rounded-xl bg-surface-2 p-3">
-                  <span className="grid place-items-center h-7 w-7 shrink-0 rounded-full bg-gold text-black font-display font-extrabold text-sm">{i + 1}</span>
+                  <span className="grid place-items-center h-7 w-7 shrink-0 rounded-full bg-gold text-black font-display font-semibold text-sm">{i + 1}</span>
                   <span>
                     <span className="font-bold block">{CHECK_LABELS[id]}</span>
                     <span className="text-sm text-muted">{CHECK_HOW[id]}</span>
@@ -141,7 +142,7 @@ export default async function AboutPage() {
             </ul>
             <p className="mt-3 text-muted">
               <span className="font-bold text-white">Track record:</span> we look up when the website was registered in the
-              public domain registry. Sites under two years old wait for a human review.
+              public domain registry. Sites under three months old wait for a human review.
             </p>
             <div className="mt-4 space-y-1.5">
               {[
@@ -159,7 +160,7 @@ export default async function AboutPage() {
             </div>
           </Expand>
 
-          <Expand icon="🎯" title="Rated beyond reviews: the Fit Score" summary="0–100 for your business, from six weighted factors. Fixed rules, no paid ranking." accent="#ff7a8a">
+          <Expand icon={<Icon name="gauge" />} title="Rated beyond reviews: the Fit Score" summary="0–100 for your business, from six weighted factors. Fixed rules, no paid ranking." accent="#ff7a8a">
             <div className="flex h-4 w-full overflow-hidden rounded-full" role="img" aria-label="Fit Score weights">
               {(Object.keys(WEIGHTS) as FactorId[]).map((f) => (
                 <div key={f} style={{ width: `${WEIGHTS[f]}%`, background: FACTOR_COLORS[f] }} />
@@ -188,7 +189,7 @@ export default async function AboutPage() {
       {example && (
         <section aria-labelledby="receipt-h" className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="space-y-3">
-            <h2 id="receipt-h" className="font-display text-2xl sm:text-3xl font-extrabold">
+            <h2 id="receipt-h" className="font-display text-2xl sm:text-3xl font-semibold">
               A real receipt
             </h2>
             <p className="text-muted">
@@ -221,7 +222,7 @@ export default async function AboutPage() {
         <div className="flex flex-wrap items-center gap-5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/umd-wordmark-white.svg" alt="University of Maryland" width={240} height={48} className="h-10 w-auto" />
-          <h2 id="about-h" className="font-display text-2xl sm:text-3xl font-extrabold">
+          <h2 id="about-h" className="font-display text-2xl sm:text-3xl font-semibold">
             About us
           </h2>
         </div>
@@ -229,7 +230,7 @@ export default async function AboutPage() {
           Built at the University of Maryland by <strong>Smit Patel</strong> and <strong>Daniel Petrov</strong> to give
           Main Street businesses the same confidence with AI that big companies get from an IT department.
         </p>
-        <Expand icon="🤝" title="Our promises" summary="No paid placement. No stored answers. Honest when a tool isn't a fit." accent="#ffd200">
+        <Expand icon={<Icon name="check" />} title="Our promises" summary="No paid placement. No stored answers. Honest when a tool isn't a fit." accent="#ffd200">
           <ul className="space-y-2 text-muted">
             <li>We don&apos;t take money from vendors or sell placement. Rankings come only from the Fit Score.</li>
             <li>We don&apos;t store your answers; they live in your page&apos;s link and nowhere else.</li>

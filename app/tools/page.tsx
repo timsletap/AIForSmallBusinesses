@@ -5,6 +5,7 @@ import { getStore } from "@/lib/storage/db";
 import { INDUSTRIES } from "@/lib/taxonomy/industries";
 import { USE_CASES, getUseCase } from "@/lib/taxonomy/useCases";
 import { Card, EmptyState, TrustBadge, priceText } from "@/components/ui";
+import { PageHeader } from "@/components/PageHeader";
 import { ToolLogo } from "@/components/ToolLogo";
 import type { Tool } from "@/lib/schemas/tool";
 
@@ -35,9 +36,12 @@ export default async function BrowsePage({ searchParams }: { searchParams: SP })
   const tools = filterTools(all, { q, industry, use_case, max_price: Number.isFinite(max_price) ? max_price : null });
 
   return (
-    <div className="space-y-5">
-      <h1 className="text-3xl font-bold text-brand-strong">Browse AI tools</h1>
-      <p className="text-muted">{all.length} checked tools. Every one links back to the vendor&apos;s own website.</p>
+    <div className="space-y-8">
+      <PageHeader
+        eyebrow="The directory"
+        title="Browse AI tools"
+        sub={<>{all.length} vetted tools. Every price and claim links back to the vendor&apos;s own website.</>}
+      />
 
       <form method="get" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-end" role="search">
         <label className="sm:col-span-2 lg:col-span-4">

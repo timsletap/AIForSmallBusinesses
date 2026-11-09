@@ -25,7 +25,7 @@ function ListingCard({ t }: { t: FeaturedTool }) {
       <div className="flex items-center gap-3">
         <ToolLogo name={t.name} url={t.url} size={44} />
         <div className="min-w-0">
-          <p className="font-display text-xl font-extrabold leading-tight">{t.name}</p>
+          <p className="font-display text-xl font-semibold leading-tight">{t.name}</p>
           <p className="text-xs text-white/70">{t.useCase}</p>
         </div>
         <span className="ml-auto shrink-0 whitespace-nowrap rounded-full border border-gold/60 bg-gold/15 px-2 py-0.5 text-[0.7rem] font-bold text-gold">
@@ -41,7 +41,7 @@ function ListingCard({ t }: { t: FeaturedTool }) {
       <div className="mt-4 flex items-end justify-between gap-3">
         <div>
           <p className="text-[0.7rem] uppercase tracking-[0.16em] text-white/60">Price</p>
-          <p className="font-display text-lg font-extrabold">{t.price}</p>
+          <p className="font-display text-lg font-semibold">{t.price}</p>
         </div>
         {t.quote && (
           <p className="max-w-[11rem] text-right text-[0.72rem] leading-snug text-white/70">

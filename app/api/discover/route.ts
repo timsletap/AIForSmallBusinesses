@@ -1,33 +1,28 @@
+import { randomUUID } from "crypto";
+import { NextResponse } from "next/server";
 import { z } from "zod";
-import { runDiscovery } from "@/lib/pipeline/run";
-import { parseLogLine, type DiscoverEvent } from "@/lib/pipeline/events";
-import { buildQuery } from "@/lib/discovery/search";
-import { getStore } from "@/lib/storage/db";
+import { searchCandidates } from "@/lib/discovery/search";
 import { domainKey } from "@/lib/discovery/canonical";
-import { USE_CASE_IDS } from "@/lib/taxonomy/useCases";
-import { INDUSTRY_IDS } from "@/lib/taxonomy/industries";
+import { signCandidate } from "@/lib/pipeline/token";
+import { getStore } from "@/lib/storage/db";
 import { apiError, badInput } from "@/lib/http/errors";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 /** Every public search costs LLM + web-search credit, so it is capped per visitor and per day. */
 const DAILY_PUBLIC_RUNS = 40;
 const PER_VISITOR_WINDOW_MS = 10 * 60_000;
 const PER_VISITOR_RUNS = 3;
+const MAX_CANDIDATES = 3;
 const recentByVisitor = new Map<string, number[]>();
 
-const Body = z
-  .object({
-    query: z.string().trim().min(3).max(160).optional(),
-    use_case: z.enum(USE_CASE_IDS).optional(),
-    industry: z.enum(INDUSTRY_IDS).optional(),
-  })
-  .refine((b) => b.query || b.use_case, { message: "Tell us what you need AI for" });
+const Body = z.object({ query: z.string().trim().min(3).max(160) });
 
 /**
- * Public "Discover new tools": searches the web, extracts facts from official sites, runs vendor
- * checks and adds approved tools to the directory, streaming each step as newline-delimited JSON.
+ * Public discovery, step 1 of 2: search the web and return new candidates (vendors not already in
+ * the directory), each with a short-lived signed token. The browser then sends each candidate to
+ * /api/discover/process, one vendor per request, so no single request can run out of time.
  */
 export async function POST(req: Request) {
   const parsed = Body.safeParse(await req.json().catch(() => null));
@@ -39,70 +34,35 @@ export async function POST(req: Request) {
   if (mine.length >= PER_VISITOR_RUNS) {
     return apiError(429, "slow_down", "You've run a few searches already. Please try again in about 10 minutes.");
   }
+  const store = getStore();
   const today = new Date().toISOString().slice(0, 10);
-  const runsToday = (await getStore().listRuns(DAILY_PUBLIC_RUNS + 10)).filter(
-    (r) => r.started_at.startsWith(today) && r.query.source === "public",
-  ).length;
+  const runsToday = (await store.listRuns(DAILY_PUBLIC_RUNS + 10)).filter((r) => r.started_at.startsWith(today) && r.query.source === "public").length;
   if (runsToday >= DAILY_PUBLIC_RUNS) {
     return apiError(429, "daily_limit", "We've hit today's search limit. Browse the directory, or try again tomorrow.");
   }
   recentByVisitor.set(visitor, [...mine, now]);
 
-  const b = parsed.data;
-  const query = b.query ? `AI software for small businesses: ${b.query}` : buildQuery(b.use_case!, b.industry ?? "other");
-  const encoder = new TextEncoder();
-
-  const stream = new ReadableStream({
-    async start(controller) {
-      const send = (e: DiscoverEvent) => controller.enqueue(encoder.encode(JSON.stringify(e) + "\n"));
-      let current: { name: string; url: string } | null = null;
-      const results: Extract<DiscoverEvent, { type: "result" }>[] = [];
-      try {
-        const run = await runDiscovery(
-          { query, useCase: b.use_case, industry: b.industry, max: 3, onlyNew: true, source: "public" },
-          (line) => {
-            const e = parseLogLine(line, current);
-            if (!e) return;
-            if (e.type === "candidate") current = { name: e.name, url: e.url };
-            if (e.type === "result") results.push(e);
-            if (e.type !== "result") send(e);
-          },
-        );
-        // Attach directory links and the plain reason a tool was held.
-        const tools = await getStore().listTools();
-        for (const r of results) {
-          const t = tools.find((x) => x.name === r.name) ?? null;
-          if (t) {
-            r.slug = t.status === "published" ? t.slug : undefined;
-            if (t.status !== "published") r.detail = t.warnings[0] ?? r.detail;
-          }
-          send(r);
-        }
-        const approved = results.filter((r) => r.status === "published").length;
-        send({
-          type: "done",
-          approved,
-          held: results.length - approved,
-          message:
-            run.counts.found === 0
-              ? "No new tools this time: everything we found is already in the directory."
-              : `${approved} new tool${approved === 1 ? "" : "s"} added to the directory.`,
-        });
-      } catch (e) {
-        send({ type: "error", message: `Discovery stopped: ${(e as Error).message.slice(0, 120)}` });
-      } finally {
-        controller.close();
-      }
-    },
-  });
-  return new Response(stream, { headers: { "Content-Type": "application/x-ndjson", "Cache-Control": "no-store" } });
-}
-
-/** Newest tools in the directory, for the "Recently discovered" feed. */
-export async function GET() {
-  const tools = (await getStore().listTools({ status: "published" }))
-    .sort((a, b) => b.last_checked_at.localeCompare(a.last_checked_at))
-    .slice(0, 8)
-    .map((t) => ({ name: t.name, slug: t.slug, domain: domainKey(t.canonical_url), use_case: t.use_cases[0], checked: t.last_checked_at }));
-  return Response.json({ tools });
+  const query = `AI software for small businesses: ${parsed.data.query}`;
+  try {
+    const found = await searchCandidates(query, MAX_CANDIDATES * 3);
+    const known = new Set((await store.listTools()).map((t) => domainKey(t.canonical_url)));
+    const fresh = found.filter((c) => !known.has(domainKey(c.url))).slice(0, MAX_CANDIDATES);
+    const runId = randomUUID();
+    await store.createRun({
+      id: runId,
+      query: { query, source: "public" },
+      status: "running",
+      counts: { found: fresh.length, new: 0, updated: 0, skipped: found.length - fresh.length, failed: 0 },
+      log: [`search: "${query}"`, `found ${fresh.length} new candidate(s): ${fresh.map((c) => c.name).join(", ") || "none"}`],
+      started_at: new Date().toISOString(),
+      finished_at: null,
+    });
+    return NextResponse.json({
+      runId,
+      skipped: found.length - fresh.length,
+      candidates: fresh.map((c) => ({ name: c.name, url: c.url, token: signCandidate(runId, c.url) })),
+    });
+  } catch (e) {
+    return apiError(502, "search_failed", `The web search didn't work right now: ${(e as Error).message.slice(0, 100)}`);
+  }
 }

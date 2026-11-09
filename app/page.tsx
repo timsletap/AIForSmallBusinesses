@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProblemBox } from "@/components/ProblemBox";
 import { HeroGlass, type FeaturedTool } from "@/components/HeroGlass";
+import { ShellArt } from "@/components/ShellArt";
 import { ToolLogo } from "@/components/ToolLogo";
 import { Icon } from "@/components/Icon";
 import { priceText } from "@/components/ui";
@@ -19,7 +20,6 @@ export default async function Home() {
   const live = all.filter(isRecommendable);
   // Hero: a real listing with a verified price quote and full checks.
   const pick =
-    live.find((t) => t.slug === "goodcall" && t.evidence.price_monthly_min) ??
     [...live].sort((a, b) => passed(b) - passed(a)).find((t) => t.evidence.price_monthly_min) ??
     live[0];
   const featured: FeaturedTool | null = pick
@@ -37,22 +37,42 @@ export default async function Home() {
   const byUseCase = (id: string) => live.filter((t) => t.use_cases.includes(id as Tool["use_cases"][number])).length;
 
   return (
-    <div className="space-y-20">
-      <section className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center pt-2 sm:pt-8">
-        <div className="space-y-7">
-          <p className="flex items-center gap-2.5 text-sm font-bold text-muted">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/umd-terrapins-m.svg" alt="" width={16} height={18} className="h-[18px] w-auto" />
-            <span className="text-white">University of Maryland</span>
-            <span aria-hidden className="h-1 w-1 rounded-full bg-line-strong" />
-            AI directory for Main Street businesses
+    <div className="space-y-24">
+      {/* Hero: centerpiece shell, giant headline across it, mono captions either side */}
+      <section className="relative -mt-4 flex min-h-[70vh] flex-col items-center justify-center overflow-hidden sm:min-h-[78vh]">
+        <ShellArt className="float-slow absolute left-1/2 top-1/2 w-[min(640px,92vw)] -translate-x-1/2 -translate-y-1/2" />
+        <h1 className="relative z-10 text-center text-[clamp(3.1rem,11vw,9.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-[#f2f2f6] drop-shadow-[0_8px_30px_rgba(0,0,0,.55)]">
+          Find AI
+          <br />
+          that fits<span className="text-gold">.</span>
+        </h1>
+        <div className="relative z-10 mt-10 grid w-full grid-cols-1 gap-4 font-mono text-[0.72rem] uppercase leading-relaxed tracking-[0.04em] text-muted sm:grid-cols-2">
+          <p className="max-w-[17rem] text-center sm:text-left">An AI directory for Main Street and rural small businesses</p>
+          <p className="max-w-[19rem] text-center sm:ml-auto sm:text-right">
+            A University of Maryland project. {live.length} tools, each verified on the vendor&apos;s own site.
           </p>
-          <h1 className="font-display text-[2.6rem] sm:text-6xl font-extrabold leading-[1.02] tracking-tight">
-            Find AI tools that actually fit your business<span className="text-gold">.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-muted max-w-xl">
-            {live.length} vetted AI products for restaurants, salons, trades and shops, each with its real price, six vendor
-            checks, and a score for how well it fits <em className="text-white not-italic">your</em> business.
+        </div>
+      </section>
+
+      {/* Three pillars, mono labels over a dotted rule */}
+      <section aria-label="What we do" className="space-y-6">
+        <div className="grid grid-cols-3 font-mono text-[0.7rem] uppercase tracking-[0.08em] text-muted">
+          <span>Discovered</span>
+          <span className="text-center">Verified</span>
+          <span className="text-right">Scored for you</span>
+        </div>
+        <div className="dotted-rule" />
+      </section>
+
+      {/* Ask */}
+      <section className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="space-y-6">
+          <h2 className="text-4xl sm:text-5xl font-semibold leading-[1.02] tracking-[-0.045em]">
+            Tell us what&apos;s slowing you down.
+          </h2>
+          <p className="text-lg text-muted max-w-xl">
+            We match you with vetted tools that fit your budget and the things you already use, each with its real price,
+            six vendor checks, and a Fit Score for <em className="text-white not-italic">your</em> business.
           </p>
           <div className="rounded-2xl border border-line bg-surface p-4 sm:p-6">
             <ProblemBox />
@@ -70,7 +90,7 @@ export default async function Home() {
       {/* Real vendors in the directory */}
       <section aria-labelledby="dir-h" className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-line pb-4">
-          <h2 id="dir-h" className="text-sm font-bold uppercase tracking-[0.18em] text-muted">
+          <h2 id="dir-h" className="font-mono text-[0.7rem] uppercase tracking-[0.08em] text-muted">
             In the directory now
           </h2>
           <p className="text-sm text-muted">
@@ -78,23 +98,36 @@ export default async function Home() {
             re-checked daily
           </p>
         </div>
-        <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2">
-          {live.slice(0, 20).map((t) => (
-            <li key={t.id}>
-              <Link
-                href={`/tools/${t.slug}`}
-                className="flex items-center gap-3 rounded-xl border border-transparent px-2 py-2 hover:border-line hover:bg-surface transition"
+        {/* Two rows scrolling in opposite directions; hover or keyboard focus pauses them. */}
+        <div className="space-y-3">
+          {[live.filter((_, i) => i % 2 === 0), live.filter((_, i) => i % 2 === 1)].map((row, r) => (
+            <div key={r} className="marquee">
+              <ul
+                className={`marquee-track gap-3 py-1 ${r ? "reverse" : ""}`}
+                style={{ ["--marquee-duration" as string]: `${Math.max(24, row.length * 4)}s` }}
               >
-                <ToolLogo name={t.name} url={t.canonical_url} size={32} />
-                <span className="truncate font-bold text-[0.95rem]">{t.name}</span>
-              </Link>
-            </li>
+                {[0, 1].map((copy) =>
+                  row.map((t) => (
+                    <li key={`${copy}-${t.id}`} aria-hidden={copy === 1 ? true : undefined} className="shrink-0">
+                      <Link
+                        href={`/tools/${t.slug}`}
+                        tabIndex={copy === 1 ? -1 : undefined}
+                        className="flex items-center gap-3 rounded-2xl border border-line bg-surface/80 py-2.5 pl-2.5 pr-5 transition hover:border-gold hover:bg-surface"
+                      >
+                        <ToolLogo name={t.name} url={t.canonical_url} size={36} />
+                        <span className="whitespace-nowrap font-bold">{t.name}</span>
+                      </Link>
+                    </li>
+                  )),
+                )}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section id="problems" aria-labelledby="problems-h" className="space-y-5 scroll-mt-20">
-        <h2 id="problems-h" className="font-display text-2xl sm:text-3xl font-extrabold">
+        <h2 id="problems-h" className="font-display text-2xl sm:text-3xl font-semibold">
           Start from the problem
         </h2>
         <ul className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
@@ -117,7 +150,7 @@ export default async function Home() {
 
       <section aria-labelledby="why-h" className="grid gap-8 lg:grid-cols-[1fr_2fr]">
         <div className="space-y-3">
-          <h2 id="why-h" className="font-display text-2xl sm:text-3xl font-extrabold">
+          <h2 id="why-h" className="font-display text-2xl sm:text-3xl font-semibold">
             Built for trust, not clicks
           </h2>
           <Link href="/about" className="inline-flex items-center gap-1.5 text-sm font-bold text-gold hover:underline">

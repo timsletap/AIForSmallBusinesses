@@ -18,12 +18,20 @@ export function buildReasons(s: Scored, p: Profile): string[] {
   const bullets: Bullet[] = [];
 
   const uc = getUseCase(s.matched_use_case);
+  const primary = t.use_cases[0] === s.matched_use_case;
   bullets.push({
     factor: "use_case",
-    good: f.use_case.f >= 1,
+    good: primary,
     strength: f.use_case.f * f.use_case.weight,
-    text: f.use_case.f >= 1 ? `Built for ${uc?.reason}` : `Also helps with ${uc?.reason}`,
+    text: primary ? `Built for ${uc?.reason}` : `Also helps with ${uc?.reason}`,
   });
+
+  const ind = industryById(p.industry);
+  if (s.industry_fit === "match" && ind) {
+    bullets.push({ factor: "use_case", good: true, strength: 13, text: `Made for ${ind.label.toLowerCase()} businesses like yours` });
+  } else if (s.industry_fit === "other_industries" && ind) {
+    bullets.push({ factor: "use_case", good: false, strength: 9, text: `Not made specifically for ${ind.label.toLowerCase()} businesses` });
+  }
 
   if (s.relevant_tools.length) {
     bullets.push(

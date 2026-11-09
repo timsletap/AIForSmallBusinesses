@@ -104,6 +104,8 @@ export async function processCandidate(
   const evidence: Record<string, Evidence> = {};
   for (const k of CITED_KEYS) {
     const c = v[k];
+    // "No free plan" needs no receipt; a trial or demo quote shown under "Free plan" would mislead.
+    if (k === "free_plan" && c?.value !== true) continue;
     if (c) evidence[k] = { source_url: c.source_url, quote: c.quote, claim_type: c.claim_type };
   }
 
@@ -187,6 +189,8 @@ export async function processCandidate(
   return { outcome: existing ? "updated" : "new", tool: merged };
 }
 
+const TIME_BUDGET_MS = 150_000;
+
 export type DiscoverInput = {
   query?: string;
   useCase?: UseCaseId;
@@ -229,7 +233,13 @@ export async function runDiscovery(input: DiscoverInput, onLog?: Log): Promise<D
     }
     run.counts.found = cands.length;
     log(`found ${cands.length} candidate(s): ${cands.map((c) => c.name).join(", ") || "no new vendors this time"}`);
+    // Server-side runs (cron, admin) share one request: never start a vendor late enough to hit the 300s limit.
+    const startedAt = Date.now();
     for (const c of cands) {
+      if (Date.now() - startedAt > TIME_BUDGET_MS) {
+        log(`stopping early to stay within the time limit; ${c.name} will be checked on a later run`);
+        break;
+      }
       try {
         const { outcome } = await processCandidate(c, log, { useCase: input.useCase, industry: input.industry });
         run.counts[outcome]++;

@@ -1,5 +1,131 @@
 [
   {
+    "id": "55a18897-2114-43d8-b90f-3ccd6418963b",
+    "slug": "activ8",
+    "name": "Activ8",
+    "vendor": "Inst8 Limited",
+    "canonical_url": "https://activ8sms.com",
+    "description": "Texts new enquiries from your own phone number, and an AI assistant answers questions and books appointments.",
+    "status": "draft",
+    "use_cases": [
+      "missed_calls",
+      "booking_waitlist",
+      "auto_replies",
+      "win_back"
+    ],
+    "industries": [
+      "salon_barber",
+      "hvac_plumbing",
+      "retail",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 14,
+      "est_monthly_usd_min": 47,
+      "est_monthly_usd_max": 97,
+      "plan_name": "Starter",
+      "pricing_url": "https://activ8sms.com/pricing"
+    },
+    "integrations": [
+      "shopify",
+      "gmail_outlook",
+      "instagram_facebook"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [
+      "An Android phone with a SIM card to send texts from your own number",
+      "A Google or Outlook calendar to book appointments into",
+      "A phone plan that covers the texts you send"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Sign up for the free trial with your name, email and a password",
+      "Install the app on your Android phone and scan the QR code",
+      "Pick the SIM that your texts should send from",
+      "Run the guided AI setup (about 10 minutes) with your prices, services and hours",
+      "Start a ready-made campaign and choose the days and hours for booking"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/",
+        "note": "Website registered in 2025"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/pricing",
+        "note": "Inst8 Limited · support@activ8sms.com"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/security",
+        "note": null
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://activ8sms.com/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 12 months old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "© 2026 Inst8 Limited. Activ8 is operated by Inst8 Limited, Auckland, New Zealand.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "Guides support@activ8sms.com Company About us",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "Starter Best for one person texting from one phone US$47 /month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://activ8sms.com",
+        "quote": "Works with the tools you already use HighLevel HubSpot Zoho CRM Shopify Google Calendar Microsoft Outlook WhatsApp",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "Try Activ8 free for 14 days: no card needed, cancel any time.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "Single License Best for a business with a team, or a few locations US$97 /month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://activ8sms.com/pricing",
+        "quote": "Starter Best for one person texting from one phone US$47 /month",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T02:59:04.311+00:00",
+    "admin_reviewed": false
+  },
+  {
     "id": "d70ba302-dc34-4d72-9980-a6827838b633",
     "slug": "aedan-rose",
     "name": "Aedan Rose",
@@ -595,6 +721,128 @@
     "admin_reviewed": false
   },
   {
+    "id": "e592aee2-ac3f-4f6a-a6de-64871121e58e",
+    "slug": "billy",
+    "name": "Billy",
+    "vendor": "Billy",
+    "canonical_url": "https://usebilly.io",
+    "description": "A sales CRM that finds local prospects, sends outreach from your Gmail, and tracks replies and deals.",
+    "status": "draft",
+    "use_cases": [
+      "win_back",
+      "customer_list"
+    ],
+    "industries": [
+      "coffee_bakery",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": null,
+      "est_monthly_usd_min": 29,
+      "est_monthly_usd_max": 79,
+      "plan_name": "Starter CRM",
+      "pricing_url": "https://usebilly.io/"
+    },
+    "integrations": [
+      "gmail_outlook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A Gmail account to send outreach from"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create an account and tell Billy who you sell to",
+      "Connect your Gmail",
+      "Pick a plan and start your first local lead campaign",
+      "Review the drafted outreach and approve what to send"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://usebilly.io/",
+        "note": null
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://usebilly.io/",
+        "note": "Billy · bill@treetopgrowthstrategy.com"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://usebilly.io/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://usebilly.io/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://usebilly.io/security",
+        "note": "Encrypted in transit (TLS), workspace isolation, passwordless sign-in"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://usebilly.io/",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "We couldn't confirm how long this company's website has existed."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://usebilly.io/",
+        "quote": "© 2026 Billy. The Agentic Sales CRM for SMBs.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://usebilly.io/security",
+        "quote": "email bill@treetopgrowthstrategy.com",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://usebilly.io/security",
+        "quote": "Encrypted in transit (TLS)",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://usebilly.io/",
+        "quote": "Starter CRM The CRM, organized. $29/mo",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://usebilly.io/",
+        "quote": "Sends from your own Gmail, so replies come back to you",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://usebilly.io/privacy",
+        "quote": "Billy works as a CRM without it.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://usebilly.io/",
+        "quote": "Marketing Capture more inbound. $79/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://usebilly.io/",
+        "quote": "Starter CRM The CRM, organized. $29/mo",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T03:19:01.898+00:00",
+    "admin_reviewed": false
+  },
+  {
     "id": "0f374856-fe85-4e29-bf90-8fe7879f9a40",
     "slug": "bimbly-receptionist",
     "name": "Bimbly Receptionist",
@@ -950,6 +1198,139 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:46:34.7+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "844a1a33-bab6-490d-9a07-65e497ed5adb",
+    "slug": "booklee",
+    "name": "Booklee",
+    "vendor": "Booklee Inc.",
+    "canonical_url": "https://booklee.io",
+    "description": "Booklee is an AI receptionist and booking tool that answers client texts, books appointments, and sends reminders.",
+    "status": "draft",
+    "use_cases": [
+      "missed_calls",
+      "booking_waitlist",
+      "auto_replies",
+      "customer_list",
+      "win_back"
+    ],
+    "industries": [
+      "salon_barber",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": false,
+      "free_trial_days": 14,
+      "est_monthly_usd_min": 19.99,
+      "est_monthly_usd_max": 19.99,
+      "plan_name": "One plan",
+      "pricing_url": "https://booklee.io/pricing"
+    },
+    "integrations": [
+      "instagram_facebook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A device with the Booklee app (iPhone, iPad, Android) or a web browser",
+      "Your business services, prices and working hours entered in the app"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Start the 14-day free trial with no card needed",
+      "Sign up and finish the short account review",
+      "Add your services, prices, staff and working hours",
+      "Share your booking page link on Instagram or Google",
+      "Let the AI receptionist answer client texts and bookings"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://booklee.io/",
+        "note": null
+      },
+      "vendor_identity": {
+        "pass": false,
+        "source_url": "https://booklee.io/privacy",
+        "note": "Booklee Inc."
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://booklee.io/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://booklee.io/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://booklee.io/privacy",
+        "note": "Data encrypted in transit and at rest"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://booklee.io/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "We couldn't confirm how long this company's website has existed.",
+      "We couldn't find the company's name and a way to contact them."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://booklee.io/privacy",
+        "quote": "Booklee Inc. (\"Booklee\", \"we\") provides an AI receptionist and booking platform for appointment businesses.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://booklee.io/privacy",
+        "quote": "Data is encrypted in transit and at rest.",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "One plan. Everything in it.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "One plan. Everything in it.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "AI receptionist, 24/7 on SMS, Instagram & WhatsApp",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "14 days free with no card up front.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://booklee.io",
+        "quote": "It's all one app, from the first text to the reminder the day before",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "Is the AI receptionist really included? Yes. Every capability, including the AI, is in the one $19.99 plan.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://booklee.io/pricing",
+        "quote": "Is the AI receptionist really included? Yes. Every capability, including the AI, is in the one $19.99 plan.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T02:59:30.704+00:00",
     "admin_reviewed": false
   },
   {
@@ -1403,6 +1784,114 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:49:20.541+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "08ce1cbe-21af-4aa0-838f-0c9aee187fd4",
+    "slug": "cheeky-table",
+    "name": "Cheeky Table",
+    "vendor": "Cheeky Table",
+    "canonical_url": "https://cheekytable.com",
+    "description": "Online table booking system for independent cafés, bars and restaurants, with one flat monthly price and no commission.",
+    "status": "draft",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "industries": [
+      "restaurant",
+      "coffee_bakery"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 14,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": null,
+      "pricing_url": "https://cheekytable.com/pricing"
+    },
+    "integrations": [
+      "instagram_facebook"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create an account and claim the free period (no card needed)",
+      "Add your opening hours, shifts and tables in the guided setup",
+      "Share your booking link in your Instagram bio and Google profile",
+      "Embed the booking widget on your website or print a QR poster",
+      "Seat and manage guests from one screen during service"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://cheekytable.com/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://cheekytable.com",
+        "note": "Cheeky Table · hello@cheekytable.com"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://cheekytable.com/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://cheekytable.com/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://cheekytable.com",
+        "note": "Data is encrypted and kept separate from other restaurants' data"
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": "https://cheekytable.com/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 8 months old, so there's little track record.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://cheekytable.com",
+        "quote": "© 2026 Cheeky Table",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://cheekytable.com/privacy",
+        "quote": "If you have privacy questions, contact us at hello@cheekytable.com",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://cheekytable.com",
+        "quote": "Your data is encrypted and kept apart from every other restaurant's.",
+        "claim_type": "vendor_claim"
+      },
+      "integrations": {
+        "source_url": "https://cheekytable.com",
+        "quote": "Put it in your Instagram bio and Google profile, embed the widget on your site, or print a QR poster.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://cheekytable.com/pricing",
+        "quote": "Once the 100 places are gone, new venues get a 14-day free trial.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T02:54:09.234+00:00",
     "admin_reviewed": false
   },
   {
@@ -2017,6 +2506,128 @@
     "admin_reviewed": false
   },
   {
+    "id": "54241aae-0a71-4425-bb71-56216a2c044b",
+    "slug": "farnor",
+    "name": "Farnor",
+    "vendor": "Farnor Labs, LLC",
+    "canonical_url": "https://farnor.ai",
+    "description": "All-in-one workspace for small businesses to manage customers, projects, documents and websites.",
+    "status": "draft",
+    "use_cases": [
+      "customer_list"
+    ],
+    "industries": [
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": null,
+      "est_monthly_usd_min": 200,
+      "est_monthly_usd_max": 230,
+      "plan_name": "Paid",
+      "pricing_url": "https://farnor.ai/pricing"
+    },
+    "integrations": [
+      "excel_sheets"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "An account for Google Sheets, Slack or Stripe to connect",
+      "A Farnor workspace (free tier works with no card)"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create a free workspace with no credit card",
+      "Invite your first teammate (Free includes two people)",
+      "Connect Google Sheets, Slack or Stripe",
+      "Pick a trigger and the actions that follow, then test with a preview run",
+      "Check the run history after switching it on"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://farnor.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://farnor.ai/security",
+        "note": "Farnor Labs, LLC · hello@farnor.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://farnor.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://farnor.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://farnor.ai/security",
+        "note": "Security page; no SOC 2 or ISO 27001 certification yet"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://farnor.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 4 months old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://farnor.ai/security",
+        "quote": "© 2026 Farnor Labs, LLC. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://farnor.ai/security",
+        "quote": "or hello@farnor.ai if that bounces",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://farnor.ai/security",
+        "quote": "Do you hold SOC 2, ISO 27001 or similar? No, and not yet.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://farnor.ai/pricing",
+        "quote": "Paid $200 /month The caps come off, and everyone else comes in.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://farnor.ai/connect",
+        "quote": "Four things work now: your own Farnor workspace, Google Sheets, Slack and Stripe.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://farnor.ai/pricing",
+        "quote": "Connect works on its own",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://farnor.ai/pricing",
+        "quote": "You and three $230",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://farnor.ai/pricing",
+        "quote": "Paid $200 /month The caps come off, and everyone else comes in.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T03:08:27.319+00:00",
+    "admin_reviewed": false
+  },
+  {
     "id": "01f46049-c4ac-43dc-88f3-be9cebf8c365",
     "slug": "fieldpulse",
     "name": "FieldPulse",
@@ -2377,13 +2988,13 @@
     "name": "Fresha",
     "vendor": "Fresha.com SV Limited",
     "canonical_url": "https://fresha.com",
-    "description": "Online booking, calendar, and payment software for salons, barbers, spas, and other beauty and wellness businesses.",
+    "description": "Online booking and client management software for salons, barbers, spas and other beauty and wellness businesses.",
     "status": "published",
     "use_cases": [
       "booking_waitlist",
+      "missed_calls",
       "customer_list",
-      "win_back",
-      "missed_calls"
+      "win_back"
     ],
     "industries": [
       "salon_barber",
@@ -2404,10 +3015,11 @@
     "integration_requirements": [],
     "setup_complexity": "low",
     "setup_steps": [
-      "Sign up for the Independent or Team plan online",
-      "Add your services, prices, and calendar hours",
-      "Share your Fresha booking link on Instagram or Facebook",
-      "Add team members if you have more than one stylist"
+      "Create a Fresha account and choose the Independent or Team plan",
+      "Add your services, prices and appointment lengths",
+      "Add your team members and their calendars",
+      "Share your direct booking link on your website, Instagram or Facebook",
+      "Turn on automated appointment reminders"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -2415,7 +3027,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.fresha.com/",
-        "note": null
+        "note": "Website registered in 2005"
       },
       "vendor_identity": {
         "pass": true,
@@ -2435,7 +3047,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://www.fresha.com/pricing",
-        "note": "ISO 27001 certification for information security"
+        "note": "ISO 27001 certification and GDPR compliance, listed on the pricing page"
       },
       "public_pricing": {
         "pass": true,
@@ -2461,11 +3073,6 @@
         "quote": "ISO 27001 Globally recognized standard for information security",
         "claim_type": "fact"
       },
-      "free_plan": {
-        "source_url": "https://www.fresha.com/pricing",
-        "quote": "businesses with teams can take advantage of a 7-day free trial",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://www.fresha.com/pricing",
         "quote": "Independent 7 day trial $19.95 per month",
@@ -2473,7 +3080,7 @@
       },
       "integrations": {
         "source_url": "https://www.fresha.com/pricing",
-        "quote": "Free Facebook bookings Free Instagram bookings",
+        "quote": "Send events about certain actions to Google Analytics, and create goals based on events",
         "claim_type": "fact"
       },
       "free_trial_days": {
@@ -2493,7 +3100,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T02:41:23.3+00:00",
+    "last_checked_at": "2026-11-09T03:28:03.224+00:00",
     "admin_reviewed": false
   },
   {
@@ -2502,7 +3109,7 @@
     "name": "Goodcall",
     "vendor": "Goodcall",
     "canonical_url": "https://goodcall.com",
-    "description": "Goodcall is an AI phone agent that answers business calls, captures leads, and books appointments on your calendar.",
+    "description": "Goodcall is an AI phone agent that answers business calls, captures leads, and books appointments.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -2511,7 +3118,8 @@
     ],
     "industries": [
       "hvac_plumbing",
-      "retail"
+      "retail",
+      "other"
     ],
     "pricing": {
       "free_plan": false,
@@ -2527,16 +3135,16 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A business phone number you can forward, or a new local Goodcall number",
-      "A Google Calendar account if you want online booking",
-      "A Zapier account if you want to send call details to your CRM or other tools"
+      "A business phone number, either a new local number or your existing line set up to forward calls",
+      "A Google Calendar account if you want the agent to book appointments"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Describe your business to Gabi in plain words",
-      "Test the practice calls and approve the agent",
-      "Pick a local number or forward your existing business line",
-      "Connect Google Calendar or another tool you use"
+      "Create an account and describe your business, or hand Gabi your website",
+      "Test the agent with practice calls and approve it",
+      "Pick a local number or set up call forwarding from your existing line",
+      "Connect your calendar and CRM",
+      "Choose a plan once you connect a number"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -2544,12 +3152,12 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.goodcall.com/",
-        "note": null
+        "note": "Website registered in 1996"
       },
       "vendor_identity": {
-        "pass": true,
+        "pass": false,
         "source_url": "https://goodcall.com",
-        "note": "Goodcall · (555) 010-0199"
+        "note": "Goodcall"
       },
       "privacy_policy": {
         "pass": true,
@@ -2564,7 +3172,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://goodcall.com",
-        "note": "SOC 2 compliant and HIPAA compliant"
+        "note": "SOC 2 compliant; HIPAA compliant"
       },
       "public_pricing": {
         "pass": true,
@@ -2573,7 +3181,9 @@
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "We couldn't find the company's name and a way to contact them."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://goodcall.com",
@@ -2585,11 +3195,6 @@
         "quote": "SOC 2 compliant",
         "claim_type": "fact"
       },
-      "free_plan": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Start free with a demo agent. Add a number when you're ready.",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://www.goodcall.com/pricing",
         "quote": "Starter $79 a month",
@@ -2597,17 +3202,17 @@
       },
       "integrations": {
         "source_url": "https://goodcall.com",
-        "quote": "Tool Google Calendar, connected",
+        "quote": "connect Goodcall to Zapier",
         "claim_type": "fact"
       },
       "works_standalone": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Every plan includes a local number, and you can keep your existing one instead by forwarding it to us.",
+        "source_url": "https://goodcall.com",
+        "quote": "Rosie answers on a local number you pick",
         "claim_type": "fact"
       },
       "price_monthly_max": {
         "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Most popular $129 a month",
+        "quote": "Growth Most popular $129 a month",
         "claim_type": "fact"
       },
       "price_monthly_min": {
@@ -2617,7 +3222,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T02:37:48.301+00:00",
+    "last_checked_at": "2026-11-09T03:27:44.58+00:00",
     "admin_reviewed": false
   },
   {
@@ -2755,13 +3360,13 @@
     "name": "Housecall Pro",
     "vendor": "Codefied Inc.",
     "canonical_url": "https://housecallpro.com",
-    "description": "Field service software that helps home service pros book jobs, dispatch crews, send quotes, and get paid.",
+    "description": "Field service software that handles scheduling, dispatching, estimates, invoices, payments, and online booking for home service businesses.",
     "status": "published",
     "use_cases": [
       "scheduling_dispatch",
       "missed_calls",
       "booking_waitlist",
-      "auto_replies"
+      "customer_list"
     ],
     "industries": [
       "hvac_plumbing",
@@ -2777,19 +3382,21 @@
       "pricing_url": "https://www.housecallpro.com/pricing"
     },
     "integrations": [
-      "quickbooks"
+      "quickbooks",
+      "phone_line"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A QuickBooks Online account if you want to sync data from QuickBooks"
+      "A business phone number if you want call answering",
+      "A QuickBooks account if you want to sync invoice data"
     ],
-    "setup_complexity": "medium",
+    "setup_complexity": "low",
     "setup_steps": [
-      "Start a 14-day free trial",
-      "Add your services and price book",
-      "Add your team members and assign jobs",
-      "Connect online booking to your website or Google",
-      "Turn on automated review requests"
+      "Start a free trial with an email address; no credit card is required",
+      "Tell Housecall Pro your trade and team size to get a suggested plan",
+      "Choose a plan and set up your services and pricing",
+      "Turn on online booking and review requests on your website or Google profile",
+      "Connect QuickBooks or other tools you already use, if needed"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -2797,7 +3404,7 @@
       "official_site": {
         "pass": true,
         "source_url": "https://www.housecallpro.com/",
-        "note": null
+        "note": "Website registered in 2014"
       },
       "vendor_identity": {
         "pass": true,
@@ -2834,18 +3441,13 @@
         "claim_type": "fact"
       },
       "contact": {
-        "source_url": "https://housecallpro.com",
-        "quote": "Get in touch: 858-842-5746 support@housecallpro.com Follow our Socials",
+        "source_url": "https://www.housecallpro.com/integrations/",
+        "quote": "Get in touch: 858-842-5746 support@housecallpro.com",
         "claim_type": "fact"
       },
       "security": {
         "source_url": "https://www.housecallpro.com/integrations/",
         "quote": "Trust and Security AI Guidance & Info",
-        "claim_type": "fact"
-      },
-      "free_plan": {
-        "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "Try 14 days free. No credit card required. Cancel anytime.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2855,17 +3457,17 @@
       },
       "integrations": {
         "source_url": "https://www.housecallpro.com/integrations/",
-        "quote": "Intuit QuickBooks Sync invoice data from Housecall Pro to QuickBooks Desktop",
+        "quote": "Extend the functionality of Housecall Pro with popular 3rd party integrations.",
         "claim_type": "fact"
       },
       "free_trial_days": {
         "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "Try 14 days free.",
+        "quote": "Try 14 days free. No credit card required. Cancel anytime.",
         "claim_type": "fact"
       },
       "price_monthly_max": {
         "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "Saving $40/mo $149/mo $189/mo",
+        "quote": "$149/mo",
         "claim_type": "fact"
       },
       "price_monthly_min": {
@@ -2875,7 +3477,7 @@
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T02:37:49.25+00:00",
+    "last_checked_at": "2026-11-09T03:28:34.709+00:00",
     "admin_reviewed": false
   },
   {
@@ -3486,6 +4088,120 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-09T02:38:08.577+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "8c652563-6669-49fe-b61a-24081341e255",
+    "slug": "leads-ranger",
+    "name": "Leads Ranger",
+    "vendor": "Leads Ranger",
+    "canonical_url": "https://leadsranger.com",
+    "description": "Finds local businesses, verifies their emails, and runs AI outreach across email, WhatsApp and LinkedIn.",
+    "status": "draft",
+    "use_cases": [
+      "customer_list",
+      "auto_replies"
+    ],
+    "industries": [
+      "other"
+    ],
+    "pricing": {
+      "free_plan": true,
+      "free_trial_days": null,
+      "est_monthly_usd_min": 0,
+      "est_monthly_usd_max": null,
+      "plan_name": null,
+      "pricing_url": "https://leadsranger.com/pricing"
+    },
+    "integrations": [
+      "gmail_outlook",
+      "instagram_facebook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "An email mailbox you already own, such as Gmail, Outlook or an SMTP account",
+      "A phone with WhatsApp to link by QR scan, if you want WhatsApp outreach"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Sign up with an email address, no credit card needed",
+      "Connect the mailbox you send email from",
+      "Link WhatsApp by scanning a QR code, if you use it",
+      "Run a Google Maps mission for a trade and city",
+      "Review new leads and approve replies in the inbox"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/pricing",
+        "note": "Leads Ranger · support@leadsranger.com"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/privacy-policy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/terms-conditions",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/security",
+        "note": "Encrypts mailbox connections, sending secrets and AI keys"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://leadsranger.com/security",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 4 months old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://leadsranger.com/pricing",
+        "quote": "© 2026 Leads Ranger. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://leadsranger.com/security",
+        "quote": "Found something that looks wrong? Write to support@leadsranger.com and a person reads it, usually the same day.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://leadsranger.com/security",
+        "quote": "Mailbox connections, sending secrets and your own AI keys are encrypted the moment they arrive",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://leadsranger.com/security",
+        "quote": "Cancelling moves you to the free plan rather than deleting anything.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://leadsranger.com",
+        "quote": "Connect Microsoft 365 in two clicks, plug in Gmail or any SMTP mailbox, link WhatsApp with a QR scan",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://leadsranger.com",
+        "quote": "Leads Ranger is an all-in-one lead generation and sales outreach platform for small B2B teams.",
+        "claim_type": "vendor_claim"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T03:19:29.167+00:00",
     "admin_reviewed": false
   },
   {
@@ -4220,6 +4936,363 @@
     "admin_reviewed": false
   },
   {
+    "id": "d8a15024-7ddd-4bb8-bd36-a209374ed3aa",
+    "slug": "matably",
+    "name": "Matably",
+    "vendor": "Matably Network LLC",
+    "canonical_url": "https://matably.com",
+    "description": "Reservation software for restaurants that takes bookings from the website, Google, WhatsApp and phone.",
+    "status": "draft",
+    "use_cases": [
+      "booking_waitlist",
+      "missed_calls",
+      "auto_replies",
+      "customer_list",
+      "win_back"
+    ],
+    "industries": [
+      "restaurant"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 21,
+      "est_monthly_usd_min": 58,
+      "est_monthly_usd_max": 124,
+      "plan_name": "Starter",
+      "pricing_url": "https://matably.com/en-us/pricing/"
+    },
+    "integrations": [
+      "instagram_facebook",
+      "phone_line"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [
+      "A WhatsApp Business account to connect the WhatsApp agent",
+      "A Stripe account to collect booking deposits",
+      "A business phone number with call forwarding, if you add the voice receptionist"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Request your 21-day trial with your restaurant details and a card",
+      "Wait for the Matably team to validate your restaurant",
+      "Set up your floor plan from a photo and connect WhatsApp in one click",
+      "Add the booking button to your website",
+      "Start receiving bookings"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/pricing/",
+        "note": "Matably Network LLC · hello@matably.com"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/privacy/",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/terms/",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/privacy/",
+        "note": "ISO 27001 certified hosting (AWS); two-factor authentication on every account"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://matably.com/en-us/pricing/",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 7 months old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "© 2026 Matably Network LLC. Made for restaurants.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "Another question? Write to us at hello@matably.com",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://matably.com/en-us/privacy/",
+        "quote": "Hosting on certified infrastructure (AWS, ISO 27001).",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "Starter For a small restaurant that wants its bookings direct.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://matably.com",
+        "quote": "Payments by Stripe. Deposits and your subscription go through Stripe.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "Three plans, a 21-day trial on each.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "$124 / month Billed $1,490 a year, excl. VAT",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://matably.com/en-us/pricing/",
+        "quote": "$58 / month Billed $690 a year, excl. VAT",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T02:53:51.428+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "22a1c1be-ee6b-4399-8957-8311e342570e",
+    "slug": "muin",
+    "name": "Muin",
+    "vendor": "Falaah AI LLC",
+    "canonical_url": "https://falaah.ai",
+    "description": "Connects your existing business tools and automates finance, HR, documents and payments, with a person approving money moves.",
+    "status": "draft",
+    "use_cases": [
+      "auto_replies",
+      "customer_list",
+      "win_back"
+    ],
+    "industries": [
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": null,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": "Starter",
+      "pricing_url": "https://falaah.ai/platform"
+    },
+    "integrations": [
+      "quickbooks",
+      "instagram_facebook",
+      "phone_line",
+      "gmail_outlook",
+      "excel_sheets"
+    ],
+    "works_standalone": false,
+    "integration_requirements": [
+      "Accounts for the tools you want to connect, such as QuickBooks, Google Calendar or Outlook Calendar",
+      "Your existing records in a CSV file if you plan to bulk import contacts"
+    ],
+    "setup_complexity": "medium",
+    "setup_steps": [
+      "Start the 30-day trial or create an account",
+      "Check your organization on the approval screen and set user roles",
+      "Connect the tools you already use, such as QuickBooks or Google Calendar",
+      "Import your people and records with CSV or add them directly",
+      "Turn on the products you need and ask for onboarding help if needed"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": false,
+        "source_url": "https://falaah.ai/",
+        "note": "Website registered in 2025"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://falaah.ai/integrations/claude",
+        "note": "Falaah AI LLC · contact@falaah.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://falaah.ai/platform/security",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://falaah.ai/legal/privacy",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://falaah.ai/modules/compliance",
+        "note": "SOC 2 Type II preparation underway; multi-factor sign-in; US data residency"
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": "https://falaah.ai/platform",
+        "note": null
+      }
+    },
+    "trust_level": "partial",
+    "warnings": [
+      "This company's website is only about 12 months old, so there's little track record.",
+      "We couldn't confirm this is the company's official website.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://falaah.ai/integrations/claude",
+        "quote": "© 2026 Falaah AI LLC. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://falaah.ai/modules/compliance",
+        "quote": "Cookie Settings contact@falaah.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://falaah.ai/integrations/claude",
+        "quote": "SOC 2 Type II Preparation Underway",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://falaah.ai/modules/compliance",
+        "quote": "2 on Starter, 4 on Growth, 6 on Scale.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://falaah.ai",
+        "quote": "Connects to the tools you already use 16 integrations are available today.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://falaah.ai",
+        "quote": "Standalone Products come later.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T03:16:54.914+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "d4c232dc-085e-49aa-b508-ac2d3ee7b76f",
+    "slug": "nova",
+    "name": "Nova",
+    "vendor": "Acta Consulting Ltd.",
+    "canonical_url": "https://nova-suite.ai",
+    "description": "Nova is an AI command center that connects your business tools, flags issues, and runs approved tasks.",
+    "status": "draft",
+    "use_cases": [
+      "win_back",
+      "customer_list"
+    ],
+    "industries": [
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": null,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": "Bronze",
+      "pricing_url": "https://nova-suite.ai/pricing"
+    },
+    "integrations": [
+      "quickbooks",
+      "gmail_outlook",
+      "excel_sheets",
+      "instagram_facebook"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [
+      "Accounts for the business tools you want to connect, such as QuickBooks, Gmail or Google Sheets"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Sign up for a plan on the pricing page",
+      "Connect your tools with one click each",
+      "Ask Nova a question or set up a recurring task",
+      "Approve the actions Nova suggests"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://nova-suite.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://nova-suite.ai",
+        "note": "Acta Consulting Ltd. · 2026 Nova Suite"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://nova-suite.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://nova-suite.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://nova-suite.ai/",
+        "note": "Data encrypted in transit and at rest, isolated per business"
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": "https://nova-suite.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 6 months old, so there's little track record.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://nova-suite.ai",
+        "quote": "© 2026 Nova Suite by Acta Consulting Ltd. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://nova-suite.ai",
+        "quote": "All your data is encrypted in transit and at rest.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://nova-suite.ai",
+        "quote": "BRONZE ₪280 per month 2,500 credits a month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://nova-suite.ai",
+        "quote": "Green Invoice iCount Priority ERP QuickBooks Xero Gmail",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T03:08:43.847+00:00",
+    "admin_reviewed": false
+  },
+  {
     "id": "789c35da-9f87-49bd-a6fc-269065aa199d",
     "slug": "oncrew",
     "name": "OnCrew",
@@ -4351,6 +5424,366 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:44:15.464+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "e740481d-868f-404a-b9a4-46f4e78c832f",
+    "slug": "onlo",
+    "name": "Onlo",
+    "vendor": "ONLO AI INC.",
+    "canonical_url": "https://onlo.ai",
+    "description": "Onlo is an AI agent and shared inbox that answers customer calls, chats, emails and DMs.",
+    "status": "draft",
+    "use_cases": [
+      "missed_calls",
+      "booking_waitlist",
+      "auto_replies",
+      "win_back"
+    ],
+    "industries": [
+      "restaurant",
+      "salon_barber",
+      "hvac_plumbing",
+      "retail"
+    ],
+    "pricing": {
+      "free_plan": false,
+      "free_trial_days": 7,
+      "est_monthly_usd_min": 18,
+      "est_monthly_usd_max": 99,
+      "plan_name": "Solo",
+      "pricing_url": "https://onlo.ai/pricing"
+    },
+    "integrations": [
+      "shopify",
+      "square",
+      "gmail_outlook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "Your website, documents and FAQs to teach the AI agent",
+      "A WhatsApp Business number if you want WhatsApp replies",
+      "A Twilio number if you want calls and texts on it"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Start the 7-day free trial and create an account",
+      "Connect your channels: phone, web chat, email, WhatsApp and social",
+      "Add your website, documents and FAQs",
+      "Choose what Onlo can handle automatically and what needs your approval",
+      "Switch it on and go live"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://onlo.ai/",
+        "note": "Website registered in 2025"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://onlo.ai",
+        "note": "ONLO AI INC. · hello@onlo.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://onlo.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://onlo.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://onlo.ai/privacy",
+        "note": "Encryption in transit and at rest, scoped access controls, and audit logging"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://onlo.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 14 months old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://onlo.ai",
+        "quote": "© 2026 ONLO AI INC. · ALL RIGHTS RESERVED",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://onlo.ai",
+        "quote": "Onlo AI customer service for every business hello@onlo.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://onlo.ai/privacy",
+        "quote": "including encryption in transit and at rest, scoped access controls, and audit logging",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://onlo.ai/pricing",
+        "quote": "Solo $18 /mo Billed monthly",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://onlo.ai/integrations",
+        "quote": "Square Sync orders and payments from Square POS straight into your inbox.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://onlo.ai/pricing",
+        "quote": "7-day free trial on every plan",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://onlo.ai",
+        "quote": "Keep your helpdesk or run Onlo on its own.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://onlo.ai/pricing",
+        "quote": "Pro MOST POPULAR $99 /mo Billed monthly",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://onlo.ai/pricing",
+        "quote": "Solo $18 /mo Billed monthly",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T03:29:46.715+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "2c4a9dcb-850e-4a17-a0af-ac22b5fdafa4",
+    "slug": "outrio",
+    "name": "Outrio",
+    "vendor": "Dynode LLC",
+    "canonical_url": "https://outrio.ai",
+    "description": "Outrio is an AI sales assistant that finds prospects, writes personal emails from your mailbox, and books meetings.",
+    "status": "draft",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "industries": [
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 14,
+      "est_monthly_usd_min": 39,
+      "est_monthly_usd_max": 129,
+      "plan_name": "Starter",
+      "pricing_url": "https://outrio.ai/pricing"
+    },
+    "integrations": [
+      "gmail_outlook"
+    ],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A mailbox from Google Workspace, Gmail, Microsoft 365, Outlook, or any IMAP provider",
+      "An Anthropic Claude API key, only if you want to use your own AI account instead of credits"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Start the free 14-day trial and create an account",
+      "Connect your sending mailbox",
+      "Describe what you sell and who buys it",
+      "Review and approve emails and replies in your review queue"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://outrio.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://outrio.ai",
+        "note": "Dynode LLC · hello@outrio.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://outrio.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://outrio.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://outrio.ai/privacy",
+        "note": "Encryption in transit (TLS) and encrypted storage of secrets; two-factor sign-in"
+      },
+      "public_pricing": {
+        "pass": true,
+        "source_url": "https://outrio.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 1 month old, so there's little track record."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://outrio.ai",
+        "quote": "© 2026 Dynode LLC. All rights reserved.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://outrio.ai",
+        "quote": "Something else? hello@outrio.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://outrio.ai/privacy",
+        "quote": "Encryption in transit (TLS) and of stored secrets such as mailbox tokens and API keys",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://outrio.ai/pricing",
+        "quote": "Starter is $39/month, Team $129/month and Agency $349/month, billed monthly.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://outrio.ai",
+        "quote": "Google Workspace Gmail Microsoft 365 Outlook Zoho Mail GoDaddy IONOS Namecheap Any IMAP Claude API",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://outrio.ai/pricing",
+        "quote": "Free 14-day trial: 3 prospects researched and emailed, no card to start.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://outrio.ai",
+        "quote": "Nothing to install.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://outrio.ai/pricing",
+        "quote": "Starter is $39/month, Team $129/month and Agency $349/month, billed monthly.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://outrio.ai/pricing",
+        "quote": "Starter is $39/month, Team $129/month and Agency $349/month, billed monthly.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T03:18:44.247+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "0f03f77f-671b-45d9-a330-8ccde18c9780",
+    "slug": "padrino",
+    "name": "Padrino",
+    "vendor": null,
+    "canonical_url": "https://padrino.ai",
+    "description": "A business system where AI assistants can manage your books, customers, orders, invoices and website.",
+    "status": "draft",
+    "use_cases": [
+      "customer_list",
+      "scheduling_dispatch"
+    ],
+    "industries": [
+      "landscaping",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": null,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": null,
+      "pricing_url": null
+    },
+    "integrations": [],
+    "works_standalone": true,
+    "integration_requirements": [
+      "An AI assistant you already use, such as Claude or ChatGPT, if you want to connect one",
+      "Your business details to describe to Padrino during setup"
+    ],
+    "setup_complexity": "medium",
+    "setup_steps": [
+      "Click Build my Padrino and describe what your business does and how it gets paid",
+      "Review the accounting, CRM, website and invoicing setup Padrino prepares",
+      "Add Padrino as a custom connector in your AI assistant using mcp.padrino.ai/mcp",
+      "Choose what your AI may do, then start asking for real work"
+    ],
+    "engagement": "self_serve",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://www.padrino.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": false,
+        "source_url": "https://www.padrino.ai/",
+        "note": null
+      },
+      "privacy_policy": {
+        "pass": false,
+        "source_url": null,
+        "note": null
+      },
+      "terms": {
+        "pass": false,
+        "source_url": null,
+        "note": null
+      },
+      "security_docs": {
+        "pass": false,
+        "source_url": null,
+        "note": null
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": null,
+        "note": null
+      }
+    },
+    "trust_level": "unverified",
+    "warnings": [
+      "This company's website is only about 4 months old, so there's little track record.",
+      "We couldn't find the company's name and a way to contact them.",
+      "We couldn't find a privacy policy.",
+      "We couldn't find terms of service.",
+      "We couldn't find information about how they keep your data safe.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "integrations": {
+        "source_url": "https://padrino.ai",
+        "quote": "Works with Muse ChatGPT Claude Grok Padrino's AI team",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://padrino.ai",
+        "quote": "Padrino is not a connector between other apps.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T03:08:55.007+00:00",
     "admin_reviewed": false
   },
   {
@@ -4947,6 +6380,125 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:43:25.082+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "f8c9d449-06bd-431a-b4a7-409ad07e7070",
+    "slug": "pryvela",
+    "name": "PRYVELA",
+    "vendor": "Pathway X Technologies Limited",
+    "canonical_url": "https://pryvela.ai",
+    "description": "AI assistant that drafts enquiry replies, follows up with customers, and invites past customers back for UK small businesses.",
+    "status": "draft",
+    "use_cases": [
+      "missed_calls",
+      "auto_replies",
+      "win_back",
+      "customer_list"
+    ],
+    "industries": [
+      "restaurant",
+      "salon_barber",
+      "hvac_plumbing",
+      "retail",
+      "other"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 14,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": "Starter",
+      "pricing_url": "https://pryvela.ai/pricing"
+    },
+    "integrations": [
+      "gmail_outlook",
+      "shopify",
+      "phone_line"
+    ],
+    "works_standalone": null,
+    "integration_requirements": [
+      "Your business information, prices, hours and services entered in the app",
+      "A business receptionist phone number if you add the AI Receptionist extra"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Start the 14-day free trial with no card",
+      "Answer a few simple questions about your business",
+      "Add your approved prices, hours and services",
+      "Connect your email or website enquiry forms",
+      "Review and approve the drafts PRYVELA prepares"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://pryvela.ai/",
+        "note": "Website registered in 2026"
+      },
+      "vendor_identity": {
+        "pass": true,
+        "source_url": "https://pryvela.ai",
+        "note": "Pathway X Technologies Limited · hello@pryvela.ai"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://pryvela.ai/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://pryvela.ai/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://pryvela.ai/security",
+        "note": null
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": "https://pryvela.ai/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "checks_passed",
+    "warnings": [
+      "This company's website is only about 1 month old, so there's little track record.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://pryvela.ai",
+        "quote": "PRYVELA is a product operated by Pathway X Technologies Limited, company number 17329825",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://pryvela.ai",
+        "quote": "Get in touch hello@pryvela.ai pryvela.ai",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://pryvela.ai/pricing",
+        "quote": "Starter £39/month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://pryvela.ai",
+        "quote": "CRM Shopify Website forms Gmail Outlook Phone calls",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://pryvela.ai",
+        "quote": "14-day free trial. No card required.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T03:17:14.794+00:00",
     "admin_reviewed": false
   },
   {
@@ -5903,11 +7455,10 @@
     "name": "SimpleTexting",
     "vendor": "SimpleTexting, LLC",
     "canonical_url": "https://simpletexting.com",
-    "description": "A texting service that helps small businesses send text marketing blasts and hold two-way text conversations with customers.",
+    "description": "Lets small businesses send text messages to customers, including marketing blasts and two-way conversations.",
     "status": "published",
     "use_cases": [
       "win_back",
-      "auto_replies",
       "customer_list"
     ],
     "industries": [
@@ -5923,37 +7474,38 @@
       "pricing_url": "https://simpletexting.com/pricing/"
     },
     "integrations": [
+      "gmail_outlook",
+      "excel_sheets",
+      "instagram_facebook",
       "quickbooks",
       "shopify",
-      "excel_sheets",
-      "gmail_outlook",
-      "instagram_facebook",
       "phone_line"
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A phone number to text from, either a new number or an existing landline that can be text-enabled"
+      "A business phone number to text from, or a new local, toll-free, or landline number",
+      "Customer phone numbers collected with permission to text"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start a free trial account online",
-      "Register your business texting number",
-      "Collect customer opt-in consent before you text",
-      "Import your contacts or build a list with opt-in tools",
-      "Set up auto-replies and send your first text campaign"
+      "Sign up online and choose a plan",
+      "Choose a local, toll-free, or landline number for texting",
+      "Register your business texting number with carriers",
+      "Collect opt-in consent from customers",
+      "Send a text blast or set up automated texts"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
         "pass": true,
         "source_url": "https://simpletexting.com/",
-        "note": null
+        "note": "Website registered in 2007"
       },
       "vendor_identity": {
         "pass": true,
         "source_url": "https://simpletexting.com",
-        "note": "SimpleTexting, LLC · (866) 259-1887"
+        "note": "SimpleTexting, LLC · (866) 259-1887; One North Wacker, Suite 2500, Chicago, IL 60606"
       },
       "privacy_policy": {
         "pass": false,
@@ -5991,14 +7543,9 @@
         "quote": "Call us Mon-Fri 9 a.m.-9 p.m. ET Sat-Sun 10 a.m.-5 p.m. ET (866) 259-1887",
         "claim_type": "fact"
       },
-      "free_plan": {
-        "source_url": "https://simpletexting.com",
-        "quote": "Our free trial lets you text your own number so you can see exactly how it works before you text your customers.",
-        "claim_type": "fact"
-      },
       "integrations": {
         "source_url": "https://simpletexting.com/integrations/",
-        "quote": "QuickBooks Salesforce Shopify SimpleTix Slack Squarespace",
+        "quote": "Google Calendar Google Sheets HubSpot Infusionsoft Instagram",
         "claim_type": "fact"
       },
       "works_standalone": {
@@ -6008,12 +7555,12 @@
       },
       "price_monthly_min": {
         "source_url": "https://simpletexting.com/pricing/",
-        "quote": "Estimated monthly cost $39.00 (billed yearly at $398.40 )",
+        "quote": "Estimated monthly cost $39.00",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-09T02:38:40.887+00:00",
+    "last_checked_at": "2026-11-09T03:29:44.898+00:00",
     "admin_reviewed": false
   },
   {
@@ -6494,6 +8041,119 @@
     },
     "missing_fields": [],
     "last_checked_at": "2026-11-08T22:45:06.254+00:00",
+    "admin_reviewed": false
+  },
+  {
+    "id": "48072b45-7545-4bd4-9490-f1dea0f8a272",
+    "slug": "tablemonk",
+    "name": "Tablemonk",
+    "vendor": "Klik 'm aan",
+    "canonical_url": "https://tablemonk.com",
+    "description": "Online reservation system for restaurants, cafés and bars, with a table overview and a booking widget for websites.",
+    "status": "draft",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "industries": [
+      "restaurant",
+      "coffee_bakery"
+    ],
+    "pricing": {
+      "free_plan": null,
+      "free_trial_days": 30,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
+      "plan_name": "Basic",
+      "pricing_url": "https://tablemonk.com/pricing"
+    },
+    "integrations": [],
+    "works_standalone": true,
+    "integration_requirements": [
+      "A website if you want the booking widget on it (optional)"
+    ],
+    "setup_complexity": "low",
+    "setup_steps": [
+      "Create an account with your name, restaurant name and email",
+      "Set up opening hours, tables and reservation preferences",
+      "Manage reservations from the dashboard",
+      "Optionally add the booking widget to your website with one script (Pro plan)"
+    ],
+    "engagement": "free_trial",
+    "reviews": null,
+    "vendor_checks": {
+      "official_site": {
+        "pass": true,
+        "source_url": "https://tablemonk.com/",
+        "note": "Website registered in 2025"
+      },
+      "vendor_identity": {
+        "pass": false,
+        "source_url": "https://tablemonk.com/privacy",
+        "note": "Klik 'm aan"
+      },
+      "privacy_policy": {
+        "pass": true,
+        "source_url": "https://tablemonk.com/privacy",
+        "note": null
+      },
+      "terms": {
+        "pass": true,
+        "source_url": "https://tablemonk.com/terms",
+        "note": null
+      },
+      "security_docs": {
+        "pass": true,
+        "source_url": "https://tablemonk.com/privacy",
+        "note": "Encrypted connections (HTTPS), hashed passwords, access controls"
+      },
+      "public_pricing": {
+        "pass": false,
+        "source_url": "https://tablemonk.com/pricing",
+        "note": null
+      }
+    },
+    "trust_level": "partial",
+    "warnings": [
+      "This company's website is only about 18 months old, so there's little track record.",
+      "We couldn't find the company's name and a way to contact them.",
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
+    "evidence": {
+      "vendor": {
+        "source_url": "https://tablemonk.com/privacy",
+        "quote": "Tablemonk is a product of Klik 'm aan (KVK 92220010)",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://tablemonk.com/privacy",
+        "quote": "encrypted connections (HTTPS), hashed passwords, and access controls",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://tablemonk.com/pricing",
+        "quote": "Basic €12 /month excl. VAT or €120 per year: 2 months free",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://tablemonk.com",
+        "quote": "use the free WordPress plugin",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://tablemonk.com/pricing",
+        "quote": "30 days free, no payment details. After that, cancel any month.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://tablemonk.com",
+        "quote": "Tablemonk works fully in the browser on phone, tablet and computer.",
+        "claim_type": "fact"
+      }
+    },
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T02:53:35.201+00:00",
     "admin_reviewed": false
   },
   {

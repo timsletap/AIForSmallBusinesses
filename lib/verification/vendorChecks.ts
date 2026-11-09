@@ -1,9 +1,10 @@
 import { CHECK_IDS, type CheckId, type TrustLevel, type VendorChecks } from "@/lib/schemas/tool";
 import { domainKey, slugify } from "@/lib/discovery/canonical";
+import { findRealContact, hasRealContact } from "./contact";
 
 export const CHECK_LABELS: Record<CheckId, string> = {
   official_site: "Official website",
-  vendor_identity: "Company name and contact",
+  vendor_identity: "Contact details",
   privacy_policy: "Privacy policy",
   terms: "Terms of service",
   security_docs: "Security information",
@@ -12,7 +13,7 @@ export const CHECK_LABELS: Record<CheckId, string> = {
 
 const FAIL_WARNINGS: Record<CheckId, string> = {
   official_site: "We couldn't confirm this is the company's official website.",
-  vendor_identity: "We couldn't find the company's name and a way to contact them.",
+  vendor_identity: "We couldn't find a phone number, email or address for this company on their site.",
   privacy_policy: "We couldn't find a privacy policy.",
   terms: "We couldn't find terms of service.",
   security_docs: "We couldn't find information about how they keep your data safe.",
@@ -39,13 +40,13 @@ export function domainMatchesProduct(name: string, url: string): boolean {
   return d.includes(parts.join("")) || parts.some((p) => d.includes(p));
 }
 
-const CONTACT_RE = /[\w.+-]+@[\w-]+\.[\w.]+|\(?\b\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b|\b\d{2,5}\s+\w+(\s\w+)*\s(street|st|avenue|ave|road|rd|suite|blvd|drive|dr)\b/i;
 
 export function runVendorChecks(i: CheckInput): VendorChecks {
   const home = i.homepage;
   const homeUrl = home?.finalUrl ?? null;
-  const contactMatch = home?.text.match(CONTACT_RE)?.[0] ?? null;
-  const contact = i.contact?.value ?? contactMatch;
+  // Demo screens on vendor homepages show sample callers; only real-looking contacts count.
+  const contactMatch = home ? findRealContact(home.text) : null;
+  const contact = (i.contact && hasRealContact(i.contact.value) ? i.contact.value : null) ?? contactMatch;
   const securityText = home && /\bSOC ?2\b|ISO ?27001|trust center|HIPAA|PCI[- ]DSS/i.exec(home.text);
 
   return {
@@ -54,10 +55,12 @@ export function runVendorChecks(i: CheckInput): VendorChecks {
       source_url: homeUrl,
       note: !home ? "Site did not load" : !home.https ? "Site is not secure (no HTTPS)" : null,
     },
+    // The company name is always known (their own brand, or a legal name when stated); the check is
+    // whether a real way to reach them is published.
     vendor_identity: {
-      pass: !!i.vendor && !!contact,
-      source_url: i.vendor?.source_url ?? i.links.contact ?? homeUrl,
-      note: [i.vendor?.value, contact].filter(Boolean).join(" · ") || null,
+      pass: !!contact,
+      source_url: i.contact?.source_url ?? i.links.contact ?? homeUrl,
+      note: [i.vendor?.value ?? i.name, contact ?? "no contact details found"].join(" · "),
     },
     privacy_policy: {
       pass: !!i.links.privacy,

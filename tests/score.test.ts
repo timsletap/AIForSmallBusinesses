@@ -66,6 +66,7 @@ describe("factor math", () => {
   it("fit = round(Σ weight × f); perfect tool scores 100", () => {
     const t = tool({
       integrations: ["square"],
+      industries: ["restaurant"],
       admin_reviewed: true,
       reviews: { rating: 5, count: 1, source_url: "x" },
     });
@@ -158,5 +159,45 @@ describe("break-even", () => {
     expect(breakEven(99, "hvac_plumbing")).toMatch(/about 1 extra customer a month/);
     expect(breakEven(0, "restaurant")).toBeNull();
     expect(breakEven(null, "restaurant")).toBeNull();
+  });
+});
+
+describe("industry fit", () => {
+  it("built for your industry > general purpose > built for other industries", async () => {
+    const { industryFit } = await import("@/lib/ranking/score");
+    expect(industryFit(tool({ industries: ["restaurant", "retail"] }), "restaurant")).toEqual({ kind: "match", mult: 1 });
+    expect(industryFit(tool({ industries: [] }), "restaurant").kind).toBe("general");
+    expect(industryFit(tool({ industries: ["hvac_plumbing", "other"] }), "restaurant").kind).toBe("general");
+    expect(industryFit(tool({ industries: ["hvac_plumbing", "retail"] }), "restaurant")).toEqual({ kind: "other_industries", mult: 0.75 });
+    expect(industryFit(tool({ industries: ["hvac_plumbing"] }), "other").kind).toBe("general");
+  });
+
+  it("changes the ranking: same tool, the one made for restaurants wins", () => {
+    const forDiners = tool({ name: "DinerBot", industries: ["restaurant"] });
+    const forTrades = tool({ name: "TradeBot", industries: ["hvac_plumbing"] });
+    const r = recommend([forTrades, forDiners], profile({ industry: "restaurant" }));
+    // A tool built only for other industries leaves the main list for "check first".
+    expect(r.ranked.map((s) => s.tool.name)).toEqual(["DinerBot"]);
+    expect(r.check_first.map((s) => s.tool.name)).toEqual(["TradeBot"]);
+    expect(r.check_first[0].check_first.join(" ")).toMatch(/other kinds of businesses/);
+    expect(r.ranked[0].reasons.join(" ")).toMatch(/Made for restaurant or diner businesses/);
+    const h = recommend([forTrades, forDiners], profile({ industry: "hvac_plumbing" }));
+    expect(h.ranked.map((s) => s.tool.name)).toEqual(["TradeBot"]);
+  });
+});
+
+describe("free only", () => {
+  it("a $0 budget shows only tools with a free plan", () => {
+    const free = tool({ name: "FreeBot", pricing: { ...tool().pricing, free_plan: true, est_monthly_usd_min: 20 } });
+    const paid = tool({ name: "PaidBot", pricing: { ...tool().pricing, free_plan: false, est_monthly_usd_min: 10 } });
+    const unknown = tool({ name: "AskBot", pricing: { ...tool().pricing, free_plan: null, est_monthly_usd_min: null } });
+    const r = recommend([free, paid, unknown], profile({ budget_usd: 0 }));
+    expect(r.ranked.map((s) => s.tool.name)).toEqual(["FreeBot"]);
+    expect(r.check_first).toEqual([]);
+  });
+
+  it("any budget above $0 still shows paid tools (over budget scores lower, not hidden)", () => {
+    const paid = tool({ name: "PaidBot", pricing: { ...tool().pricing, est_monthly_usd_min: 80 } });
+    expect(recommend([paid], profile({ budget_usd: 50 })).ranked).toHaveLength(1);
   });
 });

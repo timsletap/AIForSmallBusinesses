@@ -1,32 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import type { DiscoverEvent, Stage } from "@/lib/pipeline/events";
-import { USE_CASES, type UseCaseId } from "@/lib/taxonomy/useCases";
+import { APPROVAL_RULES } from "@/lib/pipeline/approval";
 import { ToolLogo } from "@/components/ToolLogo";
 
-const STAGES: { id: Stage; label: string; detail: string }[] = [
-  { id: "search", label: "Search the web", detail: "Live web search for AI products" },
-  { id: "site", label: "Find official sites", detail: "Directories and reviews are ignored" },
-  { id: "extract", label: "Extract the facts", detail: "Prices, features and setup, word-for-word" },
-  { id: "verify", label: "Verify the vendor", detail: "6 safety checks + website track record" },
-  { id: "save", label: "Add to directory", detail: "Only approved tools go live" },
+const STAGES: { id: Stage; label: string }[] = [
+  { id: "search", label: "Search" },
+  { id: "site", label: "Official site" },
+  { id: "extract", label: "Extract facts" },
+  { id: "verify", label: "Verify vendor" },
+  { id: "save", label: "Decide" },
 ];
-const ORDER: Stage[] = STAGES.map((s) => s.id);
+const ORDER = STAGES.map((s) => s.id);
 
-type Cand = { name: string; url?: string; stage: Stage; message: string; result?: Extract<DiscoverEvent, { type: "result" }> };
+const SUGGESTIONS = ["Email marketing for a bakery", "Online booking for a barbershop", "AI phone answering for a plumber", "Review replies for a restaurant"];
+
+type Result = Extract<DiscoverEvent, { type: "result" }>;
+type Cand = { name: string; url?: string; stage: Stage; message: string; result?: Result };
+
+function RuleList({ rules }: { rules: NonNullable<Result["rules"]> }) {
+  return (
+    <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+      {rules.map((r) => (
+        <li key={r.id} className={`flex items-start gap-2.5 rounded-xl border px-3 py-2.5 ${r.pass ? "border-gold/30 bg-gold/[0.06]" : "border-brand/40 bg-brand/[0.08]"}`}>
+          <span
+            aria-hidden
+            className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-xs font-semibold ${r.pass ? "bg-gold text-black" : "bg-brand text-white"}`}
+          >
+            {r.pass ? "✓" : "✕"}
+          </span>
+          <span className="min-w-0">
+            <span className="block text-sm font-bold">
+              <span className="sr-only">{r.pass ? "Passed: " : "Failed: "}</span>
+              {r.label}
+            </span>
+            <span className="block text-xs text-muted">{r.detail}</span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function DiscoverLive() {
   const [query, setQuery] = useState("");
-  const [useCase, setUseCase] = useState<UseCaseId | null>(null);
   const [running, setRunning] = useState(false);
   const [stage, setStage] = useState<Stage | null>(null);
-  const [feed, setFeed] = useState<string[]>([]);
+  const [status, setStatus] = useState<string | null>(null);
   const [cands, setCands] = useState<Cand[]>([]);
   const [done, setDone] = useState<Extract<DiscoverEvent, { type: "done" }> | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const resultsRef = useRef<HTMLDivElement>(null);
 
   const upsert = (name: string, patch: Partial<Cand>) =>
     setCands((cs) => {
@@ -41,12 +66,12 @@ export function DiscoverLive() {
     switch (e.type) {
       case "stage":
         setStage(e.stage);
-        setFeed((f) => [...f, e.message]);
+        setStatus(e.message);
         break;
       case "candidates":
         setStage("site");
-        setFeed((f) => [...f, e.names.length ? `Found ${e.names.length} new product(s) to investigate` : "Everything found is already in the directory"]);
-        e.names.forEach((n) => upsert(n, { stage: "site", message: "Queued" }));
+        setStatus(e.names.length ? `Found ${e.names.length} new product${e.names.length === 1 ? "" : "s"} to check` : "Everything found is already in the directory");
+        e.names.forEach((n) => upsert(n, { stage: "site", message: "Waiting" }));
         break;
       case "candidate":
         setStage(e.stage);
@@ -54,11 +79,11 @@ export function DiscoverLive() {
         break;
       case "result":
         setStage("save");
-        upsert(e.name, { stage: "save", message: e.detail, result: e });
+        upsert(e.name, { stage: "save", message: e.detail, result: e, url: e.url });
         break;
       case "done":
         setDone(e);
-        setFeed((f) => [...f, e.message]);
+        setStatus(e.message);
         break;
       case "error":
         setError(e.message);
@@ -66,37 +91,59 @@ export function DiscoverLive() {
     }
   }
 
-  async function start(e: React.FormEvent) {
-    e.preventDefault();
-    if (!query.trim() && !useCase) return setError("Type what you need AI for, or pick a problem.");
+  async function run(q: string) {
+    if (q.trim().length < 3) return setError("Tell us what you need AI for.");
+    setQuery(q);
     setRunning(true);
     setError(null);
     setDone(null);
-    setFeed([]);
     setCands([]);
     setStage("search");
+    setStatus(`Searching the web for “${q.trim()}”`);
     try {
+      // Step 1: search once, get signed candidates.
       const res = await fetch("/api/discover", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(query.trim() ? { query: query.trim(), use_case: useCase ?? undefined } : { use_case: useCase }),
+        body: JSON.stringify({ query: q.trim() }),
       });
-      if (!res.ok || !res.body) {
-        const j = await res.json().catch(() => null);
-        throw new Error(j?.error?.message ?? "Discovery couldn't start. Please try again.");
+      const j = await res.json().catch(() => null);
+      if (!res.ok || !j) throw new Error(j?.error?.message ?? "Discovery couldn't start. Please try again.");
+      const list = j.candidates as { name: string; url: string; token: string }[];
+      handle({ type: "candidates", names: list.map((c) => c.name) });
+
+      // Step 2: one vendor per request, so a slow site can't time out the whole run.
+      let approved = 0;
+      let held = 0;
+      for (const c of list) {
+        upsert(c.name, { url: c.url, stage: "site", message: "Opening the official website" });
+        const pr = await fetch("/api/discover/process", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ runId: j.runId, ...c }),
+        });
+        if (!pr.ok || !pr.body) {
+          const pj = await pr.json().catch(() => null);
+          handle({ type: "result", name: c.name, status: "failed", url: c.url, detail: pj?.error?.message ?? "Couldn't check this vendor" });
+          continue;
+        }
+        await readStream(pr.body, (e) => {
+          if (e.type === "result") {
+            if (e.status === "published") approved++;
+            else held++;
+            // Keep the card keyed by the search name even if the site calls itself something else.
+            handle({ ...e, name: c.name });
+          } else if (e.type === "candidate") {
+            handle({ ...e, name: c.name });
+          } else handle(e);
+        });
       }
-      const reader = res.body.getReader();
-      const dec = new TextDecoder();
-      let buf = "";
-      for (;;) {
-        const { value, done: end } = await reader.read();
-        if (end) break;
-        buf += dec.decode(value, { stream: true });
-        const lines = buf.split("\n");
-        buf = lines.pop() ?? "";
-        for (const l of lines) if (l.trim()) handle(JSON.parse(l) as DiscoverEvent);
-      }
-      resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      handle({
+        type: "done",
+        approved,
+        held,
+        message: list.length === 0 ? "No new tools this time: everything we found is already in the directory." : `${approved} new tool${approved === 1 ? "" : "s"} added to the directory.`,
+      });
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -104,158 +151,185 @@ export function DiscoverLive() {
     }
   }
 
-  const reached = (s: Stage) => (stage ? ORDER.indexOf(s) <= ORDER.indexOf(stage) : false);
+  async function readStream(body: ReadableStream<Uint8Array>, onEvent: (e: DiscoverEvent) => void) {
+    const reader = body.getReader();
+    const dec = new TextDecoder();
+    let buf = "";
+    for (;;) {
+      const { value, done: end } = await reader.read();
+      if (end) break;
+      buf += dec.decode(value, { stream: true });
+      const lines = buf.split("\n");
+      buf = lines.pop() ?? "";
+      for (const l of lines) if (l.trim()) onEvent(JSON.parse(l) as DiscoverEvent);
+    }
+    if (buf.trim()) onEvent(JSON.parse(buf) as DiscoverEvent);
+  }
+
+  const stageIdx = stage ? ORDER.indexOf(stage) : -1;
+  const started = running || !!done || cands.length > 0;
 
   return (
-    <div className="space-y-8">
-      <form onSubmit={start} className="glass rounded-3xl p-5 sm:p-7 glow-ring space-y-4">
-        <label htmlFor="need" className="block font-display text-xl font-extrabold">
+    <div className="space-y-10">
+      {/* Search */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void run(query);
+        }}
+        className="mx-auto max-w-3xl space-y-4"
+      >
+        <label htmlFor="need" className="sr-only">
           What do you need AI for?
         </label>
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-2 sm:flex-row focus-within:border-gold/60 transition">
           <input
             id="need"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="e.g. answering phone orders for a pizza shop"
+            placeholder="What do you need AI for? e.g. phone orders for a pizza shop"
             maxLength={160}
-            className="flex-1 min-h-12 rounded-xl border-2 border-line bg-surface-2 px-4 text-lg focus:border-gold"
+            className="min-h-12 flex-1 bg-transparent px-3 text-lg outline-none placeholder:text-muted"
           />
           <button
             disabled={running}
-            className="min-h-12 px-6 rounded-xl bg-brand text-white font-bold text-lg hover:bg-brand-hover disabled:opacity-60 inline-flex items-center justify-center gap-2"
+            className="min-h-12 rounded-xl bg-white px-6 font-bold text-black transition hover:bg-gold disabled:opacity-60 inline-flex items-center justify-center gap-2"
           >
-            {running && <span aria-hidden className="h-4 w-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />}
-            {running ? "Discovering…" : "Discover new tools"}
+            {running && <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-black/30 border-t-black" />}
+            {running ? "Searching" : "Discover tools"}
           </button>
         </div>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Or pick a problem">
-          {USE_CASES.map((u) => (
+        <div className="flex flex-wrap justify-center gap-2 text-sm">
+          <span className="text-muted">Try:</span>
+          {SUGGESTIONS.map((s) => (
             <button
-              key={u.id}
+              key={s}
               type="button"
-              onClick={() => setUseCase(useCase === u.id ? null : u.id)}
-              aria-pressed={useCase === u.id}
-              className={`min-h-10 px-3 rounded-full border text-sm font-bold transition ${
-                useCase === u.id ? "bg-gold text-black border-gold" : "border-line text-muted hover:text-white hover:border-white/40"
-              }`}
+              disabled={running}
+              onClick={() => void run(s)}
+              className="rounded-full border border-line px-3 py-1 text-muted transition hover:border-white/40 hover:text-white disabled:opacity-50"
             >
-              {u.short}
+              {s}
             </button>
           ))}
         </div>
         {error && (
-          <p role="alert" className="text-warn font-bold">
+          <p role="alert" className="text-center font-bold text-warn">
             {error}
           </p>
         )}
       </form>
 
-      {/* Pipeline */}
-      <ol className="grid grid-cols-1 sm:grid-cols-5 gap-2" aria-label="Discovery progress">
-        {STAGES.map((s, i) => {
-          const active = running && stage === s.id;
-          const on = reached(s.id) || (!!done && true);
-          return (
-            <li
-              key={s.id}
-              className={`relative rounded-2xl border p-4 transition-all duration-500 ${
-                active ? "border-gold bg-gold/10 shadow-[0_0_30px_-8px_rgba(255,210,0,.6)]" : on ? "border-brand/60 bg-brand/10" : "border-line bg-surface/70"
-              }`}
-              aria-current={active ? "step" : undefined}
-            >
-              <p className={`font-display text-xs font-extrabold tracking-[0.2em] ${active ? "text-gold" : on ? "text-white" : "text-muted"}`}>
-                0{i + 1}
-              </p>
-              <p className="font-bold mt-1 flex items-center gap-2">
-                {on && !active ? <span className="text-gold">✓</span> : active ? <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-gold animate-pulse" /> : null}
-                {s.label}
-              </p>
-              <p className="text-sm text-muted">{s.detail}</p>
-            </li>
-          );
-        })}
-      </ol>
-
-      <div ref={resultsRef} className="grid gap-6 lg:grid-cols-[1.4fr_1fr] scroll-mt-24">
-        <section aria-label="Products being investigated" className="space-y-3">
-          {cands.length === 0 && !running && !done && (
-            <p className="rounded-2xl border border-dashed border-line p-8 text-center text-muted">
-              Results appear here as we find, read and verify each product.
+      {/* Progress */}
+      {started && (
+        <div className="mx-auto max-w-4xl space-y-3" aria-label="Discovery progress">
+          <ol className="relative grid grid-cols-5">
+            <div aria-hidden className="absolute left-[10%] right-[10%] top-[11px] h-px bg-line" />
+            <div
+              aria-hidden
+              className="absolute left-[10%] top-[11px] h-px bg-gradient-to-r from-brand to-gold transition-all duration-700"
+              style={{ width: `${Math.max(0, stageIdx) * 20}%` }}
+            />
+            {STAGES.map((s, i) => {
+              const state = done || i < stageIdx ? "done" : i === stageIdx && running ? "active" : "todo";
+              return (
+                <li key={s.id} className="relative flex flex-col items-center gap-2" aria-current={state === "active" ? "step" : undefined}>
+                  <span
+                    className={`grid h-6 w-6 place-items-center rounded-full border text-[0.65rem] font-semibold transition ${
+                      state === "done"
+                        ? "border-gold bg-gold text-black"
+                        : state === "active"
+                          ? "border-gold bg-background text-gold shadow-[0_0_18px_rgba(255,210,0,.55)]"
+                          : "border-line bg-background text-muted"
+                    }`}
+                  >
+                    {state === "done" ? "✓" : i + 1}
+                  </span>
+                  <span className={`font-mono text-[0.7rem] uppercase tracking-[0.14em] ${state === "todo" ? "text-muted" : "text-white"}`}>{s.label}</span>
+                </li>
+              );
+            })}
+          </ol>
+          {status && (
+            <p className="text-center text-sm text-muted" role="status" aria-live="polite">
+              {status}
             </p>
           )}
+        </div>
+      )}
+
+      {/* Results, or the rules before any search */}
+      {cands.length > 0 ? (
+        <section aria-label="Products checked" className="mx-auto max-w-4xl space-y-4">
           {cands.map((c) => {
             const r = c.result;
             const ok = r?.status === "published";
             return (
               <article
                 key={c.name}
-                className={`rounded-2xl border p-4 animate-[fadeUp_.35s_ease-out_both] ${
-                  ok ? "border-gold bg-gold/10" : r ? "border-line bg-surface" : "border-line bg-surface-2"
-                }`}
+                className={`rounded-2xl border bg-surface p-5 animate-[fadeUp_.35s_ease-out_both] ${ok ? "border-gold/60 shadow-[0_0_40px_-18px_rgba(255,210,0,.6)]" : "border-line"}`}
               >
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div className="flex items-center gap-3 min-w-0">
-                    {c.url && <ToolLogo name={c.name} url={c.url} size={40} />}
-                    <div className="min-w-0">
-                      <h3 className="font-display text-lg font-extrabold">{c.name}</h3>
-                      {c.url && <p className="text-sm text-muted break-all">{c.url.replace(/^https?:\/\//, "")}</p>}
-                    </div>
+                <div className="flex flex-wrap items-center gap-4">
+                  {c.url ? <ToolLogo name={c.name} url={c.url} size={44} /> : <span className="h-11 w-11 rounded-xl bg-surface-2" />}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-lg font-semibold">{c.name}</h3>
+                    {c.url && <p className="truncate text-sm text-muted">{c.url.replace(/^https?:\/\//, "")}</p>}
                   </div>
                   {r ? (
                     <span
-                      className={`rounded-full px-3 py-1 text-sm font-bold border ${
-                        ok ? "bg-gold text-black border-gold" : r.status === "failed" ? "border-line text-muted" : "border-brand/60 bg-brand/15 text-warn"
+                      className={`rounded-full px-3 py-1 text-sm font-bold ${
+                        ok ? "bg-gold text-black" : r.status === "failed" ? "border border-line text-muted" : "border border-brand/60 text-warn"
                       }`}
                     >
-                      {ok ? "✓ Added to directory" : r.status === "failed" ? "Couldn't read site" : "Held for review"}
+                      {ok ? "Added to directory" : r.status === "failed" ? "Couldn't read site" : "Held back"}
                     </span>
                   ) : (
-                    <span className="rounded-full px-3 py-1 text-sm font-bold border border-line text-muted inline-flex items-center gap-2">
-                      <span aria-hidden className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-                      {STAGES.find((s) => s.id === c.stage)?.label}
-                    </span>
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-gold">{STAGES.find((s) => s.id === c.stage)?.label}…</span>
                   )}
                 </div>
-                <p className="mt-2">{c.message}</p>
-                {r && r.checks !== undefined && (
-                  <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
-                    <span className="flex gap-1" aria-label={`${r.checks} of 6 vendor checks passed`}>
-                      {Array.from({ length: 6 }, (_, i) => (
-                        <span key={i} className={`h-2 w-6 rounded-full ${i < r.checks! ? "bg-gold" : "bg-line-strong"}`} />
-                      ))}
-                    </span>
-                    <span className="text-muted">{r.checks}/6 checks</span>
-                    {r.price && <span className="text-muted">· {r.price}</span>}
+                {r?.description && <p className="mt-3 text-sm text-muted">{r.description}</p>}
+                {!r && <p className="mt-3 text-sm text-muted">{c.message}</p>}
+                {r?.status === "failed" && <p className="mt-3 text-sm text-muted">We couldn&apos;t load their website, so nothing was added.</p>}
+                {r?.rules && <RuleList rules={r.rules} />}
+                {(r?.price || (ok && r?.slug)) && (
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-sm">
+                    <span className="text-muted">{r?.price}</span>
+                    {ok && r?.slug && (
+                      <Link href={`/tools/${r.slug}`} className="font-bold text-gold hover:underline">
+                        Open its listing →
+                      </Link>
+                    )}
                   </div>
-                )}
-                {ok && r?.slug && (
-                  <Link href={`/tools/${r.slug}`} className="mt-3 inline-flex min-h-11 items-center font-bold text-gold underline underline-offset-4">
-                    See its new listing →
-                  </Link>
                 )}
               </article>
             );
           })}
           {done && (
-            <p className="rounded-2xl border border-line bg-surface p-4 font-bold" role="status">
-              {done.message} {done.held > 0 && `${done.held} held for review: we only list companies with a track record and full checks.`}
+            <p className="text-center text-sm text-muted">
+              {done.approved > 0
+                ? `${done.approved} added to the directory.`
+                : "Nothing new was added this time. Tools that miss a rule wait for a person to review them."}
             </p>
           )}
         </section>
-
-        <section aria-label="Live log" className="rounded-2xl border border-line bg-black/60 p-4 font-mono text-sm min-h-40">
-          <p className="text-muted mb-2">Live log</p>
-          <ul className="space-y-1.5" aria-live="polite">
-            {feed.map((f, i) => (
-              <li key={i} className="animate-[fadeUp_.25s_ease-out_both]">
-                <span className="text-gold">›</span> {f}
-              </li>
-            ))}
-            {running && <li className="text-muted animate-pulse">working…</li>}
-          </ul>
-        </section>
-      </div>
+      ) : (
+        !running && (
+          <section aria-labelledby="rules-h" className="mx-auto max-w-4xl">
+            <h2 id="rules-h" className="mb-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-muted">
+              A tool is added only if it passes all four
+            </h2>
+            <ol className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {APPROVAL_RULES.map((r, i) => (
+                <li key={r.id} className="bg-surface p-5">
+                  <p className="font-mono text-xs text-gold">0{i + 1}</p>
+                  <p className="mt-2 font-bold">{r.label}</p>
+                  <p className="mt-1 text-sm text-muted">{r.detail}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )
+      )}
     </div>
   );
 }

@@ -22,7 +22,7 @@ export function Expand({
           {icon}
         </span>
         <span className="flex-1">
-          <span className="block font-display text-lg font-extrabold">{title}</span>
+          <span className="block font-display text-lg font-semibold">{title}</span>
           <span className="block text-muted">{summary}</span>
         </span>
         <span

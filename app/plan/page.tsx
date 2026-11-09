@@ -6,6 +6,7 @@ import { getStore } from "@/lib/storage/db";
 import { idsFromParams } from "@/lib/http/params";
 import { Button, Card, EmptyState, ENGAGEMENT, SETUP_LABEL, SourceLink, TrustBadge, Warnings, priceText } from "@/components/ui";
 import { PrintButton } from "@/components/PrintButton";
+import { PageHeader } from "@/components/PageHeader";
 import { AlreadyInYourTools } from "@/components/AlreadyInYourTools";
 import { builtInMatches } from "@/lib/builtins/match";
 import { loadBuiltIns } from "@/lib/builtins/load";
@@ -61,16 +62,18 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
   const already = builtInMatches(await loadBuiltIns(), profile);
 
   return (
-    <div className="space-y-6">
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-3xl font-bold text-brand-strong">Your plan to get started</h1>
-          <p className="text-muted">
+    <div className="mx-auto max-w-3xl space-y-6">
+      <PageHeader
+        eyebrow="Your plan"
+        title="Your plan to get started"
+        sub={
+          <>
             {chosen.length === 1 ? "1 tool" : `${chosen.length} tools`} · made {new Date().toLocaleDateString("en-US", { dateStyle: "long" })}
-          </p>
-        </div>
+          </>
+        }
+      >
         <PrintButton />
-      </header>
+      </PageHeader>
 
       <AlreadyInYourTools matches={already} />
 
@@ -99,7 +102,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
         <p className={`font-bold ${underBudget ? "text-good" : "text-warn"}`}>
           {underBudget
             ? `✓ Within your $${profile.budget_usd}/month budget${unknownPrice.length ? " (not counting prices we couldn't find)" : ""}.`
-            : `⚠ Over your $${profile.budget_usd}/month budget by $${total - profile.budget_usd}. Start with one tool, or ask about a smaller plan.`}
+            : `Over your $${profile.budget_usd}/month budget by $${total - profile.budget_usd}. Start with one tool, or ask about a smaller plan.`}
         </p>
         <p className="text-sm text-muted">Starting prices from each vendor&apos;s website. Taxes, add-ons and phone minutes can cost extra.</p>
       </Card>

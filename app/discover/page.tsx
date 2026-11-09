@@ -3,6 +3,7 @@ import { getStore } from "@/lib/storage/db";
 import { getUseCase } from "@/lib/taxonomy/useCases";
 import { domainKey } from "@/lib/discovery/canonical";
 import { DiscoverLive } from "@/components/DiscoverLive";
+import { PageHeader } from "@/components/PageHeader";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Discover new AI tools | AI Tool Matchmaker" };
@@ -14,40 +15,21 @@ export default async function DiscoverPage() {
 
   return (
     <div className="space-y-12">
-      <header className="space-y-4 max-w-3xl">
-        <p className="inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/15 px-3 py-1 text-sm font-bold">
-          <span aria-hidden className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75 animate-ping" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand" />
-          </span>
-          Live discovery engine
+      <PageHeader
+        eyebrow="Discover"
+        title="Search the web for new AI tools"
+        sub="We find products on the open web, read each company's official site, check the vendor, and add only the ones that pass every rule."
+      >
+        <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+          <span className="text-white">{published.length}</span> approved · <span className="text-white">{all.length}</span> investigated ·{" "}
+          <span className="text-white">{all.length - published.length}</span> held back
         </p>
-        <h1 className="font-display text-4xl sm:text-6xl font-extrabold leading-[1.02]">
-          We find the tools. <span className="text-gradient">You don&apos;t have to.</span>
-        </h1>
-        <p className="text-lg text-muted">
-          Search the web for new AI products right now. We read each company&apos;s official website, pull out the
-          facts word-for-word, run six vendor safety checks plus a track-record check, and only add the ones that pass.
-        </p>
-      </header>
-
-      <section aria-label="Directory stats" className="grid grid-cols-3 border-y border-line">
-        {[
-          [String(published.length), "approved tools live"],
-          [String(all.length), "products investigated"],
-          [String(all.length - published.length), "held back or rejected"],
-        ].map(([n, l], i) => (
-          <div key={l} className={`py-5 px-3 sm:px-5 ${i ? "border-l border-line" : ""}`}>
-            <p className="font-display text-3xl sm:text-4xl font-extrabold">{n}</p>
-            <p className="text-sm text-muted">{l}</p>
-          </div>
-        ))}
-      </section>
+      </PageHeader>
 
       <DiscoverLive />
 
       <section aria-labelledby="recent-h" className="space-y-4">
-        <h2 id="recent-h" className="font-display text-2xl font-extrabold">
+        <h2 id="recent-h" className="text-center font-mono text-xs uppercase tracking-[0.22em] text-muted">
           Recently checked
         </h2>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

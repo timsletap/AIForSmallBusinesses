@@ -1,16 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import { Atkinson_Hyperlegible, Inter_Tight } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { NavPill } from "@/components/NavPill";
 
-// Body text: Atkinson Hyperlegible (built for low-vision readability). Headlines: Inter Tight.
-const font = Atkinson_Hyperlegible({
-  variable: "--font-sans-face",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-});
-const display = Inter_Tight({ variable: "--font-display-face", subsets: ["latin"], weight: ["600", "800"], display: "swap" });
+// Geist (a precise grotesk) for everything, Geist Mono for small technical captions.
+const font = Geist({ variable: "--font-sans-face", subsets: ["latin"], display: "swap" });
+const mono = Geist_Mono({ variable: "--font-mono-face", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "AI Tool Matchmaker: find the right AI for your small business",
@@ -18,51 +14,28 @@ export const metadata: Metadata = {
     "Describe what's slowing your business down. Get checked, plain-English AI tool picks that fit your budget and the tools you already use.",
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#050505" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#121318" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${font.variable} ${display.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${font.variable} ${mono.variable} antialiased min-h-screen flex flex-col`}>
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-surface-2 focus:z-50">
           Skip to content
         </a>
-        <header className="no-print sticky top-0 z-40 border-b border-line bg-background/75 backdrop-blur-md">
-          <div aria-hidden className="md-flag-stripe h-1" />
-          <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between gap-2" aria-label="Main">
-            <Link href="/" className="font-display font-extrabold tracking-tight flex items-center gap-2.5 min-h-11" aria-label="AI Tool Matchmaker, University of Maryland, home">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/umd-terrapins-m.svg" alt="" width={30} height={33} className="h-8 w-auto" />
-              <span className="leading-none">
-                <span className="block text-base sm:text-lg whitespace-nowrap">Tool Matchmaker</span>
-                <span className="hidden sm:block text-[0.65rem] font-bold tracking-[0.18em] text-gold uppercase mt-0.5">University of Maryland</span>
-              </span>
-            </Link>
-            <div className="flex items-center gap-1 sm:gap-2 text-[0.95rem] whitespace-nowrap">
-              <Link href="/discover" className="px-2 sm:px-3 min-h-11 inline-flex items-center gap-1.5 rounded-lg text-muted hover:text-white">
-                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-                Discover
-              </Link>
-              <Link href="/about" className="hidden md:inline-flex px-3 min-h-11 items-center rounded-lg text-muted hover:text-white">
-                About
-              </Link>
-              <Link href="/tools" className="px-2 sm:px-3 min-h-11 inline-flex items-center rounded-lg text-muted hover:text-white">
-                Browse
-              </Link>
-              <Link
-                href="/advisor"
-                className="px-3 sm:px-4 min-h-10 inline-flex items-center rounded-full bg-white text-black font-bold hover:bg-gold transition-colors"
-              >
-                <span className="sm:hidden">Start</span>
-                <span className="hidden sm:inline">Get matched</span>
-              </Link>
-            </div>
-          </nav>
+        <header className="no-print flex justify-center pt-6 pb-2">
+          <Link href="/" aria-label="AI Tool Matchmaker, University of Maryland, home" className="grid h-11 w-11 place-items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/brand/umd-terrapins-m.svg" alt="" width={30} height={33} className="h-[33px] w-auto" />
+          </Link>
         </header>
-        <main id="main" className="flex-1 min-w-0 mx-auto w-full max-w-6xl px-4 py-6 sm:py-10">
+        <div className="relative z-50">
+          <NavPill />
+        </div>
+        <main id="main" className="flex-1 min-w-0 mx-auto w-full max-w-6xl px-5 pt-8 pb-28 sm:pt-12">
           {children}
         </main>
-        <footer className="no-print border-t border-line text-sm text-muted">
+        <footer className="no-print border-t border-line text-sm text-muted pb-24">
           <div className="mx-auto max-w-6xl px-4 py-8 grid gap-6 sm:grid-cols-[2fr_1fr]">
             <div className="sm:col-span-2 flex flex-wrap items-center gap-4 pb-6 border-b border-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}

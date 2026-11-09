@@ -1,6 +1,7 @@
 import { getLlm, parseJsonLoose, type ChatMessage } from "@/lib/llm/provider";
 import { Extraction } from "./schema";
 import type { Tool } from "@/lib/schemas/tool";
+import { hasRealContact } from "@/lib/verification/contact";
 import { EXTRACTION_SYSTEM, extractionUser } from "./prompts";
 
 export type SourcePage = { url: string; text: string };
@@ -72,7 +73,6 @@ function findQuote(quote: string, sourceUrl: string, pages: SourcePage[]): { url
   return null;
 }
 
-const CONTACT_IN_QUOTE = /[\w.+-]+@[\w-]+\.[\w.]+|\+?\d[\d\s().-]{8,}\d|\b\d{2,5}\s+\w+.*\b(street|st|avenue|ave|road|rd|suite|blvd|drive|dr|wacker|olive)\b/i;
 const SECURITY_IN_QUOTE = /secur|\bsoc ?(1|2|3|ii)\b|iso ?27001|encrypt|complian|\btrust center\b|hipaa|pci|gdpr|penetration|audit/i;
 
 /** Does the quote actually support the value it's attached to? */
@@ -102,7 +102,7 @@ export function quoteSupports(key: CitedKey, value: unknown, quote: string): boo
       return !!word && q.includes(word);
     }
     case "contact":
-      return CONTACT_IN_QUOTE.test(quote);
+      return hasRealContact(quote);
     case "security":
       // "We are not yet SOC 2 certified" is not evidence of security docs.
       return SECURITY_IN_QUOTE.test(quote) && !/\bnot (yet )?(soc|iso|hipaa|certified|compliant|audited)/i.test(quote);

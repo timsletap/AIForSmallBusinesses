@@ -2,7 +2,9 @@ import { fetchWithTimeout } from "@/lib/llm/provider";
 import { domainKey } from "@/lib/discovery/canonical";
 
 /** Vendors need a track record: domains younger than this are never auto-published. */
-export const MIN_DOMAIN_AGE_DAYS = 730;
+export const MIN_DOMAIN_AGE_DAYS = 90;
+/** Plain-language form of the rule, used wherever it is shown to people. */
+export const MIN_DOMAIN_AGE_LABEL = "3 months";
 
 const cache = new Map<string, string | null>();
 

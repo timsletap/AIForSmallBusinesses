@@ -10,6 +10,7 @@ import { CHECK_IDS, type Tool } from "@/lib/schemas/tool";
 import { Button, EmptyState, ENGAGEMENT, SETUP_LABEL, TrustBadge, priceText } from "@/components/ui";
 import { FitMeter } from "@/components/FitMeter";
 import { ToolLogo } from "@/components/ToolLogo";
+import { PageHeader } from "@/components/PageHeader";
 import { FactorChart, PaybackChart, PriceChart, SERIES, type ChartTool } from "@/components/CompareCharts";
 
 export const dynamic = "force-dynamic";
@@ -109,19 +110,21 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
 
   return (
     <div className="space-y-10">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <Link href={back} className="text-sm text-muted hover:text-white">
-            ← Back
-          </Link>
-          <h1 className="font-display text-3xl sm:text-5xl font-extrabold mt-2">Head to head</h1>
-          <p className="text-muted mt-1">
+      <Link href={back} className="text-sm text-muted hover:text-white">
+        ← Back
+      </Link>
+      <PageHeader
+        eyebrow="Compare"
+        title="Head to head"
+        sub={
+          <>
             {tools.map((t) => t.name).join(" vs ")}
             {profile && <> · scored for your {industry.label.toLowerCase()}</>}
-          </p>
-        </div>
+          </>
+        }
+      >
         {profile && <Button href={`/plan?${query}&ids=${tools.map((t) => t.slug).join(",")}`}>Build my plan with these</Button>}
-      </div>
+      </PageHeader>
 
       {/* Contenders */}
       <section className={`grid gap-4 ${cols}`} aria-label="Tools compared">
@@ -132,7 +135,7 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
               <div className="flex items-center gap-3 min-w-0">
                 <ToolLogo name={t.name} url={t.canonical_url} size={48} />
                 <div className="min-w-0">
-                  <Link href={`/tools/${t.slug}?${query}`} className="font-display text-xl font-extrabold hover:text-gold">
+                  <Link href={`/tools/${t.slug}?${query}`} className="font-display text-xl font-semibold hover:text-gold">
                     {t.name}
                   </Link>
                   <p className="text-sm text-muted truncate">{t.vendor ?? new URL(t.canonical_url).hostname}</p>
@@ -144,15 +147,15 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
             <div className="flex flex-wrap items-center gap-2">
               <TrustBadge level={t.trust_level} />
               {badges[i].map((b) => (
-                <span key={b} className="rounded-full bg-gold px-2.5 py-0.5 text-xs font-extrabold text-black">
-                  ★ {b}
+                <span key={b} className="rounded-full bg-gold px-2.5 py-0.5 text-xs font-semibold text-black">
+                  {b}
                 </span>
               ))}
             </div>
             <div className="flex items-end justify-between border-t border-line pt-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.16em] text-muted">From</p>
-                <p className="font-display text-2xl font-extrabold">
+                <p className="font-display text-2xl font-semibold">
                   {prices[i] === null ? "Ask" : prices[i] === 0 ? "Free" : `$${prices[i]}`}
                   {prices[i] ? <span className="text-sm font-bold text-muted">/mo</span> : null}
                 </p>
@@ -178,7 +181,7 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
 
       {/* Head-to-head table */}
       <section aria-labelledby="facts-h" className="space-y-3">
-        <h2 id="facts-h" className="font-display text-2xl font-extrabold">
+        <h2 id="facts-h" className="font-display text-2xl font-semibold">
           The facts, side by side
         </h2>
         <div className="overflow-hidden rounded-2xl border border-line">

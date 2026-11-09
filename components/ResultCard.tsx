@@ -5,6 +5,7 @@ import type { Profile } from "@/lib/schemas/profile";
 import { FitMeter } from "@/components/FitMeter";
 import { ToolLogo } from "@/components/ToolLogo";
 import { Button, Card, ENGAGEMENT, TrustBadge, Warnings, priceText } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 
 export function ResultCard({
   s,
@@ -58,7 +59,7 @@ export function ResultCard({
         ))}
       </ul>
 
-      {payback && <p className="rounded-xl bg-warn-soft border border-warn/30 px-3 py-2 text-[0.95rem]">💡 {payback}</p>}
+      {payback && <p className="flex items-start gap-2 rounded-xl border border-gold/25 bg-gold/[0.05] px-3 py-2 text-[0.95rem]"><Icon name="insight" size={18} className="mt-0.5 shrink-0 text-gold" />{payback}</p>}
 
       {s.check_first.length > 0 && <Warnings items={s.check_first} />}
       <Warnings items={t.warnings} max={2} />

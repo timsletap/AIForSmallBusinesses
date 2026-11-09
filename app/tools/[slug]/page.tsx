@@ -11,7 +11,8 @@ import { CHECK_LABELS } from "@/lib/verification/vendorChecks";
 import { ToolFitChecker } from "@/components/ToolFitChecker";
 import { ToolLogo } from "@/components/ToolLogo";
 import { daysSinceChecked, isStale } from "@/lib/pipeline/refresh";
-import { Button, Card, ENGAGEMENT, SETUP_LABEL, SourceLink, TrustBadge, Warnings, priceText } from "@/components/ui";
+import { Button, Card, ENGAGEMENT, SETUP_LABEL, SourceTitle, TrustBadge, Warnings, priceText } from "@/components/ui";
+import { Icon } from "@/components/Icon";
 
 export const dynamic = "force-dynamic";
 
@@ -42,24 +43,25 @@ export default async function ToolPage({ params, searchParams }: Props) {
   const profile = profileFromParams(await searchParams);
   const mine = new Set(profile?.current_tools ?? []);
   const query = profile ? profileToParams(profile).toString() : "";
-  const sources = [...new Set([t.canonical_url, ...Object.values(t.evidence).map((e) => e.source_url), ...Object.values(t.vendor_checks).map((c) => c.source_url)].filter((u): u is string => !!u).map((u) => u.replace(/\/+$/, "")))];
+  // A trial or demo quote must never appear under "Free plan" for a tool without one.
+  const evidence = Object.entries(t.evidence).filter(([field]) => field !== "free_plan" || t.pricing.free_plan === true);
 
   return (
-    <article className="space-y-6">
+    <article className="mx-auto max-w-4xl space-y-6">
       {profile && (
-        <Link href={`/results?${query}`} className="no-print underline">
+        <Link href={`/results?${query}`} className="no-print text-sm text-muted hover:text-white">
           ← Back to my matches
         </Link>
       )}
-      <header className="space-y-3">
-        <div className="flex flex-wrap items-center gap-3">
-          <ToolLogo name={t.name} url={t.canonical_url} size={56} />
-          <h1 className="font-display text-4xl font-extrabold">{t.name}</h1>
+      <header className="mx-auto max-w-3xl space-y-4 pt-2 pb-4 text-center">
+        <ToolLogo name={t.name} url={t.canonical_url} size={64} className="mx-auto" />
+        <h1 className="font-display text-4xl sm:text-5xl font-semibold">{t.name}</h1>
+        <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-muted">
           <TrustBadge level={t.trust_level} />
+          {t.vendor && <span>Made by {t.vendor}</span>}
         </div>
-        {t.vendor && <p className="text-muted">Made by {t.vendor}</p>}
-        <p className="text-lg">{t.description}</p>
-        <div className="flex flex-wrap gap-3">
+        <p className="text-lg text-muted">{t.description}</p>
+        <div className="flex flex-wrap justify-center gap-3">
           <Button href={t.canonical_url} external>
             {t.engagement ? ENGAGEMENT[t.engagement] : "Visit their website"}
           </Button>
@@ -87,26 +89,27 @@ export default async function ToolPage({ params, searchParams }: Props) {
         </Card>
 
         <Card className="space-y-2">
-          <h2 className="text-xl font-bold">Price</h2>
+          <h2 className="text-xl font-bold">
+            <SourceTitle href={t.pricing.pricing_url}>Price</SourceTitle>
+          </h2>
           <p className="text-lg font-bold">{priceText(t)}</p>
           {t.pricing.plan_name && <p>Plan: {t.pricing.plan_name}</p>}
           {t.pricing.free_trial_days ? <p>{t.pricing.free_trial_days}-day free trial</p> : null}
           {t.evidence.price_monthly_min && (
-            <blockquote className="border-l-4 border-line pl-3 text-muted italic">
-              “{t.evidence.price_monthly_min.quote}”
-            </blockquote>
+            <blockquote className="border-l-2 border-gold/60 pl-3 text-muted">“{t.evidence.price_monthly_min.quote}”</blockquote>
           )}
-          <SourceLink href={t.pricing.pricing_url}>See prices on their site</SourceLink>
         </Card>
 
         <Card className="space-y-2">
-          <h2 className="text-xl font-bold">Works with</h2>
+          <h2 className="text-xl font-bold">
+            <SourceTitle href={t.evidence.integrations?.source_url}>Works with</SourceTitle>
+          </h2>
           {t.integrations.length ? (
             <ul className="flex flex-wrap gap-2">
               {t.integrations.map((i) => (
                 <li
                   key={i}
-                  className={`rounded-full px-3 py-1 border-2 font-bold ${mine.has(i) ? "border-brand bg-brand-soft text-brand-strong" : "border-line"}`}
+                  className={`rounded-full px-3 py-1 border-2 font-bold ${mine.has(i) ? "border-gold/70 bg-gold/10 text-gold" : "border-line"}`}
                 >
                   {mine.has(i) && <span aria-hidden>✓ </span>}
                   {toolLabel(i)}
@@ -115,7 +118,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
               ))}
             </ul>
           ) : (
-            <p className="text-warn">⚠ Their site doesn&apos;t say which apps it works with. Ask before buying.</p>
+            <p className="text-warn">Their site doesn&apos;t say which apps it works with. Ask before buying.</p>
           )}
           {profile &&
             [...mine]
@@ -126,7 +129,6 @@ export default async function ToolPage({ params, searchParams }: Props) {
                 </p>
               ))}
           {t.works_standalone && <p>Also works on its own, no other apps needed.</p>}
-          <SourceLink href={t.evidence.integrations?.source_url}>Source</SourceLink>
         </Card>
 
         <Card className="space-y-2">
@@ -175,56 +177,49 @@ export default async function ToolPage({ params, searchParams }: Props) {
                   >
                     {c?.pass ? "✓" : "!"}
                   </span>
-                  <span className="font-bold">{CHECK_LABELS[id]}</span>
+                  <span className="font-bold">
+                    {c?.pass ? <SourceTitle href={c.source_url}>{CHECK_LABELS[id]}</SourceTitle> : CHECK_LABELS[id]}
+                  </span>
                   <span className={c?.pass ? "text-good" : "text-warn"}>{c?.pass ? "Found" : "Not found"}</span>
                 </span>
-                <span className="flex items-center gap-3">
-                  {c?.note && <span className="text-sm text-muted">{c.note}</span>}
-                  {c?.pass && <SourceLink href={c.source_url}>View</SourceLink>}
-                </span>
+                {c?.note && <span className="text-sm text-muted">{c.note}</span>}
               </li>
             );
           })}
         </ul>
-        {t.admin_reviewed && <p className="text-good font-bold">✔ Our team also checked this tool by hand.</p>}
+        {t.admin_reviewed && <p className="text-good font-bold flex items-center gap-2"><Icon name="check" size={18} /> Our team also checked this tool by hand.</p>}
         <Warnings items={t.warnings} />
       </Card>
 
-      <Card className="space-y-3">
-        <h2 className="text-xl font-bold">Where these facts come from</h2>
-        <dl className="space-y-2">
-          {Object.entries(t.evidence).map(([field, e]) => (
+      <details className="group rounded-2xl border border-line bg-surface">
+        <summary className="list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3 p-5 min-h-14">
+          <span>
+            <span className="block text-xl font-bold">Where these facts come from</span>
+            <span className="block text-sm text-muted">
+              {evidence.length} facts, each quoted word-for-word from {t.name}&apos;s own site · checked{" "}
+              {new Date(t.last_checked_at).toLocaleDateString("en-US", { dateStyle: "medium" })}
+            </span>
+          </span>
+          <span aria-hidden className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-sm transition-transform group-open:rotate-180">
+            ▾
+          </span>
+        </summary>
+        <dl className="grid gap-x-6 gap-y-4 px-5 pb-5 sm:grid-cols-2">
+          {evidence.map(([field, e]) => (
             <div key={field}>
-              <dt className="font-bold">
-                {FIELD_LABELS[field] ?? field}
-                {e.claim_type === "vendor_claim" && <span className="ml-2 text-sm text-accent">Vendor says</span>}
+              <dt className="text-sm font-bold">
+                <SourceTitle href={e.source_url}>{FIELD_LABELS[field] ?? field}</SourceTitle>
+                {e.claim_type === "vendor_claim" && <span className="ml-2 text-xs text-accent">Vendor says</span>}
               </dt>
-              <dd className="text-muted">
-                “{e.quote}” <SourceLink href={e.source_url}>source</SourceLink>
-              </dd>
+              <dd className="text-sm text-muted">“{e.quote}”</dd>
             </div>
           ))}
         </dl>
-        <h3 className="font-bold pt-2">Pages we read</h3>
-        <ul className="text-sm space-y-1 break-all">
-          {sources.map((u) => (
-            <li key={u}>
-              <a href={u} target="_blank" rel="noreferrer" className="underline">
-                {u}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="text-sm text-muted">
-          Last checked {new Date(t.last_checked_at).toLocaleDateString("en-US", { dateStyle: "long" })}. Details can
-          change, so confirm with the vendor before you pay.
-        </p>
-        {isStale(t) && (
-          <p className="text-warn font-bold">
-            ⚠ We last checked this {daysSinceChecked(t)} days ago, so some details may be out of date.
-          </p>
-        )}
-      </Card>
+        <p className="px-5 pb-5 text-xs text-muted">Details can change, so confirm with the vendor before you pay.</p>
+      </details>
+      {isStale(t) && (
+        <p className="text-warn font-bold flex items-center gap-2"><Icon name="alert" size={18} /> We last checked this {daysSinceChecked(t)} days ago, so some details may be out of date.</p>
+      )}
     </article>
   );
 }

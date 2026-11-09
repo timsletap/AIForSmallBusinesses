@@ -17,7 +17,7 @@ export function ToolLogo({ name, url, size = 40, className = "" }: { name: strin
       <span
         aria-hidden
         style={box}
-        className={`grid shrink-0 place-items-center rounded-xl bg-surface-2 ring-1 ring-line font-display font-extrabold text-white ${className}`}
+        className={`grid shrink-0 place-items-center rounded-xl bg-surface-2 ring-1 ring-line font-display font-semibold text-white ${className}`}
       >
         {name.charAt(0).toUpperCase()}
       </span>

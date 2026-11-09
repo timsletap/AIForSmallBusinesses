@@ -8,7 +8,18 @@ export type DiscoverEvent =
   | { type: "stage"; stage: Stage; message: string }
   | { type: "candidates"; names: string[] }
   | { type: "candidate"; name: string; url: string; stage: Stage; message: string }
-  | { type: "result"; name: string; status: "published" | "draft" | "rejected" | "failed" | "skipped"; detail: string; slug?: string; checks?: number; price?: string }
+  | {
+      type: "result";
+      name: string;
+      status: "published" | "draft" | "rejected" | "failed" | "skipped";
+      detail: string;
+      slug?: string;
+      checks?: number;
+      price?: string;
+      url?: string;
+      description?: string;
+      rules?: { id: string; label: string; pass: boolean; detail: string }[];
+    }
   | { type: "done"; approved: number; held: number; message: string }
   | { type: "error"; message: string };
 

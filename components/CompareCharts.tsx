@@ -38,7 +38,7 @@ function Panel({ title, sub, children }: { title: string; sub: string; children:
   return (
     <section className="rounded-2xl border border-line bg-surface p-5 space-y-4">
       <div>
-        <h3 className="font-display text-lg font-extrabold">{title}</h3>
+        <h3 className="font-display text-lg font-semibold">{title}</h3>
         <p className="text-sm text-muted">{sub}</p>
       </div>
       {children}
@@ -117,7 +117,7 @@ export function PriceChart({ tools, budget }: { tools: ChartTool[]; budget: numb
                 <span aria-hidden className="h-2 w-2 shrink-0 rounded-sm" style={{ background: SERIES[i] }} />
                 {t.name}
               </dt>
-              <dd className="mt-1 font-display text-lg font-extrabold tabular-nums">{lo == null ? "Ask" : lo === 0 ? "$0" : money(Math.round(lo * 12))}</dd>
+              <dd className="mt-1 font-display text-lg font-semibold tabular-nums">{lo == null ? "Ask" : lo === 0 ? "$0" : money(Math.round(lo * 12))}</dd>
               <dd className="text-xs text-muted">per year to start</dd>
             </div>
           );

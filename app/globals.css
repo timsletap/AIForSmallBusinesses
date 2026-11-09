@@ -6,13 +6,13 @@
  * buttons 4.8:1. Red is never used for body text (too dark on black); warnings use a light red tint.
  */
 :root {
-  --background: #050505;
-  --surface: #0f0f10;
-  --surface-2: #18181a;
-  --foreground: #ffffff;
-  --muted: #a8a8ad;
-  --border: #26262a;
-  --border-strong: #3a3a40;
+  --background: #121318;
+  --surface: #18191f;
+  --surface-2: #20212a;
+  --foreground: #f2f2f6;
+  --muted: #9b9ba8;
+  --border: #2a2b34;
+  --border-strong: #3c3d48;
   --brand: #e21833;
   --brand-hover: #f0324b;
   --brand-strong: #ffffff;
@@ -47,7 +47,8 @@
   --color-warn-soft: var(--warn-soft);
   --color-bad: var(--bad);
   --font-sans: var(--font-sans-face), system-ui, sans-serif;
-  --font-display: var(--font-display-face), var(--font-sans-face), system-ui, sans-serif;
+  --font-display: var(--font-sans-face), system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
 }
 
 html {
@@ -57,17 +58,6 @@ html {
 body {
   background-color: var(--background);
   /* Soft glows behind the content; fixed so they don't repaint while scrolling. */
-  background-image:
-    radial-gradient(55rem 35rem at 90% -15%, rgba(226, 24, 51, 0.22), transparent 60%),
-    radial-gradient(40rem 28rem at -10% 5%, rgba(255, 210, 0, 0.07), transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size:
-    auto,
-    auto,
-    56px 56px,
-    56px 56px;
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.55;
@@ -86,6 +76,25 @@ summary {
 select option {
   background: var(--surface-2);
   color: var(--foreground);
+}
+
+/* Film grain on the canvas (Room & Pillar-style texture), very low contrast. z-index -1 keeps it
+   behind all content, so it can never intercept clicks or stack over the floating nav. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27160%27 height=%27160%27><filter id=%27n%27><feTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%272%27 stitchTiles=%27stitch%27/></filter><rect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/></svg>");
+}
+
+/* Dotted divider used under mono labels. */
+.dotted-rule {
+  background-image: linear-gradient(90deg, var(--border-strong) 1px, transparent 1px);
+  background-size: 4px 1px;
+  height: 1px;
 }
 
 /* Shared looks */
@@ -165,9 +174,14 @@ select option {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  letter-spacing: -0.035em;
 }
 
 /* Maryland flag accent: Calvert (gold/black) and Crossland (red/white) halves. */
@@ -175,4 +189,58 @@ h2 {
   background:
     repeating-linear-gradient(90deg, #ffd200 0 14px, #000 14px 28px) left / 50% 100% no-repeat,
     repeating-linear-gradient(90deg, #e21833 0 14px, #fff 14px 28px) right / 50% 100% no-repeat;
+}
+
+/* Logo marquee: the track holds the list twice and slides by half its width for a seamless loop. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .marquee-track [aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+.float-slow {
+  animation: float 9s ease-in-out infinite;
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Tool, TrustLevel } from "@/lib/schemas/tool";
 import { TRUST_BADGE } from "@/lib/verification/vendorChecks";
+import { Icon } from "@/components/Icon";
 
 // UMD palette: gold = verified by hand, white = automated checks passed, red tint = some checks missing.
 const TONES: Record<string, string> = {
@@ -84,7 +85,7 @@ export function Warnings({ items, max }: { items: string[]; max?: number }) {
     <ul className="space-y-1 text-[0.95rem] text-warn">
       {shown.map((w) => (
         <li key={w} className="flex gap-2">
-          <span aria-hidden>⚠</span>
+          <Icon name="alert" size={16} className="mt-1 shrink-0" />
           <span>
             <span className="sr-only">Warning: </span>
             {w}
@@ -111,5 +112,17 @@ export function EmptyState({ title, children }: { title: string; children?: Reac
       <p className="text-lg font-bold">{title}</p>
       {children && <div className="mt-2 text-muted">{children}</div>}
     </Card>
+  );
+}
+
+/** A heading or label that links to the vendor page it came from (instead of a separate "source" link). */
+export function SourceTitle({ href, children }: { href: string | null | undefined; children: React.ReactNode }) {
+  if (!href) return <>{children}</>;
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="group/src inline-flex items-baseline gap-1 hover:text-gold">
+      {children}
+      <Icon name="external" size={13} className="text-muted transition group-hover/src:text-gold group-hover/src:-translate-y-0.5 self-center" />
+      <span className="sr-only"> (opens the vendor&apos;s page)</span>
+    </a>
   );
 }
