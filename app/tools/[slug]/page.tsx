@@ -10,6 +10,7 @@ import { CURRENT_TOOLS, toolLabel } from "@/lib/taxonomy/tools";
 import { getUseCase } from "@/lib/taxonomy/useCases";
 import { CHECK_LABELS } from "@/lib/verification/vendorChecks";
 import { FitBreakdown } from "@/components/ResultCard";
+import { daysSinceChecked, isStale } from "@/lib/pipeline/refresh";
 import { Button, Card, ENGAGEMENT, SETUP_LABEL, SourceLink, TrustBadge, Warnings, priceText } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
@@ -225,6 +226,11 @@ export default async function ToolPage({ params, searchParams }: Props) {
           Last checked {new Date(t.last_checked_at).toLocaleDateString("en-US", { dateStyle: "long" })}. Details can
           change, so confirm with the vendor before you pay.
         </p>
+        {isStale(t) && (
+          <p className="text-amber-900 font-bold">
+            ⚠ We last checked this {daysSinceChecked(t)} days ago, so some details may be out of date.
+          </p>
+        )}
       </Card>
     </article>
   );

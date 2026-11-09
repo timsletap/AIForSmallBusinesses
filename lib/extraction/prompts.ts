@@ -8,6 +8,8 @@ RULES
 - Use ONLY the page text provided. Never use outside knowledge. If a fact is not in the text, use null.
 - Every cited field is {"value": ..., "source_url": "<one of the provided page URLs>", "quote": "<short EXACT copy of words from that page, 3-25 words>", "claim_type": "fact" | "vendor_claim"} or null.
 - The quote must be copied character-for-character from the page text so it can be found again. Do not paraphrase quotes.
+- The quote must itself show the value: a price quote contains that dollar amount; a plan_name quote contains the plan name; a free_trial_days quote contains the number of days; a free_plan quote says "free" (and is not about a trial or demo); a contact quote contains the email, phone or address; a security quote names the security practice or certification; a vendor quote contains the company name (the footer copyright line is ideal).
+- plan_name is ONE plan: the cheapest paid plan a small business would use.
 - Marketing statements ("best", "#1", "boost revenue 30%") are "vendor_claim". Prices, plan names, integrations and policies are "fact".
 - Prices are US dollars PER MONTH for the cheapest paid plan a small business would use (min) and a typical mid plan (max). Convert annual prices to monthly only if the page shows the monthly figure. If no dollar price is shown, null.
 - use_cases, industries and integrations must use ONLY these IDs:

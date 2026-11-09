@@ -3,7 +3,7 @@ import type { DiscoveryRun, Evidence, Tool } from "@/lib/schemas/tool";
 import { canonicalUrl, homepageUrl, sameSite, slugify } from "@/lib/discovery/canonical";
 import { disallowed, fetchPage, findKeyLinks, type FetchedPage } from "@/lib/discovery/fetchPage";
 import { buildQuery, searchCandidates, type Candidate } from "@/lib/discovery/search";
-import { extract, validateExtraction, CITED_KEYS } from "@/lib/extraction/extract";
+import { carryForward, extract, validateExtraction, CITED_KEYS } from "@/lib/extraction/extract";
 import type { Extraction } from "@/lib/extraction/schema";
 import { runVendorChecks, trustLevel, checkWarnings } from "@/lib/verification/vendorChecks";
 import { getStore } from "@/lib/storage/db";
@@ -70,6 +70,10 @@ export async function processCandidate(
   } catch (e) {
     log(`✗ ${cand.name}: extraction failed (${(e as Error).message.slice(0, 120)})`);
     return { outcome: "failed" };
+  }
+  if (existing) {
+    const carried = carryForward(ex, existing);
+    if (carried.length) log(`  re-checking previous values: ${carried.join(", ")}`);
   }
   const { ex: v, dropped } = validateExtraction(ex, pages.map((p) => ({ url: p.url, text: p.text })));
   if (dropped.length) log(`  dropped unverified fields: ${dropped.join(", ")}`);

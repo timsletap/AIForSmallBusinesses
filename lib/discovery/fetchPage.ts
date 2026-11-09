@@ -116,10 +116,20 @@ export async function fetchPage(url: string): Promise<FetchedPage | null> {
       // Bad href.
     }
   });
-  $("script, style, noscript, svg, iframe").remove();
   const title = $("title").first().text().trim();
-  const text = $("body").text().replace(/\s+/g, " ").trim().slice(0, MAX_TEXT);
-  return { url, finalUrl, status: res.status, https: finalUrl.startsWith("https://"), title, text, links };
+  return { url, finalUrl, status: res.status, https: finalUrl.startsWith("https://"), title, text: htmlToText($).slice(0, MAX_TEXT), links };
+}
+
+/**
+ * Visible body text with a space between elements, so "<h3>Starter</h3><p>$79 a month</p>" reads
+ * "Starter $79 a month" rather than "Starter$79 a month".
+ */
+export function htmlToText(input: string | cheerio.CheerioAPI): string {
+  const $ = typeof input === "string" ? cheerio.load(input) : input;
+  $("script, style, noscript, svg, iframe, template").remove();
+  $("br").replaceWith(" ");
+  $("body *").after(" ");
+  return $("body").text().replace(/\s+/g, " ").trim();
 }
 
 export type PageKind = "pricing" | "integrations" | "privacy" | "terms" | "security" | "contact";

@@ -103,3 +103,80 @@ describe("admin unverify", () => {
     expect(trustLevel(checks(6), false)).toBe("checks_passed");
   });
 });
+
+describe("refresh carry-forward", () => {
+  it("keeps a previous price only if its quote is still on the vendor's page", async () => {
+    const { carryForward } = await import("@/lib/extraction/extract");
+    const prev = tool({
+      pricing: { ...tool().pricing, est_monthly_usd_min: 29 },
+      evidence: { price_monthly_min: { source_url: "https://a.com/pricing", quote: "Starter plan $29 per month", claim_type: "fact" } },
+    });
+    const fresh = () => Extraction.parse({ name: "A", description: "x" });
+
+    const still = fresh();
+    expect(carryForward(still, prev)).toEqual(["price_monthly_min"]);
+    const samePages = [{ url: "https://a.com/pricing", text: "Starter plan  $29 per month, billed monthly." }];
+    expect(validateExtraction(still, samePages).ex.price_monthly_min?.value).toBe(29);
+
+    const changed = fresh();
+    carryForward(changed, prev);
+    const newPages = [{ url: "https://a.com/pricing", text: "Starter plan $39 per month" }];
+    expect(validateExtraction(changed, newPages).ex.price_monthly_min).toBeNull();
+  });
+
+  it("never overrides a value the new extraction found", async () => {
+    const { carryForward } = await import("@/lib/extraction/extract");
+    const prev = tool({
+      vendor: "Old Inc.",
+      evidence: { vendor: { source_url: "https://a.com", quote: "Old Inc.", claim_type: "fact" } },
+    });
+    const ex = Extraction.parse({ name: "A", description: "x", vendor: { value: "New Inc.", source_url: "https://a.com", quote: "New Inc." } });
+    expect(carryForward(ex, prev)).toEqual([]);
+    expect(ex.vendor?.value).toBe("New Inc.");
+  });
+});
+
+describe("quotes must support their values (real failures from the live data)", () => {
+  it("reads page elements with spaces between them", async () => {
+    const { htmlToText } = await import("@/lib/discovery/fetchPage");
+    expect(htmlToText("<body><h3>Starter</h3><p>$79 a month</p><a>Login</a><span>412-569-0026</span></body>")).toBe(
+      "Starter $79 a month Login 412-569-0026",
+    );
+  });
+
+  it("shows the page's own spacing for a run-together quote", async () => {
+    const { locateQuote } = await import("@/lib/extraction/extract");
+    expect(locateQuote("Professional$49per month", "Plans: Professional $49 per month For solo owners")).toBe("Professional $49 per month");
+    expect(locateQuote("Enterprise $999", "Professional $49 per month")).toBeNull();
+  });
+
+  it.each([
+    ["plan_name", "Core, Connect, Grow, Plus", "We recommend the Connect plan for you.", false],
+    ["plan_name", "Starter", "Our Starter plan gives you:", true],
+    ["free_plan", true, "For solo operators just getting started.", false],
+    ["free_plan", true, "25 calls / month, free forever", true],
+    ["free_plan", true, "Start your free trial", false],
+    ["free_trial_days", 14, "Try Capsule free for 14 days.", true],
+    ["free_trial_days", 30, "Try Capsule free for 14 days.", false],
+    ["security", "x", "Privacy Policy Terms of Service Trust Center Careers", true],
+    ["security", "x", "Give us a call and we'll walk you through it.", false],
+    ["contact", "x", "Give us a call and we'll walk you through it.", false],
+    ["contact", "x", "Call us toll free: 1-888-721-1115", true],
+    ["vendor", "Birdeye Inc", "© 2026 Birdeye Inc", true],
+    ["vendor", "The Rocket Science Group", "Mailchimp® is a registered trademark of The Rocket Science Group.", true],
+    ["vendor", "Acme Inc", "© 2026 Other Co", false],
+  ] as const)("%s = %j with %j → %s", async (key, value, quote, ok) => {
+    const { quoteSupports } = await import("@/lib/extraction/extract");
+    expect(quoteSupports(key, value, quote)).toBe(ok);
+  });
+
+  it("keeps only integrations the vendor's pages actually name", () => {
+    const ex = Extraction.parse({
+      name: "A",
+      description: "x",
+      integrations: { value: ["QuickBooks", "Salesforce"], source_url: "https://a.com", quote: "Sync with QuickBooks" },
+    });
+    const v = validateExtraction(ex, [{ url: "https://a.com", text: "Sync with QuickBooks Online and Gmail." }]).ex;
+    expect(v.integrations?.value).toEqual(["QuickBooks"]);
+  });
+});

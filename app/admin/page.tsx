@@ -63,15 +63,28 @@ export default function AdminPage() {
 
   async function discover(e: React.FormEvent) {
     e.preventDefault();
-    setBusy(true);
-    setMsg("Running discovery. This can take 1 to 3 minutes…");
-    setLastRun(null);
-    try {
-      const res = await fetch("/api/admin/discover", {
+    await runJob("Running discovery. This can take 1 to 3 minutes…", () =>
+      fetch("/api/admin/discover", {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-admin-password": pw },
         body: JSON.stringify(query.trim() ? { query: query.trim(), use_case: useCase } : { use_case: useCase, industry }),
-      });
+      }),
+    );
+  }
+
+  /** Same job the daily cron runs: re-check the 3 tools checked longest ago. */
+  async function refreshOldest() {
+    await runJob("Re-checking the 3 oldest tools. This can take 1 to 3 minutes…", () =>
+      fetch("/api/cron/refresh", { headers: { "x-admin-password": pw } }),
+    );
+  }
+
+  async function runJob(startMsg: string, call: () => Promise<Response>) {
+    setBusy(true);
+    setMsg(startMsg);
+    setLastRun(null);
+    try {
+      const res = await call();
       const data = await res.json();
       if (!res.ok) throw new Error(data.error?.message ?? "Run failed");
       setLastRun(data.run);
@@ -84,7 +97,8 @@ export default function AdminPage() {
     }
   }
 
-  async function act(id: string, action: "verify" | "unverify" | "reject") {
+  async function act(id: string, action: "verify" | "unverify" | "reject" | "recheck") {
+    if (action === "recheck") setMsg("Re-checking the vendor's site. This takes about a minute…");
     const res = await fetch(`/api/admin/tools/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-admin-password": pw },
@@ -93,6 +107,7 @@ export default function AdminPage() {
     const data = await res.json();
     if (!res.ok) return setMsg(data.error?.message ?? "Action failed");
     setTools((ts) => ts.map((t) => (t.id === id ? data.tool : t)));
+    if (action === "recheck") setMsg((data.log as string[]).filter((l) => /^[✓✗]/.test(l)).join(" ") || "Re-check finished.");
   }
 
   if (!authed) {
@@ -158,6 +173,17 @@ export default function AdminPage() {
             {busy ? "Running…" : "Run (up to 3 candidates)"}
           </button>
         </form>
+        <div className="flex flex-wrap items-center gap-3 border-t border-line pt-3">
+          <button
+            type="button"
+            onClick={refreshOldest}
+            disabled={busy}
+            className="min-h-11 px-5 rounded-xl border-2 border-brand text-brand-strong bg-white font-bold disabled:opacity-60"
+          >
+            Refresh the 3 oldest tools now
+          </button>
+          <span className="text-sm text-muted">This also runs by itself once a day.</span>
+        </div>
         <p role="status" className="font-bold">
           {msg}
         </p>
@@ -224,6 +250,9 @@ export default function AdminPage() {
                     )}
                     <button onClick={() => act(t.id, "reject")} disabled={t.status === "rejected"} className="min-h-9 px-3 rounded-lg bg-red-800 text-white font-bold disabled:opacity-40">
                       Reject
+                    </button>
+                    <button onClick={() => act(t.id, "recheck")} className="min-h-9 px-3 rounded-lg border-2 border-line bg-white font-bold">
+                      Re-check
                     </button>
                   </td>
                 </tr>

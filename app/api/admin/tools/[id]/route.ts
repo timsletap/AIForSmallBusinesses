@@ -3,8 +3,11 @@ import { z } from "zod";
 import { getStore } from "@/lib/storage/db";
 import { checkWarnings, trustLevel } from "@/lib/verification/vendorChecks";
 import { apiError, badInput, isAdmin } from "@/lib/http/errors";
+import { processCandidate } from "@/lib/pipeline/run";
 
-const Body = z.object({ action: z.enum(["verify", "unverify", "reject"]) });
+export const maxDuration = 120;
+
+const Body = z.object({ action: z.enum(["verify", "unverify", "reject", "recheck"]) });
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
   if (!isAdmin(req)) return apiError(401, "unauthorized", "Wrong admin password.");
@@ -14,6 +17,15 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   const store = getStore();
   const tool = await store.getTool(id);
   if (!tool) return apiError(404, "not_found", "No tool with that id.");
+
+  if (parsed.data.action === "recheck") {
+    // Re-run the pipeline on this vendor now (same as the daily refresh, for one tool).
+    const log: string[] = [];
+    const r = await processCandidate({ name: tool.name, url: tool.canonical_url, found_via: "admin re-check" }, (m) => log.push(m), {
+      useCase: tool.use_cases[0],
+    });
+    return NextResponse.json({ tool: r.tool ?? (await store.getTool(id)), log });
+  }
 
   if (parsed.data.action === "reject") {
     tool.status = "rejected";
