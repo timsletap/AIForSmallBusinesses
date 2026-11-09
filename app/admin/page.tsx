@@ -6,7 +6,7 @@ import { INDUSTRIES } from "@/lib/taxonomy/industries";
 import { USE_CASES } from "@/lib/taxonomy/useCases";
 
 const KEY = "atm-admin-pw";
-const input = "block w-full min-h-11 rounded-xl border-2 border-line bg-white px-3";
+const input = "block w-full min-h-11 rounded-xl border-2 border-line bg-surface-2 px-3";
 
 export default function AdminPage() {
   const [pw, setPw] = useState("");
@@ -72,6 +72,13 @@ export default function AdminPage() {
     );
   }
 
+  /** Same job the daily discovery cron runs: next search slot, new vendors only. */
+  async function findNew() {
+    await runJob("Searching for new tools we haven't seen yet. This can take 1 to 3 minutes…", () =>
+      fetch("/api/cron/discover", { headers: { "x-admin-password": pw } }),
+    );
+  }
+
   /** Same job the daily cron runs: re-check the 3 tools checked longest ago. */
   async function refreshOldest() {
     await runJob("Re-checking the 3 oldest tools. This can take 1 to 3 minutes…", () =>
@@ -118,8 +125,8 @@ export default function AdminPage() {
           <span className="font-bold">Password</span>
           <input type="password" value={pw} onChange={(e) => setPw(e.target.value)} className={input} autoComplete="current-password" />
         </label>
-        <button className="min-h-11 px-5 rounded-xl bg-brand text-white font-bold">Sign in</button>
-        <p role="alert" className="text-red-800">
+        <button className="min-h-11 px-5 rounded-xl bg-brand text-on-brand font-bold">Sign in</button>
+        <p role="alert" className="text-bad">
           {msg}
         </p>
       </form>
@@ -169,7 +176,7 @@ export default function AdminPage() {
             <span className="font-bold">Or a custom search query (optional)</span>
             <input value={query} onChange={(e) => setQuery(e.target.value)} className={input} placeholder="e.g. AI phone answering for pizza shops" />
           </label>
-          <button disabled={busy} className="min-h-11 px-5 rounded-xl bg-brand text-white font-bold disabled:opacity-60 sm:w-fit">
+          <button disabled={busy} className="min-h-11 px-5 rounded-xl bg-brand text-on-brand font-bold disabled:opacity-60 sm:w-fit">
             {busy ? "Running…" : "Run (up to 3 candidates)"}
           </button>
         </form>
@@ -178,11 +185,19 @@ export default function AdminPage() {
             type="button"
             onClick={refreshOldest}
             disabled={busy}
-            className="min-h-11 px-5 rounded-xl border-2 border-brand text-brand-strong bg-white font-bold disabled:opacity-60"
+            className="min-h-11 px-5 rounded-xl border-2 border-brand text-brand-strong bg-surface-2 font-bold disabled:opacity-60"
           >
             Refresh the 3 oldest tools now
           </button>
-          <span className="text-sm text-muted">This also runs by itself once a day.</span>
+          <button
+            type="button"
+            onClick={findNew}
+            disabled={busy}
+            className="min-h-11 px-5 rounded-xl border-2 border-gold text-gold bg-surface-2 font-bold disabled:opacity-60"
+          >
+            Find new tools now
+          </button>
+          <span className="text-sm text-muted">Both also run by themselves once a day.</span>
         </div>
         <p role="status" className="font-bold">
           {msg}
@@ -240,7 +255,7 @@ export default function AdminPage() {
                   <td className="p-2">{t.missing_fields.join(", ") || "–"}</td>
                   <td className="p-2 space-x-2 whitespace-nowrap">
                     {t.admin_reviewed ? (
-                      <button onClick={() => act(t.id, "unverify")} className="min-h-9 px-3 rounded-lg border-2 border-green-800 text-green-900 bg-white font-bold">
+                      <button onClick={() => act(t.id, "unverify")} className="min-h-9 px-3 rounded-lg border-2 border-gold text-gold bg-surface-2 font-bold">
                         Unverify
                       </button>
                     ) : (
@@ -251,7 +266,7 @@ export default function AdminPage() {
                     <button onClick={() => act(t.id, "reject")} disabled={t.status === "rejected"} className="min-h-9 px-3 rounded-lg bg-red-800 text-white font-bold disabled:opacity-40">
                       Reject
                     </button>
-                    <button onClick={() => act(t.id, "recheck")} className="min-h-9 px-3 rounded-lg border-2 border-line bg-white font-bold">
+                    <button onClick={() => act(t.id, "recheck")} className="min-h-9 px-3 rounded-lg border-2 border-line bg-surface-2 font-bold">
                       Re-check
                     </button>
                   </td>

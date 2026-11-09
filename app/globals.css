@@ -1,28 +1,53 @@
 @import "tailwindcss";
 
+/*
+ * University of Maryland palette (red #E21833, gold #FFD200, black, white) on a near-black,
+ * Scale-style canvas. Contrast: white text 18:1, muted 8:1, gold 14:1 on --surface; white on red
+ * buttons 4.8:1. Red is never used for body text (too dark on black); warnings use a light red tint.
+ */
 :root {
-  --background: #fbfaf7;
-  --surface: #ffffff;
-  --foreground: #1c1917;
-  --muted: #57534e;
-  --border: #d6d3d1;
-  --brand: #166534;
-  --brand-strong: #14532d;
-  --brand-soft: #dcfce7;
-  --accent: #b45309;
+  --background: #050505;
+  --surface: #0f0f10;
+  --surface-2: #18181a;
+  --foreground: #ffffff;
+  --muted: #a8a8ad;
+  --border: #26262a;
+  --border-strong: #3a3a40;
+  --brand: #e21833;
+  --brand-hover: #f0324b;
+  --brand-strong: #ffffff;
+  --brand-soft: rgba(226, 24, 51, 0.14);
+  --on-brand: #ffffff;
+  --accent: #ffd200;
+  --gold: #ffd200;
+  --good: #ffd200;
+  --warn: #ff8a96;
+  --warn-soft: rgba(226, 24, 51, 0.1);
+  --bad: #ff8a96;
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
   --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
   --color-brand-strong: var(--brand-strong);
   --color-brand-soft: var(--brand-soft);
+  --color-on-brand: var(--on-brand);
   --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
   --font-sans: var(--font-sans-face), system-ui, sans-serif;
+  --font-display: var(--font-display-face), var(--font-sans-face), system-ui, sans-serif;
 }
 
 html {
@@ -30,33 +55,124 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  /* Soft glows behind the content; fixed so they don't repaint while scrolling. */
+  background-image:
+    radial-gradient(55rem 35rem at 90% -15%, rgba(226, 24, 51, 0.22), transparent 60%),
+    radial-gradient(40rem 28rem at -10% 5%, rgba(255, 210, 0, 0.07), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    56px 56px,
+    56px 56px;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.55;
 }
 
 :focus-visible {
-  outline: 3px solid #2563eb;
+  outline: 3px solid #ffd200;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 summary {
   cursor: pointer;
 }
 
+select option {
+  background: var(--surface-2);
+  color: var(--foreground);
+}
+
+/* Shared looks */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #ffffff 0%, #ffd200 55%, #ff5468 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(255, 210, 0, 0.35),
+    0 12px 44px -12px rgba(226, 24, 51, 0.55);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Printed plans stay light and ink-friendly. */
 @media print {
-  .no-print {
-    display: none !important;
+  :root {
+    --background: #fff;
+    --surface: #fff;
+    --surface-2: #fff;
+    --foreground: #111;
+    --muted: #444;
+    --border: #bbb;
+    --brand-strong: #111;
+    --brand-soft: #fff;
+    --gold: #7a5c00;
+    --warn: #7c2d12;
+    --good: #14532d;
+    color-scheme: light;
   }
   body {
     background: white;
+    background-image: none;
     font-size: 12pt;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .glass {
+    backdrop-filter: none;
+    background: white;
   }
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 9pt;
     color: #555;
   }
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Maryland flag accent: Calvert (gold/black) and Crossland (red/white) halves. */
+.md-flag-stripe {
+  background:
+    repeating-linear-gradient(90deg, #ffd200 0 14px, #000 14px 28px) left / 50% 100% no-repeat,
+    repeating-linear-gradient(90deg, #e21833 0 14px, #fff 14px 28px) right / 50% 100% no-repeat;
 }

@@ -180,3 +180,16 @@ describe("quotes must support their values (real failures from the live data)", 
     expect(v.integrations?.value).toEqual(["QuickBooks"]);
   });
 });
+
+describe("more quote checks from the live data", () => {
+  it.each([
+    ["price_monthly_min", 19.95, "Independent 7 day trial $19.95 per month", true],
+    ["price_monthly_min", 20, "Independent 7 day trial $19.95 per month", false],
+    ["price_monthly_min", 13, "$ 13 00 /mo for 12 months", true],
+    ["security", "x", "Lawnager is not yet SOC 2 Type II certified independently", false],
+    ["security", "x", "SOC 2 TYPE II ISO 27001 GDPR & CCPA HIPAA", true],
+  ] as const)("%s = %j with %j → %s", async (key, value, quote, ok) => {
+    const { quoteSupports } = await import("@/lib/extraction/extract");
+    expect(quoteSupports(key, value, quote)).toBe(ok);
+  });
+});

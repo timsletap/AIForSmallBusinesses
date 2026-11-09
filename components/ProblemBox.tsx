@@ -50,17 +50,17 @@ export function ProblemBox() {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="For example: We miss calls during the lunch rush and lose takeout orders."
-        className="w-full rounded-xl border-2 border-line bg-white p-3 text-lg focus:border-brand"
+        className="w-full rounded-xl border-2 border-line bg-surface-2 p-3 text-lg focus:border-brand"
         maxLength={2000}
       />
       <button
         type="submit"
         disabled={busy}
-        className="w-full sm:w-auto min-h-12 px-6 rounded-xl bg-brand text-white text-lg font-bold hover:bg-brand-strong disabled:opacity-70"
+        className="w-full sm:w-auto min-h-12 px-6 rounded-xl bg-brand text-on-brand text-lg font-bold hover:bg-brand-hover disabled:opacity-70"
       >
         {busy ? "Reading your problem…" : "Find AI for my business"}
       </button>
-      <p role="status" aria-live="polite" className="text-amber-900">
+      <p role="status" aria-live="polite" className="text-warn">
         {msg}
       </p>
     </form>

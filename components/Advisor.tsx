@@ -15,12 +15,12 @@ const COMFORT = [
 
 const chip = (on: boolean) =>
   `min-h-11 px-4 rounded-full border-2 font-bold text-base cursor-pointer select-none inline-flex items-center gap-2 ${
-    on ? "bg-brand text-white border-brand" : "bg-white border-line hover:border-brand"
+    on ? "bg-brand text-on-brand border-brand" : "bg-surface-2 border-line hover:border-brand"
   }`;
 
 const option = (on: boolean) =>
   `flex items-center gap-3 min-h-12 px-4 rounded-xl border-2 cursor-pointer ${
-    on ? "border-brand bg-brand-soft" : "border-line bg-white hover:border-brand"
+    on ? "border-brand bg-brand-soft" : "border-line bg-surface-2 hover:border-brand"
   }`;
 
 export function Advisor() {
@@ -85,7 +85,7 @@ export function Advisor() {
           Step {step + 1} of 3: {STEPS[step]}
         </p>
         <div
-          className="mt-2 h-3 rounded-full bg-stone-200 overflow-hidden"
+          className="mt-2 h-3 rounded-full bg-line-strong overflow-hidden"
           role="progressbar"
           aria-label="Progress"
           aria-valuemin={1}
@@ -101,7 +101,7 @@ export function Advisor() {
           <fieldset className="space-y-3">
             <legend className="text-xl font-bold mb-2">What do you need help with?</legend>
             {q && (
-              <p className="rounded-xl bg-stone-100 p-3 text-muted">
+              <p className="rounded-xl bg-surface-2 p-3 text-muted">
                 You said: <q className="italic">{q}</q>
               </p>
             )}
@@ -121,7 +121,7 @@ export function Advisor() {
               </div>
             ) : (
               <div className="space-y-2">
-                {unsure && q && <p className="text-amber-900">We weren&apos;t sure. Pick one or two that fit best:</p>}
+                {unsure && q && <p className="text-warn">We weren&apos;t sure. Pick one or two that fit best:</p>}
                 {USE_CASES.map((u) => (
                   <label key={u.id} className={option(useCases.includes(u.id))}>
                     <input
@@ -255,7 +255,7 @@ export function Advisor() {
         </>
       )}
 
-      <p role="alert" className="text-red-800 font-bold min-h-6">
+      <p role="alert" className="text-bad font-bold min-h-6">
         {error}
       </p>
 
@@ -264,12 +264,12 @@ export function Advisor() {
           <button
             type="button"
             onClick={() => setStep(step - 1)}
-            className="min-h-12 px-5 rounded-xl border-2 border-brand text-brand-strong font-bold bg-white"
+            className="min-h-12 px-5 rounded-xl border-2 border-brand text-brand-strong font-bold bg-surface-2"
           >
             Back
           </button>
         )}
-        <button type="button" onClick={next} className="flex-1 sm:flex-none min-h-12 px-6 rounded-xl bg-brand text-white font-bold text-lg hover:bg-brand-strong">
+        <button type="button" onClick={next} className="flex-1 sm:flex-none min-h-12 px-6 rounded-xl bg-brand text-on-brand font-bold text-lg hover:bg-brand-hover">
           {step === 2 ? "Show my matches" : "Next"}
         </button>
       </div>

@@ -96,7 +96,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
             </span>
           </li>
         </ul>
-        <p className={`font-bold ${underBudget ? "text-green-800" : "text-amber-900"}`}>
+        <p className={`font-bold ${underBudget ? "text-good" : "text-warn"}`}>
           {underBudget
             ? `✓ Within your $${profile.budget_usd}/month budget${unknownPrice.length ? " (not counting prices we couldn't find)" : ""}.`
             : `⚠ Over your $${profile.budget_usd}/month budget by $${total - profile.budget_usd}. Start with one tool, or ask about a smaller plan.`}
@@ -148,7 +148,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
                 ))}
               </ol>
             ) : (
-              <p className="text-amber-900">The vendor doesn&apos;t list setup steps. Ask them to walk you through it.</p>
+              <p className="text-warn">The vendor doesn&apos;t list setup steps. Ask them to walk you through it.</p>
             )}
             <Warnings items={s.tool.warnings} />
             <div className="flex flex-wrap gap-3 items-center">

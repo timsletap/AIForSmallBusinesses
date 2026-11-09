@@ -82,7 +82,9 @@ export function quoteSupports(key: CitedKey, value: unknown, quote: string): boo
     case "price_monthly_min":
     case "price_monthly_max": {
       const n = Number(value);
-      return Number.isFinite(n) && n >= 0 && n <= 5000 && (n === 0 || q.replace(/[,\s]/g, "").includes(String(Math.round(n))));
+      // Compare the exact number ("19.95", not a rounded 20); "$ 13 00" compacts to "$1300", which contains "13".
+      const compact = q.replace(/[,\s]/g, "");
+      return Number.isFinite(n) && n >= 0 && n <= 5000 && (n === 0 || compact.includes(String(n)));
     }
     case "free_trial_days":
       return /trial|free/.test(q) && q.includes(String(value));
@@ -102,7 +104,8 @@ export function quoteSupports(key: CitedKey, value: unknown, quote: string): boo
     case "contact":
       return CONTACT_IN_QUOTE.test(quote);
     case "security":
-      return SECURITY_IN_QUOTE.test(quote);
+      // "We are not yet SOC 2 certified" is not evidence of security docs.
+      return SECURITY_IN_QUOTE.test(quote) && !/\bnot (yet )?(soc|iso|hipaa|certified|compliant|audited)/i.test(quote);
     default:
       return true;
   }

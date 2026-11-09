@@ -5,6 +5,7 @@ import { getStore } from "@/lib/storage/db";
 import { INDUSTRIES } from "@/lib/taxonomy/industries";
 import { USE_CASES, getUseCase } from "@/lib/taxonomy/useCases";
 import { Card, EmptyState, TrustBadge, priceText } from "@/components/ui";
+import { ToolLogo } from "@/components/ToolLogo";
 import type { Tool } from "@/lib/schemas/tool";
 
 export const dynamic = "force-dynamic";
@@ -15,7 +16,7 @@ type SP = Promise<Record<string, string | string[] | undefined>>;
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
 
 
-const select = "block w-full min-h-11 rounded-xl border-2 border-line bg-white px-3 text-base";
+const select = "block w-full min-h-11 rounded-xl border-2 border-line bg-surface-2 px-3 text-base";
 
 export default async function BrowsePage({ searchParams }: { searchParams: SP }) {
   const sp = await searchParams;
@@ -45,7 +46,7 @@ export default async function BrowsePage({ searchParams }: { searchParams: SP })
             name="q"
             defaultValue={q}
             placeholder="Try: phone, Square, reviews, booking"
-            className="mt-1 block w-full min-h-11 rounded-xl border-2 border-line bg-white px-3 text-lg"
+            className="mt-1 block w-full min-h-11 rounded-xl border-2 border-line bg-surface-2 px-3 text-lg"
           />
         </label>
         <label>
@@ -82,7 +83,7 @@ export default async function BrowsePage({ searchParams }: { searchParams: SP })
           </select>
         </label>
         <div className="flex gap-2">
-          <button type="submit" className="min-h-11 px-5 rounded-xl bg-brand text-white font-bold hover:bg-brand-strong">
+          <button type="submit" className="min-h-11 px-5 rounded-xl bg-brand text-on-brand font-bold hover:bg-brand-hover">
             Search
           </button>
           {(q || industry || use_case || maxRaw) && (
@@ -104,11 +105,14 @@ export default async function BrowsePage({ searchParams }: { searchParams: SP })
           {tools.map((t) => (
             <li key={t.id}>
               <Card className="h-full space-y-2">
-                <h2 className="text-lg font-bold">
-                  <Link href={`/tools/${t.slug}`} className="underline">
-                    {t.name}
-                  </Link>
-                </h2>
+                <div className="flex items-center gap-3">
+                  <ToolLogo name={t.name} url={t.canonical_url} size={40} />
+                  <h2 className="text-lg font-bold">
+                    <Link href={`/tools/${t.slug}`} className="hover:text-gold">
+                      {t.name}
+                    </Link>
+                  </h2>
+                </div>
                 <p className="text-muted">{t.description}</p>
                 <div className="flex flex-wrap items-center gap-2">
                   <TrustBadge level={t.trust_level} />

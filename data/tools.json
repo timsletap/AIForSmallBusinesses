@@ -6,7 +6,7 @@
     "vendor": "Aedan Rose",
     "canonical_url": "https://aedanrose.ai",
     "description": "Restaurant software that uses AI to answer guests, take orders and reservations, and manage staff.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "booking_waitlist",
       "missed_calls",
@@ -82,24 +82,19 @@
         "quote": "2026 Aedan Rose. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://aedanrose.ai/security",
+        "quote": "Security & privacy contact: help@aedanrose.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://aedanrose.ai/security",
+        "quote": "We do not currently hold SOC 2, ISO 27001, or our own PCI DSS certification",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://aedanrose.ai/pricing",
         "quote": "stay on the free order-only plan",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://aedanrose.ai/pricing",
-        "quote": "30 days Free trial — no card",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://aedanrose.ai/pricing",
-        "quote": "$79 Lowest paid plan, per month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://aedanrose.ai/pricing",
-        "quote": "Full House $299/month",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -112,24 +107,29 @@
         "quote": "acts in Slack, Google Sheets, Microsoft Excel, Wix, Squarespace & GitHub",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "30 days Free trial — no card",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://aedanrose.ai/",
         "quote": "Aedan Rose finds the leaks in how your restaurant runs, then gives you one place to fix them",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://aedanrose.ai/security",
-        "quote": "Security & privacy contact: help@aedanrose.ai",
+      "price_monthly_max": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "Full House $299/month",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://aedanrose.ai/security",
-        "quote": "We do not currently hold SOC 2, ISO 27001, or our own PCI DSS certification",
+      "price_monthly_min": {
+        "source_url": "https://aedanrose.ai/pricing",
+        "quote": "$79 Lowest paid plan, per month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:01:23.939Z",
+    "last_checked_at": "2026-11-08T23:01:23.939+00:00",
     "admin_reviewed": false
   },
   {
@@ -139,7 +139,7 @@
     "vendor": "Auxflo, Inc.",
     "canonical_url": "https://auxflo.com",
     "description": "AI receptionist that answers calls, qualifies leads, books appointments, and texts missed callers for trades businesses.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -212,24 +212,19 @@
         "quote": "© 2026 Auxflo, Inc. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://auxflo.com/privacy",
+        "quote": "Contact us at auxflo0@gmail.com and we'll get back to you promptly.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://auxflo.com/privacy",
+        "quote": "encryption in transit, access controls, and row-level security on customer data",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://auxflo.com",
         "quote": "14-day free trial · No credit card required",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://auxflo.com",
-        "quote": "Start with a 14-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://auxflo.com",
-        "quote": "Solo operators and small crews$149/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://auxflo.com",
-        "quote": "The standard for growing trades businesses$249/mo",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -242,19 +237,24 @@
         "quote": "Dropped straight into Google Calendar with reminders.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://auxflo.com/privacy",
-        "quote": "Contact us at auxflo0@gmail.com and we'll get back to you promptly.",
+      "free_trial_days": {
+        "source_url": "https://auxflo.com",
+        "quote": "Start with a 14-day free trial",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://auxflo.com/privacy",
-        "quote": "encryption in transit, access controls, and row-level security on customer data",
+      "price_monthly_max": {
+        "source_url": "https://auxflo.com",
+        "quote": "The standard for growing trades businesses$249/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://auxflo.com",
+        "quote": "Solo operators and small crews$149/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:43:58.354Z",
+    "last_checked_at": "2026-11-08T22:43:58.354+00:00",
     "admin_reviewed": false
   },
   {
@@ -264,7 +264,7 @@
     "vendor": "Bakeable",
     "canonical_url": "https://getbakeable.com",
     "description": "Gives cottage and micro bakers a branded website, pre-orders, pickup days, and payments in one place.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "booking_waitlist",
       "customer_list",
@@ -344,16 +344,6 @@
         "quote": "The Nano plan is free forever.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://getbakeable.com/pricing",
-        "quote": "Micro includes a 14-day free trial.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://getbakeable.com/pricing",
-        "quote": "Monthly priceFree$39$99",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://getbakeable.com/pricing",
         "quote": "For bakers ready to grow their local presence.",
@@ -363,10 +353,20 @@
         "source_url": "https://getbakeable.com/pricing",
         "quote": "Stripe processing fees (2.9% + $0.30 per transaction) apply on all plans, separate from platform fees.",
         "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://getbakeable.com/pricing",
+        "quote": "Micro includes a 14-day free trial.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://getbakeable.com/pricing",
+        "quote": "Monthly priceFree$39$99",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:02:33.572Z",
+    "last_checked_at": "2026-11-08T23:02:33.572+00:00",
     "admin_reviewed": false
   },
   {
@@ -376,7 +376,7 @@
     "vendor": "Bakery Buddy.ai",
     "canonical_url": "https://bakerybuddy.ai",
     "description": "Bakery Buddy is an AI assistant that turns customer texts into orders and helps with payments, follow-ups, and marketing.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "customer_list",
       "win_back"
@@ -447,24 +447,14 @@
         "quote": "© 2026 Bakery Buddy.ai. All rights reserved. A Muley product.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://bakerybuddy.ai/privacy",
+        "quote": "contact us at privacy@bakerybuddy.ai",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://bakerybuddy.ai/pricing",
         "quote": "Try either plan free for 14 days.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://bakerybuddy.ai/pricing",
-        "quote": "Try either plan free for 14 days.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://bakerybuddy.ai/pricing",
-        "quote": "$29/moor $23/mo billed annually",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://bakerybuddy.ai/pricing",
-        "quote": "$59/moor $49/mo billed annually",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -472,16 +462,26 @@
         "quote": "Bakery Buddy Baker — all of it, one tool, with Buddy",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://bakerybuddy.ai/privacy",
-        "quote": "contact us at privacy@bakerybuddy.ai",
+      "free_trial_days": {
+        "source_url": "https://bakerybuddy.ai/pricing",
+        "quote": "Try either plan free for 14 days.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://bakerybuddy.ai/pricing",
+        "quote": "$59/moor $49/mo billed annually",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://bakerybuddy.ai/pricing",
+        "quote": "$29/moor $23/mo billed annually",
         "claim_type": "fact"
       }
     },
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:51:30.797Z",
+    "last_checked_at": "2026-11-08T22:51:30.797+00:00",
     "admin_reviewed": false
   },
   {
@@ -491,7 +491,7 @@
     "vendor": "BarberAI",
     "canonical_url": "https://barberreceptionist.com",
     "description": "Answers calls, books appointments, and captures new client details for barbershops and salons.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -569,16 +569,6 @@
         "quote": "© 2026 BarberAI. All rights reserved.",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://barberreceptionist.com",
-        "quote": "Starter$39/month Get Started",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://barberreceptionist.com",
-        "quote": "Pro$89/month Get Started",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://barberreceptionist.com",
         "quote": "Starter$39/month Get Started",
@@ -588,10 +578,20 @@
         "source_url": "https://barberreceptionist.com",
         "quote": "Integrates with Google Calendar, Retell AI, OpenAI, Twilio and Square.",
         "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://barberreceptionist.com",
+        "quote": "Pro$89/month Get Started",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://barberreceptionist.com",
+        "quote": "Starter$39/month Get Started",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:43:09.065Z",
+    "last_checked_at": "2026-11-08T22:43:09.065+00:00",
     "admin_reviewed": false
   },
   {
@@ -600,8 +600,8 @@
     "name": "Bimbly Receptionist",
     "vendor": "Bimbly Inc.",
     "canonical_url": "https://bimblyai.com",
-    "description": "Bimbly is an AI receptionist that answers calls, books appointments, and manages walk-in waitlists for barbershops and salons.",
-    "status": "published",
+    "description": "Bimbly is an AI receptionist that answers calls, takes bookings, and manages walk-in waitlists for barbershops and salons.",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -611,27 +611,25 @@
       "salon_barber"
     ],
     "pricing": {
-      "free_plan": null,
+      "free_plan": false,
       "free_trial_days": 30,
-      "est_monthly_usd_min": 39,
-      "est_monthly_usd_max": 99,
+      "est_monthly_usd_min": null,
+      "est_monthly_usd_max": null,
       "plan_name": "Solo",
-      "pricing_url": "https://bimblyai.com"
+      "pricing_url": null
     },
     "integrations": [
       "gmail_outlook",
-      "google_business_profile",
-      "instagram_facebook",
       "phone_line"
     ],
     "works_standalone": true,
     "integration_requirements": [
       "A business phone number you can forward to Bimbly",
-      "A Google Calendar for barber schedules"
+      "A Google Calendar account to sync barber schedules"
     ],
-    "setup_complexity": "medium",
+    "setup_complexity": "low",
     "setup_steps": [
-      "Book a free setup call so Bimbly can configure your services, hours, and barbers",
+      "Book a free setup call so Bimbly can set up your services, hours, and barbers",
       "Forward your existing business phone number to Bimbly",
       "Share your online booking page link on Google Maps and Instagram",
       "Start taking bookings by phone, online, or walk-in QR code"
@@ -662,51 +660,23 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://bimblyai.com/privacy-policy.html",
-        "note": "Data encrypted in transit using TLS"
+        "note": "Data encrypted in transit using TLS; database hosted on Supabase"
       },
       "public_pricing": {
-        "pass": true,
-        "source_url": "https://bimblyai.com",
+        "pass": false,
+        "source_url": null,
         "note": null
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [],
+    "warnings": [
+      "Price isn't listed on the vendor's site. Ask before signing up."
+    ],
     "evidence": {
       "vendor": {
         "source_url": "https://bimblyai.com/privacy-policy.html",
-        "quote": "operated by Bimbly Inc.",
+        "quote": "operated by Bimbly Inc. (company details to be updated)",
         "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://bimblyai.com",
-        "quote": "30-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://bimblyai.com",
-        "quote": "Solo $39/mo 1 team member",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://bimblyai.com",
-        "quote": "Starter $99/mo 2 to 4 team members",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://bimblyai.com",
-        "quote": "Solo $39/mo 1 team member",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://bimblyai.com",
-        "quote": "Customers pick who they want and see real-time availability from Google Calendar.",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://bimblyai.com",
-        "quote": "Just forward your number and Bimbly handles the rest.",
-        "claim_type": "vendor_claim"
       },
       "contact": {
         "source_url": "https://bimblyai.com/privacy-policy.html",
@@ -716,11 +686,38 @@
       "security": {
         "source_url": "https://bimblyai.com/privacy-policy.html",
         "quote": "All data is encrypted in transit using TLS.",
-        "claim_type": "vendor_claim"
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://bimblyai.com",
+        "quote": "First 30 days free.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://bimblyai.com",
+        "quote": "Solo $39/mo 1 team member",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://bimblyai.com",
+        "quote": "see real-time availability from Google Calendar",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://bimblyai.com",
+        "quote": "First 30 days free.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://bimblyai.com",
+        "quote": "No hardware. No complicated setup. Just forward your number and Bimbly handles the rest.",
+        "claim_type": "fact"
       }
     },
-    "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:37:05.273Z",
+    "missing_fields": [
+      "price"
+    ],
+    "last_checked_at": "2026-11-09T02:20:43.46+00:00",
     "admin_reviewed": false
   },
   {
@@ -729,12 +726,11 @@
     "name": "Birdeye",
     "vendor": "Birdeye Inc",
     "canonical_url": "https://birdeye.com",
-    "description": "Birdeye is an AI platform that helps businesses with many locations manage reviews, listings, social posts, and front desk tasks.",
+    "description": "Birdeye provides AI helpers that handle front desk tasks, appointments, reviews, and marketing for multi-location businesses.",
     "status": "published",
     "use_cases": [
       "booking_waitlist",
-      "missed_calls",
-      "customer_list"
+      "missed_calls"
     ],
     "industries": [
       "restaurant",
@@ -755,15 +751,15 @@
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "Accounts in the business tools you want to connect, such as QuickBooks Online or Square"
+      "Pricing is set through a sales conversation for your number of locations",
+      "Access to the software you want to connect, such as Square or QuickBooks Online"
     ],
     "setup_complexity": "high",
     "setup_steps": [
-      "Request pricing through the short form on the pricing page",
-      "Talk with the Birdeye sales team about your number of locations",
-      "Choose the AI coworker you need: Myna for front desk, Jay for marketing, or Robin for customer experience",
-      "Connect the software tools you already use",
-      "Set up appointments, reminders, and waitlists for each location"
+      "Request enterprise pricing from Birdeye",
+      "Talk with the Birdeye team about your locations and needs",
+      "Choose the AI coworkers you want to use",
+      "Connect your software and review channels with help from the team"
     ],
     "engagement": "book_demo",
     "reviews": null,
@@ -791,7 +787,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://birdeye.com/security/",
-        "note": "SOC 2 Type II, ISO 27001, HIPAA, GDPR, and CCPA/CPRA support, with a Trust Center"
+        "note": "SOC 2 Type II, ISO 27001, HIPAA, GDPR, CCPA / CPRA"
       },
       "public_pricing": {
         "pass": false,
@@ -809,11 +805,6 @@
         "quote": "© 2026 Birdeye Inc",
         "claim_type": "fact"
       },
-      "integrations": {
-        "source_url": "https://birdeye.com/integration/",
-        "quote": "Birdeye integrates with over 3,000 software systems",
-        "claim_type": "fact"
-      },
       "contact": {
         "source_url": "https://birdeye.com",
         "quote": "1 800 561 3357",
@@ -821,14 +812,19 @@
       },
       "security": {
         "source_url": "https://birdeye.com/security/",
-        "quote": "Independent auditors validate our controls so your security and compliance teams don't have to take our word for it.",
+        "quote": "SOC 2 Type II ISO 27001 HIPAA GDPR CCPA / CPRA",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://birdeye.com/integration/",
+        "quote": "QuickBooks Online Integration Tier Standard",
         "claim_type": "fact"
       }
     },
     "missing_fields": [
       "price"
     ],
-    "last_checked_at": "2026-11-08T22:58:32.476Z",
+    "last_checked_at": "2026-11-09T02:37:13.693+00:00",
     "admin_reviewed": false
   },
   {
@@ -838,7 +834,7 @@
     "vendor": "BookBite AI",
     "canonical_url": "https://bookbiteai.com",
     "description": "An AI front desk that answers guest messages and phone calls and books restaurant tables.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -916,19 +912,14 @@
         "quote": "© 2026 BookBite AI. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://www.bookbiteai.com/pricing",
-        "quote": "Pick a plan within 7 days for full access.",
+      "contact": {
+        "source_url": "https://www.bookbiteai.com/privacy-policy",
+        "quote": "please contact us at: privacy@bookbiteai.com",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://www.bookbiteai.com/pricing",
-        "quote": "$149/moper location / month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.bookbiteai.com/pricing",
-        "quote": "$360/moper location / month",
+      "security": {
+        "source_url": "https://www.bookbiteai.com/privacy-policy",
+        "quote": "stored securely using industry-standard encryption on Supabase infrastructure",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -941,19 +932,24 @@
         "quote": "Instagram, Messenger and WhatsApp Business",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://www.bookbiteai.com/privacy-policy",
-        "quote": "please contact us at: privacy@bookbiteai.com",
+      "free_trial_days": {
+        "source_url": "https://www.bookbiteai.com/pricing",
+        "quote": "Pick a plan within 7 days for full access.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://www.bookbiteai.com/privacy-policy",
-        "quote": "stored securely using industry-standard encryption on Supabase infrastructure",
+      "price_monthly_max": {
+        "source_url": "https://www.bookbiteai.com/pricing",
+        "quote": "$360/moper location / month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.bookbiteai.com/pricing",
+        "quote": "$149/moper location / month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:46:34.700Z",
+    "last_checked_at": "2026-11-08T22:46:34.7+00:00",
     "admin_reviewed": false
   },
   {
@@ -962,14 +958,13 @@
     "name": "Booksy",
     "vendor": "Booksy Inc.",
     "canonical_url": "https://booksy.com",
-    "description": "Booksy is a booking app for beauty and wellness businesses that handles calendars, appointments, reminders and payments.",
+    "description": "Booksy is a calendar and booking tool for beauty and wellness businesses that sends appointment reminders.",
     "status": "published",
     "use_cases": [
       "booking_waitlist"
     ],
     "industries": [
-      "salon_barber",
-      "other"
+      "salon_barber"
     ],
     "pricing": {
       "free_plan": null,
@@ -984,10 +979,10 @@
     "integration_requirements": [],
     "setup_complexity": "low",
     "setup_steps": [
-      "Download the BooksyBiz app on iOS or Android",
-      "Click Grow My Business and create your business account",
-      "Set up your calendar and online booking",
-      "Turn on appointment reminders and payments"
+      "Download the BooksyBiz app from iOS or Android",
+      "Click Grow My Business to get started",
+      "Set up your calendar, booking, and payments",
+      "Share your booking link with clients"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -1015,7 +1010,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://trust.booksy.com/",
-        "note": "Trust Center linked from the booksy.com footer (the trust.booksy.com page had no text to review)"
+        "note": "Trust Center page linked in the site footer"
       },
       "public_pricing": {
         "pass": false,
@@ -1037,7 +1032,7 @@
       },
       "security": {
         "source_url": "https://booksy.com",
-        "quote": "Privacy PolicyTerms of ServiceTrust CenterCareers",
+        "quote": "Privacy Policy Terms of Service Trust Center Careers",
         "claim_type": "fact"
       }
     },
@@ -1045,7 +1040,7 @@
       "price",
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:55:57.789Z",
+    "last_checked_at": "2026-11-09T02:37:08.746+00:00",
     "admin_reviewed": false
   },
   {
@@ -1055,7 +1050,7 @@
     "vendor": null,
     "canonical_url": "https://startcanopy.com",
     "description": "Canopy is an AI office manager for landscapers that answers calls, prices jobs, and keeps schedules full.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -1149,7 +1144,7 @@
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T23:02:49.266Z",
+    "last_checked_at": "2026-11-08T23:02:49.266+00:00",
     "admin_reviewed": false
   },
   {
@@ -1158,11 +1153,10 @@
     "name": "Capsule CRM",
     "vendor": "Zestia Ltd",
     "canonical_url": "https://capsulecrm.com",
-    "description": "Capsule is a simple CRM that keeps customer contacts, sales and tasks in one place.",
+    "description": "Capsule CRM helps small businesses keep track of contacts, sales deals, and tasks in one place.",
     "status": "published",
     "use_cases": [
-      "customer_list",
-      "win_back"
+      "customer_list"
     ],
     "industries": [
       "other"
@@ -1182,17 +1176,16 @@
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A Gmail or Outlook account to send and log email in Capsule"
+      "A Gmail or Outlook account to connect email"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Sign up for the free plan or a 14-day free trial with no card",
-      "Choose a plan that fits your number of users and contacts",
-      "Import your contacts from a spreadsheet or another CRM",
+      "Start a free 14-day trial with no card required",
+      "Import your contacts from a spreadsheet",
       "Connect your Gmail or Outlook account",
-      "Connect other tools you use, such as QuickBooks or Shopify"
+      "Invite team members and set their permissions"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -1218,7 +1211,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://capsulecrm.com/security/",
-        "note": "Dedicated security page; data encrypted in transit and at rest; hosted on Amazon Web Services"
+        "note": "PCI-DSS compliance for payment collection"
       },
       "public_pricing": {
         "pass": true,
@@ -1231,37 +1224,7 @@
     "evidence": {
       "vendor": {
         "source_url": "https://capsulecrm.com/signup/",
-        "quote": "Capsule is a service of Zestia Ltd, registered in England with No 06418281.",
-        "claim_type": "fact"
-      },
-      "free_plan": {
-        "source_url": "https://capsulecrm.com/signup/",
-        "quote": "Yes. Capsule CRM has a free plan for up to 2 users and 250 contacts, with one sales pipeline.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://capsulecrm.com/signup/",
-        "quote": "Try Capsule free for 14 days. No card required.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://capsulecrm.com/signup/",
-        "quote": "or $22, $40, $60 and $75 billed monthly.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://capsulecrm.com/signup/",
-        "quote": "or $22, $40, $60 and $75 billed monthly.",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://capsulecrm.com/signup/",
-        "quote": "Our Starter plan gives you:",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://capsulecrm.com",
-        "quote": "Connect to 100+ integrations",
+        "quote": "© 2026 Zestia Ltd. All Rights Reserved.",
         "claim_type": "fact"
       },
       "contact": {
@@ -1271,12 +1234,42 @@
       },
       "security": {
         "source_url": "https://capsulecrm.com/security/",
-        "quote": "Customer data is encrypted at rest.",
+        "quote": "We maintain PCI-DSS compliance for payment collection.",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://capsulecrm.com/signup/",
+        "quote": "Capsule CRM has a free plan for up to 2 users and 250 contacts.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://capsulecrm.com/signup/",
+        "quote": "Our Starter plan gives you: 30,000 Contacts",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://capsulecrm.com",
+        "quote": "Connect to 100+ integrations Zapier Slack Google Microsoft QuickBooks",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://capsulecrm.com/signup/",
+        "quote": "Try Capsule free for 14 days. No card required.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://capsulecrm.com/signup/",
+        "quote": "or $22, $40, $60 and $75 billed monthly",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://capsulecrm.com/signup/",
+        "quote": "or $22, $40, $60 and $75 billed monthly",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:40:30.457Z",
+    "last_checked_at": "2026-11-09T02:37:16.287+00:00",
     "admin_reviewed": false
   },
   {
@@ -1286,7 +1279,7 @@
     "vendor": "Catch CRM",
     "canonical_url": "https://catchcrm.ai",
     "description": "A CRM for home-service businesses that auto-calls new leads and runs jobs, estimates, invoices, and reviews.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -1367,19 +1360,19 @@
         "quote": "© 2026 Catch CRM. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://catchcrm.ai/security",
+        "quote": "For security questionnaires, DPAs, or other compliance documents, email office@catchcrm.ai.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://catchcrm.ai/security",
+        "quote": "Underlying providers maintain SOC 2, ISO 27001, and other certifications.",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://catchcrm.ai/pricing",
         "quote": "Catch CRM is free forever for 300 contacts, 3,000 emails per month, and 3 users.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://catchcrm.ai/pricing",
-        "quote": "Paid plans are Starter $30, Pro $99, and Business $249 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://catchcrm.ai/pricing",
-        "quote": "Paid plans are Starter $30, Pro $99, and Business $249 a month.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -1397,19 +1390,19 @@
         "quote": "Start solo. Scale to a whole dispatch operation.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://catchcrm.ai/security",
-        "quote": "For security questionnaires, DPAs, or other compliance documents, email office@catchcrm.ai.",
+      "price_monthly_max": {
+        "source_url": "https://catchcrm.ai/pricing",
+        "quote": "Paid plans are Starter $30, Pro $99, and Business $249 a month.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://catchcrm.ai/security",
-        "quote": "Underlying providers maintain SOC 2, ISO 27001, and other certifications.",
+      "price_monthly_min": {
+        "source_url": "https://catchcrm.ai/pricing",
+        "quote": "Paid plans are Starter $30, Pro $99, and Business $249 a month.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:49:20.541Z",
+    "last_checked_at": "2026-11-08T22:49:20.541+00:00",
     "admin_reviewed": false
   },
   {
@@ -1418,24 +1411,24 @@
     "name": "Craftify AI",
     "vendor": "Craftify AI",
     "canonical_url": "https://craftify.ai",
-    "description": "All-in-one marketing and customer platform for local service businesses, covering leads, contacts, reviews, email, and social posts.",
+    "description": "An all-in-one marketing platform for local service businesses that manages leads, contacts, reviews, email, and social posts.",
     "status": "published",
     "use_cases": [
       "booking_waitlist",
-      "auto_replies",
       "customer_list",
+      "auto_replies",
       "win_back"
     ],
     "industries": [
-      "salon_barber",
       "hvac_plumbing",
+      "salon_barber",
       "other"
     ],
     "pricing": {
       "free_plan": null,
       "free_trial_days": 14,
       "est_monthly_usd_min": 32,
-      "est_monthly_usd_max": null,
+      "est_monthly_usd_max": 57,
       "plan_name": "Craftify Core",
       "pricing_url": "https://craftify.ai"
     },
@@ -1447,15 +1440,15 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A website URL or Google Business Profile to build your business profile"
+      "Accounts for the tools you want to connect, such as Google Business Profile, Facebook, Instagram, QuickBooks, or Shopify",
+      "Owner or admin access to each account, since only owners and admins can change connections"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start the free 14-day trial with no credit card",
-      "Enter your website URL or Google Business Profile",
-      "Review the business profile Craftify builds for you",
-      "Connect tools like Google Business Profile or QuickBooks in Settings",
-      "Pick a template and review the drafts before they go out"
+      "Start the 14-day free trial with no credit card",
+      "Set up your business profile so the AI knows your services and brand voice",
+      "Connect your tools from Settings, such as QuickBooks, Shopify, or Google Business Profile",
+      "Pick a template, review the AI drafts, and schedule them"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -1501,19 +1494,14 @@
         "quote": "© 2026 Craftify AI. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://craftify.ai",
-        "quote": "Start free for 14 days",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://craftify.ai",
-        "quote": "From $32/month",
+      "contact": {
+        "source_url": "https://www.craftify.ai/privacy-policy",
+        "quote": "you can contact us at contact@craftify.ai",
         "claim_type": "fact"
       },
       "plan_name": {
         "source_url": "https://craftify.ai",
-        "quote": "Craftify CoreFor solo service pros and small teams getting started.",
+        "quote": "Craftify Core starts at $32 a month",
         "claim_type": "fact"
       },
       "integrations": {
@@ -1521,19 +1509,29 @@
         "quote": "Connect Google Business Profile, Google Ads, Google Analytics, Search Console, Facebook and Instagram, TikTok, WordPress, Shopify, QuickBooks, and Zapier.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://craftify.ai",
+        "quote": "Start free for 14 days",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://craftify.ai",
         "quote": "The all-in-one AI customer platform for local service businesses",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://www.craftify.ai/privacy-policy",
-        "quote": "you can contact us at contact@craftify.ai.",
+      "price_monthly_max": {
+        "source_url": "https://craftify.ai",
+        "quote": "Craftify Pro at $57 a month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://craftify.ai",
+        "quote": "Craftify Core starts at $32 a month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:52:29.134Z",
+    "last_checked_at": "2026-11-09T02:37:27.165+00:00",
     "admin_reviewed": false
   },
   {
@@ -1543,7 +1541,7 @@
     "vendor": "Block Nexus Labs",
     "canonical_url": "https://crewrunner.app",
     "description": "AI back office for trades contractors that answers calls, schedules jobs, and sends invoices.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -1624,14 +1622,9 @@
         "quote": "Built by Block Nexus Labs",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
+      "security": {
         "source_url": "https://crewrunner.app",
-        "quote": "$99/mo$1,089/yr (Save $99)",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://crewrunner.app",
-        "quote": "$199/mo$2,189/yr (Save $199)",
+        "quote": "both SOC 2 Type II certified",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -1644,14 +1637,19 @@
         "quote": "CrewRunner integrates with QuickBooks, Google Calendar, and popular field service tools.",
         "claim_type": "fact"
       },
-      "security": {
+      "price_monthly_max": {
         "source_url": "https://crewrunner.app",
-        "quote": "both SOC 2 Type II certified",
+        "quote": "$199/mo$2,189/yr (Save $199)",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://crewrunner.app",
+        "quote": "$99/mo$1,089/yr (Save $99)",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:03:03.560Z",
+    "last_checked_at": "2026-11-08T23:03:03.56+00:00",
     "admin_reviewed": false
   },
   {
@@ -1661,7 +1659,7 @@
     "vendor": "Dine Replies",
     "canonical_url": "https://dinereplies.com",
     "description": "Uses AI to write and post replies to restaurant reviews on Google and other review sites.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "auto_replies"
     ],
@@ -1731,19 +1729,14 @@
         "quote": "© 2025 Dine Replies. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
+      "contact": {
         "source_url": "https://dinereplies.com/pricing",
-        "quote": "Every plan includes a 14-day free trial with no credit card required.",
+        "quote": "[email protected] 203-913-3060",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
+      "security": {
         "source_url": "https://dinereplies.com/pricing",
-        "quote": "Starter $10/month per location",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://dinereplies.com/pricing",
-        "quote": "Growth $50/month per location",
+        "quote": "We implement appropriate technical and organizational security measures",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -1756,24 +1749,29 @@
         "quote": "OpenTable, Yelp, DoorDash, Uber Eats, Trustpilot, and TripAdvisor.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://dinereplies.com/pricing",
+        "quote": "Every plan includes a 14-day free trial with no credit card required.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://dinereplies.com/",
         "quote": "No POS integration needed.",
         "claim_type": "fact"
       },
-      "contact": {
+      "price_monthly_max": {
         "source_url": "https://dinereplies.com/pricing",
-        "quote": "[email protected] 203-913-3060",
+        "quote": "Growth $50/month per location",
         "claim_type": "fact"
       },
-      "security": {
+      "price_monthly_min": {
         "source_url": "https://dinereplies.com/pricing",
-        "quote": "We implement appropriate technical and organizational security measures",
+        "quote": "Starter $10/month per location",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:46:57.181Z",
+    "last_checked_at": "2026-11-08T22:46:57.181+00:00",
     "admin_reviewed": false
   },
   {
@@ -1783,7 +1781,7 @@
     "vendor": "DispatchLine",
     "canonical_url": "https://getdispatchline.com",
     "description": "Answers your forwarded business phone line 24/7 for home-service companies and books jobs onto your board.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -1859,19 +1857,9 @@
         "quote": "© 2026 DispatchLine. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://getdispatchline.com",
-        "quote": "3 days free, then from $149 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://getdispatchline.com/pricing/",
-        "quote": "One Truck $149/month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://getdispatchline.com/pricing/",
-        "quote": "Crew $299/month",
+      "contact": {
+        "source_url": "https://getdispatchline.com/learn/topic/compliance/",
+        "quote": "hello@getdispatchline.com · support@getdispatchline.com",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -1884,19 +1872,29 @@
         "quote": "Not yet. Jobber is in development and the other two are planned; none is live, and none has a promised date.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://getdispatchline.com",
+        "quote": "3 days free, then from $149 a month.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://getdispatchline.com",
         "quote": "It is a phone line that books jobs.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://getdispatchline.com/learn/topic/compliance/",
-        "quote": "hello@getdispatchline.com · support@getdispatchline.com",
+      "price_monthly_max": {
+        "source_url": "https://getdispatchline.com/pricing/",
+        "quote": "Crew $299/month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://getdispatchline.com/pricing/",
+        "quote": "One Truck $149/month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:44:32.565Z",
+    "last_checked_at": "2026-11-08T22:44:32.565+00:00",
     "admin_reviewed": false
   },
   {
@@ -1906,7 +1904,7 @@
     "vendor": "KARAOGLAN LOGISTICS LLC",
     "canonical_url": "https://tryecholy.com",
     "description": "Drafts replies to your Google reviews so you can approve them with one tap before they post.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "auto_replies"
     ],
@@ -1978,19 +1976,9 @@
         "quote": "operated by KARAOGLAN LOGISTICS LLC, a New York limited liability company",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://tryecholy.com",
-        "quote": "Your first 14 days are free.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://tryecholy.com",
-        "quote": "For businesses just starting to collect reviews.$49/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://tryecholy.com",
-        "quote": "For restaurants, clinics and hotels that get reviews every day.$99/mo",
+      "contact": {
+        "source_url": "https://www.tryecholy.com/privacy",
+        "quote": "Email hello@tryecholy.com or call (631) 316-8679.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2003,19 +1991,29 @@
         "quote": "Add us as a manager on your Google Business Profile.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://tryecholy.com",
+        "quote": "Your first 14 days are free.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://tryecholy.com",
         "quote": "Add us as a manager on your Google Business Profile.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://www.tryecholy.com/privacy",
-        "quote": "Email hello@tryecholy.com or call (631) 316-8679.",
+      "price_monthly_max": {
+        "source_url": "https://tryecholy.com",
+        "quote": "For restaurants, clinics and hotels that get reviews every day.$99/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://tryecholy.com",
+        "quote": "For businesses just starting to collect reviews.$49/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:47:25.403Z",
+    "last_checked_at": "2026-11-08T22:47:25.403+00:00",
     "admin_reviewed": false
   },
   {
@@ -2024,13 +2022,13 @@
     "name": "FieldPulse",
     "vendor": "FieldPulse",
     "canonical_url": "https://fieldpulse.com",
-    "description": "Field service software that helps trade businesses schedule jobs, dispatch technicians, and send estimates and invoices.",
+    "description": "Field service management software that schedules jobs, dispatches technicians, and handles estimates, invoices, and customer communication.",
     "status": "published",
     "use_cases": [
       "scheduling_dispatch",
       "missed_calls",
-      "booking_waitlist",
-      "customer_list"
+      "customer_list",
+      "booking_waitlist"
     ],
     "industries": [
       "hvac_plumbing",
@@ -2045,21 +2043,20 @@
       "pricing_url": "https://www.fieldpulse.com/pricing"
     },
     "integrations": [
-      "quickbooks",
-      "phone_line"
+      "quickbooks"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A QuickBooks Online account if you want accounting sync",
-      "A business phone line, and a desk phone system (SIP/PBX) if your office uses one, for the Engage phone system"
+      "A QuickBooks Online account if you want the two-way sync",
+      "Desk phones (SIP/PBX) only if your office runs on them and you use Engage"
     ],
     "setup_complexity": "high",
     "setup_steps": [
-      "Book a demo or request a custom quote from FieldPulse sales",
+      "Book a demo with the FieldPulse team",
+      "Get a custom quote based on your team size",
       "Work with the FieldPulse team on setup, migration, and training",
-      "Set up dedicated business phone lines in Engage, if you use it",
-      "Connect QuickBooks Online, if you use it",
-      "Build your workflows and invite your team"
+      "Connect QuickBooks Online if you use it",
+      "Set up business phone lines in Engage if needed"
     ],
     "engagement": "book_demo",
     "reviews": null,
@@ -2105,21 +2102,21 @@
         "quote": "All Rights Reserved © FieldPulse (2026)",
         "claim_type": "fact"
       },
-      "integrations": {
-        "source_url": "https://www.fieldpulse.com/company/partners/quickbooks",
-        "quote": "FieldPulse syncs with QuickBooks Online",
-        "claim_type": "fact"
-      },
       "contact": {
         "source_url": "https://fieldpulse.com",
         "quote": "Sales +1 (817) 635-2218",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://www.fieldpulse.com/company/partners/quickbooks",
+        "quote": "FieldPulse syncs with QuickBooks Online",
         "claim_type": "fact"
       }
     },
     "missing_fields": [
       "price"
     ],
-    "last_checked_at": "2026-11-08T22:59:56.759Z",
+    "last_checked_at": "2026-11-09T02:37:28.83+00:00",
     "admin_reviewed": false
   },
   {
@@ -2129,7 +2126,7 @@
     "vendor": "Fonitix AI",
     "canonical_url": "https://fonitix.ai",
     "description": "Fonitix is an AI phone receptionist that answers calls, books appointments, and takes orders.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -2208,19 +2205,14 @@
         "quote": "© 2026 Fonitix AI",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://fonitix.ai/pricing",
-        "quote": "Going live starts a 14-day free trial",
+      "contact": {
+        "source_url": "https://fonitix.ai/privacy-policy",
+        "quote": "Questions or concerns about this Privacy Policy? Contact us at:Email: info@fonitix.ai",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://fonitix.ai",
-        "quote": "Try it free for 14 days, then $99 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://fonitix.ai/pricing",
-        "quote": "Pro$249a monthBilled monthly1,000 call minutes",
+      "security": {
+        "source_url": "https://fonitix.ai/privacy-policy",
+        "quote": "We implement technical and organizational measures to secure your data against unauthorized access, loss, or misuse.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2233,19 +2225,24 @@
         "quote": "Connect your own software, a POS or tools like Zapier",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://fonitix.ai/privacy-policy",
-        "quote": "Questions or concerns about this Privacy Policy? Contact us at:Email: info@fonitix.ai",
+      "free_trial_days": {
+        "source_url": "https://fonitix.ai/pricing",
+        "quote": "Going live starts a 14-day free trial",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://fonitix.ai/privacy-policy",
-        "quote": "We implement technical and organizational measures to secure your data against unauthorized access, loss, or misuse.",
+      "price_monthly_max": {
+        "source_url": "https://fonitix.ai/pricing",
+        "quote": "Pro$249a monthBilled monthly1,000 call minutes",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://fonitix.ai",
+        "quote": "Try it free for 14 days, then $99 a month.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:42:36.810Z",
+    "last_checked_at": "2026-11-08T22:42:36.81+00:00",
     "admin_reviewed": false
   },
   {
@@ -2255,7 +2252,7 @@
     "vendor": "Monster Hub Pty Ltd",
     "canonical_url": "https://forktime.ai",
     "description": "Answers restaurant reservation calls and books them into the booking system a restaurant already uses.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -2334,19 +2331,9 @@
         "quote": "© 2026 Monster Hub Pty Ltd · Fork Time",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://forktime.ai/pricing",
-        "quote": "Every plan includes a 14-day free trial, one per restaurant location.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://forktime.ai/pricing",
-        "quote": "The $99 Reservations plan starts instantly.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://forktime.ai",
-        "quote": "$199 a month per location. No per-booking fees.",
+      "contact": {
+        "source_url": "https://forktime.ai/privacy",
+        "quote": "Privacy questions and requests: support@forktime.ai, or in writing to Monster Hub Pty Ltd",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2359,19 +2346,29 @@
         "quote": "Fork Time connects to CloudWaitress, PushPOS and Square POS for phone ordering",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://forktime.ai/pricing",
+        "quote": "Every plan includes a 14-day free trial, one per restaurant location.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://forktime.ai/integrations",
         "quote": "work with no integration connected at all",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://forktime.ai/privacy",
-        "quote": "Privacy questions and requests: support@forktime.ai, or in writing to Monster Hub Pty Ltd",
+      "price_monthly_max": {
+        "source_url": "https://forktime.ai",
+        "quote": "$199 a month per location. No per-booking fees.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://forktime.ai/pricing",
+        "quote": "The $99 Reservations plan starts instantly.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:46:16.579Z",
+    "last_checked_at": "2026-11-08T22:46:16.579+00:00",
     "admin_reviewed": false
   },
   {
@@ -2380,7 +2377,7 @@
     "name": "Fresha",
     "vendor": "Fresha.com SV Limited",
     "canonical_url": "https://fresha.com",
-    "description": "Online booking and client management software for salons, barbers, spas and other beauty and wellness businesses.",
+    "description": "Online booking, calendar, and payment software for salons, barbers, spas, and other beauty and wellness businesses.",
     "status": "published",
     "use_cases": [
       "booking_waitlist",
@@ -2395,7 +2392,7 @@
     "pricing": {
       "free_plan": false,
       "free_trial_days": 7,
-      "est_monthly_usd_min": null,
+      "est_monthly_usd_min": 19.95,
       "est_monthly_usd_max": null,
       "plan_name": "Independent",
       "pricing_url": "https://www.fresha.com/pricing"
@@ -2403,16 +2400,16 @@
     "integrations": [
       "instagram_facebook"
     ],
-    "works_standalone": null,
+    "works_standalone": true,
     "integration_requirements": [],
     "setup_complexity": "low",
     "setup_steps": [
-      "Create a Fresha account and choose the Independent or Team plan",
-      "Add your services, prices and bookable team members",
-      "Share your online booking link on Instagram or Facebook",
-      "Turn on automated appointment reminders for clients"
+      "Sign up for the Independent or Team plan online",
+      "Add your services, prices, and calendar hours",
+      "Share your Fresha booking link on Instagram or Facebook",
+      "Add team members if you have more than one stylist"
     ],
-    "engagement": "self_serve",
+    "engagement": "free_trial",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -2438,42 +2435,20 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://www.fresha.com/pricing",
-        "note": "HIPAA compliance and ISO 27001 listed"
+        "note": "ISO 27001 certification for information security"
       },
       "public_pricing": {
-        "pass": false,
+        "pass": true,
         "source_url": "https://www.fresha.com/pricing",
         "note": null
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [
-      "Price isn't listed on the vendor's site. Ask before signing up."
-    ],
+    "warnings": [],
     "evidence": {
       "vendor": {
         "source_url": "https://terms.fresha.com/privacy-policy",
         "quote": "At Fresha.com SV Limited (referred to as",
-        "claim_type": "fact"
-      },
-      "free_plan": {
-        "source_url": "https://www.fresha.com/pricing",
-        "quote": "businesses with teams can take advantage of a 7-day free trial",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://www.fresha.com/pricing",
-        "quote": "businesses with teams can take advantage of a 7-day free trial",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://www.fresha.com/pricing",
-        "quote": "The Independent plan is designed to supercharge small businesses with one bookable team member",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://www.fresha.com/pricing",
-        "quote": "Send events about certain actions to Google Analytics",
         "claim_type": "fact"
       },
       "contact": {
@@ -2483,23 +2458,51 @@
       },
       "security": {
         "source_url": "https://www.fresha.com/pricing",
-        "quote": "Globally recognized standard for information security",
+        "quote": "ISO 27001 Globally recognized standard for information security",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "businesses with teams can take advantage of a 7-day free trial",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "Independent 7 day trial $19.95 per month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "Free Facebook bookings Free Instagram bookings",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "Independent 7 day trial $19.95 per month",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "You can use us without using Fresha to process your payments.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.fresha.com/pricing",
+        "quote": "Independent 7 day trial $19.95 per month",
         "claim_type": "fact"
       }
     },
-    "missing_fields": [
-      "price"
-    ],
-    "last_checked_at": "2026-11-08T22:57:58.006Z",
+    "missing_fields": [],
+    "last_checked_at": "2026-11-09T02:41:23.3+00:00",
     "admin_reviewed": false
   },
   {
     "id": "463c9c4a-f4bd-4525-a0bc-ed99e580b25a",
     "slug": "goodcall",
     "name": "Goodcall",
-    "vendor": "Goodcall AI, Inc.",
+    "vendor": "Goodcall",
     "canonical_url": "https://goodcall.com",
-    "description": "Goodcall is an AI phone agent that answers calls, captures leads, and books appointments for small businesses.",
+    "description": "Goodcall is an AI phone agent that answers business calls, captures leads, and books appointments on your calendar.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -2511,12 +2514,12 @@
       "retail"
     ],
     "pricing": {
-      "free_plan": null,
+      "free_plan": false,
       "free_trial_days": null,
       "est_monthly_usd_min": 79,
       "est_monthly_usd_max": 129,
       "plan_name": "Starter",
-      "pricing_url": "https://goodcall.com"
+      "pricing_url": "https://www.goodcall.com/pricing"
     },
     "integrations": [
       "gmail_outlook",
@@ -2524,16 +2527,16 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A business phone line to forward calls to the agent, or a new local number",
-      "A connected calendar such as Google Calendar if you want the agent to book appointments"
+      "A business phone number you can forward, or a new local Goodcall number",
+      "A Google Calendar account if you want online booking",
+      "A Zapier account if you want to send call details to your CRM or other tools"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Create a free demo agent by describing your business to Gabi",
-      "Test the agent with practice calls and approve the changes",
-      "Pick a voice and greeting for your agent",
-      "Get a local number or forward your existing business line",
-      "Connect your calendar or CRM to book and save leads"
+      "Describe your business to Gabi in plain words",
+      "Test the practice calls and approve the agent",
+      "Pick a local number or forward your existing business line",
+      "Connect Google Calendar or another tool you use"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -2544,9 +2547,9 @@
         "note": null
       },
       "vendor_identity": {
-        "pass": false,
-        "source_url": "https://help.goodcall.com/en/articles/8007565-privacy",
-        "note": "Goodcall AI, Inc."
+        "pass": true,
+        "source_url": "https://goodcall.com",
+        "note": "Goodcall · (555) 010-0199"
       },
       "privacy_policy": {
         "pass": true,
@@ -2565,53 +2568,56 @@
       },
       "public_pricing": {
         "pass": true,
-        "source_url": "https://goodcall.com",
+        "source_url": "https://www.goodcall.com/pricing",
         "note": null
       }
     },
     "trust_level": "checks_passed",
-    "warnings": [
-      "We couldn't find the company's name and a way to contact them."
-    ],
+    "warnings": [],
     "evidence": {
       "vendor": {
-        "source_url": "https://help.goodcall.com/en/articles/8007565-privacy",
-        "quote": "Goodcall AI, Inc. Privacy Policy Last Updated: September 28, 2024",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
         "source_url": "https://goodcall.com",
-        "quote": "Plans start at $79 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "GrowthMost popular$129 a month",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Starter$79 a month",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://goodcall.com",
-        "quote": "Google Calendar, connected",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://www.goodcall.com/pricing",
-        "quote": "Every plan includes a local number, and you can keep your existing one",
+        "quote": "© Goodcall 2026. All rights reserved.",
         "claim_type": "fact"
       },
       "security": {
         "source_url": "https://goodcall.com",
         "quote": "SOC 2 compliant",
         "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Start free with a demo agent. Add a number when you're ready.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Starter $79 a month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://goodcall.com",
+        "quote": "Tool Google Calendar, connected",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Every plan includes a local number, and you can keep your existing one instead by forwarding it to us.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Most popular $129 a month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.goodcall.com/pricing",
+        "quote": "Starter $79 a month",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:37:59.262Z",
+    "last_checked_at": "2026-11-09T02:37:48.301+00:00",
     "admin_reviewed": false
   },
   {
@@ -2621,7 +2627,7 @@
     "vendor": "Hunter Apps, Inc., a Uniq Ventures, SLU company",
     "canonical_url": "https://hero365.ai",
     "description": "Hero AI answers calls, books jobs, sends quotes and collects payments for trade businesses.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -2703,19 +2709,14 @@
         "quote": "© 2026 Hunter Apps, Inc., a Uniq Ventures, SLU company. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
+      "contact": {
+        "source_url": "https://hero365.ai/privacy",
+        "quote": "Help: Reply HELP to any message, or contact support@hero365.ai, for assistance.",
+        "claim_type": "fact"
+      },
+      "security": {
         "source_url": "https://hero365.ai",
-        "quote": "the first 7 days are free",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://hero365.ai/pricing",
-        "quote": "$149/moGet Started",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://hero365.ai/pricing",
-        "quote": "$349/moGet Started",
+        "quote": "SOC 2 Type II in progress.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2728,19 +2729,24 @@
         "quote": "QuickBooks, Xero, Stripe, Google Calendar, Zapier — supported out of the box.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://hero365.ai/privacy",
-        "quote": "Help: Reply HELP to any message, or contact support@hero365.ai, for assistance.",
+      "free_trial_days": {
+        "source_url": "https://hero365.ai",
+        "quote": "the first 7 days are free",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://hero365.ai",
-        "quote": "SOC 2 Type II in progress.",
+      "price_monthly_max": {
+        "source_url": "https://hero365.ai/pricing",
+        "quote": "$349/moGet Started",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://hero365.ai/pricing",
+        "quote": "$149/moGet Started",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:49:51.502Z",
+    "last_checked_at": "2026-11-08T22:49:51.502+00:00",
     "admin_reviewed": false
   },
   {
@@ -2749,13 +2755,12 @@
     "name": "Housecall Pro",
     "vendor": "Codefied Inc.",
     "canonical_url": "https://housecallpro.com",
-    "description": "Software that helps home service businesses book jobs, dispatch crews, send quotes, and collect payments.",
+    "description": "Field service software that helps home service pros book jobs, dispatch crews, send quotes, and get paid.",
     "status": "published",
     "use_cases": [
       "scheduling_dispatch",
       "missed_calls",
       "booking_waitlist",
-      "customer_list",
       "auto_replies"
     ],
     "industries": [
@@ -2767,26 +2772,24 @@
       "free_plan": false,
       "free_trial_days": 14,
       "est_monthly_usd_min": 59,
-      "est_monthly_usd_max": 189,
+      "est_monthly_usd_max": 149,
       "plan_name": "Basic",
       "pricing_url": "https://www.housecallpro.com/pricing"
     },
     "integrations": [
-      "quickbooks",
-      "phone_line"
+      "quickbooks"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A QuickBooks account if you want to sync invoice data",
-      "A business phone number if you want the AI call answering feature"
+      "A QuickBooks Online account if you want to sync data from QuickBooks"
     ],
-    "setup_complexity": "low",
+    "setup_complexity": "medium",
     "setup_steps": [
-      "Start the 14-day free trial with no credit card",
-      "Answer the pricing quiz about your industry, team size, and goals to find a plan",
-      "Add your services and prices to the price book",
-      "Turn on online booking so customers can book from Google or your website",
-      "Invite your team members and assign them to jobs"
+      "Start a 14-day free trial",
+      "Add your services and price book",
+      "Add your team members and assign jobs",
+      "Connect online booking to your website or Google",
+      "Turn on automated review requests"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -2830,24 +2833,19 @@
         "quote": "© 2026 Codefied Inc.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://housecallpro.com",
+        "quote": "Get in touch: 858-842-5746 support@housecallpro.com Follow our Socials",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://www.housecallpro.com/integrations/",
+        "quote": "Trust and Security AI Guidance & Info",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://www.housecallpro.com/pricing",
         "quote": "Try 14 days free. No credit card required. Cancel anytime.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "Try 14 days free. No credit card required.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "$59 /mo (Billed annually)",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.housecallpro.com/pricing",
-        "quote": "Saving $40/mo $149/mo $189/mo",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -2857,22 +2855,27 @@
       },
       "integrations": {
         "source_url": "https://www.housecallpro.com/integrations/",
-        "quote": "Sync invoice data from Housecall Pro to QuickBooks Desktop",
+        "quote": "Intuit QuickBooks Sync invoice data from Housecall Pro to QuickBooks Desktop",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://housecallpro.com",
-        "quote": "Get in touch: 858-842-5746 support@housecallpro.com",
+      "free_trial_days": {
+        "source_url": "https://www.housecallpro.com/pricing",
+        "quote": "Try 14 days free.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://housecallpro.com",
-        "quote": "Trust and Security",
+      "price_monthly_max": {
+        "source_url": "https://www.housecallpro.com/pricing",
+        "quote": "Saving $40/mo $149/mo $189/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.housecallpro.com/pricing",
+        "quote": "$59 /mo (Billed annually)",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:59:22.944Z",
+    "last_checked_at": "2026-11-09T02:37:49.25+00:00",
     "admin_reviewed": false
   },
   {
@@ -2881,7 +2884,7 @@
     "name": "HubSpot",
     "vendor": null,
     "canonical_url": "https://hubspot.com",
-    "description": "Customer software that keeps contact details, marketing emails, sales, and customer service in one place.",
+    "description": "HubSpot provides marketing, sales, and customer service software, including a free CRM for managing customer contacts.",
     "status": "published",
     "use_cases": [
       "customer_list",
@@ -2896,7 +2899,7 @@
       "free_trial_days": 14,
       "est_monthly_usd_min": 20,
       "est_monthly_usd_max": 890,
-      "plan_name": "Starter (Marketing Hub)",
+      "plan_name": "Starter",
       "pricing_url": "https://www.hubspot.com/products/marketing"
     },
     "integrations": [],
@@ -2904,12 +2907,12 @@
     "integration_requirements": [],
     "setup_complexity": "low",
     "setup_steps": [
-      "Sign up for a free HubSpot account",
-      "Import your customer contacts into the CRM",
-      "Connect your favorite apps from the HubSpot Marketplace",
-      "Set up automated email campaigns to past customers"
+      "Sign up for the free HubSpot CRM",
+      "Import or add your customer contacts",
+      "Choose the marketing or sales tool you need",
+      "Start the 14-day free trial of a paid tool if you want more features"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -2935,7 +2938,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://legal.hubspot.com/security",
-        "note": "Trust Center with SOC 2 Type 2 report"
+        "note": "SOC 2 Type 2 and SOC 3 reports available through the Trust Center"
       },
       "public_pricing": {
         "pass": true,
@@ -2949,9 +2952,24 @@
       "The vendor's site doesn't say which apps it works with. Ask before buying."
     ],
     "evidence": {
+      "contact": {
+        "source_url": "https://legal.hubspot.com/security",
+        "quote": "Have questions? Give us a call and we'll walk you through it. 1 888 482 7768",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://legal.hubspot.com/security",
+        "quote": "Download our SOC3 and SOC 2 Type 2, our latest penetration test summaries",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://www.hubspot.com/products/marketing",
         "quote": "Free No credit card required $0/month",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://www.hubspot.com/products/marketing",
+        "quote": "Starter Starts at $10 $20 /month per seat*",
         "claim_type": "fact"
       },
       "free_trial_days": {
@@ -2959,36 +2977,21 @@
         "quote": "Start 14-day free trial of HubSpot's marketing tools",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://www.hubspot.com/products/marketing",
-        "quote": "Starter Starts at $10 $20/month per seat*",
-        "claim_type": "fact"
-      },
       "price_monthly_max": {
         "source_url": "https://www.hubspot.com/products/marketing",
         "quote": "Professional Starts at $890/month (3 seats included)",
         "claim_type": "fact"
       },
-      "plan_name": {
+      "price_monthly_min": {
         "source_url": "https://www.hubspot.com/products/marketing",
-        "quote": "Starter Starts at $10 $20/month per seat*",
-        "claim_type": "fact"
-      },
-      "contact": {
-        "source_url": "https://legal.hubspot.com/security",
-        "quote": "Give us a call and we'll walk you through it.",
-        "claim_type": "fact"
-      },
-      "security": {
-        "source_url": "https://legal.hubspot.com/security",
-        "quote": "Download our SOC3 and SOC 2 Type 2, our latest penetration test summaries",
+        "quote": "Starter Starts at $10 $20 /month per seat*",
         "claim_type": "fact"
       }
     },
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:56:32.525Z",
+    "last_checked_at": "2026-11-09T02:37:51.136+00:00",
     "admin_reviewed": false
   },
   {
@@ -2998,7 +3001,7 @@
     "vendor": "Jayu Services Inc",
     "canonical_url": "https://jayu.us",
     "description": "Jayu helps small businesses text, email, and reward customers so they come back.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "win_back",
       "customer_list"
@@ -3071,31 +3074,6 @@
         "quote": "Jayu Services Inc",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://jayu.us/pricing/",
-        "quote": "Start with a 7 day free trial. Cancel anytime.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://jayu.us",
-        "quote": "Starting at $29 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://jayu.us",
-        "quote": "the Basic plan at $59/month",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://jayu.us",
-        "quote": "starts at $29/month for the Starter plan",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://jayu.us/pricing/",
-        "quote": "A complete retention platform built for small business",
-        "claim_type": "vendor_claim"
-      },
       "contact": {
         "source_url": "https://jayu.us",
         "quote": "San Diego, CA info@jayu.us",
@@ -3105,12 +3083,37 @@
         "source_url": "https://jayu.us/privacy/",
         "quote": "Information transferred through Jayu’s app utilizes Secure Socket Layer (SSL) encryption.",
         "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://jayu.us",
+        "quote": "starts at $29/month for the Starter plan",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://jayu.us/pricing/",
+        "quote": "Start with a 7 day free trial. Cancel anytime.",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://jayu.us/pricing/",
+        "quote": "A complete retention platform built for small business",
+        "claim_type": "vendor_claim"
+      },
+      "price_monthly_max": {
+        "source_url": "https://jayu.us",
+        "quote": "the Basic plan at $59/month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://jayu.us",
+        "quote": "Starting at $29 a month.",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:52:05.504Z",
+    "last_checked_at": "2026-11-08T22:52:05.504+00:00",
     "admin_reviewed": false
   },
   {
@@ -3197,14 +3200,14 @@
         "quote": "© Jobber 2026",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://www.getjobber.com/pricing/",
-        "quote": "$49/mo No commitment $49/mo $39/mo",
+      "contact": {
+        "source_url": "https://getjobber.com",
+        "quote": "Call us toll free: 1-888-721-1115",
         "claim_type": "fact"
       },
-      "price_monthly_max": {
-        "source_url": "https://www.getjobber.com/pricing/",
-        "quote": "$199/mo No commitment $199/mo $169/mo",
+      "security": {
+        "source_url": "https://www.getjobber.com/security/",
+        "quote": "Security at Jobber",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -3217,19 +3220,19 @@
         "quote": "Sync with QuickBooks Online",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://getjobber.com",
-        "quote": "Call us toll free: 1-888-721-1115",
+      "price_monthly_max": {
+        "source_url": "https://www.getjobber.com/pricing/",
+        "quote": "$199/mo No commitment $199/mo $169/mo",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://www.getjobber.com/security/",
-        "quote": "Security at Jobber",
+      "price_monthly_min": {
+        "source_url": "https://www.getjobber.com/pricing/",
+        "quote": "$49/mo No commitment $49/mo $39/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:58:51.225Z",
+    "last_checked_at": "2026-11-08T22:58:51.225+00:00",
     "admin_reviewed": false
   },
   {
@@ -3239,7 +3242,7 @@
     "vendor": "Jvora",
     "canonical_url": "https://jvora.com",
     "description": "Jvora is an AI receptionist and booking platform that answers calls, texts clients, and takes deposits for barbers and stylists.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -3316,19 +3319,14 @@
         "quote": "© 2025 Jvora. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://jvora.com",
-        "quote": "Start 14-Day Trial",
+      "contact": {
+        "source_url": "https://jvora.com/privacy",
+        "quote": "Email support@jvora.com.",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://jvora.com",
-        "quote": "Starter $39/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://jvora.com",
-        "quote": "Pro AI $79/mo",
+      "security": {
+        "source_url": "https://jvora.com/privacy",
+        "quote": "encryption in transit, access controls",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -3341,19 +3339,24 @@
         "quote": "require partial or full deposits securely through Stripe or Square",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://jvora.com/privacy",
-        "quote": "Email support@jvora.com.",
+      "free_trial_days": {
+        "source_url": "https://jvora.com",
+        "quote": "Start 14-Day Trial",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://jvora.com/privacy",
-        "quote": "encryption in transit, access controls",
+      "price_monthly_max": {
+        "source_url": "https://jvora.com",
+        "quote": "Pro AI $79/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://jvora.com",
+        "quote": "Starter $39/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:45:38.351Z",
+    "last_checked_at": "2026-11-08T22:45:38.351+00:00",
     "admin_reviewed": false
   },
   {
@@ -3362,8 +3365,8 @@
     "name": "Lawnager",
     "vendor": "Lawnager",
     "canonical_url": "https://lawnager.com",
-    "description": "Lawn care software for quoting jobs, routing crews, scheduling visits, invoicing, and collecting card payments.",
-    "status": "published",
+    "description": "Lawn care software for quoting jobs, routing crews, invoicing customers and tracking payments.",
+    "status": "rejected",
     "use_cases": [
       "scheduling_dispatch",
       "win_back",
@@ -3375,8 +3378,8 @@
     "pricing": {
       "free_plan": true,
       "free_trial_days": 14,
-      "est_monthly_usd_min": 41,
-      "est_monthly_usd_max": 83,
+      "est_monthly_usd_min": 49,
+      "est_monthly_usd_max": 99,
       "plan_name": "Growth",
       "pricing_url": "https://www.lawnager.com/pricing"
     },
@@ -3386,20 +3389,19 @@
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A QuickBooks Online account if you want invoices and payments synced",
       "A Stripe account to accept card payments",
-      "A Twilio account and phone number if you want to send SMS (optional)",
-      "A Resend API key if you want your own email sending (optional)"
+      "A Twilio account and phone number to send SMS",
+      "A QuickBooks Online account if you want accounting sync"
     ],
-    "setup_complexity": "low",
+    "setup_complexity": "medium",
     "setup_steps": [
-      "Sign up for free at Lawnager",
-      "Connect QuickBooks Online under Settings → Integrations",
-      "Connect Stripe under Settings → Payments by pasting your API keys",
-      "Add your customers and create your first quote",
-      "Optionally connect Twilio under Settings → Notifications for SMS"
+      "Sign up for a free Starter account",
+      "Import your customers",
+      "Connect Stripe for online payments",
+      "Connect QuickBooks Online if you use it",
+      "Build your first quote and send it to a client"
     ],
-    "engagement": "free_trial",
+    "engagement": "self_serve",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -3425,7 +3427,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://www.lawnager.com/security",
-        "note": "Vercel and Supabase are SOC 2 Type II; Stripe is PCI DSS Level 1; Lawnager itself is not SOC 2 certified"
+        "note": "Hosted on Vercel and Supabase, both SOC 2 Type II; Stripe PCI DSS Level 1. Lawnager is not yet independently SOC 2 certified."
       },
       "public_pricing": {
         "pass": true,
@@ -3441,36 +3443,6 @@
         "quote": "© 2026 Lawnager. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_plan": {
-        "source_url": "https://www.lawnager.com/pricing",
-        "quote": "For solo operators just getting started.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://www.lawnager.com/pricing",
-        "quote": "Start 14-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.lawnager.com/pricing",
-        "quote": "Growth$41/monthBilled $490/year — save $98+20% more credits included",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.lawnager.com/pricing",
-        "quote": "Pro$83/monthBilled $990/year — save $198+20% more credits included",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://www.lawnager.com/pricing",
-        "quote": "For crews ready to scale.",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://www.lawnager.com/integrations",
-        "quote": "Lawnager integrates with QuickBooks, Stripe, Google, Twilio, and more",
-        "claim_type": "fact"
-      },
       "contact": {
         "source_url": "https://www.lawnager.com/security",
         "quote": "Email security@lawnager.com and we'll respond within one business day.",
@@ -3478,12 +3450,42 @@
       },
       "security": {
         "source_url": "https://www.lawnager.com/security",
-        "quote": "Hosted on Vercel (SOC 2 Type II) with database on Supabase (SOC 2 Type II).",
+        "quote": "Lawnager is not yet SOC 2 Type II certified independently",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://www.lawnager.com/pricing",
+        "quote": "Starter Free For solo operators just getting started.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://www.lawnager.com/pricing",
+        "quote": "Growth $41 /month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://www.lawnager.com/integrations",
+        "quote": "Lawnager integrates with QuickBooks, Stripe, Google, Twilio, and more — natively, no Zapier middleman required.",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://www.lawnager.com/pricing",
+        "quote": "Start 14-day free trial",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://www.lawnager.com/pricing",
+        "quote": "Starting price Free $49/mo $99/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.lawnager.com/pricing",
+        "quote": "Starting price Free $49/mo $99/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:54:24.910Z",
+    "last_checked_at": "2026-11-09T02:38:08.577+00:00",
     "admin_reviewed": false
   },
   {
@@ -3492,7 +3494,7 @@
     "name": "Less Annoying CRM",
     "vendor": "Less Annoying CRM",
     "canonical_url": "https://lessannoyingcrm.com",
-    "description": "Simple CRM that tracks contacts, tasks, calendar events and email in one place for small businesses.",
+    "description": "A simple CRM that keeps contacts, tasks, notes, and emails in one place for small businesses.",
     "status": "published",
     "use_cases": [
       "customer_list"
@@ -3506,25 +3508,24 @@
       "est_monthly_usd_min": 15,
       "est_monthly_usd_max": 15,
       "plan_name": "Everything included",
-      "pricing_url": "https://lessannoyingcrm.com"
+      "pricing_url": "https://lessannoyingcrm.com/pricing"
     },
     "integrations": [
       "gmail_outlook",
-      "excel_sheets",
       "quickbooks"
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A Google or Outlook email account to sync inbox email",
-      "A Google or Outlook calendar to sync meetings"
+      "A Google or Outlook email account to connect (optional)",
+      "A Google or Outlook calendar to sync (optional)"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start your free trial with no credit card",
-      "Import your contacts",
-      "Connect your Google or Outlook email",
-      "Connect your Google or Outlook calendar",
-      "Add your team members and set permissions"
+      "Start your free trial",
+      "Import your contacts from a spreadsheet or file",
+      "Connect your Google or Outlook email and calendar",
+      "Add team members and set their permissions",
+      "Create tasks and follow-ups linked to your contacts"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -3537,7 +3538,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://lessannoyingcrm.com",
-        "note": "Less Annoying CRM · 1017 Olive St. #300, St. Louis, MO 63101"
+        "note": "Less Annoying CRM · 1017 Olive St. #300 St. Louis, MO 63101"
       },
       "privacy_policy": {
         "pass": true,
@@ -3552,11 +3553,11 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://lessannoyingcrm.com/security",
-        "note": "Security center page; data encrypted; HIPAA-compliant with BAA available"
+        "note": "HIPAA-compliant; data encrypted in transit and at rest"
       },
       "public_pricing": {
         "pass": true,
-        "source_url": "https://lessannoyingcrm.com",
+        "source_url": "https://lessannoyingcrm.com/pricing",
         "note": null
       }
     },
@@ -3568,29 +3569,29 @@
         "quote": "© 2026 Less Annoying CRM. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
+      "contact": {
+        "source_url": "https://lessannoyingcrm.com",
+        "quote": "1017 Olive St. #300 St. Louis, MO 63101",
+        "claim_type": "fact"
+      },
+      "security": {
         "source_url": "https://lessannoyingcrm.com/pricing",
-        "quote": "Try it risk-free for 30 days",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://lessannoyingcrm.com",
-        "quote": "$15 per user, per month. That's it.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://lessannoyingcrm.com",
-        "quote": "$15 per user, per month. That's it.",
+        "quote": "LACRM is HIPAA-compliant and you can sign a BAA with us.",
         "claim_type": "fact"
       },
       "plan_name": {
         "source_url": "https://lessannoyingcrm.com/pricing",
-        "quote": "No tiers. No contracts. No features locked behind upgrades.",
+        "quote": "Everything included $15 per user per month + applicable tax",
         "claim_type": "fact"
       },
       "integrations": {
         "source_url": "https://lessannoyingcrm.com/integrations",
-        "quote": "Less Annoying CRM works with all the tools you're already using to manage your business.",
+        "quote": "Sync QuickBooks Online with LACRM",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://lessannoyingcrm.com/pricing",
+        "quote": "Try it risk-free for 30 days",
         "claim_type": "fact"
       },
       "works_standalone": {
@@ -3598,19 +3599,19 @@
         "quote": "Less Annoying CRM is cloud-based — access it from any device with an internet connection.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://lessannoyingcrm.com",
-        "quote": "1017 Olive St. #300",
+      "price_monthly_max": {
+        "source_url": "https://lessannoyingcrm.com/pricing",
+        "quote": "$15 per user per month + applicable tax",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://lessannoyingcrm.com/security",
-        "quote": "At Less Annoying CRM, the privacy and security of your data are a top priority.",
+      "price_monthly_min": {
+        "source_url": "https://lessannoyingcrm.com/pricing",
+        "quote": "$15 per user per month + applicable tax",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:40:11.191Z",
+    "last_checked_at": "2026-11-09T02:38:04.867+00:00",
     "admin_reviewed": false
   },
   {
@@ -3620,7 +3621,7 @@
     "vendor": "Lilo AI, Inc.",
     "canonical_url": "https://heylilo.co",
     "description": "Lilo is booking, client, marketing, and payment software for salons, barbershops, and booth renters.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "booking_waitlist",
       "customer_list",
@@ -3699,19 +3700,9 @@
         "quote": "© 2026 Lilo AI, Inc. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://heylilo.co",
-        "quote": "30-day free trial for every new business.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://heylilo.co/pricing",
-        "quote": "Lilo Booth ($20/mo flat) is designed specifically for independent booth renters.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://heylilo.co/pricing",
-        "quote": "Lilo Pro starts at $59/month for your first location with unlimited team members.",
+      "security": {
+        "source_url": "https://heylilo.co/security",
+        "quote": "Yes, Lilo is fully HIPAA compliant.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -3724,19 +3715,29 @@
         "quote": "Connect Square or upload your Vagaro export yourself",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://heylilo.co",
+        "quote": "30-day free trial for every new business.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://heylilo.co",
         "quote": "The all-in-one platform",
         "claim_type": "vendor_claim"
       },
-      "security": {
-        "source_url": "https://heylilo.co/security",
-        "quote": "Yes, Lilo is fully HIPAA compliant.",
+      "price_monthly_max": {
+        "source_url": "https://heylilo.co/pricing",
+        "quote": "Lilo Pro starts at $59/month for your first location with unlimited team members.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://heylilo.co/pricing",
+        "quote": "Lilo Booth ($20/mo flat) is designed specifically for independent booth renters.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:51:10.340Z",
+    "last_checked_at": "2026-11-08T22:51:10.34+00:00",
     "admin_reviewed": false
   },
   {
@@ -3746,7 +3747,7 @@
     "vendor": "Lobotix",
     "canonical_url": "https://lobotix.com",
     "description": "Sends personally written email and text campaigns to your customers at key moments, like birthdays and visits.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "win_back",
       "customer_list"
@@ -3828,21 +3829,6 @@
         "quote": "Free accounts stay free, with one campaign run a day.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://lobotix.com/pricing",
-        "quote": "3-day trial on paid plans.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://lobotix.com",
-        "quote": "Starter — $29/mo · $0.03 per email · $0.04 per text",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://lobotix.com",
-        "quote": "Pro — $79/mo · $0.02 per email · $0.03 per text",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://lobotix.com",
         "quote": "Starter — $29/mo · $0.03 per email · $0.04 per text",
@@ -3853,14 +3839,29 @@
         "quote": "Eight integrations, each honest about what it can do",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://lobotix.com/pricing",
+        "quote": "3-day trial on paid plans.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://lobotix.com/integrations",
         "quote": "you do not need the right software to get started.",
         "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://lobotix.com",
+        "quote": "Pro — $79/mo · $0.02 per email · $0.03 per text",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://lobotix.com",
+        "quote": "Starter — $29/mo · $0.03 per email · $0.04 per text",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:50:53.686Z",
+    "last_checked_at": "2026-11-08T22:50:53.686+00:00",
     "admin_reviewed": false
   },
   {
@@ -3870,7 +3871,7 @@
     "vendor": "Now Tech LLC",
     "canonical_url": "https://lokuli.com",
     "description": "Lets customers find and book local service appointments, and lets small businesses take bookings and get paid online.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "booking_waitlist",
       "missed_calls"
@@ -3942,19 +3943,19 @@
         "quote": "© 2026 Now Tech LLC · Lokuli · Terms · Privacy · Support",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://lokuli.com",
+        "quote": "Contact [email protected] 1-844-4LOKULI Los Angeles, CA",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://lokuli.com/privacy",
+        "quote": "Google Cloud with SOC 2 Type II certification",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://lokuli.com/pricing",
         "quote": "Your first 10 bookings are free. After that, $5 a month keeps your page taking bookings.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://lokuli.com/pricing",
-        "quote": "Get paid online $15/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://lokuli.com/pricing",
-        "quote": "2–10 staff $29/mo",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -3972,19 +3973,19 @@
         "quote": "Live today. No card needed.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://lokuli.com",
-        "quote": "Contact [email protected] 1-844-4LOKULI Los Angeles, CA",
+      "price_monthly_max": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "2–10 staff $29/mo",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://lokuli.com/privacy",
-        "quote": "Google Cloud with SOC 2 Type II certification",
+      "price_monthly_min": {
+        "source_url": "https://lokuli.com/pricing",
+        "quote": "Get paid online $15/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:00:50.285Z",
+    "last_checked_at": "2026-11-08T23:00:50.285+00:00",
     "admin_reviewed": false
   },
   {
@@ -3993,40 +3994,41 @@
     "name": "Mailchimp",
     "vendor": "The Rocket Science Group",
     "canonical_url": "https://mailchimp.com",
-    "description": "Email and text marketing tool that sends campaigns and automations to your customers.",
+    "description": "Email and SMS marketing tool for sending campaigns, automated messages, and re-engagement emails to customers.",
     "status": "published",
     "use_cases": [
-      "win_back"
+      "win_back",
+      "customer_list"
     ],
     "industries": [
-      "retail",
-      "restaurant"
+      "restaurant",
+      "retail"
     ],
     "pricing": {
       "free_plan": true,
       "free_trial_days": 14,
       "est_monthly_usd_min": 13,
-      "est_monthly_usd_max": 350,
-      "plan_name": "Free, Essentials, Standard, Premium",
+      "est_monthly_usd_max": 20,
+      "plan_name": "Essentials",
       "pricing_url": "https://mailchimp.com/pricing/marketing/"
     },
     "integrations": [
+      "quickbooks",
       "square",
       "shopify",
-      "quickbooks",
       "instagram_facebook"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "An account with any app you want to connect, such as Square or Shopify"
+      "A customer contact list to import or sync",
+      "Accounts for any store or accounting tool you want to connect"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start the free trial or sign up for the free plan",
-      "Add or import your customer contacts",
-      "Connect Square, Shopify, or other apps you use",
-      "Build an email or text campaign or automation",
-      "Send to your audience and review results"
+      "Create an account or start the free trial",
+      "Import or sync your customer contacts",
+      "Connect Square, Shopify, or QuickBooks if you use them",
+      "Build your first campaign or automation"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -4038,8 +4040,8 @@
       },
       "vendor_identity": {
         "pass": true,
-        "source_url": "https://mailchimp.com/integrations/",
-        "note": "The Rocket Science Group · +1 (800) 330-4838"
+        "source_url": "https://mailchimp.com",
+        "note": "The Rocket Science Group · +1 (800) 315-5939"
       },
       "privacy_policy": {
         "pass": true,
@@ -4054,7 +4056,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://mailchimp.com/gdpr/",
-        "note": "GDPR compliance page; certified under the EU-US Data Privacy Framework"
+        "note": null
       },
       "public_pricing": {
         "pass": true,
@@ -4066,53 +4068,48 @@
     "warnings": [],
     "evidence": {
       "vendor": {
-        "source_url": "https://mailchimp.com/integrations/",
+        "source_url": "https://mailchimp.com",
         "quote": "Mailchimp® is a registered trademark of The Rocket Science Group.",
+        "claim_type": "fact"
+      },
+      "contact": {
+        "source_url": "https://mailchimp.com",
+        "quote": "Get a demo: +1 (800) 315-5939",
         "claim_type": "fact"
       },
       "free_plan": {
         "source_url": "https://mailchimp.com/pricing/marketing/",
-        "quote": "Under 250 contacts? It's free.",
+        "quote": "Under 250 contacts? It's free. Use core features to manage early growth.",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://mailchimp.com",
+        "quote": "Cancel or downgrade to our Essentials or basic Free plans at any time.",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://mailchimp.com",
+        "quote": "QuickBooks Online Sync real-time data between QuickBooks and Mailchimp",
         "claim_type": "fact"
       },
       "free_trial_days": {
+        "source_url": "https://mailchimp.com",
+        "quote": "Join Mailchimp with a free 14-day trial or save 15% off on 10,000+ contacts.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
         "source_url": "https://mailchimp.com/pricing/marketing/",
-        "quote": "Try free for 14 days",
+        "quote": "$ 20 00 /mo for 12 months",
         "claim_type": "fact"
       },
       "price_monthly_min": {
         "source_url": "https://mailchimp.com/pricing/marketing/",
         "quote": "$ 13 00 /mo for 12 months",
         "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://mailchimp.com/pricing/marketing/",
-        "quote": "$ 350 00 /mo for 12 months",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://mailchimp.com/pricing/marketing/",
-        "quote": "Premium Our most advanced tools, unlimited contacts, and priority support; built for teams.",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://mailchimp.com",
-        "quote": "Square Bring customer data and marketing tools together",
-        "claim_type": "fact"
-      },
-      "contact": {
-        "source_url": "https://mailchimp.com",
-        "quote": "Call +1 (800) 330-4838 for custom pricing, annual plans, demos, and more.",
-        "claim_type": "fact"
-      },
-      "security": {
-        "source_url": "https://mailchimp.com/gdpr/",
-        "quote": "Mailchimp is certified under the EU-US DPF, the UK Extension to the EU-U.S. Data Privacy Framework, and the Swiss-U.S. Data Privacy Framework.",
-        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:03:22.093Z",
+    "last_checked_at": "2026-11-09T02:38:29.858+00:00",
     "admin_reviewed": false
   },
   {
@@ -4200,6 +4197,11 @@
         "quote": "© 2025 Maple. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://callmaple.ai",
+        "quote": "Get in Touchhello@callmaple.ai© 2025 Maple. All rights reserved.",
+        "claim_type": "fact"
+      },
       "plan_name": {
         "source_url": "https://www.callmaple.ai/pricing",
         "quote": "Perfect for small businesses getting started",
@@ -4209,17 +4211,12 @@
         "source_url": "https://callmaple.ai",
         "quote": "Checks availability and creates bookings instantly in OpenTable, SevenRooms, or your system.",
         "claim_type": "fact"
-      },
-      "contact": {
-        "source_url": "https://callmaple.ai",
-        "quote": "Get in Touchhello@callmaple.ai© 2025 Maple. All rights reserved.",
-        "claim_type": "fact"
       }
     },
     "missing_fields": [
       "price"
     ],
-    "last_checked_at": "2026-11-08T22:42:51.253Z",
+    "last_checked_at": "2026-11-08T22:42:51.253+00:00",
     "admin_reviewed": false
   },
   {
@@ -4229,7 +4226,7 @@
     "vendor": "OnCrew",
     "canonical_url": "https://oncrew.ai",
     "description": "Answers business phone calls with an AI receptionist, captures job details, flags urgent calls, and books appointments.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -4306,24 +4303,19 @@
         "quote": "© 2026 OnCrew. Built for the trades, a",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://oncrew.ai",
+        "quote": "Demo line: (213) 319-5075hello@oncrew.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://oncrew.ai/trust",
+        "quote": "We do not claim SOC 2, HIPAA, PCI DSS, or ISO 27001.",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://oncrew.ai",
         "quote": "Plans from $49/mo after trial",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://oncrew.ai",
-        "quote": "Free 14-day trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://oncrew.ai/",
-        "quote": "OnCrew starts at $49/month with 150 included minutes.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://oncrew.ai/",
-        "quote": "Pro is $149/month for 200 minutes, and Multi-Truck is $349/month for 500 minutes.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -4336,24 +4328,29 @@
         "quote": "Housecall Pro and Google Calendar connect from the Integrations page of your OnCrew dashboard.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://oncrew.ai",
+        "quote": "Free 14-day trial",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://oncrew.ai/answering-service-integrations",
         "quote": "A text and an email after every real call, with or without a tool connected.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://oncrew.ai",
-        "quote": "Demo line: (213) 319-5075hello@oncrew.ai",
+      "price_monthly_max": {
+        "source_url": "https://oncrew.ai/",
+        "quote": "Pro is $149/month for 200 minutes, and Multi-Truck is $349/month for 500 minutes.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://oncrew.ai/trust",
-        "quote": "We do not claim SOC 2, HIPAA, PCI DSS, or ISO 27001.",
+      "price_monthly_min": {
+        "source_url": "https://oncrew.ai/",
+        "quote": "OnCrew starts at $49/month with 150 included minutes.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:44:15.464Z",
+    "last_checked_at": "2026-11-08T22:44:15.464+00:00",
     "admin_reviewed": false
   },
   {
@@ -4363,7 +4360,7 @@
     "vendor": "Platero AI",
     "canonical_url": "https://platero.ai",
     "description": "Drafts replies to Google restaurant reviews for you to approve before they are published.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "auto_replies"
     ],
@@ -4434,19 +4431,14 @@
         "quote": "© 2026 Platero AI. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://platero.ai",
-        "quote": "30 days free. No card.",
+      "contact": {
+        "source_url": "https://platero.ai/privacy",
+        "quote": "General inquiries: hello@platero.ai",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://platero.ai",
-        "quote": "$5/mo per location",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://platero.ai",
-        "quote": "$20/mo per location",
+      "security": {
+        "source_url": "https://platero.ai/privacy",
+        "quote": "including encryption in transit (TLS/SSL), encryption at rest, access controls, and secure authentication",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -4459,19 +4451,24 @@
         "quote": "connect your restaurant’s Business Profile",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://platero.ai/privacy",
-        "quote": "General inquiries: hello@platero.ai",
+      "free_trial_days": {
+        "source_url": "https://platero.ai",
+        "quote": "30 days free. No card.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://platero.ai/privacy",
-        "quote": "including encryption in transit (TLS/SSL), encryption at rest, access controls, and secure authentication",
+      "price_monthly_max": {
+        "source_url": "https://platero.ai",
+        "quote": "$20/mo per location",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://platero.ai",
+        "quote": "$5/mo per location",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:47:10.349Z",
+    "last_checked_at": "2026-11-08T22:47:10.349+00:00",
     "admin_reviewed": false
   },
   {
@@ -4481,7 +4478,7 @@
     "vendor": "Plyrium",
     "canonical_url": "https://plyrium.com",
     "description": "Plyrium helps trade shops answer calls with AI and manage quotes, invoices, scheduling and Google reviews.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -4561,19 +4558,9 @@
         "quote": "© 2026 Plyrium. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://www.plyrium.com/pricing",
-        "quote": "14-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.plyrium.com/pricing",
-        "quote": "$49/month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.plyrium.com/pricing",
-        "quote": "$699/month",
+      "contact": {
+        "source_url": "https://plyrium.com",
+        "quote": "Call (971) 342-9092.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -4586,14 +4573,24 @@
         "quote": "Your calendar syncs through real Google/Microsoft OAuth.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://plyrium.com",
-        "quote": "Call (971) 342-9092.",
+      "free_trial_days": {
+        "source_url": "https://www.plyrium.com/pricing",
+        "quote": "14-day free trial",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://www.plyrium.com/pricing",
+        "quote": "$699/month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.plyrium.com/pricing",
+        "quote": "$49/month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:50:31.251Z",
+    "last_checked_at": "2026-11-08T22:50:31.251+00:00",
     "admin_reviewed": false
   },
   {
@@ -4603,7 +4600,7 @@
     "vendor": "ClientFuse LLC",
     "canonical_url": "https://plyto.ai",
     "description": "Plyto is an AI marketing assistant that builds and runs ads, follows up on leads, and tracks which sales came back.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "customer_list",
       "win_back",
@@ -4679,19 +4676,19 @@
         "quote": "Plyto is a product of ClientFuse LLC, a United States company.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://plyto.ai",
+        "quote": "If yours is not here, write to hello@plyto.ai.",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://plyto.ai/privacy",
+        "quote": "Data is stored with the providers above, in the United States, encrypted in transit and at rest.",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://plyto.ai",
         "quote": "Free: 100 contacts, 100 emails a month, lead forms and CSV import, unlimited seats, no card.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://plyto.ai",
-        "quote": "Connect your agent$19/moFor people who already run their business from Claude, ChatGPT or Grok.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://plyto.ai",
-        "quote": "Ads Manager$49/moFor a business that wants its ads made, run and measured.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -4709,19 +4706,19 @@
         "quote": "One login instead of eight subscriptions, and one assistant that knows all of it.",
         "claim_type": "fact"
       },
-      "contact": {
+      "price_monthly_max": {
         "source_url": "https://plyto.ai",
-        "quote": "If yours is not here, write to hello@plyto.ai.",
+        "quote": "Ads Manager$49/moFor a business that wants its ads made, run and measured.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://plyto.ai/privacy",
-        "quote": "Data is stored with the providers above, in the United States, encrypted in transit and at rest.",
+      "price_monthly_min": {
+        "source_url": "https://plyto.ai",
+        "quote": "Connect your agent$19/moFor people who already run their business from Claude, ChatGPT or Grok.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:48:21.643Z",
+    "last_checked_at": "2026-11-08T22:48:21.643+00:00",
     "admin_reviewed": false
   },
   {
@@ -4730,16 +4727,16 @@
     "name": "Podium",
     "vendor": "Podium Corp Inc.",
     "canonical_url": "https://podium.com",
-    "description": "Podium uses an AI Employee to answer leads, book appointments, and re-engage past customers.",
+    "description": "Podium's AI Employee answers customer leads, books appointments, and re-engages past customers for local businesses.",
     "status": "published",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
+      "auto_replies",
       "win_back"
     ],
     "industries": [
       "retail",
-      "hvac_plumbing",
       "other"
     ],
     "pricing": {
@@ -4755,10 +4752,10 @@
     "integration_requirements": [],
     "setup_complexity": "high",
     "setup_steps": [
-      "Choose your industry on the pricing page.",
-      "Request a custom quote for your business.",
-      "Watch a demo with the Podium sales team.",
-      "Start using the AI Employee after your quote is approved."
+      "Watch a demo or contact sales",
+      "Select your industry on the pricing page",
+      "Get a custom quote for your business",
+      "Work with the Podium team to set up your AI Employee"
     ],
     "engagement": "book_demo",
     "reviews": null,
@@ -4771,7 +4768,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://podium.com",
-        "note": "Podium Corp Inc. · 1-801-438-4425"
+        "note": "Podium Corp Inc. · Sales: 1-801-438-4425"
       },
       "privacy_policy": {
         "pass": true,
@@ -4784,9 +4781,9 @@
         "note": null
       },
       "security_docs": {
-        "pass": false,
-        "source_url": null,
-        "note": null
+        "pass": true,
+        "source_url": "https://legal.podium.com/?_gl=1*1h75xqj*_gcl_aw*R0NMLjE3NjQxOTIxODAuQ2p3S0NBaUE1NXJKQmhCeUVpd0FGa1kxUU13ZEpaREdIQlVoaGdhUEM4NUNxX2pmM3RKZWV4aXVvajBIY21Va2pXdWxKYzdXMFBzNmtCb0M4TFVRQXZEX0J3RQ..*_gcl_au*MTc4NjgzMzg5OS4xNzYzNDAwMTI5*_ga*MjAwNzk4NzExMC4xNzU1ODAyOTM0*_ga_WKYNN4EZQT*czE3NjQ5NzI2MTgkbzExOCRnMSR0MTc2NDk3Mjg2NSRqNTkkbDAkaDA.&_ga=2.14642034.452699395.1764966989-2007987110.1755802934&_gac=1.45924822.1764192180.CjwKCAiA55rJBhByEiwAFkY1QMwdJZDGHBUhhgaPC85Cq_jf3tJeexiuoj0HcmUkjWulJc7W0Ps6kBoC8LUQAvD_BwE",
+        "note": "Developer Security & SLA Requirements document listed in legal center"
       },
       "public_pricing": {
         "pass": false,
@@ -4794,9 +4791,8 @@
         "note": null
       }
     },
-    "trust_level": "partial",
+    "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find information about how they keep your data safe.",
       "Price isn't listed on the vendor's site. Ask before signing up.",
       "The vendor's site doesn't say which apps it works with. Ask before buying."
     ],
@@ -4810,13 +4806,18 @@
         "source_url": "https://podium.com",
         "quote": "Sales: 1-801-438-4425",
         "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://legal.podium.com/?_gl=1*1h75xqj*_gcl_aw*R0NMLjE3NjQxOTIxODAuQ2p3S0NBaUE1NXJKQmhCeUVpd0FGa1kxUU13ZEpaREdIQlVoaGdhUEM4NUNxX2pmM3RKZWV4aXVvajBIY21Va2pXdWxKYzdXMFBzNmtCb0M4TFVRQXZEX0J3RQ..*_gcl_au*MTc4NjgzMzg5OS4xNzYzNDAwMTI5*_ga*MjAwNzk4NzExMC4xNzU1ODAyOTM0*_ga_WKYNN4EZQT*czE3NjQ5NzI2MTgkbzExOCRnMSR0MTc2NDk3Mjg2NSRqNTkkbDAkaDA.&_ga=2.14642034.452699395.1764966989-2007987110.1755802934&_gac=1.45924822.1764192180.CjwKCAiA55rJBhByEiwAFkY1QMwdJZDGHBUhhgaPC85Cq_jf3tJeexiuoj0HcmUkjWulJc7W0Ps6kBoC8LUQAvD_BwE",
+        "quote": "Developer Security & SLA Requirements",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [
       "price",
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:58:14.758Z",
+    "last_checked_at": "2026-11-09T02:38:22.365+00:00",
     "admin_reviewed": false
   },
   {
@@ -4826,7 +4827,7 @@
     "vendor": "Think & Do Hub, LLC",
     "canonical_url": "https://porchbell.com",
     "description": "A 24/7 voice receptionist that answers business calls, books appointments, and texts missed callers back.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -4903,19 +4904,14 @@
         "quote": "© 2026 Think & Do Hub, LLC. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://porchbell.com/pricing",
-        "quote": "14-day free trial, no credit card. Cancel anytime.",
+      "contact": {
+        "source_url": "https://porchbell.com",
+        "quote": "Or contact ushello@porchbell.com",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://porchbell.com/pricing",
-        "quote": "Starter$49/ monthSolo operator. Single number, single calendar.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://porchbell.com/pricing",
-        "quote": "Growth$99/ monthSmall team with multiple staff or services.",
+      "security": {
+        "source_url": "https://porchbell.com/security",
+        "quote": "Security and data practices",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -4928,24 +4924,29 @@
         "quote": "Connect Google Calendar in a tap, or run your schedule entirely in PorchBell.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://porchbell.com/pricing",
+        "quote": "14-day free trial, no credit card. Cancel anytime.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://porchbell.com/integrations",
         "quote": "It is a complete system on its own, so there is no engineer and no import job to get started.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://porchbell.com",
-        "quote": "Or contact ushello@porchbell.com",
+      "price_monthly_max": {
+        "source_url": "https://porchbell.com/pricing",
+        "quote": "Growth$99/ monthSmall team with multiple staff or services.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://porchbell.com/security",
-        "quote": "Security and data practices",
+      "price_monthly_min": {
+        "source_url": "https://porchbell.com/pricing",
+        "quote": "Starter$49/ monthSolo operator. Single number, single calendar.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:43:25.082Z",
+    "last_checked_at": "2026-11-08T22:43:25.082+00:00",
     "admin_reviewed": false
   },
   {
@@ -4955,7 +4956,7 @@
     "vendor": "JIE & P LLC",
     "canonical_url": "https://pulvo.ai",
     "description": "Drafts AI replies to Google reviews and shows what customers praise or complain about.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "auto_replies"
     ],
@@ -5030,19 +5031,14 @@
         "quote": "© 2026 JIE & P LLC. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
+      "contact": {
         "source_url": "https://pulvo.ai",
-        "quote": "14-day free trial · No credit card · No surprise charges",
+        "quote": "Didn't find your answer? Email support@pulvo.ai.",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
+      "security": {
         "source_url": "https://pulvo.ai",
-        "quote": "From $23 a month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://pulvo.ai",
-        "quote": "Pro$47/mo",
+        "quote": "We use encryption to protect sensitive data, HTTPS on all endpoints",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -5055,24 +5051,29 @@
         "quote": "Connect your Google Business Profile in about 5 minutes.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://pulvo.ai",
+        "quote": "14-day free trial · No credit card · No surprise charges",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://pulvo.ai",
         "quote": "Connect your Google Business Profile in about 5 minutes.",
         "claim_type": "fact"
       },
-      "contact": {
+      "price_monthly_max": {
         "source_url": "https://pulvo.ai",
-        "quote": "Didn't find your answer? Email support@pulvo.ai.",
+        "quote": "Pro$47/mo",
         "claim_type": "fact"
       },
-      "security": {
+      "price_monthly_min": {
         "source_url": "https://pulvo.ai",
-        "quote": "We use encryption to protect sensitive data, HTTPS on all endpoints",
+        "quote": "From $23 a month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:47:44.488Z",
+    "last_checked_at": "2026-11-08T22:47:44.488+00:00",
     "admin_reviewed": false
   },
   {
@@ -5082,7 +5083,7 @@
     "vendor": "Reservaii",
     "canonical_url": "https://reservaii.com",
     "description": "Booking system for independent restaurants that also answers phone calls with an AI receptionist.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist"
@@ -5153,19 +5154,9 @@
         "quote": "© 2026 Reservaii. All rights reserved.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
+      "contact": {
         "source_url": "https://www.reservaii.com/",
-        "quote": "Try free for 2 months.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.reservaii.com/",
-        "quote": "Starter $39/mo Growth $99/mo Scale $199/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.reservaii.com/",
-        "quote": "Starter $39/mo Growth $99/mo Scale $199/mo",
+        "quote": "hello@reservaii.com · Reply within 24 hours",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -5178,19 +5169,29 @@
         "quote": "Our AI receptionist connects to: + Yelp Guest Manager, CoverManager & more",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://www.reservaii.com/",
+        "quote": "Try free for 2 months.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://www.reservaii.com/",
         "quote": "Reservaii gives you both.",
         "claim_type": "fact"
       },
-      "contact": {
+      "price_monthly_max": {
         "source_url": "https://www.reservaii.com/",
-        "quote": "hello@reservaii.com · Reply within 24 hours",
+        "quote": "Starter $39/mo Growth $99/mo Scale $199/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.reservaii.com/",
+        "quote": "Starter $39/mo Growth $99/mo Scale $199/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:45:57.346Z",
+    "last_checked_at": "2026-11-08T22:45:57.346+00:00",
     "admin_reviewed": false
   },
   {
@@ -5200,7 +5201,7 @@
     "vendor": "Responsly",
     "canonical_url": "https://responsly.ai",
     "description": "Replies to Google reviews with AI-written answers in your brand voice.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "auto_replies"
     ],
@@ -5272,19 +5273,14 @@
         "quote": "© 2026 Responsly. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://responsly.ai/privacy",
+        "quote": "reach us at zain@responsly.ai",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://responsly.ai/pricing",
         "quote": "There is no free tier, but you can cancel any time",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://responsly.ai/pricing",
-        "quote": "Plans are $10 a month for Basic and $25 for Premium.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://responsly.ai/pricing",
-        "quote": "Plans are $10 a month for Basic and $25 for Premium.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -5297,14 +5293,19 @@
         "quote": "Connect once and Responsly syncs every location on your Google Business Profile",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://responsly.ai/privacy",
-        "quote": "reach us at zain@responsly.ai",
+      "price_monthly_max": {
+        "source_url": "https://responsly.ai/pricing",
+        "quote": "Plans are $10 a month for Basic and $25 for Premium.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://responsly.ai/pricing",
+        "quote": "Plans are $10 a month for Basic and $25 for Premium.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:47:58.594Z",
+    "last_checked_at": "2026-11-08T22:47:58.594+00:00",
     "admin_reviewed": false
   },
   {
@@ -5390,7 +5391,7 @@
       "price",
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:52:38.396Z",
+    "last_checked_at": "2026-11-08T22:52:38.396+00:00",
     "admin_reviewed": false
   },
   {
@@ -5400,7 +5401,7 @@
     "vendor": "Noviqo LLC",
     "canonical_url": "https://ringvance.com",
     "description": "Ringvance keeps customer texts, email, Facebook and Instagram messages, and contacts in one place.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "customer_list",
       "booking_waitlist",
@@ -5483,24 +5484,14 @@
         "quote": "Ringvance is a service of Noviqo LLC, a California limited liability company",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://ringvance.com",
+        "quote": "Email hello@ringvance.com. We reply within 1 business day.",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://ringvance.com/pricing",
         "quote": "Inbox is $9 a month.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://ringvance.com/pricing",
-        "quote": "Core ($97) and Pro ($297) start with a 14-day free trial, no card needed.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://ringvance.com/pricing",
-        "quote": "Inbox is $9 a month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://ringvance.com/pricing",
-        "quote": "Core ($97) and Pro ($297) start with a 14-day free trial, no card needed.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -5513,28 +5504,38 @@
         "quote": "Sign in to your email, Facebook and Instagram to connect them.",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://ringvance.com/pricing",
+        "quote": "Core ($97) and Pro ($297) start with a 14-day free trial, no card needed.",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://ringvance.com/pricing",
         "quote": "Core is a full CRM, so most small businesses can run conversations, scheduling, follow-up and billing in one place",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://ringvance.com",
-        "quote": "Email hello@ringvance.com. We reply within 1 business day.",
+      "price_monthly_max": {
+        "source_url": "https://ringvance.com/pricing",
+        "quote": "Core ($97) and Pro ($297) start with a 14-day free trial, no card needed.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://ringvance.com/pricing",
+        "quote": "Inbox is $9 a month.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:48:57.140Z",
+    "last_checked_at": "2026-11-08T22:48:57.14+00:00",
     "admin_reviewed": false
   },
   {
     "id": "56496980-14e3-46ab-b1f7-32011a67295a",
     "slug": "rosie",
     "name": "Rosie",
-    "vendor": null,
+    "vendor": "Rosie",
     "canonical_url": "https://heyrosie.com",
-    "description": "Rosie is an AI phone receptionist that answers calls, books appointments, and texts call details to owners.",
+    "description": "Rosie is an AI phone receptionist that answers calls, books appointments, and texts you the details of each call.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -5542,7 +5543,6 @@
       "auto_replies"
     ],
     "industries": [
-      "landscaping",
       "other"
     ],
     "pricing": {
@@ -5551,7 +5551,7 @@
       "est_monthly_usd_min": 49,
       "est_monthly_usd_max": 149,
       "plan_name": "Professional",
-      "pricing_url": "https://heyrosie.com"
+      "pricing_url": "https://heyrosie.com/pricing"
     },
     "integrations": [
       "google_business_profile",
@@ -5559,16 +5559,15 @@
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A business phone number that can forward calls",
-      "A website or Google Business Profile to train Rosie",
-      "A calendar or scheduling link if you want Rosie to book appointments"
+      "A business website or Google Business Profile to train Rosie",
+      "A business phone number whose calls can be forwarded to Rosie"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Start your 7-day free trial",
       "Add your website or Google Business Profile to train Rosie",
-      "Review your information, add FAQs, and set a custom greeting",
-      "Call Rosie to test her answers, then forward your calls to her"
+      "Review and customize your greeting, FAQs and business information",
+      "Call Rosie to test her answers and accuracy",
+      "Forward your business calls to Rosie"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -5579,9 +5578,9 @@
         "note": null
       },
       "vendor_identity": {
-        "pass": false,
-        "source_url": "https://heyrosie.com/about",
-        "note": "412-569-0026"
+        "pass": true,
+        "source_url": "https://heyrosie.com/legal/privacy",
+        "note": "Rosie · 412-569-0026"
       },
       "privacy_policy": {
         "pass": true,
@@ -5594,39 +5593,34 @@
         "note": null
       },
       "security_docs": {
-        "pass": true,
-        "source_url": "https://heyrosie.com/legal/privacy",
-        "note": "Privacy notice published at heyrosie.com/legal/privacy"
+        "pass": false,
+        "source_url": null,
+        "note": null
       },
       "public_pricing": {
         "pass": true,
-        "source_url": "https://heyrosie.com",
+        "source_url": "https://heyrosie.com/pricing",
         "note": null
       }
     },
     "trust_level": "checks_passed",
     "warnings": [
-      "We couldn't find the company's name and a way to contact them."
+      "We couldn't find information about how they keep your data safe."
     ],
     "evidence": {
-      "free_trial_days": {
-        "source_url": "https://heyrosie.com",
-        "quote": "7-day free trial with all features. Cancel anytime.",
+      "vendor": {
+        "source_url": "https://heyrosie.com/legal/privacy",
+        "quote": "Rosie may update this Privacy Notice from time to time.",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
+      "contact": {
         "source_url": "https://heyrosie.com",
-        "quote": "Starting at $49/month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://heyrosie.com/pricing",
-        "quote": "$149per monthFor busy businesses that need Rosie to answer",
+        "quote": "Solutions Features Resources Pricing Login 412-569-0026",
         "claim_type": "fact"
       },
       "plan_name": {
         "source_url": "https://heyrosie.com/pricing",
-        "quote": "Professional$49per monthFor solo owners and small businesses",
+        "quote": "Professional $49 per month For solo owners and small businesses who can't always answer the phone.",
         "claim_type": "fact"
       },
       "integrations": {
@@ -5634,19 +5628,24 @@
         "quote": "Zapier integration — connect to 1,000+ apps",
         "claim_type": "fact"
       },
-      "contact": {
+      "free_trial_days": {
         "source_url": "https://heyrosie.com",
-        "quote": "Login412-569-0026Start My Free Trial",
+        "quote": "7-day free trial with all features. Cancel anytime.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://heyrosie.com/legal/privacy",
-        "quote": "This is the privacy notice (“Privacy Notice”) for Rosie.",
+      "price_monthly_max": {
+        "source_url": "https://heyrosie.com/pricing",
+        "quote": "Scale $149 per month For busy businesses that need Rosie to answer",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://heyrosie.com/pricing",
+        "quote": "Professional $49 per month For solo owners and small businesses who can't always answer the phone.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:38:35.568Z",
+    "last_checked_at": "2026-11-09T02:38:25.694+00:00",
     "admin_reviewed": false
   },
   {
@@ -5656,7 +5655,7 @@
     "vendor": "Servorio Inc.",
     "canonical_url": "https://servorio.com",
     "description": "Field service software for trades that handles dispatch, customers, invoices, inventory and AI phone answering.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "scheduling_dispatch",
       "missed_calls",
@@ -5735,31 +5734,6 @@
         "quote": "Servorio is made by Servorio Inc. in Ontario, Canada, for businesses in Canada and the United States.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://servorio.com",
-        "quote": "Free for 30 days or 50 jobs",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://servorio.com",
-        "quote": "From $59 / month",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://servorio.com",
-        "quote": "Starter $129 for 5 users",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://servorio.com",
-        "quote": "Solo for 1 user",
-        "claim_type": "fact"
-      },
-      "works_standalone": {
-        "source_url": "https://servorio.com",
-        "quote": "One app to run a trades business.",
-        "claim_type": "vendor_claim"
-      },
       "contact": {
         "source_url": "https://servorio.com",
         "quote": "Veronica answers 24/7",
@@ -5769,12 +5743,37 @@
         "source_url": "https://servorio.com/privacy-policy/",
         "quote": "encrypted connections (HTTPS/TLS), separation between customer accounts, role-based permissions",
         "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://servorio.com",
+        "quote": "Solo for 1 user",
+        "claim_type": "fact"
+      },
+      "free_trial_days": {
+        "source_url": "https://servorio.com",
+        "quote": "Free for 30 days or 50 jobs",
+        "claim_type": "fact"
+      },
+      "works_standalone": {
+        "source_url": "https://servorio.com",
+        "quote": "One app to run a trades business.",
+        "claim_type": "vendor_claim"
+      },
+      "price_monthly_max": {
+        "source_url": "https://servorio.com",
+        "quote": "Starter $129 for 5 users",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://servorio.com",
+        "quote": "From $59 / month",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [
       "integrations"
     ],
-    "last_checked_at": "2026-11-08T22:53:16.083Z",
+    "last_checked_at": "2026-11-08T22:53:16.083+00:00",
     "admin_reviewed": false
   },
   {
@@ -5784,7 +5783,7 @@
     "vendor": "Simple CRM AI",
     "canonical_url": "https://simplecrmai.com",
     "description": "A CRM that gives each client an AI agent to follow up, take notes, and draft replies.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "customer_list",
       "auto_replies"
@@ -5858,19 +5857,14 @@
         "quote": "© 2026 Simple CRM AI · simplecrmai.com",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://simplecrmai.com/pricing",
-        "quote": "14-day free trial",
+      "contact": {
+        "source_url": "https://simplecrmai.com/privacy",
+        "quote": "contact us at privacy@simplecrmai.com",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://simplecrmai.com/pricing",
-        "quote": "$10 per user, per month. Link up to 5 accounts as a team — one bill.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://simplecrmai.com/pricing",
-        "quote": "$10 per user, per month. Link up to 5 accounts as a team — one bill.",
+      "security": {
+        "source_url": "https://simplecrmai.com/privacy",
+        "quote": "We use industry-standard measures to protect data",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -5883,19 +5877,24 @@
         "quote": "when you connect Google or Apple, we may access data you authorize (such as Gmail, Calendar, or contacts)",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://simplecrmai.com/privacy",
-        "quote": "contact us at privacy@simplecrmai.com",
+      "free_trial_days": {
+        "source_url": "https://simplecrmai.com/pricing",
+        "quote": "14-day free trial",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://simplecrmai.com/privacy",
-        "quote": "We use industry-standard measures to protect data",
+      "price_monthly_max": {
+        "source_url": "https://simplecrmai.com/pricing",
+        "quote": "$10 per user, per month. Link up to 5 accounts as a team — one bill.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://simplecrmai.com/pricing",
+        "quote": "$10 per user, per month. Link up to 5 accounts as a team — one bill.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:48:39.222Z",
+    "last_checked_at": "2026-11-08T22:48:39.222+00:00",
     "admin_reviewed": false
   },
   {
@@ -5904,7 +5903,7 @@
     "name": "SimpleTexting",
     "vendor": "SimpleTexting, LLC",
     "canonical_url": "https://simpletexting.com",
-    "description": "Lets businesses send mass texts and two-way text conversations with their customers from a business number.",
+    "description": "A texting service that helps small businesses send text marketing blasts and hold two-way text conversations with customers.",
     "status": "published",
     "use_cases": [
       "win_back",
@@ -5924,27 +5923,26 @@
       "pricing_url": "https://simpletexting.com/pricing/"
     },
     "integrations": [
-      "gmail_outlook",
-      "excel_sheets",
       "quickbooks",
       "shopify",
+      "excel_sheets",
+      "gmail_outlook",
       "instagram_facebook",
       "phone_line"
     ],
-    "works_standalone": null,
+    "works_standalone": true,
     "integration_requirements": [
-      "A business phone number to text-enable, or a new local or toll-free number",
-      "Business details for carrier registration of your texting number"
+      "A phone number to text from, either a new number or an existing landline that can be text-enabled"
     ],
-    "setup_complexity": "medium",
+    "setup_complexity": "low",
     "setup_steps": [
-      "Start the free trial and create an account",
-      "Choose a local, toll-free, or landline number to text from",
-      "Complete the number registration form so carriers approve your number",
-      "Collect opt-in consent from contacts before texting them",
+      "Start a free trial account online",
+      "Register your business texting number",
+      "Collect customer opt-in consent before you text",
+      "Import your contacts or build a list with opt-in tools",
       "Set up auto-replies and send your first text campaign"
     ],
-    "engagement": "self_serve",
+    "engagement": "free_trial",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -5955,7 +5953,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://simpletexting.com",
-        "note": "SimpleTexting, LLC · (866) 259-1887; One North Wacker, Suite 2500, Chicago, IL 60606"
+        "note": "SimpleTexting, LLC · (866) 259-1887"
       },
       "privacy_policy": {
         "pass": false,
@@ -5988,14 +5986,14 @@
         "quote": "© Copyright 2026 SimpleTexting, LLC",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://simpletexting.com",
+        "quote": "Call us Mon-Fri 9 a.m.-9 p.m. ET Sat-Sun 10 a.m.-5 p.m. ET (866) 259-1887",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://simpletexting.com",
         "quote": "Our free trial lets you text your own number so you can see exactly how it works before you text your customers.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://simpletexting.com/pricing/",
-        "quote": "$39.00 (billed yearly at $398.40)",
         "claim_type": "fact"
       },
       "integrations": {
@@ -6003,14 +6001,19 @@
         "quote": "QuickBooks Salesforce Shopify SimpleTix Slack Squarespace",
         "claim_type": "fact"
       },
-      "contact": {
+      "works_standalone": {
         "source_url": "https://simpletexting.com",
-        "quote": "One North Wacker, Suite 2500Chicago, IL 60606",
+        "quote": "Everything you need to start texting",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://simpletexting.com/pricing/",
+        "quote": "Estimated monthly cost $39.00 (billed yearly at $398.40 )",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:03:43.367Z",
+    "last_checked_at": "2026-11-09T02:38:40.887+00:00",
     "admin_reviewed": false
   },
   {
@@ -6019,7 +6022,7 @@
     "name": "Slang AI",
     "vendor": "Slang AI",
     "canonical_url": "https://slang.ai",
-    "description": "Answers restaurant phone calls with an AI voice agent that handles guest questions and takes reservations.",
+    "description": "An AI phone agent that answers restaurant calls, takes reservations, and sends guests texts.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -6038,13 +6041,15 @@
     },
     "integrations": [],
     "works_standalone": null,
-    "integration_requirements": [],
+    "integration_requirements": [
+      "An account on a supported reservation platform such as OpenTable, SevenRooms, Yelp, or Resy"
+    ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Get a quote for a plan that fits your restaurant",
-      "Connect your reservation platform, such as OpenTable or SevenRooms",
-      "Set up your restaurant's approved information for the AI to use",
-      "Go live, which the site says can happen the same day"
+      "Request a quote or book a demo with Slang AI",
+      "Connect your reservation platform such as OpenTable or Resy",
+      "Add your restaurant's approved information for the AI to use",
+      "Go live, which the company says can happen the same day"
     ],
     "engagement": "book_demo",
     "reviews": null,
@@ -6090,19 +6095,14 @@
         "quote": "Copyright © 2026 Slang AI",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
+      "security": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "Starting at$399*per location",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.slang.ai/pricing",
-        "quote": "Starting at$599*per location",
+        "quote": "Enterprise-Grade Security and Compliance SOC II compliant",
         "claim_type": "fact"
       },
       "plan_name": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "Perfect for smaller teams or early growth — reliable AI answering that turns calls into reservations.",
+        "quote": "Core Get a quote Perfect for smaller teams or early growth",
         "claim_type": "fact"
       },
       "integrations": {
@@ -6110,14 +6110,19 @@
         "quote": "Integrate with leading reservation platforms (including OpenTable, SevenRooms, Yelp, and Resy) to power end-to-end voice booking.",
         "claim_type": "fact"
       },
-      "security": {
+      "price_monthly_max": {
         "source_url": "https://www.slang.ai/pricing",
-        "quote": "SOC II compliant",
+        "quote": "Starting at $599 *per location",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://www.slang.ai/pricing",
+        "quote": "Starting at $399 *per location",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:38:17.334Z",
+    "last_checked_at": "2026-11-09T02:38:42.089+00:00",
     "admin_reviewed": false
   },
   {
@@ -6127,7 +6132,7 @@
     "vendor": "Slott",
     "canonical_url": "https://slott.ai",
     "description": "AI front desk that answers calls and texts, books clients into your schedule, and charges no booking fees.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -6203,24 +6208,19 @@
         "quote": "© 2026 Slott. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://slott.ai/privacy",
+        "quote": "please contact us at privacy@slott.ai",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://slott.ai/privacy",
+        "quote": "Encryption of data in transit (TLS/SSL) and at rest",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://slott.ai/",
         "quote": "the free plan gives you the booking link on its own",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://slott.ai/",
-        "quote": "Every paid plan starts with a 7-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://slott.ai/",
-        "quote": "Your phone answers itself.$19/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://slott.ai/",
-        "quote": "Let Slott run the calendar.$49/mo",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -6233,19 +6233,24 @@
         "quote": "Google Calendar: Calendar events and availability data",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://slott.ai/privacy",
-        "quote": "please contact us at privacy@slott.ai",
+      "free_trial_days": {
+        "source_url": "https://slott.ai/",
+        "quote": "Every paid plan starts with a 7-day free trial",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://slott.ai/privacy",
-        "quote": "Encryption of data in transit (TLS/SSL) and at rest",
+      "price_monthly_max": {
+        "source_url": "https://slott.ai/",
+        "quote": "Let Slott run the calendar.$49/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://slott.ai/",
+        "quote": "Your phone answers itself.$19/mo",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:45:24.484Z",
+    "last_checked_at": "2026-11-08T22:45:24.484+00:00",
     "admin_reviewed": false
   },
   {
@@ -6254,7 +6259,7 @@
     "name": "Smith.ai",
     "vendor": "Smith.ai, Inc.",
     "canonical_url": "https://smith.ai",
-    "description": "Answers business calls with AI or live receptionists, qualifies callers, and books appointments.",
+    "description": "Answers business phone calls with AI or live receptionists, qualifies callers, and books appointments.",
     "status": "published",
     "use_cases": [
       "missed_calls",
@@ -6273,13 +6278,17 @@
     },
     "integrations": [],
     "works_standalone": null,
-    "integration_requirements": [],
-    "setup_complexity": "medium",
+    "integration_requirements": [
+      "An existing practice management or CRM tool to sync call data into",
+      "A calendar or scheduling tool such as Calendly for booking appointments"
+    ],
+    "setup_complexity": "low",
     "setup_steps": [
-      "Start with the free plan of 25 calls per month",
-      "Train and test your AI receptionist in Quality Studio",
-      "Connect your calendar and CRM integrations",
-      "Go live with your AI receptionist"
+      "Sign up for the free plan on the pricing page",
+      "Train and test your AI receptionist in Quality Studio before going live",
+      "Connect your CRM, calendar, or scheduling tool",
+      "Set up call routing and lead qualification questions",
+      "Go live once test calls look right"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -6292,7 +6301,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://smith.ai/pricing/ai-receptionist",
-        "note": "Smith.ai, Inc. · support@smith.ai"
+        "note": "Smith.ai, Inc. · (650) 727-6484"
       },
       "privacy_policy": {
         "pass": true,
@@ -6307,7 +6316,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://smith.ai/responsible-disclosure-program",
-        "note": "Security program for responsible vulnerability reports"
+        "note": "Responsible disclosure program for reporting security vulnerabilities"
       },
       "public_pricing": {
         "pass": true,
@@ -6323,44 +6332,44 @@
         "quote": "Smith.ai, Inc. ©2026 All Rights Reserved",
         "claim_type": "fact"
       },
-      "free_plan": {
-        "source_url": "https://smith.ai",
-        "quote": "25 calls / month, free forever",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://smith.ai/pricing/ai-receptionist",
-        "quote": "Set it up yourself with dedicated support.$150/mo",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://smith.ai/pricing/ai-receptionist",
-        "quote": "We build and run a custom solution for you.$500/mo",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://smith.ai/pricing/ai-receptionist",
-        "quote": "Set it up yourself with dedicated support.",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://smith.ai",
-        "quote": "Smith.ai integrates with 7,000+ systems",
-        "claim_type": "fact"
-      },
       "contact": {
-        "source_url": "https://smith.ai/pricing/ai-receptionist",
-        "quote": "just email support@smith.ai",
+        "source_url": "https://smith.ai",
+        "quote": "(650) 727-6484 Learn more about Smith.ai",
         "claim_type": "fact"
       },
       "security": {
         "source_url": "https://smith.ai/responsible-disclosure-program",
         "quote": "Smith.ai is committed to maintaining the security and integrity of our systems and customer data.",
         "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://smith.ai",
+        "quote": "25 calls / month, free forever",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "quote": "Pro Set it up yourself with dedicated support. $150/mo",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://smith.ai",
+        "quote": "Integrations include Clio, Filevine, Lawmatics, MyCase, PracticePanther, Smokeball, Litify and Rocket Matter.",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "quote": "Enterprise We build and run a custom solution for you. $500/mo",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://smith.ai/pricing/ai-receptionist",
+        "quote": "Pro Set it up yourself with dedicated support. $150/mo",
+        "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:55:45.881Z",
+    "last_checked_at": "2026-11-09T02:38:48.818+00:00",
     "admin_reviewed": false
   },
   {
@@ -6370,7 +6379,7 @@
     "vendor": "STACKEDBOOKING LLC",
     "canonical_url": "https://stackedbooking.com",
     "description": "Booking software for barbers and stylists with online booking, reminders, payments and an AI front desk.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -6447,19 +6456,14 @@
         "quote": "Made in Oklahoma by STACKEDBOOKING LLC.",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://stackedbooking.com/pricing",
-        "quote": "You get 14 days with every Pro feature.",
+      "contact": {
+        "source_url": "https://stackedbooking.com/privacy",
+        "quote": "Questions or requests: morgan@stackedbooking.com.",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://stackedbooking.com/pricing",
-        "quote": "Starter$29/monthEverything you need to get booked and paid.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://stackedbooking.com/pricing",
-        "quote": "Pro$59/monthEverything in Starter, plus an AI front desk that keeps your chair full.",
+      "security": {
+        "source_url": "https://stackedbooking.com/privacy",
+        "quote": "Data is sent over HTTPS, each business can only see its own data, and access tokens are encrypted.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -6472,19 +6476,24 @@
         "quote": "Upload your client list from Squire, Booksy, Vagaro, Square or a spreadsheet.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://stackedbooking.com/privacy",
-        "quote": "Questions or requests: morgan@stackedbooking.com.",
+      "free_trial_days": {
+        "source_url": "https://stackedbooking.com/pricing",
+        "quote": "You get 14 days with every Pro feature.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://stackedbooking.com/privacy",
-        "quote": "Data is sent over HTTPS, each business can only see its own data, and access tokens are encrypted.",
+      "price_monthly_max": {
+        "source_url": "https://stackedbooking.com/pricing",
+        "quote": "Pro$59/monthEverything in Starter, plus an AI front desk that keeps your chair full.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://stackedbooking.com/pricing",
+        "quote": "Starter$29/monthEverything you need to get booked and paid.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:45:06.254Z",
+    "last_checked_at": "2026-11-08T22:45:06.254+00:00",
     "admin_reviewed": false
   },
   {
@@ -6494,7 +6503,7 @@
     "vendor": "Zenturr AI LLC",
     "canonical_url": "https://terrascape.io",
     "description": "Business management software for landscaping crews, with an AI assistant named Zentra that handles invoices and scheduling.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "scheduling_dispatch",
       "customer_list"
@@ -6567,14 +6576,14 @@
         "quote": "© 2026 Zenturr AI LLC",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://terrascape.io/pricing",
-        "quote": "Start your 7-day free trial.",
+      "contact": {
+        "source_url": "https://terrascape.io/privacy",
+        "quote": "contact us at info@terrascape.io",
         "claim_type": "fact"
       },
-      "price_monthly_min": {
-        "source_url": "https://terrascape.io/pricing",
-        "quote": "$0 today, then $49.99/mo or $33/mo billed yearly.",
+      "security": {
+        "source_url": "https://terrascape.io/privacy",
+        "quote": "Encryption in Transit: All data transmitted between Zenturr, your browser, and QuickBooks uses HTTPS/TLS.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -6587,19 +6596,19 @@
         "quote": "with an integration to QuickBooks Online",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://terrascape.io/privacy",
-        "quote": "contact us at info@terrascape.io",
+      "free_trial_days": {
+        "source_url": "https://terrascape.io/pricing",
+        "quote": "Start your 7-day free trial.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://terrascape.io/privacy",
-        "quote": "Encryption in Transit: All data transmitted between Zenturr, your browser, and QuickBooks uses HTTPS/TLS.",
+      "price_monthly_min": {
+        "source_url": "https://terrascape.io/pricing",
+        "quote": "$0 today, then $49.99/mo or $33/mo billed yearly.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:54:41.108Z",
+    "last_checked_at": "2026-11-08T22:54:41.108+00:00",
     "admin_reviewed": false
   },
   {
@@ -6608,10 +6617,11 @@
     "name": "Tidio",
     "vendor": "Tidio",
     "canonical_url": "https://tidio.com",
-    "description": "Live chat and AI agent that answers customer messages on your website, email, and social channels.",
+    "description": "Tidio combines live chat, an AI support agent, and a shared inbox to answer customer messages on websites and social channels.",
     "status": "published",
     "use_cases": [
-      "auto_replies"
+      "auto_replies",
+      "win_back"
     ],
     "industries": [
       "retail"
@@ -6630,16 +6640,16 @@
     ],
     "works_standalone": true,
     "integration_requirements": [
-      "A website or online store where the chat widget can be placed",
-      "Accounts for the social or messaging channels you want to connect, such as Instagram or WhatsApp"
+      "A website, Shopify store, or WordPress site to add the chat widget to",
+      "Accounts for any social channels you want in the shared inbox, such as Instagram or WhatsApp"
     ],
     "setup_complexity": "low",
     "setup_steps": [
-      "Create a free account on Tidio",
-      "Start the 7-day free trial or choose a paid plan",
-      "Connect your channels such as Instagram, Messenger, or WhatsApp",
-      "Add the live chat widget to your website",
-      "Build Flows or turn on the Lyro AI Agent for automatic answers"
+      "Sign up for a free plan or free trial on the Tidio site",
+      "Connect your website, Shopify store, or WordPress site",
+      "Add the chat widget to your pages",
+      "Set up Lyro AI Agent answers and Flows for common questions and carts",
+      "Connect Instagram, Messenger, or WhatsApp to the shared inbox"
     ],
     "engagement": "free_trial",
     "reviews": null,
@@ -6667,7 +6677,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://www.tidio.com/customers/adt-security/",
-        "note": "SOC 2 certified controls, GDPR and CCPA features, and a Trust Center"
+        "note": "SOC2"
       },
       "public_pricing": {
         "pass": true,
@@ -6683,29 +6693,24 @@
         "quote": "Tidio 2026. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://www.tidio.com/integrations/",
+        "quote": "Manage my privacy settings support@tidio.net",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://tidio.com",
+        "quote": "SOC2 Certified controls for data security, availability, integrity, privacy, and confidentiality.",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://tidio.com",
         "quote": "Free plan forever",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://www.tidio.com/pricing/",
-        "quote": "7-day free trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://www.tidio.com/pricing/",
-        "quote": "$24.17/mo.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://www.tidio.com/pricing/",
-        "quote": "Starts at$49.17/mo.",
-        "claim_type": "fact"
-      },
       "plan_name": {
         "source_url": "https://www.tidio.com/pricing/",
-        "quote": "Reply faster with smarter features.",
+        "quote": "Starter Handle all customer conversations in one tool.",
         "claim_type": "fact"
       },
       "integrations": {
@@ -6713,24 +6718,29 @@
         "quote": "Seamlessly integrate your favorite apps like Salesforce, Zendesk, and Shopify",
         "claim_type": "fact"
       },
+      "free_trial_days": {
+        "source_url": "https://www.tidio.com/pricing/",
+        "quote": "7-day free trial",
+        "claim_type": "fact"
+      },
       "works_standalone": {
         "source_url": "https://www.tidio.com/pricing/",
         "quote": "Available as a stand-alone product",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://www.tidio.com/integrations/",
-        "quote": "Manage my privacy settingssupport@tidio.net",
+      "price_monthly_max": {
+        "source_url": "https://www.tidio.com/pricing/",
+        "quote": "Starts at $49.17/mo. Get started",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://tidio.com",
-        "quote": "Certified controls for data security, availability, integrity, privacy, and confidentiality.",
+      "price_monthly_min": {
+        "source_url": "https://www.tidio.com/pricing/",
+        "quote": "Starter $24.17/mo. Get started",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:39:52.102Z",
+    "last_checked_at": "2026-11-09T02:39:01.092+00:00",
     "admin_reviewed": false
   },
   {
@@ -6739,10 +6749,11 @@
     "name": "Waitwhile",
     "vendor": null,
     "canonical_url": "https://waitwhile.com",
-    "description": "A queue and appointment platform that manages walk-in waitlists, bookings and customer messages for businesses.",
+    "description": "Waitwhile manages walk-in waitlists and appointment bookings so customers can wait or book without standing in line.",
     "status": "published",
     "use_cases": [
-      "booking_waitlist"
+      "booking_waitlist",
+      "customer_list"
     ],
     "industries": [
       "retail",
@@ -6763,18 +6774,14 @@
       "square"
     ],
     "works_standalone": null,
-    "integration_requirements": [
-      "Accounts for any outside tools you want to connect, such as Google Calendar, Square POS or Mailchimp",
-      "A Zapier account if you want no-code connections to other apps",
-      "A developer to use the REST API, which is available on the Business and Enterprise plans"
-    ],
+    "integration_requirements": [],
     "setup_complexity": "medium",
     "setup_steps": [
-      "Sign up for the free plan on the pricing page",
-      "Set up your waitlist or booking settings for your location",
-      "Invite your staff and assign their roles and permissions",
-      "Connect Google Calendar, Square POS or other tools you use",
-      "Share your waitlist or check-in page with customers"
+      "Choose a plan on the pricing page",
+      "Create your account and log in",
+      "Set up your waitlist or bookings for each location",
+      "Connect tools such as Google Calendar, Square POS, or Google Sheets",
+      "Invite your team members and set their roles"
     ],
     "engagement": "self_serve",
     "reviews": null,
@@ -6802,7 +6809,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://waitwhile.com/security/",
-        "note": "Lists SOC 2 Type II, ISO 27001, GDPR & CCPA, HIPAA and SSO/SAML 2.0; has a security page and trust center"
+        "note": "SOC 2 Type II, ISO 27001, GDPR and CCPA, HIPAA"
       },
       "public_pricing": {
         "pass": true,
@@ -6815,44 +6822,44 @@
       "We couldn't find the company's name and a way to contact them."
     ],
     "evidence": {
-      "free_plan": {
-        "source_url": "https://waitwhile.com/pricing/",
-        "quote": "Try out Waitwhile for as long as you want",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://waitwhile.com/pricing/",
-        "quote": "Waitwhile offers 3 fixed plans with tiered pricing start as low as $31/month.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://waitwhile.com/pricing/",
-        "quote": "starts at$ 55 / month",
-        "claim_type": "fact"
-      },
-      "plan_name": {
-        "source_url": "https://waitwhile.com/pricing/",
-        "quote": "Core features for growing businesses",
-        "claim_type": "fact"
-      },
-      "integrations": {
-        "source_url": "https://waitwhile.com/solutions/integrations/",
-        "quote": "Sync your POS with your waitlist so that transactions automatically add a customer to your waitlist",
-        "claim_type": "fact"
-      },
       "contact": {
         "source_url": "https://waitwhile.com",
-        "quote": "Drop us a linehello@waitwhile.com",
+        "quote": "Drop us a line hello@waitwhile.com",
         "claim_type": "fact"
       },
       "security": {
         "source_url": "https://waitwhile.com",
-        "quote": "We meet the world’s most rigorous security standards to ensure your data",
+        "quote": "SOC 2 TYPE II ISO 27001 GDPR & CCPA HIPAA",
+        "claim_type": "fact"
+      },
+      "free_plan": {
+        "source_url": "https://waitwhile.com/pricing/",
+        "quote": "Free Try out Waitwhile for as long as you want",
+        "claim_type": "fact"
+      },
+      "plan_name": {
+        "source_url": "https://waitwhile.com/pricing/",
+        "quote": "Starter Core features for growing businesses starts at $ 31 / month",
+        "claim_type": "fact"
+      },
+      "integrations": {
+        "source_url": "https://waitwhile.com/solutions/integrations/",
+        "quote": "Square POS Sync your POS with your waitlist so that transactions automatically add a customer to your waitlist",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://waitwhile.com/pricing/",
+        "quote": "Advanced tools for scaling operations starts at $ 55 / month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://waitwhile.com/pricing/",
+        "quote": "Core features for growing businesses starts at $ 31 / month",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:38:55.469Z",
+    "last_checked_at": "2026-11-09T02:38:58.961+00:00",
     "admin_reviewed": false
   },
   {
@@ -6862,7 +6869,7 @@
     "vendor": "Wemu Inc.",
     "canonical_url": "https://wemu.io",
     "description": "Wemu runs bookings, point of sale, staff schedules, stock and customer messages for small businesses in one app.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "booking_waitlist",
       "customer_list",
@@ -6939,24 +6946,19 @@
         "quote": "© 2026 Wemu Inc. All rights reserved.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://wemu.io/privacy",
+        "quote": "Email: [email protected]",
+        "claim_type": "fact"
+      },
+      "security": {
+        "source_url": "https://wemu.io/privacy",
+        "quote": "We implement industry-standard security measures to protect your data",
+        "claim_type": "fact"
+      },
       "free_plan": {
         "source_url": "https://wemu.io/pricing",
         "quote": "7-day free trial on all paid plans.",
-        "claim_type": "fact"
-      },
-      "free_trial_days": {
-        "source_url": "https://wemu.io/pricing",
-        "quote": "you get 7 days free with every feature, no credit card required.",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://wemu.io/pricing",
-        "quote": "Wemu Core is $29/month for one location",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://wemu.io/pricing",
-        "quote": "Wemu Growth is $49/month per location.",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -6969,19 +6971,24 @@
         "quote": "Card payments need Stripe connected.",
         "claim_type": "fact"
       },
-      "contact": {
-        "source_url": "https://wemu.io/privacy",
-        "quote": "Email: [email protected]",
+      "free_trial_days": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "you get 7 days free with every feature, no credit card required.",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://wemu.io/privacy",
-        "quote": "We implement industry-standard security measures to protect your data",
+      "price_monthly_max": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "Wemu Growth is $49/month per location.",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://wemu.io/pricing",
+        "quote": "Wemu Core is $29/month for one location",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T23:01:41.463Z",
+    "last_checked_at": "2026-11-08T23:01:41.463+00:00",
     "admin_reviewed": false
   },
   {
@@ -6990,7 +6997,7 @@
     "name": "Workiz",
     "vendor": "Workiz Inc.",
     "canonical_url": "https://workiz.com",
-    "description": "Field service software that answers calls, schedules jobs, dispatches techs, sends invoices, and collects payments for home service businesses.",
+    "description": "Field service software for home service businesses that answers calls, books jobs, dispatches techs, sends estimates and collects payments.",
     "status": "published",
     "use_cases": [
       "scheduling_dispatch",
@@ -7008,28 +7015,26 @@
       "free_trial_days": null,
       "est_monthly_usd_min": null,
       "est_monthly_usd_max": null,
-      "plan_name": "Standard, Pro, Ultimate",
+      "plan_name": "Standard",
       "pricing_url": "https://www.workiz.com/pricing-plans/"
     },
     "integrations": [
       "quickbooks",
-      "gmail_outlook",
-      "phone_line"
+      "gmail_outlook"
     ],
     "works_standalone": null,
     "integration_requirements": [
-      "A QuickBooks Online or QuickBooks Desktop account, if you want accounting sync",
-      "A local phone number for the Genius Phone add-on"
+      "A QuickBooks Online or Desktop account, if you want accounting sync"
     ],
     "setup_complexity": "medium",
     "setup_steps": [
-      "Start a free trial or book a demo",
-      "Pick a plan (Standard, Pro, or Ultimate) and request pricing",
-      "Import your existing customer and QuickBooks data",
-      "Add the Genius Phone, Answering, or Marketing add-ons if needed",
-      "Link QuickBooks Online from the Workiz Feature Center"
+      "Book a demo or start the free trial",
+      "Request pricing for the Standard plan",
+      "Import your existing data into Workiz",
+      "Connect QuickBooks from the Workiz Feature Center",
+      "Add Genius Phone or Genius Answering if you want AI call handling"
     ],
-    "engagement": "free_trial",
+    "engagement": "book_demo",
     "reviews": null,
     "vendor_checks": {
       "official_site": {
@@ -7040,7 +7045,7 @@
       "vendor_identity": {
         "pass": true,
         "source_url": "https://workiz.com",
-        "note": "Workiz Inc. · 855-790-7363"
+        "note": "Workiz Inc. · 855-790-7363, 9444 Balboa Ave, San Diego, CA 92123"
       },
       "privacy_policy": {
         "pass": true,
@@ -7055,7 +7060,7 @@
       "security_docs": {
         "pass": true,
         "source_url": "https://www.workiz.com/trust-center/",
-        "note": "Trust Center states an information security system is maintained to ISO-27001 requirements"
+        "note": "Trust Center"
       },
       "public_pricing": {
         "pass": false,
@@ -7073,31 +7078,26 @@
         "quote": "©2026 Workiz Inc.",
         "claim_type": "fact"
       },
+      "contact": {
+        "source_url": "https://workiz.com",
+        "quote": "Contact us 855-790-7363 9444 Balboa Ave, San Diego, CA 92123",
+        "claim_type": "fact"
+      },
       "plan_name": {
         "source_url": "https://www.workiz.com/pricing-plans/",
-        "quote": "StandardCore tools to keep jobs moving and cash coming in.",
+        "quote": "Standard Core tools to keep jobs moving and cash coming in.",
         "claim_type": "fact"
       },
       "integrations": {
         "source_url": "https://workiz.com",
         "quote": "Plays nice with your favorite tools",
         "claim_type": "fact"
-      },
-      "contact": {
-        "source_url": "https://workiz.com",
-        "quote": "Call us: 855-790-7363",
-        "claim_type": "fact"
-      },
-      "security": {
-        "source_url": "https://www.workiz.com/trust-center/",
-        "quote": "in accordance with the requirements of ISO-27001 international standard.",
-        "claim_type": "fact"
       }
     },
     "missing_fields": [
       "price"
     ],
-    "last_checked_at": "2026-11-08T22:59:40.703Z",
+    "last_checked_at": "2026-11-09T02:39:05.809+00:00",
     "admin_reviewed": false
   },
   {
@@ -7107,7 +7107,7 @@
     "vendor": "WowServe, Inc.",
     "canonical_url": "https://wowserve.com",
     "description": "AI phone receptionist and field service software that books jobs, dispatches techs, and sends invoices for HVAC, plumbing and electrical shops.",
-    "status": "published",
+    "status": "rejected",
     "use_cases": [
       "missed_calls",
       "booking_waitlist",
@@ -7188,19 +7188,9 @@
         "quote": "WowServe, Inc. (\"WowServe,\" \"we,\" \"us,\" or \"our\") respects your privacy",
         "claim_type": "fact"
       },
-      "free_trial_days": {
-        "source_url": "https://wowserve.com/pricing",
-        "quote": "Free 14-day trial",
-        "claim_type": "fact"
-      },
-      "price_monthly_min": {
-        "source_url": "https://wowserve.com",
-        "quote": "From $229/mo, flat.",
-        "claim_type": "fact"
-      },
-      "price_monthly_max": {
-        "source_url": "https://wowserve.com",
-        "quote": "Growth4–7 technicians$449per month",
+      "security": {
+        "source_url": "https://wowserve.com/privacy",
+        "quote": "Access credentials are encrypted at rest using AES-256-GCM",
         "claim_type": "fact"
       },
       "plan_name": {
@@ -7213,14 +7203,24 @@
         "quote": "Works with the tools you already use",
         "claim_type": "fact"
       },
-      "security": {
-        "source_url": "https://wowserve.com/privacy",
-        "quote": "Access credentials are encrypted at rest using AES-256-GCM",
+      "free_trial_days": {
+        "source_url": "https://wowserve.com/pricing",
+        "quote": "Free 14-day trial",
+        "claim_type": "fact"
+      },
+      "price_monthly_max": {
+        "source_url": "https://wowserve.com",
+        "quote": "Growth4–7 technicians$449per month",
+        "claim_type": "fact"
+      },
+      "price_monthly_min": {
+        "source_url": "https://wowserve.com",
+        "quote": "From $229/mo, flat.",
         "claim_type": "fact"
       }
     },
     "missing_fields": [],
-    "last_checked_at": "2026-11-08T22:53:47.650Z",
+    "last_checked_at": "2026-11-08T22:53:47.65+00:00",
     "admin_reviewed": false
   }
 ]

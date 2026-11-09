@@ -1,11 +1,12 @@
 import { randomUUID } from "crypto";
 import type { DiscoveryRun, Evidence, Tool } from "@/lib/schemas/tool";
-import { canonicalUrl, homepageUrl, sameSite, slugify } from "@/lib/discovery/canonical";
+import { canonicalUrl, domainKey, homepageUrl, sameSite, slugify } from "@/lib/discovery/canonical";
 import { disallowed, fetchPage, findKeyLinks, type FetchedPage } from "@/lib/discovery/fetchPage";
 import { buildQuery, searchCandidates, type Candidate } from "@/lib/discovery/search";
 import { carryForward, extract, validateExtraction, CITED_KEYS } from "@/lib/extraction/extract";
 import type { Extraction } from "@/lib/extraction/schema";
 import { runVendorChecks, trustLevel, checkWarnings } from "@/lib/verification/vendorChecks";
+import { domainAgeDays, domainAgeWarning, domainRegisteredAt } from "@/lib/verification/domainAge";
 import { getStore } from "@/lib/storage/db";
 import { INDUSTRY_IDS, type IndustryId } from "@/lib/taxonomy/industries";
 import { USE_CASE_IDS, type UseCaseId } from "@/lib/taxonomy/useCases";
@@ -121,9 +122,20 @@ export async function processCandidate(
   if (!ex.setup_steps.length) missing.push("setup_steps");
   if (!ex.setup_complexity) missing.push("setup_complexity");
 
+  // Track record: how long the vendor's domain has existed (public registry data).
+  const registeredAt = await domainRegisteredAt(home);
+  const ageDays = domainAgeDays(registeredAt);
+  const ageWarning = domainAgeWarning(ageDays);
+  if (registeredAt) {
+    const year = new Date(registeredAt).getUTCFullYear();
+    checks.official_site.note = [checks.official_site.note, `Website registered in ${year}`].filter(Boolean).join(" · ");
+  }
+  log(`  domain age: ${ageDays === null ? "unknown" : `${Math.floor(ageDays / 365)}y ${Math.floor((ageDays % 365) / 30)}m`}`);
+
   const adminReviewed = existing?.admin_reviewed ?? false;
   const level = trustLevel(checks, adminReviewed);
   const warnings = checkWarnings(checks);
+  if (ageWarning) warnings.unshift(ageWarning);
   if (!v.integrations) warnings.push("The vendor's site doesn't say which apps it works with. Ask before buying.");
 
   const fresh: Tool = {
@@ -159,10 +171,12 @@ export async function processCandidate(
     : fresh;
 
   const keyMissing = KEY_FIELDS.some((k) => !merged[k] || (Array.isArray(merged[k]) && !(merged[k] as unknown[]).length));
+  // Young or unconfirmed domains wait in draft for a human; an admin's Verify can still publish them.
+  const needsHuman = !!ageWarning && !adminReviewed;
   merged.status =
     existing?.status === "rejected"
       ? "rejected"
-      : level === "unverified" || keyMissing
+      : level === "unverified" || keyMissing || needsHuman
         ? "draft"
         : "published";
 
@@ -173,14 +187,23 @@ export async function processCandidate(
   return { outcome: existing ? "updated" : "new", tool: merged };
 }
 
-export type DiscoverInput = { query?: string; useCase?: UseCaseId; industry?: IndustryId; max?: number };
+export type DiscoverInput = {
+  query?: string;
+  useCase?: UseCaseId;
+  industry?: IndustryId;
+  max?: number;
+  /** Where the run came from ("admin", "cron", "public"); public runs count toward a daily cap. */
+  source?: string;
+  /** Only process vendors not already in the database (any status), so each run finds new tools. */
+  onlyNew?: boolean;
+};
 
 /** Search, then process up to `max` candidates. Records a discovery_runs row with the log. */
 export async function runDiscovery(input: DiscoverInput, onLog?: Log): Promise<DiscoveryRun> {
   const query = input.query || buildQuery(input.useCase ?? "missed_calls", input.industry ?? "other");
   const run: DiscoveryRun = {
     id: randomUUID(),
-    query: { query, use_case: input.useCase ?? null, industry: input.industry ?? null },
+    query: { query, use_case: input.useCase ?? null, industry: input.industry ?? null, source: input.source ?? "admin" },
     status: "running",
     counts: { found: 0, new: 0, updated: 0, skipped: 0, failed: 0 },
     log: [],
@@ -195,9 +218,17 @@ export async function runDiscovery(input: DiscoverInput, onLog?: Log): Promise<D
   await store.createRun(run);
   try {
     log(`search: "${query}"`);
-    const cands = await searchCandidates(query, input.max ?? 3);
+    const max = input.max ?? 3;
+    let cands = await searchCandidates(query, input.onlyNew ? max * 3 : max);
+    if (input.onlyNew) {
+      const known = new Set((await store.listTools()).map((t) => domainKey(t.canonical_url)));
+      const fresh = cands.filter((c) => !known.has(domainKey(c.url)));
+      run.counts.skipped += cands.length - fresh.length;
+      if (cands.length > fresh.length) log(`skipping ${cands.length - fresh.length} vendor(s) already in the database`);
+      cands = fresh.slice(0, max);
+    }
     run.counts.found = cands.length;
-    log(`found ${cands.length} candidate(s): ${cands.map((c) => c.name).join(", ")}`);
+    log(`found ${cands.length} candidate(s): ${cands.map((c) => c.name).join(", ") || "no new vendors this time"}`);
     for (const c of cands) {
       try {
         const { outcome } = await processCandidate(c, log, { useCase: input.useCase, industry: input.industry });

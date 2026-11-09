@@ -5,7 +5,7 @@ export function PrintButton() {
     <button
       type="button"
       onClick={() => window.print()}
-      className="no-print min-h-12 px-5 rounded-xl bg-brand text-white font-bold hover:bg-brand-strong"
+      className="no-print min-h-12 px-5 rounded-xl bg-brand text-on-brand font-bold hover:bg-brand-hover"
     >
       Print my plan
     </button>

@@ -21,3 +21,14 @@ describe("scheduled refresh", () => {
     expect(isStale({ last_checked_at: "2026-11-20T00:00:00Z" }, NOW)).toBe(false);
   });
 });
+
+describe("discovery rotation", () => {
+  it("covers every use case × industry before repeating, then changes wording", async () => {
+    const { rotationSlot } = await import("@/lib/pipeline/rotate");
+    const pairs = 6 * 6;
+    const seen = new Set(Array.from({ length: pairs }, (_, n) => `${rotationSlot(n).useCase}/${rotationSlot(n).industry}`));
+    expect(seen.size).toBe(pairs);
+    expect(rotationSlot(0).useCase).toBe(rotationSlot(pairs).useCase);
+    expect(rotationSlot(0).query).not.toBe(rotationSlot(pairs).query);
+  });
+});

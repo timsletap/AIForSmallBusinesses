@@ -1,24 +1,31 @@
 import Link from "next/link";
 import { profileFromParams, profileToParams } from "@/lib/schemas/profile";
 import { isRecommendable } from "@/lib/ranking/constraints";
-import { scoreTool } from "@/lib/ranking/score";
+import { monthlyPrice, scoreTool } from "@/lib/ranking/score";
 import { getStore } from "@/lib/storage/db";
 import { idsFromParams } from "@/lib/http/params";
+import { industryById } from "@/lib/taxonomy/industries";
 import { toolLabel } from "@/lib/taxonomy/tools";
+import { CHECK_IDS, type Tool } from "@/lib/schemas/tool";
 import { Button, EmptyState, ENGAGEMENT, SETUP_LABEL, TrustBadge, priceText } from "@/components/ui";
-import { WEIGHTS, FACTOR_LABELS, type FactorId } from "@/lib/ranking/score";
+import { FitMeter } from "@/components/FitMeter";
+import { ToolLogo } from "@/components/ToolLogo";
+import { FactorChart, PaybackChart, PriceChart, SERIES, type ChartTool } from "@/components/CompareCharts";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Compare tools | AI Tool Matchmaker" };
 
 type SP = Promise<Record<string, string | string[] | undefined>>;
 
+const checksPassed = (t: Tool) => CHECK_IDS.filter((c) => t.vendor_checks[c]?.pass).length;
+const EASE: Record<string, number> = { low: 3, medium: 2, high: 1 };
+
 export default async function ComparePage({ searchParams }: { searchParams: SP }) {
   const sp = await searchParams;
   const profile = profileFromParams(sp);
   const ids = idsFromParams(sp);
   const all = await getStore().listTools({ status: "published" });
-  const tools = ids.map((id) => all.find((t) => t.slug === id)).filter((t) => !!t && isRecommendable(t)).map((t) => t!);
+  const tools = ids.map((id) => all.find((t) => t.slug === id)).filter((t): t is Tool => !!t && isRecommendable(t));
   const query = profile ? profileToParams(profile).toString() : "";
   const back = profile ? `/results?${query}` : "/tools";
 
@@ -30,120 +37,166 @@ export default async function ComparePage({ searchParams }: { searchParams: SP }
       </EmptyState>
     );
   }
-  const scored = profile ? tools.map((t) => scoreTool(t, profile)) : [];
+
+  const scored = tools.map((t) => (profile ? scoreTool(t, profile) : null));
+  const prices = tools.map(monthlyPrice);
+  const known = prices.filter((p): p is number => p !== null);
+
+  // Winner per dimension (ties share the badge).
+  const badges = tools.map(() => [] as string[]);
+  const award = (label: string, values: (number | null)[], best: "max" | "min") => {
+    const vs = values.filter((v): v is number => v !== null);
+    if (vs.length < 2 || new Set(vs).size === 1) return;
+    const target = best === "max" ? Math.max(...vs) : Math.min(...vs);
+    values.forEach((v, i) => v === target && badges[i].push(label));
+  };
+  award("Best fit", scored.map((s) => s?.fit ?? null), "max");
+  award("Lowest price", prices, "min");
+  award("Most vendor checks", tools.map(checksPassed), "max");
+  award("Easiest setup", tools.map((t) => (t.setup_complexity ? EASE[t.setup_complexity] : null)), "max");
+
+  const chartTools: ChartTool[] = tools.map((t, i) => ({
+    name: t.name,
+    min: t.pricing.est_monthly_usd_min,
+    max: t.pricing.est_monthly_usd_max,
+    freePlan: !!t.pricing.free_plan,
+    plan: t.pricing.plan_name,
+    factors: scored[i]?.factors ?? null,
+  }));
+  const industry = industryById(profile?.industry ?? "other")!;
   const mine = new Set(profile?.current_tools ?? []);
+  const cols = tools.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2";
 
   const rows: { label: string; cells: React.ReactNode[] }[] = [
     { label: "Price", cells: tools.map((t) => <strong key={t.id}>{priceText(t)}</strong>) },
-    ...(profile
-      ? [
-          { label: "Fit Score", cells: scored.map((s, i) => <strong key={i} className="text-xl">{s ? `${s.fit} / 100` : "Not a fit"}</strong>) },
-          ...(Object.keys(WEIGHTS) as FactorId[]).map((f) => ({
-            label: FACTOR_LABELS[f],
-            cells: scored.map((s, i) => {
-              const x = s?.factors.find((y) => y.id === f);
-              return <span key={i} className="tabular-nums">{x ? `${Math.round(x.points)} / ${x.weight}` : "–"}</span>;
-            }),
-          })),
-        ]
-      : []),
+    {
+      label: "Free trial",
+      cells: tools.map((t) => <span key={t.id}>{t.pricing.free_trial_days ? `${t.pricing.free_trial_days} days` : t.pricing.free_plan ? "Free plan" : "–"}</span>),
+    },
     {
       label: "Works with",
       cells: tools.map((t) =>
         t.integrations.length ? (
-          <span key={t.id}>
-            {t.integrations.map((i, n) => (
-              <span key={i} className={mine.has(i) ? "font-bold text-brand-strong" : ""}>
-                {n > 0 && ", "}
+          <span key={t.id} className="flex flex-wrap gap-1">
+            {t.integrations.map((i) => (
+              <span key={i} className={`rounded-md px-1.5 py-0.5 text-xs border ${mine.has(i) ? "border-gold text-gold" : "border-line text-muted"}`}>
                 {mine.has(i) && "✓ "}
                 {toolLabel(i)}
               </span>
             ))}
           </span>
         ) : (
-          <span key={t.id} className="text-amber-900">Not listed</span>
+          <span key={t.id} className="text-muted">Not listed</span>
         ),
       ),
     },
-    { label: "Setup effort", cells: tools.map((t) => <span key={t.id}>{t.setup_complexity ? SETUP_LABEL[t.setup_complexity] : "Not listed"}</span>) },
-    { label: "Vendor trust", cells: tools.map((t) => <TrustBadge key={t.id} level={t.trust_level} />) },
-    { label: "Warnings", cells: tools.map((t) => <span key={t.id} className="text-amber-900">{t.warnings.length ? t.warnings.join(" ") : "None"}</span>) },
+    { label: "Setup", cells: tools.map((t) => <span key={t.id}>{t.setup_complexity ? SETUP_LABEL[t.setup_complexity] : "Not listed"}</span>) },
     {
-      label: "How to get started",
+      label: "Vendor checks",
       cells: tools.map((t) => (
-        <Button key={t.id} href={t.canonical_url} external>
-          {t.engagement ? ENGAGEMENT[t.engagement] : "Visit website"}
-        </Button>
+        <span key={t.id} className="flex items-center gap-2">
+          <span className="flex gap-0.5" aria-hidden>
+            {CHECK_IDS.map((c) => (
+              <span key={c} className={`h-2 w-3.5 rounded-sm ${t.vendor_checks[c]?.pass ? "bg-gold" : "bg-line-strong"}`} />
+            ))}
+          </span>
+          <span className="text-sm tabular-nums">{checksPassed(t)}/6</span>
+        </span>
       )),
     },
+    { label: "Get started", cells: tools.map((t) => <span key={t.id}>{t.engagement ? ENGAGEMENT[t.engagement] : "Visit their site"}</span>) },
   ];
 
   return (
-    <div className="space-y-5">
-      <Link href={back} className="underline">
-        ← Back
-      </Link>
-      <h1 className="text-3xl font-bold text-brand-strong">Compare side by side</h1>
-
-      {/* Phone: one card per tool, same rows in the same order. */}
-      <div className="sm:hidden space-y-4">
-        {tools.map((t, col) => (
-          <section key={t.id} className="rounded-2xl border border-line bg-surface p-4" aria-labelledby={`cmp-${t.id}`}>
-            <h2 id={`cmp-${t.id}`} className="text-xl font-bold mb-2">
-              <Link href={`/tools/${t.slug}?${query}`} className="underline">
-                {t.name}
-              </Link>
-            </h2>
-            <dl className="divide-y divide-line">
-              {rows.map((r) => (
-                <div key={r.label} className="py-2 grid grid-cols-[8rem_1fr] gap-2">
-                  <dt className="font-bold text-muted">{r.label}</dt>
-                  <dd>{r.cells[col]}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        ))}
+    <div className="space-y-10">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <Link href={back} className="text-sm text-muted hover:text-white">
+            ← Back
+          </Link>
+          <h1 className="font-display text-3xl sm:text-5xl font-extrabold mt-2">Head to head</h1>
+          <p className="text-muted mt-1">
+            {tools.map((t) => t.name).join(" vs ")}
+            {profile && <> · scored for your {industry.label.toLowerCase()}</>}
+          </p>
+        </div>
+        {profile && <Button href={`/plan?${query}&ids=${tools.map((t) => t.slug).join(",")}`}>Build my plan with these</Button>}
       </div>
 
-      {/* Wider screens: tools in columns. */}
-      <div className="hidden sm:block overflow-x-auto rounded-2xl border border-line bg-surface">
-        <table className="w-full text-left">
-          <caption className="sr-only">Comparison of {tools.map((t) => t.name).join(", ")}</caption>
-          <thead>
-            <tr className="border-b-2 border-foreground">
-              <th scope="col" className="p-3 w-36">
-                <span className="sr-only">Feature</span>
-              </th>
-              {tools.map((t) => (
-                <th key={t.id} scope="col" className="p-3 align-bottom">
-                  <Link href={`/tools/${t.slug}?${query}`} className="text-lg underline">
+      {/* Contenders */}
+      <section className={`grid gap-4 ${cols}`} aria-label="Tools compared">
+        {tools.map((t, i) => (
+          <article key={t.id} className="relative overflow-hidden rounded-2xl border border-line bg-surface p-5 space-y-4">
+            <div aria-hidden className="absolute inset-x-0 top-0 h-1" style={{ background: SERIES[i] }} />
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-3 min-w-0">
+                <ToolLogo name={t.name} url={t.canonical_url} size={48} />
+                <div className="min-w-0">
+                  <Link href={`/tools/${t.slug}?${query}`} className="font-display text-xl font-extrabold hover:text-gold">
                     {t.name}
                   </Link>
-                </th>
+                  <p className="text-sm text-muted truncate">{t.vendor ?? new URL(t.canonical_url).hostname}</p>
+                </div>
+              </div>
+              {scored[i] && <FitMeter score={scored[i]!.fit} factors={scored[i]!.factors} reasons={scored[i]!.reasons} size={88} />}
+            </div>
+            <p className="text-sm text-muted min-h-[2.5rem]">{t.description}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <TrustBadge level={t.trust_level} />
+              {badges[i].map((b) => (
+                <span key={b} className="rounded-full bg-gold px-2.5 py-0.5 text-xs font-extrabold text-black">
+                  ★ {b}
+                </span>
               ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.label} className="border-b border-line align-top">
-                <th scope="row" className="p-3 font-bold text-muted">
-                  {r.label}
-                </th>
-                {r.cells.map((c, i) => (
-                  <td key={i} className="p-3">
-                    {c}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </div>
+            <div className="flex items-end justify-between border-t border-line pt-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.16em] text-muted">From</p>
+                <p className="font-display text-2xl font-extrabold">
+                  {prices[i] === null ? "Ask" : prices[i] === 0 ? "Free" : `$${prices[i]}`}
+                  {prices[i] ? <span className="text-sm font-bold text-muted">/mo</span> : null}
+                </p>
+              </div>
+              <Button href={t.canonical_url} external>
+                {t.engagement ? ENGAGEMENT[t.engagement] : "Visit site"}
+              </Button>
+            </div>
+          </article>
+        ))}
+      </section>
 
-      {profile && (
-        <Button href={`/plan?${query}&ids=${tools.map((t) => t.slug).join(",")}`}>Build my plan with these</Button>
-      )}
+      {/* Charts */}
+      <section className="grid gap-4 lg:grid-cols-2" aria-label="Charts">
+        <PriceChart tools={chartTools} budget={profile?.budget_usd ?? null} />
+        {profile ? <FactorChart tools={chartTools} /> : <PaybackChart tools={chartTools} typicalSale={industry.typicalSale} saleWord={industry.saleWord} />}
+        {profile && (
+          <div className="lg:col-span-2">
+            <PaybackChart tools={chartTools} typicalSale={industry.typicalSale} saleWord={industry.saleWord} />
+          </div>
+        )}
+      </section>
+
+      {/* Head-to-head table */}
+      <section aria-labelledby="facts-h" className="space-y-3">
+        <h2 id="facts-h" className="font-display text-2xl font-extrabold">
+          The facts, side by side
+        </h2>
+        <div className="overflow-hidden rounded-2xl border border-line">
+          {rows.map((r, ri) => (
+            <div key={r.label} className={`grid gap-3 p-4 sm:grid-cols-[10rem_repeat(var(--n),minmax(0,1fr))] ${ri % 2 ? "bg-surface" : "bg-background"}`} style={{ ["--n" as string]: tools.length }}>
+              <p className="font-bold text-muted">{r.label}</p>
+              {r.cells.map((c, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 rounded-sm sm:hidden" style={{ background: SERIES[i] }} />
+                  <span className="sm:hidden text-sm text-muted w-24 shrink-0">{tools[i].name}</span>
+                  <div className="min-w-0">{c}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        {known.length < tools.length && <p className="text-sm text-muted">“Ask” means the vendor doesn&apos;t publish a price on their site.</p>}
+      </section>
     </div>
   );
 }

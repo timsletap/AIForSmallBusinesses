@@ -2,11 +2,12 @@ import Link from "next/link";
 import type { Tool, TrustLevel } from "@/lib/schemas/tool";
 import { TRUST_BADGE } from "@/lib/verification/vendorChecks";
 
+// UMD palette: gold = verified by hand, white = automated checks passed, red tint = some checks missing.
 const TONES: Record<string, string> = {
-  green: "bg-green-100 text-green-900 border-green-700",
-  blue: "bg-sky-100 text-sky-900 border-sky-700",
-  amber: "bg-amber-100 text-amber-900 border-amber-700",
-  gray: "bg-stone-100 text-stone-800 border-stone-500",
+  green: "bg-gold/15 text-gold border-gold/60",
+  blue: "bg-white/10 text-white border-white/40",
+  amber: "bg-brand/15 text-warn border-brand/60",
+  gray: "bg-white/5 text-muted border-white/20",
 };
 
 const ICONS: Record<TrustLevel, string> = { verified: "✔", checks_passed: "✓", partial: "!", unverified: "?" };
@@ -57,7 +58,7 @@ export function Button({
 }) {
   const cls =
     variant === "primary"
-      ? "bg-brand text-white hover:bg-brand-strong"
+      ? "bg-brand text-on-brand hover:bg-brand-hover"
       : "bg-surface text-brand-strong border-2 border-brand hover:bg-brand-soft";
   const c = `inline-flex items-center justify-center min-h-11 px-5 rounded-xl font-bold text-base ${cls}`;
   return external ? (
@@ -80,7 +81,7 @@ export function Warnings({ items, max }: { items: string[]; max?: number }) {
   if (!items.length) return null;
   const shown = max ? items.slice(0, max) : items;
   return (
-    <ul className="space-y-1 text-[0.95rem] text-amber-900">
+    <ul className="space-y-1 text-[0.95rem] text-warn">
       {shown.map((w) => (
         <li key={w} className="flex gap-2">
           <span aria-hidden>⚠</span>

@@ -4,9 +4,9 @@ import { toolLabel } from "@/lib/taxonomy/tools";
 import { SourceLink } from "@/components/ui";
 
 const COST: Record<"included" | "paid_addon" | "unknown", { label: string; cls: string }> = {
-  included: { label: "No extra cost", cls: "bg-green-100 text-green-900 border-green-700" },
-  paid_addon: { label: "Costs extra", cls: "bg-amber-100 text-amber-900 border-amber-700" },
-  unknown: { label: "Ask about cost", cls: "bg-stone-100 text-stone-800 border-stone-500" },
+  included: { label: "No extra cost", cls: "bg-gold/15 text-gold border-gold/60" },
+  paid_addon: { label: "Costs extra", cls: "bg-brand/15 text-warn border-brand/60" },
+  unknown: { label: "Ask about cost", cls: "bg-white/5 text-muted border-white/25" },
 };
 
 function Feature({ f }: { f: BuiltInFeature }) {

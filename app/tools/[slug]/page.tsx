@@ -3,13 +3,13 @@ import { notFound } from "next/navigation";
 import { profileFromParams, profileToParams } from "@/lib/schemas/profile";
 import { CHECK_IDS } from "@/lib/schemas/tool";
 import { isRecommendable } from "@/lib/ranking/constraints";
-import { scoreTool } from "@/lib/ranking/score";
 import { getStore } from "@/lib/storage/db";
 import { industryById } from "@/lib/taxonomy/industries";
 import { CURRENT_TOOLS, toolLabel } from "@/lib/taxonomy/tools";
 import { getUseCase } from "@/lib/taxonomy/useCases";
 import { CHECK_LABELS } from "@/lib/verification/vendorChecks";
-import { FitBreakdown } from "@/components/ResultCard";
+import { ToolFitChecker } from "@/components/ToolFitChecker";
+import { ToolLogo } from "@/components/ToolLogo";
 import { daysSinceChecked, isStale } from "@/lib/pipeline/refresh";
 import { Button, Card, ENGAGEMENT, SETUP_LABEL, SourceLink, TrustBadge, Warnings, priceText } from "@/components/ui";
 
@@ -40,7 +40,6 @@ export default async function ToolPage({ params, searchParams }: Props) {
   const t = await getStore().getTool(slug);
   if (!t || !isRecommendable(t)) notFound();
   const profile = profileFromParams(await searchParams);
-  const scored = profile ? scoreTool(t, profile) : null;
   const mine = new Set(profile?.current_tools ?? []);
   const query = profile ? profileToParams(profile).toString() : "";
   const sources = [...new Set([t.canonical_url, ...Object.values(t.evidence).map((e) => e.source_url), ...Object.values(t.vendor_checks).map((c) => c.source_url)].filter((u): u is string => !!u).map((u) => u.replace(/\/+$/, "")))];
@@ -54,7 +53,8 @@ export default async function ToolPage({ params, searchParams }: Props) {
       )}
       <header className="space-y-3">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-3xl font-bold text-brand-strong">{t.name}</h1>
+          <ToolLogo name={t.name} url={t.canonical_url} size={56} />
+          <h1 className="font-display text-4xl font-extrabold">{t.name}</h1>
           <TrustBadge level={t.trust_level} />
         </div>
         {t.vendor && <p className="text-muted">Made by {t.vendor}</p>}
@@ -71,17 +71,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
         </div>
       </header>
 
-      {scored && (
-        <Card className="space-y-2">
-          <h2 className="text-xl font-bold">Fit Score for you: {scored.fit} / 100</h2>
-          <ul className="list-disc pl-6">
-            {scored.reasons.map((r) => (
-              <li key={r}>{r}</li>
-            ))}
-          </ul>
-          <FitBreakdown s={scored} />
-        </Card>
-      )}
+      <ToolFitChecker tool={t} initial={profile} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="space-y-2">
@@ -125,7 +115,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
               ))}
             </ul>
           ) : (
-            <p className="text-amber-900">⚠ Their site doesn&apos;t say which apps it works with. Ask before buying.</p>
+            <p className="text-warn">⚠ Their site doesn&apos;t say which apps it works with. Ask before buying.</p>
           )}
           {profile &&
             [...mine]
@@ -163,13 +153,16 @@ export default async function ToolPage({ params, searchParams }: Props) {
             ))}
           </ol>
         ) : (
-          <p className="text-amber-900">The vendor doesn&apos;t list setup steps. Ask them to walk you through it.</p>
+          <p className="text-warn">The vendor doesn&apos;t list setup steps. Ask them to walk you through it.</p>
         )}
       </Card>
 
       <Card className="space-y-3">
         <h2 className="text-xl font-bold">Can you trust this company?</h2>
-        <p className="text-muted">We checked the vendor&apos;s own website for these things:</p>
+        <p className="text-muted">
+          We checked the vendor&apos;s own website for these things.{" "}
+          <Link href="/about" className="underline hover:text-gold">How we check →</Link>
+        </p>
         <ul className="divide-y divide-line">
           {CHECK_IDS.map((id) => {
             const c = t.vendor_checks[id];
@@ -178,12 +171,12 @@ export default async function ToolPage({ params, searchParams }: Props) {
                 <span className="flex items-center gap-2">
                   <span
                     aria-hidden
-                    className={`h-6 w-6 rounded-full text-center font-bold leading-6 text-white ${c?.pass ? "bg-green-700" : "bg-amber-700"}`}
+                    className={`h-6 w-6 rounded-full text-center font-bold leading-6 ${c?.pass ? "bg-gold text-black" : "bg-brand text-white"}`}
                   >
                     {c?.pass ? "✓" : "!"}
                   </span>
                   <span className="font-bold">{CHECK_LABELS[id]}</span>
-                  <span className={c?.pass ? "text-green-800" : "text-amber-900"}>{c?.pass ? "Found" : "Not found"}</span>
+                  <span className={c?.pass ? "text-good" : "text-warn"}>{c?.pass ? "Found" : "Not found"}</span>
                 </span>
                 <span className="flex items-center gap-3">
                   {c?.note && <span className="text-sm text-muted">{c.note}</span>}
@@ -193,7 +186,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
             );
           })}
         </ul>
-        {t.admin_reviewed && <p className="text-green-800 font-bold">✔ Our team also checked this tool by hand.</p>}
+        {t.admin_reviewed && <p className="text-good font-bold">✔ Our team also checked this tool by hand.</p>}
         <Warnings items={t.warnings} />
       </Card>
 
@@ -227,7 +220,7 @@ export default async function ToolPage({ params, searchParams }: Props) {
           change, so confirm with the vendor before you pay.
         </p>
         {isStale(t) && (
-          <p className="text-amber-900 font-bold">
+          <p className="text-warn font-bold">
             ⚠ We last checked this {daysSinceChecked(t)} days ago, so some details may be out of date.
           </p>
         )}
