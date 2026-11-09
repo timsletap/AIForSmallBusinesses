@@ -38,7 +38,7 @@ export default async function Home() {
 
   return (
     <div className="space-y-16 sm:space-y-20">
-      {/* Hero: centerpiece shell, giant headline across it, mono captions either side */}
+      {/* Hero */}
       <section className="relative -mt-4 flex min-h-[62vh] flex-col items-center justify-center overflow-hidden sm:min-h-[70vh]">
         <ShellArt className="float-slow absolute left-1/2 top-1/2 w-[min(640px,92vw)] -translate-x-1/2 -translate-y-1/2" />
         <h1 className="relative z-10 text-center drop-shadow-[0_8px_30px_rgba(0,0,0,.55)]">
@@ -49,22 +49,6 @@ export default async function Home() {
             AI tools for your business, <span className="text-gold">checked.</span>
           </span>
         </h1>
-        <div className="relative z-10 mt-10 grid w-full grid-cols-1 gap-4 font-mono text-[0.72rem] uppercase leading-relaxed tracking-[0.04em] text-muted sm:grid-cols-2">
-          <p className="max-w-[17rem] text-center sm:text-left">For Main Street and rural businesses</p>
-          <p className="max-w-[19rem] text-center sm:ml-auto sm:text-right">
-            University of Maryland · {live.length} tools checked
-          </p>
-        </div>
-      </section>
-
-      {/* Three pillars, mono labels over a dotted rule */}
-      <section aria-label="What we do" className="space-y-6">
-        <div className="grid grid-cols-3 font-mono text-[0.7rem] uppercase tracking-[0.08em] text-muted">
-          <span>Discovered</span>
-          <span className="text-center">Verified</span>
-          <span className="text-right">Scored for you</span>
-        </div>
-        <div className="dotted-rule" />
       </section>
 
       {/* Ask */}
