@@ -34,7 +34,8 @@ Secrets are only read on the server. The owner pages work without any keys. The 
 ### Storage
 
 - **Without Supabase:** the app reads and writes `data/tools.json` and `data/runs.json`. The seeded file is committed, so it ships with each deploy. On Vercel the filesystem is read-only, so admin changes last only as long as the server instance.
-- **With Supabase:** run `supabase/migrations/0001_init.sql` in the SQL editor, set the three Supabase env vars, then load the seed data with `npx tsx scripts/backfill.ts --import-json`. RLS allows anonymous reads of published tools only. All writes go through server routes with the service role key.
+- **With Supabase (production uses this):** installed through the Vercel Marketplace, which adds `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `POSTGRES_URL_NON_POOLING` and other vars to the Vercel project. To set up the schema and data, deploy, then call `POST /api/admin/setup-db` with the `x-admin-password` header. It runs on Vercel where the secrets live, applies `supabase/migrations/*.sql` once each, and imports `data/tools.json` into an empty table. It's safe to call again. Locally, with `POSTGRES_URL_NON_POOLING` in `.env.local`, `npm run migrate -- --import` does the same. RLS allows anonymous reads of published tools only. All writes go through server routes with the service role key.
+- Local dev without Supabase vars in `.env.local` keeps using the JSON file, so seeding locally doesn't touch production. To push new local seed data to production, use admin discovery on the live site, or empty the `tools` table and rerun setup-db after deploying.
 
 ## Data pipeline
 
