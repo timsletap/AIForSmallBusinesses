@@ -84,7 +84,7 @@ export default function AdminPage() {
     }
   }
 
-  async function act(id: string, action: "verify" | "reject") {
+  async function act(id: string, action: "verify" | "unverify" | "reject") {
     const res = await fetch(`/api/admin/tools/${id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-admin-password": pw },
@@ -213,9 +213,15 @@ export default function AdminPage() {
                   </td>
                   <td className="p-2">{t.missing_fields.join(", ") || "–"}</td>
                   <td className="p-2 space-x-2 whitespace-nowrap">
-                    <button onClick={() => act(t.id, "verify")} disabled={t.admin_reviewed && t.status === "published"} className="min-h-9 px-3 rounded-lg bg-green-800 text-white font-bold disabled:opacity-40">
-                      Verify
-                    </button>
+                    {t.admin_reviewed ? (
+                      <button onClick={() => act(t.id, "unverify")} className="min-h-9 px-3 rounded-lg border-2 border-green-800 text-green-900 bg-white font-bold">
+                        Unverify
+                      </button>
+                    ) : (
+                      <button onClick={() => act(t.id, "verify")} className="min-h-9 px-3 rounded-lg bg-green-800 text-white font-bold">
+                        Verify
+                      </button>
+                    )}
                     <button onClick={() => act(t.id, "reject")} disabled={t.status === "rejected"} className="min-h-9 px-3 rounded-lg bg-red-800 text-white font-bold disabled:opacity-40">
                       Reject
                     </button>

@@ -4,7 +4,7 @@ import { getStore } from "@/lib/storage/db";
 import { checkWarnings, trustLevel } from "@/lib/verification/vendorChecks";
 import { apiError, badInput, isAdmin } from "@/lib/http/errors";
 
-const Body = z.object({ action: z.enum(["verify", "reject"]) });
+const Body = z.object({ action: z.enum(["verify", "unverify", "reject"]) });
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
   if (!isAdmin(req)) return apiError(401, "unauthorized", "Wrong admin password.");
@@ -17,6 +17,11 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
 
   if (parsed.data.action === "reject") {
     tool.status = "rejected";
+  } else if (parsed.data.action === "unverify") {
+    // Undo a hand check: trust falls back to what the automated checks alone support.
+    tool.admin_reviewed = false;
+    tool.trust_level = trustLevel(tool.vendor_checks, false);
+    if (tool.trust_level === "unverified") tool.status = "draft";
   } else {
     tool.admin_reviewed = true;
     tool.trust_level = trustLevel(tool.vendor_checks, true);

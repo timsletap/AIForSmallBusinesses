@@ -96,3 +96,10 @@ describe("quote validation", () => {
     expect(validateExtraction(ex, pages).ex.price_monthly_min).toBeNull();
   });
 });
+
+describe("admin unverify", () => {
+  it("drops verified back to checks_passed with the same checks", () => {
+    expect(trustLevel(checks(6), true)).toBe("verified");
+    expect(trustLevel(checks(6), false)).toBe("checks_passed");
+  });
+});

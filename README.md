@@ -51,7 +51,7 @@ Code is split by stage: `lib/discovery` → `lib/extraction` → `lib/verificati
 
 - `npm run seed`: runs the pipeline over a starter list of well-known vendor homepages (names only; every fact is extracted from their own pages), then search queries for each use case × relevant industries. Flags: `--list-only`, `--search-only`.
 - `npx tsx scripts/backfill.ts`: re-applies deterministic rules (trust levels, warnings, low-tech integration inference) without re-fetching.
-- **Admin** (`/admin`): run discovery for a use case + industry or a custom query, see the run log, and Verify or Reject tools. Verify marks a tool `admin_reviewed`, which shows as **Verified vendor** when ≥ 5 checks pass, and the pipeline then never overwrites its reviewed fields.
+- **Admin** (`/admin`): run discovery for a use case + industry or a custom query, see the run log, and Verify, Unverify or Reject tools. Verify marks a tool `admin_reviewed`, which shows as **Verified vendor** when ≥ 5 checks pass, and the pipeline then never overwrites its reviewed fields. Unverify undoes a hand check: trust falls back to what the automated checks support.
 
 ### Trust levels
 
