@@ -14,7 +14,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { FactorChart, PaybackChart, PriceChart, SERIES, type ChartTool } from "@/components/CompareCharts";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Compare tools | AI Tool Matchmaker" };
+export const metadata = { title: "Compare tools | TerpTool" };
 
 type SP = Promise<Record<string, string | string[] | undefined>>;
 

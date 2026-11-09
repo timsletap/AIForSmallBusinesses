@@ -1,4 +1,6 @@
-# AI Tool Matchmaker
+# TerpTool
+
+**The right AI tools for your small business, verified.**
 
 Helps Main Street and rural small business owners with little AI knowledge find, compare and adopt the right AI tools.
 

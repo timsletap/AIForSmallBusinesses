@@ -56,8 +56,8 @@ class OpenAiCompatibleProvider implements LlmProvider {
           headers: {
             Authorization: `Bearer ${this.apiKey}`,
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://ai-tool-matchmaker.vercel.app",
-            "X-Title": "AI Tool Matchmaker",
+            "HTTP-Referer": "https://ai-tool-matchmaker-eight.vercel.app",
+            "X-Title": "TerpTool",
           },
           body: JSON.stringify(body),
         },

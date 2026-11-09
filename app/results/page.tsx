@@ -6,7 +6,7 @@ import { LiveResults } from "@/components/LiveResults";
 import { Button, EmptyState } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Your matches | AI Tool Matchmaker" };
+export const metadata = { title: "Your matches | TerpTool" };
 
 type SP = Promise<Record<string, string | string[] | undefined>>;
 

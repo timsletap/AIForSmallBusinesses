@@ -6,7 +6,7 @@ import { DiscoverLive } from "@/components/DiscoverLive";
 import { PageHeader } from "@/components/PageHeader";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Discover new AI tools | AI Tool Matchmaker" };
+export const metadata = { title: "Discover new AI tools | TerpTool" };
 
 export default async function DiscoverPage() {
   const all = await getStore().listTools();

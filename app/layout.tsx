@@ -9,7 +9,7 @@ const font = Geist({ variable: "--font-sans-face", subsets: ["latin"], display: 
 const mono = Geist_Mono({ variable: "--font-mono-face", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "AI Tool Matchmaker: find the right AI for your small business",
+  title: "TerpTool: The right AI tools for your small business, verified.",
   description:
     "Describe what's slowing your business down. Get checked, plain-English AI tool picks that fit your budget and the tools you already use.",
 };
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <header className="no-print flex justify-center pt-6 pb-2">
-          <Link href="/" aria-label="AI Tool Matchmaker, University of Maryland, home" className="grid h-11 w-11 place-items-center">
+          <Link href="/" aria-label="TerpTool, University of Maryland, home" className="grid h-11 w-11 place-items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/umd-terrapins-m.svg" alt="" width={30} height={33} className="h-[33px] w-auto" />
           </Link>
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="sm:col-span-2 flex flex-wrap items-center gap-4 pb-6 border-b border-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/brand/umd-wordmark-white.svg" alt="University of Maryland" width={220} height={44} className="h-9 w-auto" />
-              <span className="text-white/80">Built at the University of Maryland for Main Street businesses.</span>
+              <span className="text-white/80"><strong className="text-white">TerpTool</strong>: the right AI tools for your small business, verified. Built at the University of Maryland.</span>
               <span aria-hidden className="md-flag-stripe h-1.5 w-24 rounded-full ml-auto hidden sm:block" />
             </div>
             <p>

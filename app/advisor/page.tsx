@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Advisor } from "@/components/Advisor";
 import { PageHeader } from "@/components/PageHeader";
 
-export const metadata = { title: "Tell us about your business | AI Tool Matchmaker" };
+export const metadata = { title: "Tell us about your business | TerpTool" };
 
 export default function AdvisorPage() {
   return (

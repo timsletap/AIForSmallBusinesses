@@ -12,7 +12,7 @@ import { builtInMatches } from "@/lib/builtins/match";
 import { loadBuiltIns } from "@/lib/builtins/load";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Your adoption plan | AI Tool Matchmaker" };
+export const metadata = { title: "Your adoption plan | TerpTool" };
 
 type SP = Promise<Record<string, string | string[] | undefined>>;
 

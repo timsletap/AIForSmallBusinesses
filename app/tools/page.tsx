@@ -10,7 +10,7 @@ import { ToolLogo } from "@/components/ToolLogo";
 import type { Tool } from "@/lib/schemas/tool";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Browse AI tools | AI Tool Matchmaker" };
+export const metadata = { title: "Browse AI tools | TerpTool" };
 
 type SP = Promise<Record<string, string | string[] | undefined>>;
 

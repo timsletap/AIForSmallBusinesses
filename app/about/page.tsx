@@ -9,7 +9,7 @@ import { Icon } from "@/components/Icon";
 
 export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "About & how we verify | AI Tool Matchmaker",
+  title: "About & how we verify | TerpTool",
   description: "How we discover AI tools, prove every fact against the vendor's own website, check vendors, and score fit.",
 };
 
@@ -69,7 +69,7 @@ export default async function AboutPage() {
         <p className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-gold/10 pl-1.5 pr-3 py-1 text-sm font-bold text-gold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/umd-terrapins-m.svg" alt="" width={18} height={20} className="h-5 w-auto" />
-          About · A University of Maryland project
+          About TerpTool · A University of Maryland project
         </p>
         <h1 className="font-display text-4xl sm:text-6xl font-semibold leading-[1.02]">
           Every fact has a receipt. <span className="text-gradient">Every vendor is checked.</span>
@@ -227,7 +227,7 @@ export default async function AboutPage() {
           </h2>
         </div>
         <p className="text-lg max-w-3xl">
-          Built at the University of Maryland by <strong>Smit Patel</strong> and <strong>Daniel Petrov</strong> to give
+          <strong>TerpTool</strong> was built at the University of Maryland by <strong>Smit Patel</strong> and <strong>Daniel Petrov</strong> to give
           Main Street businesses the same confidence with AI that big companies get from an IT department.
         </p>
         <Expand icon={<Icon name="check" />} title="Our promises" summary="No paid placement. No stored answers. Honest when a tool isn't a fit." accent="#ffd200">

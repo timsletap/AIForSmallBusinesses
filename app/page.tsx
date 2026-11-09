@@ -41,10 +41,13 @@ export default async function Home() {
       {/* Hero: centerpiece shell, giant headline across it, mono captions either side */}
       <section className="relative -mt-4 flex min-h-[70vh] flex-col items-center justify-center overflow-hidden sm:min-h-[78vh]">
         <ShellArt className="float-slow absolute left-1/2 top-1/2 w-[min(640px,92vw)] -translate-x-1/2 -translate-y-1/2" />
-        <h1 className="relative z-10 text-center text-[clamp(3.1rem,11vw,9.5rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-[#f2f2f6] drop-shadow-[0_8px_30px_rgba(0,0,0,.55)]">
-          Find AI
-          <br />
-          that fits<span className="text-gold">.</span>
+        <h1 className="relative z-10 text-center drop-shadow-[0_8px_30px_rgba(0,0,0,.55)]">
+          <span className="block text-[clamp(3.6rem,13vw,11rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#f2f2f6]">
+            TerpTool<span className="text-gold">.</span>
+          </span>
+          <span className="mx-auto mt-5 block max-w-[34rem] text-[clamp(1.15rem,2.4vw,1.75rem)] font-medium leading-snug tracking-[-0.02em] text-[#f2f2f6]/90">
+            The right AI tools for your small business, <span className="text-gold">verified.</span>
+          </span>
         </h1>
         <div className="relative z-10 mt-10 grid w-full grid-cols-1 gap-4 font-mono text-[0.72rem] uppercase leading-relaxed tracking-[0.04em] text-muted sm:grid-cols-2">
           <p className="max-w-[17rem] text-center sm:text-left">An AI directory for Main Street and rural small businesses</p>

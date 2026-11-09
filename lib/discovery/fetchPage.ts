@@ -2,7 +2,7 @@ import * as cheerio from "cheerio";
 import { fetchWithTimeout } from "@/lib/llm/provider";
 import { domainKey, isAggregator, sameSite } from "./canonical";
 
-const UA = "Mozilla/5.0 (compatible; AIToolMatchmakerBot/0.1; small-business research)";
+const UA = "Mozilla/5.0 (compatible; TerpToolBot/1.0; small-business research by the University of Maryland)";
 const TIMEOUT_MS = 10_000;
 const MAX_TEXT = 12_000;
 
@@ -39,7 +39,7 @@ export function parseRobots(body: string): RobotsRule[] {
     const val = line.slice(idx + 1).split("#")[0].trim();
     if (key === "user-agent") {
       // Consecutive user-agent lines share one group.
-      const hit = val === "*" || /aitoolmatchmaker/i.test(val);
+      const hit = val === "*" || /terptool/i.test(val);
       applies = inAgentBlock ? applies || hit : hit;
       inAgentBlock = true;
       continue;

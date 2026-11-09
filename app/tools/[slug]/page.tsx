@@ -33,7 +33,7 @@ const FIELD_LABELS: Record<string, string> = {
 
 export async function generateMetadata({ params }: Props) {
   const t = await getStore().getTool((await params).slug);
-  return { title: t ? `${t.name} | AI Tool Matchmaker` : "Tool not found" };
+  return { title: t ? `${t.name} | TerpTool` : "Tool not found" };
 }
 
 export default async function ToolPage({ params, searchParams }: Props) {
