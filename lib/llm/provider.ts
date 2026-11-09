@@ -11,7 +11,7 @@ export type ChatOptions = {
   maxTokens?: number;
   timeoutMs?: number;
   /** Enable the provider's web search (OpenRouter `web` plugin). */
-  webSearch?: { maxResults?: number; excludeDomains?: string[] };
+  webSearch?: { maxResults?: number; excludeDomains?: string[]; includeDomains?: string[] };
 };
 
 export type ChatResult = { text: string; citations: WebCitation[] };
@@ -42,6 +42,7 @@ class OpenAiCompatibleProvider implements LlmProvider {
           engine: "exa",
           max_results: opts.webSearch.maxResults ?? 8,
           ...(opts.webSearch.excludeDomains?.length ? { exclude_domains: opts.webSearch.excludeDomains } : {}),
+          ...(opts.webSearch.includeDomains?.length ? { include_domains: opts.webSearch.includeDomains } : {}),
         },
       ];
     }

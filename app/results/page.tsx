@@ -8,6 +8,9 @@ import { getUseCase } from "@/lib/taxonomy/useCases";
 import { ResultCard } from "@/components/ResultCard";
 import { ProfileHidden } from "@/components/ProfileHidden";
 import { Button, EmptyState } from "@/components/ui";
+import { AlreadyInYourTools } from "@/components/AlreadyInYourTools";
+import { builtInMatches } from "@/lib/builtins/match";
+import { loadBuiltIns } from "@/lib/builtins/load";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Your matches | AI Tool Matchmaker" };
@@ -32,6 +35,7 @@ export default async function ResultsPage({ searchParams }: { searchParams: SP }
     return <EmptyState title="We couldn't load tools right now.">Please try again in a minute.</EmptyState>;
   }
   const r = recommend(tools, profile);
+  const already = builtInMatches(await loadBuiltIns(), profile);
   const query = profileToParams(profile).toString();
 
   return (
@@ -48,6 +52,10 @@ export default async function ResultsPage({ searchParams }: { searchParams: SP }
           </Link>
         </p>
       </header>
+
+      <AlreadyInYourTools matches={already} />
+
+      {already.length > 0 && r.ranked.length > 0 && <h2 className="text-xl font-bold">New tools that fit</h2>}
 
       <form action="/compare" method="get" className="space-y-4">
         <ProfileHidden profile={profile} />

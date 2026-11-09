@@ -53,6 +53,14 @@ Code is split by stage: `lib/discovery` → `lib/extraction` → `lib/verificati
 - `npx tsx scripts/backfill.ts`: re-applies deterministic rules (trust levels, warnings, low-tech integration inference) without re-fetching.
 - **Admin** (`/admin`): run discovery for a use case + industry or a custom query, see the run log, and Verify, Unverify or Reject tools. Verify marks a tool `admin_reviewed`, which shows as **Verified vendor** when ≥ 5 checks pass, and the pipeline then never overwrites its reviewed fields. Unverify undoes a hand check: trust falls back to what the automated checks support.
 
+### "Already in your tools"
+
+Before recommending anything new, Results and Plan show AI features built into software the owner already uses (Square, QuickBooks, Google Business Profile, Gmail/Outlook, Shopify, Clover, Toast, Facebook/Instagram) that fit their problem. Included features come first, then unknown cost, then paid add-ons.
+
+- `npm run builtins [-- square,shopify]`: searches **only each platform's official domains** (`PLATFORM_SOURCES` in `lib/builtins/discover.ts`), fetches the pages under the same robots.txt and rate-limit rules, extracts features, and keeps only those whose quote appears on the page. The output goes to `data/builtins.json`, which ships with the build as read-only reference data.
+- Matching is pure and tested (`lib/builtins/match.ts`, `tests/builtins.test.ts`).
+- Adding a platform takes one entry in `PLATFORM_SOURCES`.
+
 ### Trust levels
 
 | Level | Rule | Shown |

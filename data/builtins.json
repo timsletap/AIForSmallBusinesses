@@ -1,0 +1,796 @@
+[
+  {
+    "id": "86b5403225fb",
+    "platform": "clover",
+    "name": "Appointment dashboard",
+    "description": "A single dashboard shows all reservations, which can be sorted by date, time, or employee.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Sort your reservations by date, time, or even by employee.",
+    "last_checked_at": "2026-11-09T00:51:32.089Z"
+  },
+  {
+    "id": "f58b3322bf38",
+    "platform": "clover",
+    "name": "Automated and targeted promos with winback campaigns",
+    "description": "Schedule promotions ahead of time, send them to specific customer groups, and win back customers who have stopped visiting.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "Customer Engagement Plus plan is $99/mo.",
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/customer-engagement-plus-plan",
+    "quote": "Win with MIA customers through winback campaigns.",
+    "last_checked_at": "2026-11-09T00:51:26.855Z"
+  },
+  {
+    "id": "8726a015cbe0",
+    "platform": "clover",
+    "name": "Automated win-back campaigns",
+    "description": "Sends automatic outreach to bring back past customers, with targeted promos and birthday rewards.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "That's a lot more customer engagement power for just $99/mo.",
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/feedback/m/clover-app-video-youtube",
+    "quote": "birthday rewards, automated win-back campaigns, and so much more",
+    "last_checked_at": "2026-11-09T00:51:40.066Z"
+  },
+  {
+    "id": "4b4059d68801",
+    "platform": "clover",
+    "name": "Automatic appointment confirmation emails",
+    "description": "Customers automatically get a confirmation email once their appointment is booked.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Send automatic confirmation emails to give them the peace of mind that their appointment is accurate and confirmed.",
+    "last_checked_at": "2026-11-09T00:51:32.088Z"
+  },
+  {
+    "id": "6d4e4fe51352",
+    "platform": "clover",
+    "name": "Clover Customers",
+    "description": "Builds a customer list automatically from credit card sales with digital receipts, and lets owners update contact info and notes.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": "included",
+    "cost_note": "It's simple, and comes free with your Clover system.",
+    "how_to_start": [
+      "Take a credit card payment and have the customer request a digital receipt.",
+      "Ask the customer to tap \"follow\" on the digital receipt to opt in.",
+      "Update customer details, notes, birthdays, or food allergies from your Clover POS."
+    ],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/customers/m/clover-app-video-youtube",
+    "quote": "It’s simple, and comes free with your Clover system.",
+    "last_checked_at": "2026-11-09T00:51:21.125Z"
+  },
+  {
+    "id": "fcfac1d6fe70",
+    "platform": "clover",
+    "name": "Clover Feedback",
+    "description": "Adds a customer code and invite to receipts so customers can send private feedback, which you can answer before it becomes a public review.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "included",
+    "cost_note": "It's simple and comes free with your Clover POS.",
+    "how_to_start": [
+      "Open Feedback in your Clover POS and turn it on.",
+      "Add an automatic customer code to your receipts with an invite message.",
+      "Customers send feedback by SMS or in the Clover mobile app.",
+      "Reply right away, and check the email alerts for new feedback."
+    ],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/feedback/m/clover-app-video-youtube",
+    "quote": "Add an automatic customer code to your receipts, and a message inviting them to share their input.",
+    "last_checked_at": "2026-11-09T00:51:40.066Z"
+  },
+  {
+    "id": "2e8f74d4ee01",
+    "platform": "clover",
+    "name": "Clover mobile app rewards and order ahead",
+    "description": "A free customer app where shoppers earn rewards and place orders ahead at your business.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "The Clover mobile app is fast, friendly, and free on the App Store and Google Play.",
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/customers/m/clover-app-video-youtube",
+    "quote": "The Clover mobile app gives customers a simple way to earn rewards and order ahead at favorite businesses",
+    "last_checked_at": "2026-11-09T00:51:21.126Z"
+  },
+  {
+    "id": "345412b894d3",
+    "platform": "clover",
+    "name": "Customer Engagement Plus automated win-back campaigns",
+    "description": "A paid plan that includes automated win-back campaigns, targeted promos, and birthday rewards to bring back past customers.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "That’s a lot more customer engagement power for just $99/mo. Terms & conditions apply.",
+    "how_to_start": [
+      "Sign up for the Clover Plus plan.",
+      "Schedule promos for the week from your Clover POS.",
+      "Check how each promo performs in your POS."
+    ],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/customers/m/clover-app-video-youtube",
+    "quote": "automated win-back campaigns, and so much more",
+    "last_checked_at": "2026-11-09T00:51:21.126Z"
+  },
+  {
+    "id": "3406962abb29",
+    "platform": "clover",
+    "name": "Customer history tracking",
+    "description": "The platform keeps a record of each customer's past visits and preferences in one place.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Track customer history to understand your client preferences to maximize their loyalty",
+    "last_checked_at": "2026-11-09T00:51:32.089Z"
+  },
+  {
+    "id": "1a93399b8bea",
+    "platform": "clover",
+    "name": "Email appointment reminders",
+    "description": "The platform sends email reminders to customers about upcoming appointments to reduce no-shows.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Send email reminders to keep your customers up to date.",
+    "last_checked_at": "2026-11-09T00:51:32.088Z"
+  },
+  {
+    "id": "82290c2141f9",
+    "platform": "clover",
+    "name": "Gift cards, loyalty programs, and promotions",
+    "description": "Tools let businesses offer gift cards, loyalty programs, and promotions to bring customers back.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Encourage easy purchasing with gift cards, loyalty programs and promotions",
+    "last_checked_at": "2026-11-09T00:51:32.089Z"
+  },
+  {
+    "id": "109a3f4ac303",
+    "platform": "clover",
+    "name": "Loyalty rewards with birthday and welcome bonuses",
+    "description": "Create loyalty rewards, bonuses for regular customers, birthday bonuses, and welcome bonuses for new loyalty members.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "Customer Engagement Plus plan is $99/mo.",
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/customer-engagement/customer-engagement-plus-plan",
+    "quote": "Birthday bonuses to give your customers extra love on their special day.",
+    "last_checked_at": "2026-11-09T00:51:26.855Z"
+  },
+  {
+    "id": "da16a87af0bb",
+    "platform": "clover",
+    "name": "Online appointment booking",
+    "description": "Customers can book their own appointments online, which cuts down on manual booking by staff.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://clover.com/pos-systems/appointment-management",
+    "quote": "Let your customers book appointments online",
+    "last_checked_at": "2026-11-09T00:51:32.088Z"
+  },
+  {
+    "id": "fed1dcdff436",
+    "platform": "gmail_outlook",
+    "name": "Draft with Copilot",
+    "description": "Writes full email drafts from a short prompt, using the email thread and work information.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "The feature is available to customers with a Microsoft Copilot (work) license.",
+    "how_to_start": [
+      "Open a new message or reply in Outlook.",
+      "Select the Copilot button on the ribbon, or type /.",
+      "Select Draft with Copilot.",
+      "Enter your prompt in the dialog box and review the draft before sending."
+    ],
+    "source_url": "https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook",
+    "quote": "Generates full-length email drafts from prompts based on thread context and organizational information.",
+    "last_checked_at": "2026-11-09T00:50:30.236Z"
+  },
+  {
+    "id": "48200dfdbefa",
+    "platform": "gmail_outlook",
+    "name": "Fast appointment scheduling in Gmail",
+    "description": "Lets you offer open times in your inbox so customers can book appointments without a back-and-forth of emails.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": "included",
+    "cost_note": "Workspace with Gemini is \"included with any of our business plans.\"",
+    "how_to_start": [],
+    "source_url": "https://workspace.google.com/blog/product-announcements/new-ways-to-do-your-best-work",
+    "quote": "Now, with fast appointment scheduling integrated into Gmail, you can easily offer times for customers or clients to book, without ever leaving your inbox.",
+    "last_checked_at": "2026-11-09T00:50:01.941Z"
+  },
+  {
+    "id": "0a4cc78ff96f",
+    "platform": "gmail_outlook",
+    "name": "Help me write in Gmail",
+    "description": "Gmail drafts new emails or rewrites existing text from a short prompt you type.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "included",
+    "cost_note": "If you have a personal Google Account, you can use these Gemini in Gmail features at no charge in the US: Help me write, AI Overviews for email threads, Suggested Replies",
+    "how_to_start": [
+      "Open Gmail and click Ask Gemini at the top right.",
+      "Type a short prompt describing the email you need.",
+      "Review the draft, edit it, and send it."
+    ],
+    "source_url": "https://support.google.com/meet/answer/13952129",
+    "quote": "Draft new emails or refine existing text based on a prompt.",
+    "last_checked_at": "2026-11-09T00:50:36.369Z"
+  },
+  {
+    "id": "60cda0df5d7b",
+    "platform": "gmail_outlook",
+    "name": "Personalized smart replies in Gmail",
+    "description": "Gemini drafts email replies using your past emails and Drive files, matching your usual tone.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "included",
+    "cost_note": "Workspace with Gemini is \"included with any of our business plans.\" The page says this feature is generally available later this year.",
+    "how_to_start": [],
+    "source_url": "https://workspace.google.com/blog/product-announcements/new-ways-to-do-your-best-work",
+    "quote": "Personalized smart replies in Gmail will help you draft emails that match your specific context and your tone.",
+    "last_checked_at": "2026-11-09T00:50:01.946Z"
+  },
+  {
+    "id": "520ea1a6ff5a",
+    "platform": "gmail_outlook",
+    "name": "Suggested replies in Gmail",
+    "description": "Gmail offers reply suggestions at the bottom of an email so you can answer faster.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "included",
+    "cost_note": "If you have a personal Google Account, you can use these Gemini in Gmail features at no charge in the US: Help me write, AI Overviews for email threads, Suggested Replies",
+    "how_to_start": [
+      "Open Gmail and find an email thread.",
+      "Look for the Gemini icon at the top right of Gmail.",
+      "Check the reply suggestions shown at the bottom of the thread."
+    ],
+    "source_url": "https://support.google.com/meet/answer/13952129",
+    "quote": "Select detailed, context-aware reply suggestions at the bottom of an email thread.",
+    "last_checked_at": "2026-11-09T00:50:36.368Z"
+  },
+  {
+    "id": "c34814e4a0a5",
+    "platform": "google_business_profile",
+    "name": "Draft review replies",
+    "description": "Draft replies to customer reviews on your Google Business Profile, then post or delete them.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Go to gemini.google.com and sign in with the same account you use for your Business Profile.",
+      "Connect Google Business Profile to Gemini Apps when prompted, and follow the on-screen steps.",
+      "Ask Gemini to help draft a reply to a recent review.",
+      "Check the draft, then use it as your reply."
+    ],
+    "source_url": "https://support.google.com/business/answer/17142585",
+    "quote": "Draft or delete replies to customer feedback.",
+    "last_checked_at": "2026-11-09T00:49:39.039Z"
+  },
+  {
+    "id": "3e3137d994d9",
+    "platform": "quickbooks",
+    "name": "Appointment scheduling",
+    "description": "Lets customers and leads book phone or video meetings with you directly inside QuickBooks.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": "included",
+    "cost_note": "Included with QuickBooks Essentials and above. Essentials is listed at $85, then $42.50/mo for 3 months. Feature is in beta.",
+    "how_to_start": [],
+    "source_url": "https://quickbooks.intuit.com/get-customers",
+    "quote": "Let your customers and leads schedule phone or video meetings with you.",
+    "last_checked_at": "2026-11-09T00:49:19.364Z"
+  },
+  {
+    "id": "9760300174d6",
+    "platform": "quickbooks",
+    "name": "Customer AI",
+    "description": "Automates lead generation, qualification, and nurturing, and removes manual data entry for client tasks and notes.",
+    "use_cases": [
+      "customer_list",
+      "win_back"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/accounting-bookkeeping/overview-agents-quickbooks-online/L9irCAtK4_US_en_US",
+    "quote": "It helps you get leads, focus on high-value opportunities, automate outreach, and manage proposals.",
+    "last_checked_at": "2026-11-09T00:49:11.067Z"
+  },
+  {
+    "id": "49b4be912027",
+    "platform": "quickbooks",
+    "name": "Customer AI draft email replies",
+    "description": "Writes draft replies to lead emails that you can change in tone or length before you send them.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Go to the Leads page and select Review draft response for the lead.",
+      "Choose one of the three drafts, or ask for a tone rewrite or shorter length.",
+      "Add your signature and select Send."
+    ],
+    "source_url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/get-started-customer-agent/L6KtREjm9_US_en_US",
+    "quote": "It provides 3 draft responses to choose from, based on the conversation.",
+    "last_checked_at": "2026-11-09T00:49:06.865Z"
+  },
+  {
+    "id": "cc45f615ac45",
+    "platform": "quickbooks",
+    "name": "Customer AI lead finder",
+    "description": "Finds potential customers in your Gmail or Outlook inbox and ranks them as Hot or Warm so you can follow up.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Sign in as the Primary admin.",
+      "Go to All apps, then Customer Hub, then Opportunities.",
+      "Select Import leads from your inbox, choose Gmail or Outlook, and grant access.",
+      "Select Sync now."
+    ],
+    "source_url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/get-started-customer-agent/L6KtREjm9_US_en_US",
+    "quote": "The Customer AI helps you manage potential customers by automating lead sourcing and prioritization from your Gmail or Outlook inbox.",
+    "last_checked_at": "2026-11-09T00:49:06.865Z"
+  },
+  {
+    "id": "d4a5add16a54",
+    "platform": "shopify",
+    "name": "Automated win-back emails",
+    "description": "Ready-made email automations, including win-back emails, send to customers without you writing each message. Turn one on and it runs.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Shopify Messaging is available on all Shopify plans. Send up to 10,000 emails free each month, then $1 USD per 1,000 additional emails.",
+    "how_to_start": [
+      "Open Shopify Messaging and choose an automation template, such as winback.",
+      "Edit the email so it sounds like your brand.",
+      "Turn on the automation."
+    ],
+    "source_url": "https://shopify.com/email-marketing",
+    "quote": "Choose from ready-to-use automations like welcome, winback, and upsell emails.",
+    "last_checked_at": "2026-11-09T00:50:55.847Z"
+  },
+  {
+    "id": "d7b81a5002f5",
+    "platform": "shopify",
+    "name": "Automations",
+    "description": "Sends automatic marketing emails based on customer actions, such as abandoned carts or first purchases.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Included in most Shopify plans.",
+    "how_to_start": [
+      "Choose an automation template.",
+      "Edit the email.",
+      "Turn the automation on."
+    ],
+    "source_url": "https://shopify.com/marketing-automation-tools",
+    "quote": "Quickly set up automatic workflows with templates, or create your own, and streamline your marketing efforts. Included in most Shopify plans.",
+    "last_checked_at": "2026-11-09T00:50:49.486Z"
+  },
+  {
+    "id": "8a97d966b468",
+    "platform": "shopify",
+    "name": "Email campaigns to customer segments",
+    "description": "Send an email campaign to a customer list or segment, with personalized content, to reach the right people.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Shopify Messaging is available on all Shopify plans. Send up to 10,000 emails free each month, then $1 USD per 1,000 additional emails.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/email-marketing",
+    "quote": "Pick from your customer lists or customer segments, personalize your email, and reach the right audience with the right message.",
+    "last_checked_at": "2026-11-09T00:50:55.848Z"
+  },
+  {
+    "id": "e5c7cf036b67",
+    "platform": "shopify",
+    "name": "Segmentation",
+    "description": "Groups customers automatically based on what they buy, view, or click, so you can send targeted messages.",
+    "use_cases": [
+      "customer_list",
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Included in all Shopify Plans.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/marketing-automation-tools",
+    "quote": "Segments automatically add or remove customers based on behaviors like viewing or buying products, getting tagged, or interacting with emails.",
+    "last_checked_at": "2026-11-09T00:50:49.487Z"
+  },
+  {
+    "id": "74b1af68039e",
+    "platform": "shopify",
+    "name": "Shopify Forms",
+    "description": "Captures customer names, emails, and other details from forms and adds them to your marketing lists.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": "included",
+    "cost_note": "Included in most Shopify plans.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/marketing-automation-tools",
+    "quote": "Attract, acquire, and convert new customers with Shopify Forms, a free lead capture solution.",
+    "last_checked_at": "2026-11-09T00:50:49.488Z"
+  },
+  {
+    "id": "2f27b142ea8a",
+    "platform": "shopify",
+    "name": "Shopify Inbox agent",
+    "description": "Automatically answers customer chats on your online store about products, shipping, returns, sizing, and store policies.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Install Shopify Inbox from the Shopify App Store.",
+      "Open the Inbox page in your Shopify admin.",
+      "Turn on the Inbox agent and choose which conversations it handles.",
+      "Set its persona and train it using your catalog, policies, and files."
+    ],
+    "source_url": "https://help.shopify.com/en/manual/inbox",
+    "quote": "Shopify Inbox includes an Inbox agent that you can turn on to chat with customers automatically.",
+    "last_checked_at": "2026-11-09T00:51:02.037Z"
+  },
+  {
+    "id": "aefee5af4215",
+    "platform": "shopify",
+    "name": "Shopify Inbox AI suggested replies",
+    "description": "Uses AI to suggest replies to customer chat messages during conversations.",
+    "use_cases": [
+      "auto_replies"
+    ],
+    "availability": "included",
+    "cost_note": "Included in all Shopify Plans.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/marketing-automation-tools",
+    "quote": "Use AI to automatically generate suggested replies during conversations with customers.",
+    "last_checked_at": "2026-11-09T00:50:49.489Z"
+  },
+  {
+    "id": "eccd0d904427",
+    "platform": "shopify",
+    "name": "Shopify Messaging",
+    "description": "Lets you create and send email and SMS marketing campaigns from templates or from scratch, then see results.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Your first 10,000 emails are free every month. Then you pay $1/1000 emails, with volume pricing after 300,000 emails. SMS marketing is charged separately.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/marketing-automation-tools",
+    "quote": "Create email and SMS campaigns from scratch or from templates, send with flexible pricing, and report on results.",
+    "last_checked_at": "2026-11-09T00:50:49.486Z"
+  },
+  {
+    "id": "8d6c07286d23",
+    "platform": "shopify",
+    "name": "Sidekick email campaign help",
+    "description": "Sidekick is Shopify's built-in AI assistant that can help you write and plan email marketing campaigns for your store.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "included",
+    "cost_note": "Sidekick is included with your Shopify plan. Features and usage limits vary by plan.",
+    "how_to_start": [
+      "Open your Shopify admin.",
+      "Click the purple glasses icon to open Sidekick.",
+      "Ask Sidekick to build an email marketing campaign for your store."
+    ],
+    "source_url": "https://shopify.com/sidekick",
+    "quote": "Build an effective email marketing campaign",
+    "last_checked_at": "2026-11-09T00:51:06.779Z"
+  },
+  {
+    "id": "eb290a4bd688",
+    "platform": "shopify",
+    "name": "SMS marketing campaigns",
+    "description": "Send text message campaigns with offers and updates, using templates, and track results alongside email.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "SMS marketing is charged separately.",
+    "how_to_start": [],
+    "source_url": "https://shopify.com/email-marketing",
+    "quote": "SMS marketing is charged separately.",
+    "last_checked_at": "2026-11-09T00:50:55.848Z"
+  },
+  {
+    "id": "df8f5e5be138",
+    "platform": "square",
+    "name": "AI-powered booking management",
+    "description": "Uses AI to help manage customer appointment bookings.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/ai",
+    "quote": "Learn about AI-powered booking management",
+    "last_checked_at": "2026-11-09T00:48:55.816Z"
+  },
+  {
+    "id": "3f96d15b3964",
+    "platform": "square",
+    "name": "AI-powered voice ordering",
+    "description": "Takes customer orders by phone automatically, so orders still get taken when staff can't answer.",
+    "use_cases": [
+      "missed_calls"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/ai",
+    "quote": "Serve customers faster and never miss a sale with automated voice ordering and messaging.",
+    "last_checked_at": "2026-11-09T00:48:55.814Z"
+  },
+  {
+    "id": "4edeab72b042",
+    "platform": "square",
+    "name": "Automated appointment reminders",
+    "description": "The platform automatically sends appointment reminders to customers by text and email.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Send automatic appointment reminders to customers via SMS and/or email.",
+    "last_checked_at": "2026-11-09T00:48:46.720Z"
+  },
+  {
+    "id": "a380d91c1dde",
+    "platform": "square",
+    "name": "Automated marketing campaigns",
+    "description": "Sends automated campaigns to bring clients back, including a Lapsed Booker automation for customers who stop booking.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "Additional fee",
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Encourage repeat bookings with customized and automated campaigns, or the new Lapsed Booker automation.",
+    "last_checked_at": "2026-11-09T00:48:46.727Z"
+  },
+  {
+    "id": "900d03ead008",
+    "platform": "square",
+    "name": "Customer loyalty program",
+    "description": "Lets you create a loyalty program to encourage customers to keep coming back.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": "paid_addon",
+    "cost_note": "Additional fee",
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Square Loyalty allows you to create a loyalty program to keep customers coming back.",
+    "last_checked_at": "2026-11-09T00:48:46.728Z"
+  },
+  {
+    "id": "32fa92b0547d",
+    "platform": "square",
+    "name": "Customer profiles and notes",
+    "description": "Stores customer profiles and notes so you can remember details like birthdays and preferences.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Build relationships with customers by keeping profiles on file.",
+    "last_checked_at": "2026-11-09T00:48:46.724Z"
+  },
+  {
+    "id": "b52e6a83ad78",
+    "platform": "square",
+    "name": "Free online booking website",
+    "description": "Customers can book appointments online at any time through a booking website you customize.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": "included",
+    "cost_note": "Free online booking website",
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Free online booking website Let your customers find and book your services online 24/7 with an easy-to-use website that reflects your style.",
+    "last_checked_at": "2026-11-09T00:48:46.719Z"
+  },
+  {
+    "id": "962a557a014c",
+    "platform": "square",
+    "name": "Import existing customers",
+    "description": "You can bring customer records from another database into the appointments system.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "If you have customers in another database already, import them easily into Square Appointments.",
+    "last_checked_at": "2026-11-09T00:48:46.726Z"
+  },
+  {
+    "id": "5fa7ee16d03f",
+    "platform": "square",
+    "name": "Professional estimates and invoices",
+    "description": "Send estimates and invoices with automatic customer reminders and track payments in real time.",
+    "use_cases": [
+      "scheduling_dispatch"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Send professional estimates and invoices with automatic customer reminders.",
+    "last_checked_at": "2026-11-09T00:48:46.730Z"
+  },
+  {
+    "id": "d09733323450",
+    "platform": "square",
+    "name": "Square Assistant",
+    "description": "An automated text tool that helps clients confirm, cancel, or reschedule appointments at any time of day.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": "included",
+    "cost_note": "It's free and manages all your payments and booking needs.",
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/scheduling-features/square-assistant",
+    "quote": "Square Appointments comes with Square Assistant",
+    "last_checked_at": "2026-11-09T00:48:36.203Z"
+  },
+  {
+    "id": "88a2350cd1e4",
+    "platform": "square",
+    "name": "Square Messages",
+    "description": "Puts text and email conversations with customers in one place so you do not have to switch apps.",
+    "use_cases": [
+      "customer_list"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Square Messages puts text and email threads between you and your customers in one place.",
+    "last_checked_at": "2026-11-09T00:48:46.723Z"
+  },
+  {
+    "id": "d2d01e8f76ea",
+    "platform": "square",
+    "name": "Waitlist",
+    "description": "You can create a waitlist to fill open spots caused by last-minute cancellations or reschedules.",
+    "use_cases": [
+      "booking_waitlist"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [],
+    "source_url": "https://squareup.com/us/en/appointments/features",
+    "quote": "Create a waitlist for popular services and fill gaps in your schedule due to last-minute cancellations or reschedules.",
+    "last_checked_at": "2026-11-09T00:48:46.721Z"
+  },
+  {
+    "id": "3aefcf6a4f37",
+    "platform": "toast",
+    "name": "AI Email Campaign Builder",
+    "description": "Writes email subject lines and content from a short prompt, then lets you edit and schedule the email to guests.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Log in to Toast Web and select Marketing > Assistant > Campaigns.",
+      "Enter a prompt for your campaign, such as Trivia Night.",
+      "Review and edit the subject, title, body, and call-to-action.",
+      "Select Schedule email to send it."
+    ],
+    "source_url": "https://support.toasttab.com/en/article/Get-Started-with-Toast-s-Generative-AI-powered-Marketing-Assistant",
+    "quote": "Toast’s Generative AI-Powered Marketing Assistant allows you to provide inputs, which",
+    "last_checked_at": "2026-11-09T00:51:57.984Z"
+  },
+  {
+    "id": "621ab32fc701",
+    "platform": "toast",
+    "name": "AI Personalized Campaign Plan",
+    "description": "Creates a calendar of email, SMS, Facebook, and Instagram campaigns based on your restaurant data and past campaigns.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Navigate to Marketing > Assistant.",
+      "Select the purple Review marketing plan button in the purple banner.",
+      "Review the generated Marketing Plan Preview and edit campaigns as needed.",
+      "Select Schedule in the Campaign Builder to send each campaign."
+    ],
+    "source_url": "https://support.toasttab.com/en/article/Get-Started-with-Toast-s-Generative-AI-powered-Marketing-Assistant",
+    "quote": "create a personalized calendar of marketing campaigns across your Toast marketing platforms",
+    "last_checked_at": "2026-11-09T00:51:57.984Z"
+  },
+  {
+    "id": "ee9419e108ed",
+    "platform": "toast",
+    "name": "Toast IQ campaign drafts",
+    "description": "Toast IQ drafts email or text marketing campaigns for you to review, edit, and send or schedule yourself.",
+    "use_cases": [
+      "win_back"
+    ],
+    "availability": null,
+    "cost_note": null,
+    "how_to_start": [
+      "Ask your Toast Web administrator for the 4.1 Sales Reports or 4.3 Labor Reports permission.",
+      "Open Toast IQ from the top left of the Toast Web navigation menu, or from the bottom of the Toast Now app.",
+      "Ask for a draft, such as \"Draft an email campaign for our summer sale.\"",
+      "Review the draft in the linked campaign, then send or schedule it yourself."
+    ],
+    "source_url": "https://support.toasttab.com/en/article/Toast-IQ-Overview",
+    "quote": "Draft marketing campaigns right from Toast IQ!",
+    "last_checked_at": "2026-11-09T00:51:53.068Z"
+  }
+]

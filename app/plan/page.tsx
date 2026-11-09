@@ -6,6 +6,9 @@ import { getStore } from "@/lib/storage/db";
 import { idsFromParams } from "@/lib/http/params";
 import { Button, Card, EmptyState, ENGAGEMENT, SETUP_LABEL, SourceLink, TrustBadge, Warnings, priceText } from "@/components/ui";
 import { PrintButton } from "@/components/PrintButton";
+import { AlreadyInYourTools } from "@/components/AlreadyInYourTools";
+import { builtInMatches } from "@/lib/builtins/match";
+import { loadBuiltIns } from "@/lib/builtins/load";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Your adoption plan | AI Tool Matchmaker" };
@@ -55,6 +58,7 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
   const unknownPrice = chosen.filter((s) => s.price === null);
   const underBudget = total <= profile.budget_usd;
   const needs = [...new Set(chosen.flatMap((s) => s.tool.integration_requirements))];
+  const already = builtInMatches(await loadBuiltIns(), profile);
 
   return (
     <div className="space-y-6">
@@ -67,6 +71,8 @@ export default async function PlanPage({ searchParams }: { searchParams: SP }) {
         </div>
         <PrintButton />
       </header>
+
+      <AlreadyInYourTools matches={already} />
 
       <Card className="space-y-2">
         <h2 className="text-xl font-bold">What it costs each month</h2>

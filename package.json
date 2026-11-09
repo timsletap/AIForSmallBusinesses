@@ -10,7 +10,8 @@
     "seed": "tsx scripts/seed.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "migrate": "tsx scripts/migrate.ts"
+    "migrate": "tsx scripts/migrate.ts",
+    "builtins": "tsx scripts/builtins.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",
